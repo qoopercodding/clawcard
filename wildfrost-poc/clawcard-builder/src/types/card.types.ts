@@ -128,6 +128,16 @@ export interface Test2Card extends CardBase {
   abilities: Ability[]
 }
 
+
+/** Test3 — dodany przez Frame Editor */
+export interface Test3Card extends CardBase {
+  type: 'test3'
+  hp: number
+  attack: number
+  counter: number
+  abilities: Ability[]
+}
+
 export type AnyCard =
   | CompanionCard
   | ItemCard
@@ -137,3 +147,5 @@ export type AnyCard =
   | BossCard
   | TestetsCard
   | Test2Card
+
+  | Test3Card

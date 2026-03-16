@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
 import { useCardStore } from '../../store/cardStore'
-import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, TribeType } from '../../types/card.types'
+import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, TribeType, Test3Card } from '../../types/card.types'
 import './CardEditorScreen.css'
 
 // Typy które zachowują się jak companion (HP + ATK + Counter)
-const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2']
+const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2', 'test3']
 
 interface CardDraft {
   id: string; name: string; type: CardType; tribe: TribeType
@@ -238,6 +238,9 @@ const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'charm',               label: 'Charm' },
   { value: 'testets',             label: 'testets' },
   { value: 'test2',               label: 'test2' },
+
+  { value: 'test3', label: 'test3' },
+  { value: 'test3', label: 'test3' },
 ]
 
 function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
