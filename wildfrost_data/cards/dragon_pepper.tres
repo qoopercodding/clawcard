@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dl5x4ou4wcmu7"]
+
+[ext_resource type="Texture2D" uid="uid://bnwt5lldliytd" path="res://wildfrost_data/images/Dragon_Pepper.png" id="1_3qnud"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_h5wql"]
+
+[resource]
+script = ExtResource("2_h5wql")
+id = "dragon_pepper"
+cost = 1
+icon = ExtResource("1_3qnud")
+tooltip_text = "[b]Dragon Pepper[/b]
+Apply 7 Spice
+Consume
+[color=#888888]ATK:0 HP:0 CTR:?[/color]"

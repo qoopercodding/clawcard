@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c071rk5j7wap"]
+
+[ext_resource type="PackedScene" uid="uid://d3b23v3dpsd60" path="res://enemies/bat/bat_enemy_ai.tscn" id="1_gf6hv"]
+
+[node name="BatEnemyAI" unique_id=149655995 instance=ExtResource("1_gf6hv")]

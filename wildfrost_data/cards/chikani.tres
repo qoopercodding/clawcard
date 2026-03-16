@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://c66djng30wl8n"]
+
+[ext_resource type="Texture2D" uid="uid://478pj48s4nli" path="res://wildfrost_data/images/Chikani.png" id="1_2au58"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_1fy4r"]
+
+[resource]
+script = ExtResource("2_1fy4r")
+id = "chikani"
+cost = 1
+icon = ExtResource("1_2au58")
+tooltip_text = "[b]Chikani[/b]
+When Sacrificed, summon Chikasan
+[color=#888888]ATK:4.0 HP:4.0 CTR:3.0[/color]"

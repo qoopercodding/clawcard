@@ -1,0 +1,32 @@
+// frameConfig dla companion
+// Wklej do CardEditor.frameConfig w card-editor.js
+{
+  "companion": {
+    "art": {
+      "left": 10,
+      "top": 15,
+      "width": 75,
+      "height": 40
+    },
+    "hp": {
+      "left": 10.3,
+      "top": 23.5
+    },
+    "atk": {
+      "left": 89.4,
+      "top": 22.5
+    },
+    "counter": {
+      "left": 49.8,
+      "top": 93.1
+    },
+    "name": {
+      "left": 48.7,
+      "top": 58.1
+    },
+    "desc": {
+      "left": 48.7,
+      "top": 68.3
+    }
+  }
+}

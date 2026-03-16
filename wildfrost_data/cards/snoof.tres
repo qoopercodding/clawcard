@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://p8wlg5xpxx63"]
+
+[ext_resource type="Texture2D" uid="uid://crnechbr0vxx5" path="res://wildfrost_data/images/Snoof.png" id="1_dsl7c"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_p0wjg"]
+
+[resource]
+script = ExtResource("2_p0wjg")
+id = "snoof"
+cost = 1
+icon = ExtResource("1_dsl7c")
+tooltip_text = "[b]Snoof[/b]
+Apply 1 Snow
+[color=#888888]ATK:3.0 HP:3.0 CTR:3.0[/color]"

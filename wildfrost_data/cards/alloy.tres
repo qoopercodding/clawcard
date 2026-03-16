@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://lbeolxvkgovb"]
+
+[ext_resource type="Texture2D" uid="uid://c1dym7lae7wvd" path="res://wildfrost_data/images/Alloy.png" id="1_u73iv"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_mc3vp"]
+
+[resource]
+script = ExtResource("2_mc3vp")
+id = "alloy"
+cost = 1
+icon = ExtResource("1_u73iv")
+tooltip_text = "[b]Alloy[/b]
+Apply 1 Scrap to a random ally
+[color=#888888]ATK:6.0 HP:12.0 CTR:5.0[/color]"

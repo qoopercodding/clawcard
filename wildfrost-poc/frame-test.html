@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Companion Frame — podgląd</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 32px;
+      font-family: system-ui, sans-serif;
+      color: #fff;
+    }
+    h1 { font-size: 1rem; color: #aaa; letter-spacing: 2px; text-transform: uppercase; }
+    .frames { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; justify-content: center; }
+    .frame-box { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .frame-box label { font-size: 0.75rem; color: #888; }
+    img { display: block; border: 1px solid #333; border-radius: 4px; }
+
+    /* Karta z mix-blend-mode — biały kontener */
+    .card-wrap {
+      position: relative;
+      width: 200px;
+      height: 294px;
+    }
+    .card-bg {
+      position: absolute; inset: 0;
+      background: #ffffff;
+      border-radius: 8px;
+    }
+    .card-art {
+      position: absolute;
+      left: 14%; top: 10.5%;
+      width: 70.6%; height: 44.4%;
+      background: #c8d8f0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .card-frame {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    .card-hp {
+      position: absolute;
+      left: 3.9%; top: 20.4%;
+      width: 12.7%; height: 5.3%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.85rem; color: #7a1a1a;
+      font-family: Georgia, serif;
+    }
+    .card-atk {
+      position: absolute;
+      left: 81.3%; top: 19.3%;
+      width: 9.6%; height: 5.1%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.85rem; color: #0a2a5a;
+      font-family: Georgia, serif;
+    }
+    .card-counter {
+      position: absolute;
+      left: 42.9%; top: 88.1%;
+      width: 12.7%; height: 7.3%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.85rem; color: #5a3a00;
+      font-family: Georgia, serif;
+    }
+    .card-name {
+      position: absolute;
+      left: 17.7%; top: 53.4%;
+      width: 63.1%; height: 6.7%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.62rem; color: #2a1200;
+      font-family: Georgia, serif;
+      text-align: center; overflow: hidden;
+    }
+    .card-desc {
+      position: absolute;
+      left: 19.8%; top: 61.2%;
+      width: 58.4%; height: 23.9%;
+      display: flex; align-items: flex-start; justify-content: center;
+      font-size: 0.48rem; color: #5a3a10;
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      padding: 2px;
+      line-height: 1.4;
+      overflow: hidden;
+    }
+
+    /* Status */
+    .status { font-size: 0.75rem; padding: 6px 14px; border-radius: 6px; }
+    .ok  { background: rgba(134,239,172,0.15); color: #86efac; border: 1px solid #86efac44; }
+    .err { background: rgba(248,113,113,0.15); color: #f87171; border: 1px solid #f8717144; }
+  </style>
+</head>
+<body>
+
+  <h1>Companion Frame — test PNG</h1>
+
+  <div class="frames">
+
+    <!-- 1. Sam PNG -->
+    <div class="frame-box">
+      <label>1. Sam PNG (surowy)</label>
+      <img id="raw-img" src="Companion Frame.png" width="200" alt="Companion Frame" />
+      <div id="raw-status" class="status">ładowanie...</div>
+    </div>
+
+    <!-- 2. Karta z mix-blend-mode:multiply -->
+    <div class="frame-box">
+      <label>2. Karta z multiply (białe tło)</label>
+      <div class="card-wrap">
+        <div class="card-bg"></div>
+        <div class="card-art">🦀</div>
+        <img class="card-frame" src="Companion Frame.png" alt="" />
+        <div class="card-hp">11</div>
+        <div class="card-atk">1</div>
+        <div class="card-counter">1</div>
+        <div class="card-name">Namandi Shellandi</div>
+        <div class="card-desc">Lider drużyny. Jego śmierć kończy run.</div>
+      </div>
+    </div>
+
+    <!-- 3. Karta — Tusk -->
+    <div class="frame-box">
+      <label>3. Tusk</label>
+      <div class="card-wrap">
+        <div class="card-bg"></div>
+        <div class="card-art">🦣</div>
+        <img class="card-frame" src="Companion Frame.png" alt="" />
+        <div class="card-hp">5</div>
+        <div class="card-atk">2</div>
+        <div class="card-counter">5</div>
+        <div class="card-name">Tusk</div>
+        <div class="card-desc">While active, give all allies +3 Teeth.</div>
+      </div>
+    </div>
+
+    <!-- 4. Karta — Foxee -->
+    <div class="frame-box">
+      <label>4. Foxee</label>
+      <div class="card-wrap">
+        <div class="card-bg"></div>
+        <div class="card-art">🦊</div>
+        <img class="card-frame" src="Companion Frame.png" alt="" />
+        <div class="card-hp">4</div>
+        <div class="card-atk">1</div>
+        <div class="card-counter">3</div>
+        <div class="card-name">Foxee</div>
+        <div class="card-desc">×3 Frenzy — attacks 3 times per trigger.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="info" style="font-size:0.72rem; color:#555; margin-top:8px;"></div>
+
+  <script>
+    const img = document.getElementById('raw-img')
+    const status = document.getElementById('raw-status')
+    const info   = document.getElementById('info')
+
+    img.onload = () => {
+      status.className = 'status ok'
+      status.textContent = `✓ PNG załadowany — ${img.naturalWidth}×${img.naturalHeight}px`
+      info.textContent = `Ścieżka: ${img.src}`
+    }
+    img.onerror = () => {
+      status.className = 'status err'
+      status.textContent = '✗ Błąd ładowania PNG — sprawdź czy plik jest w tym samym folderze co index.html'
+      info.textContent = `Szukam pod: ${img.src}`
+    }
+  </script>
+
+</body>
+</html>

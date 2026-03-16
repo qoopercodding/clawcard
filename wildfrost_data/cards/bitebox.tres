@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dynxf61dvf57h"]
+
+[ext_resource type="Texture2D" uid="uid://dd41wx1cwwtwh" path="res://wildfrost_data/images/Bitebox.png" id="1_4plix"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_vv7mk"]
+
+[resource]
+script = ExtResource("2_vv7mk")
+id = "bitebox"
+cost = 1
+icon = ExtResource("1_4plix")
+tooltip_text = "[b]Bitebox[/b]
+When hit, deal equal damage to the attacker
+[color=#888888]ATK:0 HP:0 CTR:?[/color]"

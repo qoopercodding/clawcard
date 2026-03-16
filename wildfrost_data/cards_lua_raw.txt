@@ -1,0 +1,222 @@
+--Pets
+cards["Booshu"] = {
+	Name="Booshu",
+	Types={Pet=true, Companion=true},
+	Health=4,
+	Attack=3,
+	Counter=5,
+	Desc="Restore '''3''' {{Stat|Health}} to all allies",
+	Challenge="Recall '''3''' Companions",
+	ChallengeOrder=1,
+}
+cards["Binku"]= {
+	Name="Binku",
+	Types={Pet=true, Companion=true},
+	Health=5,
+	Attack=2,
+	Counter=4,
+	Desc="Apply '''3''' {{Stat|Ink}}",
+	Challenge="Hit the Enemy Wave Bell '''5''' times",
+	ChallengeOrder=5
+}
+cards["Lil Gazi"] = {
+	Name="Lil' Gazi",
+	Types={Pet=true, Companion=true},
+	Health=3,
+	Attack=4,
+	Counter=4,
+	Desc="While active, add '''+1''' {{Stat|Attack}} to all allies",
+	Challenge="Achieve a '''6x''' kill combo",
+	ChallengeOrder=6,
+}
+cards["Loki"] = {
+	Name="Loki",
+	Types={Pet=true, Companion=true},
+	Health=5,
+	Attack=3,
+	Counter=3,
+	Desc="Apply '''1''' {{Stat|Demonize}}<br>{{Keyword|Aimless}}",
+	Challenge="Kill '''3''' {{Stat|Demonize|Demonized}} enemies",
+	ChallengeOrder=2,
+}
+cards["Sneezle"] = {
+	Name="Sneezle",
+	Types={Pet=true, Companion=true},
+	Health=6,
+	Attack=2,
+	Counter=3,
+	Desc="{{Keyword|Draw}} '''1''' when hit",
+	Challenge="Buy '''5''' discounted [[Items]]",
+	ChallengeOrder=3,
+}
+cards["Snoof"] = {
+	Name="Snoof",
+	Types={Pet=true, Companion=true},
+	Health=3,
+	Attack=3,
+	Counter=3,
+	Desc="Apply '''1''' {{Stat|Snow}}",
+	Challenge="''Unlocked by default.''",
+	ChallengeOrder=0,
+}
+cards["Spike"] = {
+	Name="Spike",
+	Types={Pet=true, Companion=true},
+	Health=7,
+	Other="2 {{Stat|Teeth}}",
+	Desc="{{Keyword|Hogheaded}}",
+	Challenge="Kill '''10''' enemies with {{Stat|Teeth}}",
+	ChallengeOrder=4,
+}
+cards["Alloy"] = {
+	Name="Alloy",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=12,
+	Attack=6,
+	Counter=5,
+	Other="1 {{Stat|Bom}}",
+	Desc="Apply '''1''' {{Stat|Scrap}} to a random ally",
+	Tribes={"Clunkmasters"},
+}
+cards["The Baker"] = {
+	Name="The Baker",
+	Types={Companion=true, HotSpring=true, NonPetCompanion=true},
+	Health=9,
+	Counter=4,
+	Desc="Add '''1''' {{Card|Skull Muffin}} to your hand<br>{{Keyword|Spark}}",
+	Tribes={"Shademancers"},
+}
+cards["Berry Sis"] = {
+	Name="Berry Sis",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=8,
+	Attack=2,
+	Counter=3,
+	Desc="When hit, add lost {{Stat|Health}} to a random ally",
+	Tribes={"Shademancers"},
+}
+cards["Big Berry"] = {
+	Name="Big Berry",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=10,
+	Attack=5,
+	Counter=4,
+	Desc="On kill, restore '''2''' {{Stat|Health}} to self and allies in the row",
+	Tribes={"All"},
+}
+cards["Biji"] = {
+	Name="Biji",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=8,
+	Attack=0,
+	Counter=4,
+	Desc="Apply '''3''' {{Stat|Bom}}<br>Increase by 1 when hit",
+	Tribes={"Clunkmasters"},
+}
+cards["Foxee"] = {
+	Name="Foxee",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=4,
+	Attack=1,
+	Counter=3,
+	Other="x3 {{Stat|Frenzy}}",
+	Tribes={"All"},
+}
+cards["Wallop"] = {
+	Name="Wallop",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=9,
+	Attack=4,
+	Counter=4,
+	Desc="Deal '''8''' additional damage to {{Stat|Snow}}'d targets",
+	Tribes={"Snowdwellers"},
+}
+cards["Tusk"] = {
+	Name="Tusk",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=5,
+	Attack=2,
+	Counter=5,
+	Desc="While active, add '''3''' {{Stat|Teeth}} to all allies",
+	Tribes={"Shademancers"},
+}
+cards["Chikichi"] = {
+	Name="Chikichi",
+	Types={Companion=true, NonPetCompanion=true},
+	Health=2,
+	Attack=2,
+	Counter=3,
+	Desc="When {{Keyword|Sacrificed}}, summon [[Chikani]]",
+	Tribes={"Shademancers"},
+}
+cards["Bitebox"] = {
+	Name="Bitebox",
+	Types={Clunker=true},
+	Scrap=1,
+	Desc="When hit, deal equal damage to the attacker",
+	Tribes={"All"},
+	Price=50,
+}
+cards["Woodhead"] = {
+	Name="Woodhead",
+	Types={Clunker=true},
+	Scrap=1,
+	Desc="<span style=\"color:gray\">''Does nothing, but will take a hit for you :)''</span>",
+	Tribes={"Snowdwellers"},
+	Price=25,
+}
+cards["Beepop Mask"] = {
+	Name="Beepop Mask",
+	Types={Item=true, ShopItem=true},
+	Desc="Summon [[Beepop]]",
+	Tribes={"Shademancers"},
+	Price=60,
+}
+cards["Berry Blade"] = {
+	Name="Berry Blade",
+	Types={Item=true, ShopItem=true},
+	Attack=4,
+	Desc="Restore {{Stat|Health}} to front ally equal to damage dealt",
+	Tribes={"All"},
+	Price=50,
+}
+cards["Dragon Pepper"] = {
+	Name="Dragon Pepper",
+	Types={Item=true, ShopItem=true},
+	Desc="Apply '''7''' {{Stat|Spice}}<br>{{Keyword|Consume}}",
+	Tribes={"Snowdwellers"},
+	Price=55,
+}
+cards["Junk"] = {
+	Name="Junk",
+	Types={Item=true},
+	Attack=0,
+	Desc="<span style=\"color:gray\">''Does absolutely nothing...''</span>",
+	Tribes={"All"},
+	Price=0,
+}
+cards["Beepop"] = {
+	Name="Beepop",
+	Types={Shade=true},
+	Health=1,
+	Desc="When destroyed, apply '''4''' {{Stat|Overburn}} to the attacker",
+	SummonCon="Using [[Beepop Mask]]",
+}
+cards["Chikani"] = {
+	Name="Chikani",
+	Types={Shade=true},
+	Health=4,
+	Attack=4,
+	Counter=3,
+	Desc="When {{Keyword|Sacrificed}}, summon [[Chikasan]]",
+	SummonCon="{{Keyword|Sacrificing}} [[Chikichi]]",
+}
+cards["Dregg"] = {
+	Name="Dregg",
+	Types={Shade=true},
+	Health=5,
+	Attack=5,
+	Counter=4,
+	Other="x2 {{Stat|Frenzy}}",
+	SummonCon="Destroying [[Egg]]",
+}

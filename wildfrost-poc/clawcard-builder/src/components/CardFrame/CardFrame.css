@@ -1,0 +1,78 @@
+/* CardFrame.css */
+
+.card-frame {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.card-frame--inspectable {
+  cursor: pointer;
+  transition: transform 0.12s ease, filter 0.12s ease;
+}
+
+.card-frame--inspectable:hover {
+  transform: translateY(-4px) scale(1.03);
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+}
+
+.card-frame--inspectable:active {
+  transform: scale(0.97);
+}
+
+.card-frame__hint {
+  position: absolute;
+  bottom: 5px; right: 5px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.card-frame--inspectable:hover .card-frame__hint { opacity: 0.6; }
+
+/* ── Statystyki ── */
+
+.cf-stat { pointer-events: none; }
+
+.cf-stat__val {
+  font-family: 'Georgia', serif;
+  font-weight: 900;
+  line-height: 1;
+  color: #000000;
+  font-size: 90%;
+  white-space: nowrap;
+}
+
+/* Nazwa */
+.cf-name {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  font-size: 60%;
+  color: #000000;
+  text-align: center;
+  line-height: 1.1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  padding: 0 2px;
+}
+
+/* Opis — biały, większy font */
+.cf-desc {
+  font-family: system-ui, sans-serif;
+  font-size: 54%;              /* było 46% */
+  color: #ffffff;              /* biały */
+  text-align: center;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  pointer-events: none;
+  padding: 0 2px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}

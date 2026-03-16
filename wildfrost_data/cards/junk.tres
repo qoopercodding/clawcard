@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://dxcvou8wlnvs4"]
+
+[ext_resource type="Texture2D" uid="uid://cbv1536o7d4o0" path="res://wildfrost_data/images/Junk.png" id="1_p41vy"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_heuhq"]
+
+[resource]
+script = ExtResource("2_heuhq")
+id = "junk"
+cost = 1
+icon = ExtResource("1_p41vy")
+tooltip_text = "[b]Junk[/b]
+Does absolutely nothing...
+[color=#888888]ATK:0.0 HP:0 CTR:?[/color]"

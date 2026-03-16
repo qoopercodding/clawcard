@@ -1,0 +1,393 @@
+/* FrameEditorScreen.css — v3 z tworzeniem nowych typów */
+
+.frame-editor {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 76px);
+  overflow: hidden;
+}
+
+/* ══ Sidebar ══════════════════════════════════════════════════════════════ */
+.frame-editor__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 12px;
+  border-right: 1px solid rgba(255,230,184,0.1);
+  overflow-y: auto;
+  background: rgba(10,6,3,0.6);
+  scrollbar-width: thin;
+  scrollbar-color: #2d1f0a transparent;
+}
+
+.fe-section { display: flex; flex-direction: column; gap: 5px; }
+
+.fe-label {
+  display: block;
+  color: #d8b180;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.fe-input {
+  width: 100%;
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,230,184,0.2);
+  background: rgba(40,20,5,0.8);
+  color: #fff1dd;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.fe-input:focus { outline: none; border-color: rgba(255,214,150,0.5); }
+
+.fe-select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,230,184,0.2);
+  background: rgba(47,23,9,0.8);
+  color: #fff1dd;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ── Mode tabs ── */
+.fe-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.fe-mode-tab {
+  padding: 7px 10px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.fe-mode-tab:hover { color: #d8b180; }
+
+.fe-mode-tab--active {
+  background: rgba(80,45,5,0.9);
+  color: #fbbf24;
+  border: 1px solid rgba(251,191,36,0.3);
+}
+
+/* Type preview badge */
+.fe-type-preview {
+  padding: 5px 10px;
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.2);
+  border-radius: 7px;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  margin-top: 4px;
+}
+
+.fe-type-preview code {
+  color: #fbbf24;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+}
+
+/* ── Fields checkboxes ── */
+.fe-fields-section {
+  background: rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid rgba(255,230,184,0.08);
+}
+
+.fe-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.fe-field-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  background: rgba(20,10,3,0.5);
+  color: #6b7280;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.fe-field-check input { display: none; }
+
+.fe-field-check--on {
+  background: rgba(40,20,3,0.7);
+  border-color: color-mix(in srgb, var(--fc) 40%, transparent);
+  color: var(--fc);
+}
+
+/* Drop zone */
+.fe-drop {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px dashed rgba(255,230,184,0.2);
+  background: rgba(20,10,3,0.5);
+  color: #9ca3af;
+  font-size: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.fe-drop:hover { border-color: rgba(255,214,150,0.4); color: #d8b180; }
+.fe-drop--has-img { border-color: #86efac44; color: #86efac; background: rgba(5,20,10,0.5); }
+
+/* Quick frame buttons */
+.fe-quick-frames {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fe-quick-btn {
+  padding: 5px 10px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,230,184,0.12);
+  background: rgba(30,15,3,0.5);
+  color: #9ca3af;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-align: left;
+}
+
+.fe-quick-btn:hover { border-color: rgba(255,214,150,0.3); color: #d8b180; }
+
+.fe-error {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(248,113,113,0.1);
+  border: 1px solid rgba(248,113,113,0.3);
+  color: #f87171;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* Progress bar */
+.fe-progress {
+  position: relative;
+  height: 24px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.fe-progress__bar {
+  position: absolute; left: 0; top: 0; bottom: 0;
+  background: linear-gradient(90deg, #fbbf24, #86efac);
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+.fe-progress__text {
+  position: relative; z-index: 1;
+  font-size: 0.68rem; font-weight: 700; color: #fff;
+  padding: 0 8px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  font-family: 'Courier New', monospace;
+}
+
+/* Steps */
+.fe-steps { display: flex; flex-direction: column; gap: 4px; }
+
+.fe-steps__header {
+  color: #6b7280; font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.fe-steps__empty {
+  color: #374151; font-size: 0.72rem;
+  font-style: italic; padding: 4px 0;
+}
+
+.fe-step-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: 9px;
+  border: 1.5px solid transparent;
+  background: rgba(20,10,3,0.4);
+  cursor: pointer; transition: all 0.12s;
+  text-align: left; width: 100%;
+}
+
+.fe-step-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.fe-step-btn:not(:disabled):hover {
+  background: rgba(50,25,5,0.6);
+  border-color: color-mix(in srgb, var(--step-color) 40%, transparent);
+}
+.fe-step-btn--active {
+  background: rgba(50,25,5,0.7) !important;
+  border-color: var(--step-color) !important;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--step-color) 20%, transparent);
+}
+.fe-step-btn--done .fe-step-btn__label { color: #e2e8f0; }
+
+.fe-step-btn__icon { font-size: 1.1rem; width: 22px; text-align: center; flex-shrink: 0; }
+.fe-step-btn__body { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.fe-step-btn__label { font-size: 0.82rem; font-weight: 600; color: #9ca3af; }
+.fe-step-btn--active .fe-step-btn__label { color: var(--step-color); }
+.fe-step-btn__val { font-size: 0.62rem; font-family: 'Courier New', monospace; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fe-step-btn__hint { font-size: 0.65rem; color: #4b5563; font-style: italic; }
+.fe-step-btn__right { flex-shrink: 0; }
+.fe-step-btn__status { color: #374151; font-size: 0.8rem; }
+
+.fe-delete-btn {
+  background: none; border: 1px solid #374151; color: #6b7280;
+  border-radius: 4px; width: 20px; height: 20px; font-size: 0.65rem;
+  cursor: pointer; transition: all 0.1s; display: grid; place-items: center;
+}
+.fe-delete-btn:hover { border-color: #f87171; color: #f87171; }
+
+/* Akcje */
+.fe-actions { display: flex; gap: 6px; }
+
+.fe-btn {
+  flex: 1; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid rgba(255,230,184,0.18);
+  background: rgba(40,20,5,0.6); color: #d8b180;
+  font-size: 0.75rem; cursor: pointer; transition: all 0.12s;
+}
+
+.fe-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.fe-btn:hover:not(:disabled) { border-color: rgba(255,214,150,0.4); color: #fff1dd; }
+
+/* ── Główny przycisk Zapisz ── */
+.fe-save-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid rgba(134,239,172,0.4);
+  background: rgba(5,40,20,0.7);
+  color: #86efac;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.fe-save-btn:hover:not(:disabled) {
+  border-color: #86efac;
+  background: rgba(5,60,30,0.8);
+  box-shadow: 0 0 20px rgba(134,239,172,0.15);
+}
+
+.fe-save-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.fe-save-btn--saved {
+  border-color: #fbbf24;
+  color: #fbbf24;
+  background: rgba(40,25,3,0.7);
+  animation: save-pulse 0.4s ease;
+}
+
+.fe-save-btn--error {
+  border-color: #f87171;
+  color: #f87171;
+  background: rgba(40,5,5,0.7);
+}
+
+@keyframes save-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.fe-save-hint {
+  padding: 8px 10px;
+  background: rgba(251,191,36,0.08);
+  border: 1px solid rgba(251,191,36,0.25);
+  border-radius: 8px;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.fe-save-hint strong { color: #fbbf24; }
+
+/* JSON preview */
+.fe-json-preview {
+  background: #0a0d14; border: 1px solid #1e2535;
+  border-radius: 7px; padding: 9px;
+  font-size: 0.6rem; color: #7ee787;
+  font-family: 'Courier New', monospace; line-height: 1.5;
+  overflow-x: auto; max-height: 160px; overflow-y: auto;
+  white-space: pre; scrollbar-width: thin;
+}
+
+/* ══ Canvas ═══════════════════════════════════════════════════════════════ */
+.frame-editor__canvas {
+  display: flex; flex-direction: column;
+  align-items: center; padding: 16px 20px;
+  overflow: auto; gap: 12px;
+  background: radial-gradient(ellipse at center top, rgba(20,10,40,0.3), transparent 60%);
+}
+
+.mapper-instruction {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 14px;
+  background: rgba(10,6,3,0.85);
+  border: 1px solid rgba(255,230,184,0.12);
+  border-radius: 10px;
+  width: 100%; max-width: 780px;
+  font-size: 0.82rem; flex-shrink: 0;
+}
+
+.mapper-instruction--idle { color: #4b5563; justify-content: center; font-style: italic; }
+
+.mapper-step-badge {
+  padding: 3px 10px; border-radius: 999px; border: 1px solid;
+  font-size: 0.72rem; font-weight: 700; white-space: nowrap; flex-shrink: 0;
+}
+
+.mapper-step-text { color: #d1d5db; }
+
+.fe-img-wrap {
+  position: relative; display: inline-block;
+  border-radius: 10px; box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  overflow: visible;
+}
+
+.fe-frame-img {
+  display: block; max-width: 100%; max-height: 62vh;
+  border-radius: 8px; pointer-events: none;
+  user-select: none; -webkit-user-drag: none;
+}
+
+.fe-empty {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px; padding: 60px 24px;
+  text-align: center; color: #6b7280; flex: 1;
+}
+
+.fe-empty__icon  { font-size: 3rem; opacity: 0.3; }
+.fe-empty__title { font-size: 1rem; color: #9ca3af; font-weight: 600; }
+.fe-empty__hint  { font-size: 0.8rem; line-height: 1.7; color: #4b5563; }

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bwuq5p2pdeas4"]
+
+[ext_resource type="Texture2D" uid="uid://cg5kuvonu4x3n" path="res://wildfrost_data/images/Booshu.png" id="1_dq7ko"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_dblfu"]
+
+[resource]
+script = ExtResource("2_dblfu")
+id = "booshu"
+cost = 1
+icon = ExtResource("1_dq7ko")
+tooltip_text = "[b]Booshu[/b]
+Restore 3 Health to all allies
+[color=#888888]ATK:3.0 HP:4.0 CTR:5.0[/color]"

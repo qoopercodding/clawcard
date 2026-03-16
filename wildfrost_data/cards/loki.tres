@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://b0wmdyyf4srqv"]
+
+[ext_resource type="Texture2D" uid="uid://bo0kmwuokxl1u" path="res://wildfrost_data/images/Loki.png" id="1_xco5g"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_ip0gp"]
+
+[resource]
+script = ExtResource("2_ip0gp")
+id = "loki"
+cost = 1
+icon = ExtResource("1_xco5g")
+tooltip_text = "[b]Loki[/b]
+Apply 1 Demonize
+Aimless
+[color=#888888]ATK:3.0 HP:5.0 CTR:3.0[/color]"

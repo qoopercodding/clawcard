@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://cyqsknbg7kr44"]
+
+[ext_resource type="Texture2D" uid="uid://caim7hsknov25" path="res://wildfrost_data/images/Binku.png" id="1_t5h8h"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_h5gsg"]
+
+[resource]
+script = ExtResource("2_h5gsg")
+id = "binku"
+cost = 1
+icon = ExtResource("1_t5h8h")
+tooltip_text = "[b]Binku[/b]
+Apply 3 Ink
+[color=#888888]ATK:2.0 HP:5.0 CTR:4.0[/color]"

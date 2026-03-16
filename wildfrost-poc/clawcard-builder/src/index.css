@@ -1,0 +1,40 @@
+:root {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #fff4e4;
+  background:
+    radial-gradient(circle at top, rgba(225, 144, 62, 0.22), transparent 35%),
+    linear-gradient(180deg, #23140a 0%, #140b07 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: #fff3da;
+}
+
+h2,
+p {
+  margin: 0;
+}

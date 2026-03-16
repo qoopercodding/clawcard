@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://cwqikna3f0pq2"]
+
+[ext_resource type="Texture2D" uid="uid://ck2jxrj3ueqwt" path="res://wildfrost_data/images/Big_Berry.png" id="1_nyo56"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_x726h"]
+
+[resource]
+script = ExtResource("2_x726h")
+id = "big_berry"
+cost = 1
+icon = ExtResource("1_nyo56")
+tooltip_text = "[b]Big Berry[/b]
+On kill, restore 2 Health to self and allies in the row
+[color=#888888]ATK:5.0 HP:10.0 CTR:4.0[/color]"

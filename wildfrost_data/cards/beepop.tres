@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bn4bjqq051bup"]
+
+[ext_resource type="Texture2D" uid="uid://cx6mf1g2ljqsq" path="res://wildfrost_data/images/Beepop.png" id="1_0arb8"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_opv0u"]
+
+[resource]
+script = ExtResource("2_opv0u")
+id = "beepop"
+cost = 1
+icon = ExtResource("1_0arb8")
+tooltip_text = "[b]Beepop[/b]
+When destroyed, apply 4 Overburn to the attacker
+[color=#888888]ATK:0 HP:1.0 CTR:?[/color]"

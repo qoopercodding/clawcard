@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://nl2toesumxuh"]
+
+[ext_resource type="Texture2D" uid="uid://ct4g07k50s1gs" path="res://wildfrost_data/images/Beepop_Mask.png" id="1_qiskw"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_eamld"]
+
+[resource]
+script = ExtResource("2_eamld")
+id = "beepop_mask"
+cost = 1
+icon = ExtResource("1_qiskw")
+tooltip_text = "[b]Beepop Mask[/b]
+Summon Beepop
+[color=#888888]ATK:0 HP:0 CTR:?[/color]"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://71hv46ldo4oq"]
+
+[ext_resource type="Texture2D" uid="uid://wmq7wk4n16ia" path="res://wildfrost_data/images/Biji.png" id="1_p7mhq"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_y8s6i"]
+
+[resource]
+script = ExtResource("2_y8s6i")
+id = "biji"
+cost = 1
+icon = ExtResource("1_p7mhq")
+tooltip_text = "[b]Biji[/b]
+Apply 3 Bom
+Increase by 1 when hit
+[color=#888888]ATK:0.0 HP:8.0 CTR:4.0[/color]"

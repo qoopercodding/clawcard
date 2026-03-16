@@ -1,0 +1,75 @@
+
+/* ── Nowe style — walidacja i hints ── */
+
+/* Gwiazdka wymaganego pola */
+.ced-required-star {
+  color: #f87171;
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+/* Oznaczenie opcjonalnego */
+.ced-optional {
+  color: #6b7280;
+  font-size: 0.68rem;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Hint pod polem (np. "→ ramka z mieczem") */
+.ced-field-hint {
+  display: block;
+  font-size: 0.65rem;
+  color: #fbbf24;
+  margin-top: 3px;
+  font-style: italic;
+}
+
+/* Blok błędów walidacji */
+.ced-errors {
+  margin: 8px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ced-error-item {
+  padding: 6px 10px;
+  background: rgba(248,113,113,0.1);
+  border: 1px solid rgba(248,113,113,0.3);
+  border-radius: 7px;
+  color: #f87171;
+  font-size: 0.78rem;
+}
+
+/* Hint o wymaganych polach pod przyciskami */
+.ced-required-hint {
+  font-size: 0.68rem;
+  color: #4b5563;
+  padding: 4px 0;
+}
+
+.ced-required-hint strong {
+  color: #9ca3af;
+}
+
+/* Przycisk wyszarzony gdy nie można zapisać */
+.ced-btn--muted {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Hint dla typów bez statystyk */
+.ced-section-hint {
+  padding: 10px;
+  background: rgba(255,230,184,0.05);
+  border: 1px dashed rgba(255,230,184,0.15);
+  border-radius: 8px;
+  color: #6b7280;
+  font-size: 0.78rem;
+  margin: 6px 0;
+}
+
+.ced-section-hint strong {
+  color: #d8b180;
+}

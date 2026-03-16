@@ -1,0 +1,146 @@
+.companion-frame {
+  position: relative;
+  width: 200px;
+  height: 280px;
+  display: grid;
+  grid-template-rows: 65% 15% 20%;
+  overflow: hidden;
+  border: 4px solid #5b3117;
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 222, 173, 0.2), transparent 40%),
+    linear-gradient(180deg, #9f6533 0%, #77451d 55%, #4f2b11 100%);
+  box-shadow:
+    0 24px 40px rgba(36, 17, 5, 0.36),
+    inset 0 0 0 2px rgba(255, 236, 201, 0.22);
+}
+
+.companion-frame__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(184, 216, 255, 0.35), transparent 50%),
+    linear-gradient(180deg, #244b71 0%, #13293d 100%);
+  border-bottom: 3px solid rgba(54, 28, 11, 0.75);
+}
+
+.companion-frame__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.companion-frame__emoji {
+  font-size: 88px;
+  line-height: 1;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, 0.35));
+}
+
+.companion-frame__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background:
+    linear-gradient(180deg, #e9cf94 0%, #d1b073 55%, #b9874e 100%);
+  border-bottom: 3px solid rgba(54, 28, 11, 0.6);
+}
+
+.companion-frame__name {
+  margin: 0;
+  color: #39210f;
+  font-size: 24px;
+  line-height: 1.1;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.companion-frame__description {
+  padding: 14px 18px 24px;
+  background:
+    linear-gradient(180deg, rgba(21, 13, 8, 0.86), rgba(11, 8, 5, 0.98));
+  color: #f9e7c6;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.companion-frame__description p {
+  margin: 0;
+}
+
+.companion-frame__badge {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 247, 232, 0.85);
+  color: #fff7ea;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.28);
+}
+
+.companion-frame__badge--hp {
+  top: 12px;
+  left: 12px;
+  background: linear-gradient(180deg, #eb6255 0%, #991f1f 100%);
+}
+
+.companion-frame__badge--attack {
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(180deg, #5faff6 0%, #1a4f95 100%);
+}
+
+.companion-frame__badge--counter {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #f3c75b 0%, #ab6b1f 100%);
+}
+
+/* ==========================================================================
+   Inspectable — hover states gdy karta jest klikalny
+   ========================================================================== */
+
+.companion-frame--inspectable {
+  cursor: pointer;
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+}
+
+.companion-frame--inspectable:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 28px 48px rgba(36, 17, 5, 0.42),
+    inset 0 0 0 2px rgba(255, 236, 201, 0.22),
+    0 0 0 2px rgba(75, 158, 255, 0.4);
+}
+
+.companion-frame--inspectable:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* Mały hint "🔍" w prawym dolnym rogu przy hover */
+.companion-frame__inspect-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 1px 2px #000);
+}
+
+.companion-frame--inspectable:hover .companion-frame__inspect-hint {
+  opacity: 0.7;
+}

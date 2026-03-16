@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://c2dl20gu2vcm3"]
+
+[ext_resource type="Texture2D" uid="uid://3o4cvju604d8" path="res://wildfrost_data/images/Wallop.png" id="1_m0y6g"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_3futg"]
+
+[resource]
+script = ExtResource("2_3futg")
+id = "wallop"
+cost = 1
+icon = ExtResource("1_m0y6g")
+tooltip_text = "[b]Wallop[/b]
+Deal 8 additional damage to Snow'd targets
+[color=#888888]ATK:4.0 HP:9.0 CTR:4.0[/color]"

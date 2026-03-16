@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://ddwrg4p5r21co"]
+
+[ext_resource type="Texture2D" uid="uid://beu5two6wit62" path="res://wildfrost_data/images/Berry_Sis.png" id="1_pg3hs"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_q0g63"]
+
+[resource]
+script = ExtResource("2_q0g63")
+id = "berry_sis"
+cost = 1
+icon = ExtResource("1_pg3hs")
+tooltip_text = "[b]Berry Sis[/b]
+When hit, add lost Health to a random ally
+[color=#888888]ATK:2.0 HP:8.0 CTR:3.0[/color]"

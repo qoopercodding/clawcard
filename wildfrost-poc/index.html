@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wildfrost POC</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/card-editor.css">
+  <link rel="stylesheet" href="styles/card-view.css">
+</head>
+<body>
+  <div id="app">
+    <h1 style="color:#f0c060; text-align:center; padding-top: 40vh;">⚔ Wildfrost POC — Loading...</h1>
+  </div>
+
+  <script>
+    window.IMG_BASE   = '../wildfrost_data/images/';
+    window.CARDS_BASE = '../wildfrost_data/cards/';
+    (function(){
+      const imgCandidates = [
+        '../wildfrost_data/images/',
+        '/wildfrost_data/images/',
+        '../../wildfrost_data/images/',
+      ];
+      let found = false;
+      imgCandidates.forEach(function(path) {
+        var img = new Image();
+        img.onload = function() {
+          if (!found) {
+            found = true;
+            window.IMG_BASE   = path;
+            window.CARDS_BASE = path.replace('/images/', '/cards/');
+            console.log('[IMG] Working path:', path);
+          }
+        };
+        img.onerror = function() { console.log('[IMG] Failed:', path); };
+        img.src = path + 'Berry_Sis.png';
+      });
+    })();
+  </script>
+
+  <script src="src/cards.js"></script>
+  <script src="src/audio.js"></script>
+  <script src="src/anim.js"></script>
+  <script src="src/battle.js"></script>
+  <script src="src/ui.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/card-editor.js"></script>
+</body>
+</html>

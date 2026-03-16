@@ -1,0 +1,441 @@
+[
+  {
+	"_key": "Booshu",
+	"name": "Booshu",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 4,
+	"attack": 3,
+	"counter": 5,
+	"desc": "Restore 3 Health to all allies",
+	"challenge": "Recall 3 Companions",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Booshu.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Booshu_(Booshu).png",
+	"image_filename": "Booshu.png"
+  },
+  {
+	"_key": "Binku",
+	"name": "Binku",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 5,
+	"attack": 2,
+	"counter": 4,
+	"desc": "Apply 3 Ink",
+	"challenge": "Hit the Enemy Wave Bell 5 times",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Binku.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Binku_(Binku).png",
+	"image_filename": "Binku.png"
+  },
+  {
+	"_key": "Lil Gazi",
+	"name": "Lil' Gazi",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 3,
+	"attack": 4,
+	"counter": 4,
+	"desc": "While active, add +1 Attack to all allies",
+	"challenge": "Achieve a 6x kill combo",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Lil_Gazi.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Lil_Gazi_(Lil_Gazi).png",
+	"image_filename": "Lil_Gazi.png"
+  },
+  {
+	"_key": "Loki",
+	"name": "Loki",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 5,
+	"attack": 3,
+	"counter": 3,
+	"desc": "Apply 1 Demonize\nAimless",
+	"challenge": "Kill 3 Demonize enemies",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Loki.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Loki_(Loki).png",
+	"image_filename": "Loki.png"
+  },
+  {
+	"_key": "Sneezle",
+	"name": "Sneezle",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 6,
+	"attack": 2,
+	"counter": 3,
+	"desc": "Draw 1 when hit",
+	"challenge": "Buy 5 discounted Items",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Sneezle.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Sneezle_(Sneezle).png",
+	"image_filename": "Sneezle.png"
+  },
+  {
+	"_key": "Snoof",
+	"name": "Snoof",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 3,
+	"attack": 3,
+	"counter": 3,
+	"desc": "Apply 1 Snow",
+	"challenge": "Unlocked by default.",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Snoof.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Snoof_(Snoof).png",
+	"image_filename": "Snoof.png"
+  },
+  {
+	"_key": "Spike",
+	"name": "Spike",
+	"types": [
+	  "Pet",
+      "Companion"
+	],
+	"health": 7,
+	"desc": "Hogheaded",
+	"other": "2 Teeth",
+	"challenge": "Kill 10 enemies with Teeth",
+	"card_type": "Pet",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Spike.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Spike_(Spike).png",
+	"image_filename": "Spike.png"
+  },
+  {
+	"_key": "Alloy",
+	"name": "Alloy",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 12,
+	"attack": 6,
+	"counter": 5,
+	"desc": "Apply 1 Scrap to a random ally",
+	"other": "1 Bom",
+	"tribes": [
+      "Clunkmasters"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Alloy.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Alloy_(Alloy).png",
+	"image_filename": "Alloy.png"
+  },
+  {
+	"_key": "The Baker",
+	"name": "The Baker",
+	"types": [
+	  "Companion",
+	  "HotSpring",
+      "NonPetCompanion"
+	],
+	"health": 9,
+	"counter": 4,
+	"desc": "Add 1 Skull Muffin to your hand\nSpark",
+	"tribes": [
+      "Shademancers"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/The_Baker.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/The_Baker_(The_Baker).png",
+	"image_filename": "The_Baker.png"
+  },
+  {
+	"_key": "Berry Sis",
+	"name": "Berry Sis",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 8,
+	"attack": 2,
+	"counter": 3,
+	"desc": "When hit, add lost Health to a random ally",
+	"tribes": [
+      "Shademancers"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Berry_Sis.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Berry_Sis_(Berry_Sis).png",
+	"image_filename": "Berry_Sis.png"
+  },
+  {
+	"_key": "Big Berry",
+	"name": "Big Berry",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 10,
+	"attack": 5,
+	"counter": 4,
+	"desc": "On kill, restore 2 Health to self and allies in the row",
+	"tribes": [
+      "All"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Big_Berry.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Big_Berry_(Big_Berry).png",
+	"image_filename": "Big_Berry.png"
+  },
+  {
+	"_key": "Biji",
+	"name": "Biji",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 8,
+	"attack": 0,
+	"counter": 4,
+	"desc": "Apply 3 Bom\nIncrease by 1 when hit",
+	"tribes": [
+      "Clunkmasters"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Biji.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Biji_(Biji).png",
+	"image_filename": "Biji.png"
+  },
+  {
+	"_key": "Foxee",
+	"name": "Foxee",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 4,
+	"attack": 1,
+	"counter": 3,
+	"other": "x3 Frenzy",
+	"tribes": [
+      "All"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Foxee.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Foxee_(Foxee).png",
+	"image_filename": "Foxee.png"
+  },
+  {
+	"_key": "Wallop",
+	"name": "Wallop",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 9,
+	"attack": 4,
+	"counter": 4,
+	"desc": "Deal 8 additional damage to Snow'd targets",
+	"tribes": [
+      "Snowdwellers"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Wallop.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Wallop_(Wallop).png",
+	"image_filename": "Wallop.png"
+  },
+  {
+	"_key": "Tusk",
+	"name": "Tusk",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 5,
+	"attack": 2,
+	"counter": 5,
+	"desc": "While active, add 3 Teeth to all allies",
+	"tribes": [
+      "Shademancers"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Tusk.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Tusk_(Tusk).png",
+	"image_filename": "Tusk.png"
+  },
+  {
+	"_key": "Chikichi",
+	"name": "Chikichi",
+	"types": [
+	  "Companion",
+      "NonPetCompanion"
+	],
+	"health": 2,
+	"attack": 2,
+	"counter": 3,
+	"desc": "When Sacrificed, summon Chikani",
+	"tribes": [
+      "Shademancers"
+	],
+	"card_type": "Companion",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Chikichi.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Chikichi_(Chikichi).png",
+	"image_filename": "Chikichi.png"
+  },
+  {
+	"_key": "Bitebox",
+	"name": "Bitebox",
+	"types": [
+      "Clunker"
+	],
+	"scrap": 1,
+	"price": 50,
+	"desc": "When hit, deal equal damage to the attacker",
+	"tribes": [
+      "All"
+	],
+	"card_type": "Clunker",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Bitebox.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Bitebox_(Bitebox).png",
+	"image_filename": "Bitebox.png"
+  },
+  {
+	"_key": "Woodhead",
+	"name": "Woodhead",
+	"types": [
+      "Clunker"
+	],
+	"scrap": 1,
+	"price": 25,
+	"desc": "Does nothing, but will take a hit for you :)",
+	"tribes": [
+      "Snowdwellers"
+	],
+	"card_type": "Clunker",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Woodhead.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Woodhead_(Woodhead).png",
+	"image_filename": "Woodhead.png"
+  },
+  {
+	"_key": "Beepop Mask",
+	"name": "Beepop Mask",
+	"types": [
+	  "Item",
+      "ShopItem"
+	],
+	"price": 60,
+	"desc": "Summon Beepop",
+	"tribes": [
+      "Shademancers"
+	],
+	"card_type": "Item",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Beepop_Mask.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Beepop_Mask_(Beepop_Mask).png",
+	"image_filename": "Beepop_Mask.png"
+  },
+  {
+	"_key": "Berry Blade",
+	"name": "Berry Blade",
+	"types": [
+	  "Item",
+      "ShopItem"
+	],
+	"attack": 4,
+	"price": 50,
+	"desc": "Restore Health to front ally equal to damage dealt",
+	"tribes": [
+      "All"
+	],
+	"card_type": "Item",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Berry_Blade.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Berry_Blade_(Berry_Blade).png",
+	"image_filename": "Berry_Blade.png"
+  },
+  {
+	"_key": "Dragon Pepper",
+	"name": "Dragon Pepper",
+	"types": [
+	  "Item",
+      "ShopItem"
+	],
+	"price": 55,
+	"desc": "Apply 7 Spice\nConsume",
+	"tribes": [
+      "Snowdwellers"
+	],
+	"card_type": "Item",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Dragon_Pepper.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Dragon_Pepper_(Dragon_Pepper).png",
+	"image_filename": "Dragon_Pepper.png"
+  },
+  {
+	"_key": "Junk",
+	"name": "Junk",
+	"types": [
+      "Item"
+	],
+	"attack": 0,
+	"price": 0,
+	"desc": "Does absolutely nothing...",
+	"tribes": [
+      "All"
+	],
+	"card_type": "Item",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Junk.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Junk_(Junk).png",
+	"image_filename": "Junk.png"
+  },
+  {
+	"_key": "Beepop",
+	"name": "Beepop",
+	"types": [
+      "Shade"
+	],
+	"health": 1,
+	"desc": "When destroyed, apply 4 Overburn to the attacker",
+	"summoncon": "Using Beepop Mask",
+	"card_type": "Shade",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Beepop.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Beepop_(Beepop).png",
+	"image_filename": "Beepop.png"
+  },
+  {
+	"_key": "Chikani",
+	"name": "Chikani",
+	"types": [
+      "Shade"
+	],
+	"health": 4,
+	"attack": 4,
+	"counter": 3,
+	"desc": "When Sacrificed, summon Chikasan",
+	"summoncon": "Sacrificing Chikichi",
+	"card_type": "Shade",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Chikani.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Chikani_(Chikani).png",
+	"image_filename": "Chikani.png"
+  },
+  {
+	"_key": "Dregg",
+	"name": "Dregg",
+	"types": [
+      "Shade"
+	],
+	"health": 5,
+	"attack": 5,
+	"counter": 4,
+	"other": "x2 Frenzy",
+	"summoncon": "Destroying Egg",
+	"card_type": "Shade",
+	"image_art_url": "https://wildfrostwiki.com/Special:FilePath/Dregg.png",
+	"image_card_url": "https://wildfrostwiki.com/Special:FilePath/Dregg_(Dregg).png",
+	"image_filename": "Dregg.png"
+  }
+]

@@ -1,0 +1,30 @@
+
+/* --- Inspectable state --- */
+
+.companion-frame--inspectable {
+  cursor: pointer;
+}
+
+.companion-frame--inspectable:hover {
+  box-shadow:
+    0 24px 40px rgba(36, 17, 5, 0.36),
+    inset 0 0 0 2px rgba(255, 236, 201, 0.22),
+    0 0 0 2px #4b9eff66;
+}
+
+/* Mały hint "🔍" w prawym dolnym rogu przy hover */
+.companion-frame__inspect-hint {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 1px 2px #000);
+}
+
+.companion-frame--inspectable:hover .companion-frame__inspect-hint {
+  opacity: 0.6;
+}

@@ -1,0 +1,43 @@
+// Frame config — companion
+// Wklej do src/utils/frameConfig.ts → FRAME_CONFIGS.companion
+// Każdy obszar: { left, top, width, height } w % wymiarów karty
+{
+  "companion": {
+    "art": {
+      "left": 14,
+      "top": 10.5,
+      "width": 70.6,
+      "height": 44.4
+    },
+    "atk": {
+      "left": 81.3,
+      "top": 19.3,
+      "width": 9.6,
+      "height": 5.1
+    },
+    "hp": {
+      "left": 3.9,
+      "top": 20.4,
+      "width": 12.7,
+      "height": 5.3
+    },
+    "counter": {
+      "left": 42.9,
+      "top": 88.1,
+      "width": 12.7,
+      "height": 7.3
+    },
+    "name": {
+      "left": 17.7,
+      "top": 53.4,
+      "width": 63.1,
+      "height": 6.7
+    },
+    "desc": {
+      "left": 19.8,
+      "top": 61.2,
+      "width": 58.4,
+      "height": 23.9
+    }
+  }
+}

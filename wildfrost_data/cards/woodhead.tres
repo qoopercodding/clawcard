@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bxp2a1hyslctk"]
+
+[ext_resource type="Texture2D" uid="uid://dhxf5fv283xmr" path="res://wildfrost_data/images/Woodhead.png" id="1_bdyb2"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_76owi"]
+
+[resource]
+script = ExtResource("2_76owi")
+id = "woodhead"
+cost = 1
+icon = ExtResource("1_bdyb2")
+tooltip_text = "[b]Woodhead[/b]
+Does nothing, but will take a hit for you :)
+[color=#888888]ATK:0 HP:0 CTR:?[/color]"

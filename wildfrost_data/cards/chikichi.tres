@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://bv6ibv34o8t25"]
+
+[ext_resource type="Texture2D" uid="uid://eupxn7xpd0cm" path="res://wildfrost_data/images/Chikichi.png" id="1_socv0"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_m1wt5"]
+
+[resource]
+script = ExtResource("2_m1wt5")
+id = "chikichi"
+cost = 1
+icon = ExtResource("1_socv0")
+tooltip_text = "[b]Chikichi[/b]
+When Sacrificed, summon Chikani
+[color=#888888]ATK:2.0 HP:2.0 CTR:3.0[/color]"

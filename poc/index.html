@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deckbuilder POC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #1a1a2e; color: #eee; font-family: 'Segoe UI', sans-serif; height: 100vh; overflow: hidden; user-select: none; }
+
+  .screen { display: none; width: 100vw; height: 100vh; }
+  .screen.active { display: flex; }
+
+  /* MAP */
+  #map-screen { flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+  #map-screen h1 { font-size: 2rem; color: #f0c060; letter-spacing: 3px; }
+  .map-path { display: flex; align-items: center; }
+  .map-node { width: 90px; height: 90px; border-radius: 50%; border: 3px solid #555; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 0.7rem; color: #aaa; cursor: default; transition: all 0.2s; background: #16213e; }
+  .map-node.available { border-color: #f0c060; color: #f0c060; cursor: pointer; box-shadow: 0 0 18px #f0c06055; }
+  .map-node.available:hover { transform: scale(1.1); }
+  .map-node.done { border-color: #333; background: #111; color: #444; }
+  .node-icon { font-size: 1.8rem; }
+  .map-connector { width: 50px; height: 3px; background: #333; }
+  .map-connector.done { background: #555; }
+
+  /* BATTLE */
+  #battle-screen { flex-direction: column; background: #0d1117; }
+  .battle-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; background: #161b22; border-bottom: 1px solid #30363d; height: 56px; }
+  .battle-top h2 { font-size: 1rem; color: #8b949e; }
+  .mana-display { display: flex; align-items: center; gap: 6px; }
+  .mana-pip { width: 18px; height: 18px; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 8px #3b82f6; transition: background 0.2s; }
+  .mana-pip.empty { background: #1e3a5f; box-shadow: none; }
+  #end-turn-btn { padding: 8px 20px; background: #238636; border: none; color: #fff; border-radius: 6px; cursor: pointer; font-size: 0.9rem; font-weight: bold; }
+  #end-turn-btn:hover:not(:disabled) { background: #2ea043; }
+  #end-turn-btn:disabled { background: #333; color: #666; cursor: default; }
+
+  .battle-arena { flex: 1; display: flex; align-items: center; justify-content: center; gap: 40px; padding: 20px; }
+  .grid-wrapper { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .grid-label { font-size: 0.75rem; color: #8b949e; letter-spacing: 1px; text-transform: uppercase; }
+  .board-grid { display: grid; grid-template-columns: repeat(3, 110px); grid-template-rows: repeat(2, 100px); gap: 8px; }
+  .cell { width: 110px; height: 100px; border: 2px dashed #30363d; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s, background 0.15s; }
+  .cell.player-cell { border-color: #1f4068; }
+  .cell.enemy-cell  { border-color: #4a1020; }
+  .cell.drop-target  { border-color: #f0c060 !important; background: #f0c06018; border-style: solid; }
+  .cell.attack-target { border-color: #ef4444 !important; background: #ef444418; border-style: solid; cursor: crosshair; }
+
+  .board-minion { width: 100px; height: 90px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: 0.65rem; position: relative; }
+  .board-minion.player-minion { background: #1e3a5f; border: 2px solid #3b82f6; }
+  .board-minion.enemy-minion  { background: #3a1020; border: 2px solid #ef4444; }
+  .minion-icon { font-size: 1.8rem; }
+  .minion-hp  { position: absolute; bottom: 3px; right: 5px; font-size: 0.6rem; color: #86efac; }
+  .minion-atk { position: absolute; bottom: 3px; left: 5px;  font-size: 0.6rem; color: #fca5a5; }
+  .shield-badge { position: absolute; top: 3px; right: 5px; font-size: 0.65rem; }
+
+  .vs-col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .vs-text { font-size: 1.8rem; color: #444; font-weight: bold; }
+  .hp-box { text-align: center; }
+  .hp-label { font-size: 0.7rem; color: #8b949e; }
+  .hp-value { font-size: 1.3rem; color: #86efac; font-weight: bold; }
+
+  /* HAND */
+  .battle-hand { height: 170px; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px; background: #0d1117; border-top: 1px solid #30363d; }
+  .card { width: 95px; height: 148px; border-radius: 10px; border: 2px solid #30363d; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 8px 6px 6px; cursor: grab; transition: transform 0.15s, box-shadow 0.15s; position: relative; background: #161b22; }
+  .card:hover { transform: translateY(-14px) scale(1.06); box-shadow: 0 14px 32px rgba(0,0,0,0.7); z-index: 10; }
+  .card.dragging { opacity: 0.35; }
+  .card.unaffordable { opacity: 0.4; cursor: not-allowed; }
+  .card.type-minion { border-color: #3b82f6; background: linear-gradient(150deg,#1e3a5f,#161b22); }
+  .card.type-attack  { border-color: #ef4444; background: linear-gradient(150deg,#3a1010,#161b22); }
+  .card.type-block   { border-color: #22c55e; background: linear-gradient(150deg,#0f3020,#161b22); }
+  .card-cost { position: absolute; top: 5px; left: 7px; width: 22px; height: 22px; border-radius: 50%; background: #3b82f6; font-size: 0.72rem; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+  .card-icon { font-size: 2.2rem; margin-top: 10px; }
+  .card-name { font-size: 0.62rem; color: #ddd; font-weight: bold; letter-spacing: 0.5px; }
+  .card-desc { font-size: 0.55rem; color: #8b949e; text-align: center; line-height: 1.35; }
+
+  /* REWARD */
+  #reward-screen { position: fixed; inset: 0; background: rgba(0,0,0,0.88); display: none; flex-direction: column; align-items: center; justify-content: center; gap: 28px; z-index: 500; }
+  #reward-screen.active { display: flex; }
+  #reward-screen h2 { font-size: 1.8rem; color: #f0c060; }
+  .reward-cards { display: flex; gap: 20px; }
+  .reward-card { cursor: pointer; }
+  .reward-card:hover { transform: translateY(-12px) scale(1.07) !important; }
+
+  /* LOG */
+  #battle-log { position: fixed; bottom: 180px; right: 12px; width: 200px; max-height: 110px; overflow-y: auto; background: rgba(0,0,0,0.72); border-radius: 6px; padding: 6px 8px; font-size: 0.62rem; color: #aaa; pointer-events: none; z-index: 100; }
+  .log-entry { margin-bottom: 2px; }
+  .log-entry.dmg  { color: #fca5a5; }
+  .log-entry.heal { color: #86efac; }
+  .log-entry.info { color: #93c5fd; }
+</style>
+</head>
+<body>
+
+<div id="map-screen" class="screen active">
+  <h1>⚔ DUNGEON RUN</h1>
+  <div class="map-path" id="map-path"></div>
+  <div style="color:#8b949e;font-size:0.8rem;">Click a glowing node to enter</div>
+</div>
+
+<div id="battle-screen" class="screen">
+  <div class="battle-top">
+    <h2 id="battle-title">BATTLE</h2>
+    <div class="mana-display">
+      <span style="color:#8b949e;font-size:0.75rem;margin-right:4px;">MANA</span>
+      <div id="mana-pips" style="display:flex;gap:4px;"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:18px;">
+      <div class="hp-box">
+        <div class="hp-label">PLAYER HP</div>
+        <div class="hp-value" id="player-hp-display">30 / 30</div>
+      </div>
+      <button id="end-turn-btn">End Turn</button>
+    </div>
+  </div>
+
+  <div class="battle-arena">
+    <div class="grid-wrapper">
+      <div class="grid-label">Your Field</div>
+      <div class="board-grid" id="player-grid"></div>
+    </div>
+    <div class="vs-col">
+      <div class="vs-text">VS</div>
+    </div>
+    <div class="grid-wrapper">
+      <div class="grid-label">Enemy Field</div>
+      <div class="board-grid" id="enemy-grid"></div>
+    </div>
+  </div>
+
+  <div class="battle-hand" id="hand"></div>
+</div>
+
+<div id="reward-screen">
+  <h2>⭐ Choose a Card</h2>
+  <div class="reward-cards" id="reward-cards"></div>
+  <div style="color:#8b949e;font-size:0.8rem;">Pick one — added to your deck</div>
+</div>
+
+<div id="battle-log"></div>
+
+<script>
+// ── Card definitions ─────────────────────────────────────────
+const CARDS = {
+  strike:   { id:'strike',   name:'Strike',    type:'attack', cost:1, icon:'⚔️',  atk:6,   desc:'6 dmg to one enemy.' },
+  defend:   { id:'defend',   name:'Defend',    type:'block',  cost:1, icon:'🛡️',  block:5,  desc:'Give a minion +5 shield.' },
+  soldier:  { id:'soldier',  name:'Soldier',   type:'minion', cost:2, icon:'🗡️',  atk:3, hp:8,  desc:'3 atk / 8 hp. Attacks each turn.' },
+  archer:   { id:'archer',   name:'Archer',    type:'attack', cost:2, icon:'🏹',  atk:4, splash:true, desc:'4 dmg to both cells in a column.' },
+  guardian: { id:'guardian', name:'Guardian',  type:'minion', cost:3, icon:'🛡️',  atk:2, hp:14, startShield:3, desc:'2 atk / 14 hp. Starts with 3 shield.' },
+  fireball: { id:'fireball', name:'Fireball',  type:'attack', cost:2, icon:'🔥',  atk:10,  desc:'10 dmg to one enemy.' },
+  ironwall: { id:'ironwall', name:'Iron Wall', type:'block',  cost:2, icon:'⛏️',  block:8, selfOnly:true, desc:'Gain 8 shield yourself.' },
+};
+
+const STARTER = ['strike','strike','strike','defend','defend','soldier','soldier','archer','guardian','fireball','ironwall','strike'];
+const REWARDS = ['fireball','guardian','archer','ironwall','soldier'];
+
+// ── State ────────────────────────────────────────────────────
+const S = {
+  mapNodes: [
+    {type:'battle', label:'Battle', icon:'⚔️', done:false},
+    {type:'prize',  label:'Prize',  icon:'⭐', done:false},
+    {type:'battle', label:'Battle', icon:'⚔️', done:false},
+    {type:'boss',   label:'BOSS',   icon:'💀', done:false},
+  ],
+  curNode: 0,
+  playerHp: 30, playerMaxHp: 30, playerShield: 0,
+  deck: [], hand: [], discard: [],
+  mana: 3, maxMana: 3,
+  playerCells: Array(6).fill(null),
+  enemyCells:  Array(6).fill(null),
+  turn: 1,
+  dragCard: null,
+};
+
+// ── Map ──────────────────────────────────────────────────────
+function renderMap() {
+  const path = document.getElementById('map-path');
+  path.innerHTML = '';
+  S.mapNodes.forEach((n, i) => {
+    if (i > 0) {
+      const conn = document.createElement('div');
+      conn.className = 'map-connector' + (S.mapNodes[i-1].done ? ' done' : '');
+      path.appendChild(conn);
+    }
+    const el = document.createElement('div');
+    el.className = 'map-node' + (n.done ? ' done' : i === S.curNode ? ' available' : '');
+    el.innerHTML = `<div class="node-icon">${n.icon}</div><div>${n.label}</div>`;
+    if (i === S.curNode && !n.done) el.addEventListener('click', () => enterNode(i));
+    path.appendChild(el);
+  });
+}
+
+function enterNode(i) {
+  const n = S.mapNodes[i];
+  if (n.type === 'battle' || n.type === 'boss') startBattle(n.type === 'boss');
+  else if (n.type === 'prize') showReward();
+}
+
+function advanceMap() {
+  S.mapNodes[S.curNode].done = true;
+  S.curNode++;
+  if (S.curNode >= S.mapNodes.length) {
+    alert('🏆 You won! Refresh to play again.');
+    return;
+  }
+  showScreen('map-screen');
+  renderMap();
+}
+
+// ── Battle setup ─────────────────────────────────────────────
+function startBattle(isBoss) {
+  S.playerCells = Array(6).fill(null);
+  S.enemyCells  = Array(6).fill(null);
+  S.turn = 1; S.mana = S.maxMana;
+
+  if (isBoss) {
+    S.enemyCells[1] = mkEnemy('Dragon','🐉',6,30);
+    S.enemyCells[4] = mkEnemy('Troll','👹',4,18);
+    document.getElementById('battle-title').textContent = '💀 BOSS BATTLE';
+  } else if (S.curNode === 0) {
+    S.enemyCells[0] = mkEnemy('Goblin','👺',2,8);
+    S.enemyCells[2] = mkEnemy('Orc','💪',3,12);
+    S.enemyCells[4] = mkEnemy('Rat','🐀',1,5);
+    document.getElementById('battle-title').textContent = '⚔️ BATTLE';
+  } else {
+    S.enemyCells[0] = mkEnemy('Knight','🧟',4,15);
+    S.enemyCells[1] = mkEnemy('Mage','🧙',2,10);
+    S.enemyCells[3] = mkEnemy('Wolf','🐺',3,10);
+    S.enemyCells[5] = mkEnemy('Goblin','👺',2,8);
+    document.getElementById('battle-title').textContent = '⚔️ BATTLE II';
+  }
+
+  S.deck = shuffle([...STARTER, ...S.discard.filter(c => !STARTER.includes(c))]);
+  // actually use deck properly
+  S.deck = shuffle([...STARTER]);
+  S.hand = []; S.discard = [];
+  draw(4);
+
+  document.getElementById('end-turn-btn').onclick = endTurn;
+  document.getElementById('end-turn-btn').disabled = false;
+  showScreen('battle-screen');
+  clearLog();
+  renderBattle();
+  log('Battle start — Turn 1', 'info');
+}
+
+function mkEnemy(name, icon, atk, hp) {
+  return { name, icon, atk, hp, maxHp: hp, shield: 0 };
+}
+
+// ── Rendering ────────────────────────────────────────────────
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function renderBattle() {
+  renderGrid('player-grid', S.playerCells, true);
+  renderGrid('enemy-grid',  S.enemyCells,  false);
+  renderHand();
+  renderMana();
+  const shieldStr = S.playerShield > 0 ? ` 🛡${S.playerShield}` : '';
+  document.getElementById('player-hp-display').textContent = `${S.playerHp} / ${S.playerMaxHp}${shieldStr}`;
+}
+
+function renderGrid(id, cells, isPlayer) {
+  const grid = document.getElementById(id);
+  grid.innerHTML = '';
+  cells.forEach((m, idx) => {
+    const cell = document.createElement('div');
+    cell.className = 'cell ' + (isPlayer ? 'player-cell' : 'enemy-cell');
+    cell.dataset.idx = idx;
+
+    if (m) {
+      const el = document.createElement('div');
+      el.className = 'board-minion ' + (isPlayer ? 'player-minion' : 'enemy-minion');
+      el.innerHTML = `
+        <div class="minion-icon">${m.icon}</div>
+        <div style="font-size:0.6rem;color:#ccc">${m.name}</div>
+        <div class="minion-hp">❤️${m.hp}</div>
+        <div class="minion-atk">⚔${m.atk}</div>
+        ${m.shield > 0 ? `<div class="shield-badge">🛡${m.shield}</div>` : ''}
+      `;
+      cell.appendChild(el);
+    }
+
+    cell.addEventListener('dragover', e => {
+      if (!S.dragCard) return;
+      const def = CARDS[S.dragCard];
+      if (isPlayer && def.type === 'minion' && !m) { e.preventDefault(); cell.classList.add('drop-target'); }
+      if (isPlayer && def.type === 'block') { e.preventDefault(); cell.classList.add('drop-target'); }
+      if (!isPlayer && def.type === 'attack') { e.preventDefault(); cell.classList.add('attack-target'); }
+    });
+    cell.addEventListener('dragleave', () => { cell.classList.remove('drop-target','attack-target'); });
+    cell.addEventListener('drop', e => {
+      e.preventDefault();
+      cell.classList.remove('drop-target','attack-target');
+      playCard(idx, isPlayer);
+    });
+
+    grid.appendChild(cell);
+  });
+}
+
+function renderHand() {
+  const hand = document.getElementById('hand');
+  hand.innerHTML = '';
+  S.hand.forEach((cid, i) => {
+    const def = CARDS[cid];
+    const canAfford = S.mana >= def.cost;
+    const el = document.createElement('div');
+    el.className = `card type-${def.type}` + (canAfford ? '' : ' unaffordable');
+    el.draggable = canAfford;
+    el.innerHTML = `
+      <div class="card-cost">${def.cost}</div>
+      <div class="card-icon">${def.icon}</div>
+      <div class="card-name">${def.name}</div>
+      <div class="card-desc">${def.desc}</div>
+    `;
+    el.addEventListener('dragstart', () => { S.dragCard = cid; S.dragIdx = i; el.classList.add('dragging'); });
+    el.addEventListener('dragend', () => { S.dragCard = null; el.classList.remove('dragging'); clearHighlights(); });
+    hand.appendChild(el);
+  });
+}
+
+function renderMana() {
+  const pips = document.getElementById('mana-pips');
+  pips.innerHTML = '';
+  for (let i = 0; i < S.maxMana; i++) {
+    const p = document.createElement('div');
+    p.className = 'mana-pip' + (i >= S.mana ? ' empty' : '');
+    pips.appendChild(p);
+  }
+}
+
+function clearHighlights() {
+  document.querySelectorAll('.drop-target,.attack-target').forEach(c => {
+    c.classList.remove('drop-target','attack-target');
+  });
+}
+
+// ── Card play ────────────────────────────────────────────────
+function playCard(cellIdx, isPlayerSide) {
+  const cid = S.dragCard;
+  const handIdx = S.dragIdx;
+  if (!cid || S.mana < CARDS[cid].cost) return;
+  const def = CARDS[cid];
+
+  if (def.type === 'minion' && isPlayerSide && !S.playerCells[cellIdx]) {
+    S.playerCells[cellIdx] = { name:def.name, icon:def.icon, atk:def.atk, hp:def.hp, maxHp:def.hp, shield:def.startShield||0 };
+    log(`Placed ${def.name}.`, 'info');
+    spend(handIdx, def.cost);
+
+  } else if (def.type === 'attack' && !isPlayerSide) {
+    spend(handIdx, def.cost);
+    if (def.splash) {
+      const col = cellIdx % 3;
+      [col, col+3].forEach(i => { if (S.enemyCells[i]) dmgEnemy(i, def.atk); });
+      log(`${def.name} hit column for ${def.atk}!`, 'dmg');
+    } else {
+      if (S.enemyCells[cellIdx]) { dmgEnemy(cellIdx, def.atk); log(`${def.name}: ${def.atk} dmg!`, 'dmg'); }
+      else log(`${def.name} — empty cell.`, 'info');
+    }
+
+  } else if (def.type === 'block' && isPlayerSide) {
+    spend(handIdx, def.cost);
+    if (def.selfOnly || !S.playerCells[cellIdx]) {
+      S.playerShield += def.block;
+      log(`Iron Wall: +${def.block} shield.`, 'heal');
+    } else {
+      S.playerCells[cellIdx].shield += def.block;
+      log(`${def.name}: ${S.playerCells[cellIdx].name} +${def.block} shield.`, 'heal');
+    }
+  } else return;
+
+  renderBattle();
+  checkWin();
+}
+
+function spend(handIdx, cost) {
+  const cid = S.hand.splice(handIdx, 1)[0];
+  S.discard.push(cid);
+  S.mana -= cost;
+}
+
+function dmgEnemy(idx, dmg) {
+  const e = S.enemyCells[idx];
+  if (!e) return;
+  const absorbed = Math.min(e.shield, dmg);
+  e.shield -= absorbed; e.hp -= (dmg - absorbed);
+  if (e.hp <= 0) { log(`${e.name} defeated!`, 'info'); S.enemyCells[idx] = null; }
+}
+
+function dmgPlayer(dmg) {
+  const absorbed = Math.min(S.playerShield, dmg);
+  S.playerShield -= absorbed; S.playerHp -= (dmg - absorbed);
+  if (dmg - absorbed > 0) log(`You took ${dmg - absorbed} damage!`, 'dmg');
+}
+
+// ── Turn ─────────────────────────────────────────────────────
+function endTurn() {
+  document.getElementById('end-turn-btn').disabled = true;
+  log(`--- End Turn ${S.turn} ---`, 'info');
+
+  // Player minions attack
+  S.playerCells.forEach((m, idx) => {
+    if (!m) return;
+    const col = idx % 3;
+    const target = [col, col+3].find(i => S.enemyCells[i]);
+    if (target !== undefined) {
+      const e = S.enemyCells[target];
+      log(`${m.name} → ${e.name}: ${m.atk} dmg`, 'dmg');
+      dmgEnemy(target, m.atk);
+    }
+  });
+
+  renderBattle();
+  if (checkWin()) return;
+
+  // Enemy turn (delayed)
+  setTimeout(() => {
+    S.enemyCells.forEach((e, idx) => {
+      if (!e) return;
+      const col = idx % 3;
+      const pTarget = [col, col+3].find(i => S.playerCells[i]);
+      if (pTarget !== undefined) {
+        const pm = S.playerCells[pTarget];
+        log(`${e.name} → ${pm.name}: ${e.atk} dmg`, 'dmg');
+        const abs = Math.min(pm.shield||0, e.atk);
+        if (pm.shield) pm.shield -= abs;
+        pm.hp -= (e.atk - abs);
+        if (pm.hp <= 0) { log(`${pm.name} died.`, 'info'); S.playerCells[pTarget] = null; }
+      } else {
+        log(`${e.name} attacks you: ${e.atk} dmg`, 'dmg');
+        dmgPlayer(e.atk);
+      }
+    });
+
+    if (S.playerHp <= 0) { renderBattle(); setTimeout(() => alert('💀 You died. Refresh to try again.'), 100); return; }
+
+    S.turn++; S.mana = S.maxMana;
+    draw(2);
+    renderBattle();
+    log(`--- Turn ${S.turn} ---`, 'info');
+    document.getElementById('end-turn-btn').disabled = false;
+  }, 700);
+}
+
+function checkWin() {
+  if (S.enemyCells.every(c => !c)) {
+    log('Victory!', 'info');
+    setTimeout(advanceMap, 900);
+    return true;
+  }
+  return false;
+}
+
+// ── Reward ───────────────────────────────────────────────────
+function showReward() {
+  const pool = shuffle([...REWARDS]).slice(0, 3);
+  const container = document.getElementById('reward-cards');
+  container.innerHTML = '';
+  pool.forEach(cid => {
+    const def = CARDS[cid];
+    const el = document.createElement('div');
+    el.className = `card reward-card type-${def.type}`;
+    el.style.width = '110px'; el.style.height = '165px';
+    el.innerHTML = `
+      <div class="card-cost">${def.cost}</div>
+      <div class="card-icon">${def.icon}</div>
+      <div class="card-name">${def.name}</div>
+      <div class="card-desc">${def.desc}</div>
+    `;
+    el.addEventListener('click', () => {
+      STARTER.push(cid); // add to pool permanently
+      document.getElementById('reward-screen').classList.remove('active');
+      advanceMap();
+    });
+    container.appendChild(el);
+  });
+  document.getElementById('reward-screen').classList.add('active');
+}
+
+// ── Utils ────────────────────────────────────────────────────
+function shuffle(arr) {
+  for (let i = arr.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+  }
+  return arr;
+}
+
+function draw(n) {
+  for (let i = 0; i < n; i++) {
+    if (!S.deck.length) { S.deck = shuffle([...S.discard]); S.discard = []; }
+    if (S.deck.length) S.hand.push(S.deck.shift());
+  }
+}
+
+function log(msg, type='') {
+  const el = document.getElementById('battle-log');
+  const e = document.createElement('div');
+  e.className = 'log-entry ' + type;
+  e.textContent = msg;
+  el.appendChild(e);
+  el.scrollTop = el.scrollHeight;
+}
+function clearLog() { document.getElementById('battle-log').innerHTML = ''; }
+
+// ── Init ─────────────────────────────────────────────────────
+renderMap();
+</script>
+</body>
+</html>

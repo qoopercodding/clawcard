@@ -1,0 +1,190 @@
+/* CardBuilderScreen.css */
+
+.card-builder {
+  display: grid;
+  gap: 32px;
+}
+
+/* ── Header ── */
+.card-builder__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card-builder__header h2 {
+  margin: 8px 0 4px;
+}
+
+.card-builder__subtitle {
+  margin: 0;
+  color: #d8b180;
+  font-size: 0.82rem;
+}
+
+/* ── Filtry ── */
+.card-builder__filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-btn {
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 230, 184, 0.2);
+  background: rgba(47, 23, 9, 0.5);
+  color: #d8b180;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: rgba(255, 214, 150, 0.5);
+  background: rgba(70, 34, 12, 0.7);
+  color: #fff1dd;
+}
+
+.filter-btn--active {
+  border-color: #fbbf24;
+  background: rgba(87, 50, 5, 0.8);
+  color: #fef3c7;
+  font-weight: 600;
+}
+
+/* ── Sekcje ── */
+.card-section {
+  display: grid;
+  gap: 16px;
+}
+
+.card-section__title {
+  margin: 0;
+  color: #d8b180;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 230, 184, 0.12);
+}
+
+/* ── Siatka kart ── */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* ── Item placeholder ── */
+.item-placeholder {
+  width: 140px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 16px 12px;
+  border-radius: 16px;
+  border: 2px solid rgba(251, 191, 36, 0.3);
+  background: linear-gradient(180deg, rgba(90, 60, 5, 0.8), rgba(40, 24, 3, 0.9));
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.item-placeholder:hover {
+  border-color: rgba(251, 191, 36, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(251,191,36,0.2);
+}
+
+.item-placeholder__emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.item-placeholder__name {
+  color: #fef3c7;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.item-placeholder__effect {
+  color: #f87171;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.item-placeholder__target {
+  color: #86efac;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(134, 239, 172, 0.1);
+  border: 1px solid rgba(134, 239, 172, 0.2);
+  border-radius: 8px;
+  padding: 2px 7px;
+}
+
+.item-placeholder__todo {
+  color: #4b5563;
+  font-size: 0.6rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* ── Typ placeholder (clunker/shade/charm) ── */
+.type-placeholder {
+  width: 110px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 230, 184, 0.2);
+  background: rgba(28, 15, 7, 0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.type-placeholder:hover {
+  border-color: rgba(255, 230, 184, 0.4);
+  background: rgba(50, 28, 10, 0.7);
+}
+
+.type-placeholder__emoji {
+  font-size: 2rem;
+}
+
+.type-placeholder__name {
+  color: #f5dec0;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.type-placeholder__type {
+  color: #6b7280;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Empty ── */
+.card-builder__empty {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+  border: 1px dashed rgba(255, 230, 184, 0.1);
+  border-radius: 16px;
+}

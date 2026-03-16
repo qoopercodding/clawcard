@@ -1,0 +1,395 @@
+/* card-editor.css */
+
+/* ── Ekran edytora ──────────────────────────────────────────── */
+#screen-editor {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: #0d1117;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.ced-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background: #161b22;
+  border-bottom: 2px solid #f0c06044;
+}
+
+.ced-header h2 {
+  color: #f0c060;
+  font-size: 1.2rem;
+  margin: 0;
+  flex: 1;
+}
+
+.ced-back-btn {
+  background: #21262d;
+  color: #ccc;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+.ced-back-btn:hover { background: #2d333b; color: #fff; }
+
+/* ── Tabs ───────────────────────────────────────────────────── */
+.ced-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 10px 24px 0;
+  background: #161b22;
+}
+
+.ced-tab {
+  padding: 8px 20px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  color: #8b949e;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+.ced-tab:hover  { background: #2d333b; color: #ccc; }
+.ced-tab.active { background: #0d1117; color: #f0c060; border-color: #f0c06066; }
+
+/* ── Panele ─────────────────────────────────────────────────── */
+#ced-panel-editor,
+#ced-panel-mapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Formularz ──────────────────────────────────────────────── */
+.ced-form {
+  width: 420px;
+  min-width: 300px;
+  padding: 20px 24px;
+  overflow-y: auto;
+  border-right: 1px solid #21262d;
+}
+
+.ced-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8b949e;
+  margin: 16px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #21262d;
+}
+.ced-section-title:first-child { margin-top: 0; }
+
+.ced-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: #8b949e;
+  margin-bottom: 8px;
+}
+
+.ced-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ced-input {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e0e0e0;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.ced-input:focus { outline: none; border-color: #f0c060; }
+
+.ced-textarea { resize: vertical; min-height: 60px; }
+
+/* ── Image drop zone ────────────────────────────────────────── */
+.ced-img-drop {
+  border: 2px dashed #30363d;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  color: #666;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+.ced-img-drop:hover  { border-color: #f0c060; color: #f0c060; }
+.ced-img-drop.drag-over { border-color: #f0c060; background: #f0c06011; }
+.ced-img-drop.has-img   { border-color: #86efac; color: #86efac; }
+
+/* ── Akcje ──────────────────────────────────────────────────── */
+.ced-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.ced-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  background: #21262d;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.15s;
+}
+.ced-btn:hover { background: #2d333b; color: #fff; }
+
+.ced-btn-preview { border-color: #4a90d9; color: #4a90d9; }
+.ced-btn-preview:hover { background: #4a90d922; }
+
+.ced-btn-export  { border-color: #f0c060; color: #f0c060; }
+.ced-btn-export:hover  { background: #f0c06022; }
+
+.ced-btn-save    { border-color: #86efac; color: #86efac; }
+.ced-btn-save:hover    { background: #86efac22; }
+
+/* ── Saved list ─────────────────────────────────────────────── */
+.ced-saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ced-saved-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.ced-saved-name { flex: 1; font-size: 0.88rem; color: #e0e0e0; }
+
+.ced-btn-mini {
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  background: #21262d;
+  color: #8b949e;
+  cursor: pointer;
+  font-size: 0.78rem;
+}
+.ced-btn-mini:hover { background: #2d333b; color: #fff; }
+.ced-btn-danger { border-color: #e05555; color: #e05555; }
+.ced-btn-danger:hover { background: #e0555522; }
+
+/* ── Output pre ─────────────────────────────────────────────── */
+.ced-output {
+  background: #0a0f14;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.8rem;
+  color: #86efac;
+  overflow-x: auto;
+  margin-top: 12px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* ── Podgląd ────────────────────────────────────────────────── */
+.ced-preview-wrap {
+  flex: 1;
+  padding: 20px 24px;
+  overflow-y: auto;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ced-preview-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8b949e;
+  letter-spacing: 0.05em;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #21262d;
+}
+
+.ced-preview-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 280px;
+}
+
+.ced-preview-label {
+  font-size: 0.78rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Hint ───────────────────────────────────────────────────── */
+.ced-hint {
+  font-size: 0.82rem;
+  color: #666;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* ── Frame Mapper layout ─────────────────────────────────────── */
+.map-canvas-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+  gap: 12px;
+}
+
+.map-instruction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  min-height: 44px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+
+.map-step-badge {
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Kontener obrazka — on odbiera kliknięcia, nie img ani svg */
+.map-img-wrap {
+  position: relative;
+  display: inline-block;
+  cursor: crosshair;
+  border: 2px solid #30363d;
+  border-radius: 8px;
+  overflow: visible;
+  transition: border-color 0.15s;
+  line-height: 0;
+}
+.map-img-wrap:hover { border-color: #f0c060; }
+.map-img-wrap img {
+  display: block;
+  max-width: 420px;
+  max-height: 580px;
+  user-select: none;
+  border-radius: 6px;
+  pointer-events: none; /* klik idzie na wrap, nie na img */
+}
+
+/* SVG overlay — transparent, nie blokuje kliknięć */
+#map-svg-overlay {
+  pointer-events: none;
+}
+
+.map-empty-hint {
+  color: #444;
+  font-size: 1rem;
+  margin-top: 60px;
+}
+
+/* ── Steps list ──────────────────────────────────────────────── */
+.map-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.map-step-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  color: #555;
+}
+
+.map-step-active {
+  background: #1a1f27;
+  border-color: #30363d;
+  color: #e0e0e0;
+}
+
+.map-step-done { color: #8b949e; }
+
+.map-step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.map-step-label {
+  flex: 1;
+  font-size: 0.8rem;
+}
+
+.map-step-val {
+  font-size: 0.72rem;
+  color: #555;
+  font-family: monospace;
+}
+
+/* ── Tribe / type badges ────────────────────────────────────── */
+.type-companion  { color: #86efac; }
+.type-item       { color: #fbbf24; }
+.type-power      { color: #a78bfa; }
+.type-consumable { color: #f87171; }
+.type-aura       { color: #67e8f9; }
+
+/* ── Przycisk wejścia na mapie ──────────────────────────────── */
+.map-editor-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: #161b22;
+  border: 1px solid #f0c06066;
+  color: #f0c060;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  z-index: 100;
+  transition: all 0.15s;
+}
+.map-editor-btn:hover { background: #21262d; border-color: #f0c060; }

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://4wxlx78mpu2a"]
+
+[ext_resource type="Texture2D" uid="uid://bc4n6xupwou0r" path="res://wildfrost_data/images/Spike.png" id="1_fwxp6"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_tcq5x"]
+
+[resource]
+script = ExtResource("2_tcq5x")
+id = "spike"
+cost = 1
+icon = ExtResource("1_fwxp6")
+tooltip_text = "[b]Spike[/b]
+Hogheaded
+[color=#888888]ATK:0 HP:7.0 CTR:?[/color]"

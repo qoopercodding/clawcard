@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://20tegwj8st4k"]
+
+[ext_resource type="Texture2D" uid="uid://csjbyafrjyr1v" path="res://wildfrost_data/images/The_Baker.png" id="1_c8vyn"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_6grm3"]
+
+[resource]
+script = ExtResource("2_6grm3")
+id = "the_baker"
+cost = 1
+icon = ExtResource("1_c8vyn")
+tooltip_text = "[b]The Baker[/b]
+Add 1 Skull Muffin to your hand
+Spark
+[color=#888888]ATK:0 HP:9.0 CTR:4.0[/color]"

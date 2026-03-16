@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://c0cvil6f5gkuj"]
+
+[ext_resource type="Texture2D" uid="uid://chejngh1ft5sb" path="res://wildfrost_data/images/Berry_Blade.png" id="1_k0li8"]
+[ext_resource type="Script" uid="uid://c7fromqied45l" path="res://custom_resources/card.gd" id="2_iwive"]
+
+[resource]
+script = ExtResource("2_iwive")
+id = "berry_blade"
+cost = 1
+icon = ExtResource("1_k0li8")
+tooltip_text = "[b]Berry Blade[/b]
+Restore Health to front ally equal to damage dealt
+[color=#888888]ATK:4.0 HP:0 CTR:?[/color]"
