@@ -1,4 +1,13 @@
-export type CardType = 'companion' | 'item_with_attack' | 'item_without_attack' | 'clunker' | 'shade' | 'charm' | 'boss' | 'testets' | 'test2'
+export type CardType =
+  | 'companion'
+  | 'item_with_attack'
+  | 'item_without_attack'
+  | 'clunker'
+  | 'shade'
+  | 'charm'
+  | 'boss'
+  | 'testets'
+  | 'test2'
 
 export type TribeType =
   | 'snowdwellers'
@@ -49,6 +58,7 @@ export interface CharmEffect {
   addKeyword?: Keyword
 }
 
+/** Companion — główna karta gracza */
 export interface CompanionCard extends CardBase {
   type: 'companion'
   hp: number
@@ -57,6 +67,7 @@ export interface CompanionCard extends CardBase {
   abilities: Ability[]
 }
 
+/** Item z atakiem (ramka z mieczem) */
 export interface ItemCard extends CardBase {
   type: 'item_with_attack' | 'item_without_attack'
   effect: ItemEffect
@@ -64,6 +75,7 @@ export interface ItemCard extends CardBase {
   consume: boolean
 }
 
+/** Clunker — mechaniczna jednostka */
 export interface ClunkerCard extends CardBase {
   type: 'clunker'
   scrap: number
@@ -72,6 +84,7 @@ export interface ClunkerCard extends CardBase {
   abilities: Ability[]
 }
 
+/** Shade — przywołana jednostka */
 export interface ShadeCard extends CardBase {
   type: 'shade'
   hp: number
@@ -81,12 +94,14 @@ export interface ShadeCard extends CardBase {
   summonedBy: string
 }
 
+/** Charm — ulepszenie karty */
 export interface CharmCard extends CardBase {
   type: 'charm'
   effect: CharmEffect
   compatibleWith: CardType[]
 }
 
+/** Boss — silny przeciwnik */
 export interface BossCard extends CardBase {
   type: 'boss'
   hp: number
@@ -95,7 +110,7 @@ export interface BossCard extends CardBase {
   abilities: Ability[]
 }
 
-
+/** Testets — typ testowy */
 export interface TestetsCard extends CardBase {
   type: 'testets'
   hp: number
@@ -104,7 +119,7 @@ export interface TestetsCard extends CardBase {
   abilities: Ability[]
 }
 
-
+/** Test2 — typ testowy 2 */
 export interface Test2Card extends CardBase {
   type: 'test2'
   hp: number
@@ -114,12 +129,11 @@ export interface Test2Card extends CardBase {
 }
 
 export type AnyCard =
-  | TestetsCard
-  | Test2Card
-
   | CompanionCard
   | ItemCard
   | ClunkerCard
   | ShadeCard
   | CharmCard
   | BossCard
+  | TestetsCard
+  | Test2Card

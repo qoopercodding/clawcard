@@ -1,8 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
-import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TribeType, TestetsCard, Test2Card } from '../../types/card.types'
+import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, TribeType } from '../../types/card.types'
 import './CardEditorScreen.css'
+
+// =============================================================================
+// CardEditorScreen.tsx
+// CARD_TYPES — lista typów kart w dropdownie.
+// Plugin vite-plugin-frame-config.ts dodaje nowe typy automatycznie.
+// =============================================================================
+
+// Typy które zachowują się jak companion (HP + ATK + Counter)
+const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2']
 
 interface CardDraft {
   id: string; name: string; type: CardType; tribe: TribeType
@@ -27,7 +36,7 @@ function validateDraft(draft: CardDraft): string[] {
   const errors: string[] = []
   if (!draft.name.trim()) errors.push('Nazwa jest wymagana')
   if (!draft.desc.trim()) errors.push('Opis jest wymagany')
-  if (draft.type === 'companion' || draft.type === 'boss') {
+  if (COMPANION_LIKE_TYPES.includes(draft.type)) {
     if (draft.hp <= 0)      errors.push('HP musi być > 0')
     if (draft.counter <= 0) errors.push('Counter musi być > 0')
   }
@@ -47,11 +56,14 @@ function draftToCard(draft: CardDraft): AnyCard {
   if (draft.type === 'companion') {
     return { ...base, type: 'companion', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as CompanionCard
   }
+  if (draft.type === 'boss') {
+    return { ...base, type: 'boss', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as BossCard
+  }
   if (draft.type === 'testets') {
     return { ...base, type: 'testets', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as TestetsCard
   }
-  if (draft.type === 'boss') {
-    return { ...base, type: 'boss', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as BossCard
+  if (draft.type === 'test2') {
+    return { ...base, type: 'test2', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test2Card
   }
   return {
     ...base,
@@ -108,7 +120,7 @@ export function CardEditorScreen() {
     const imgLine = draft.imgSrc
       ? (draft.imgSrc.startsWith('data:') ? `    img: null, icon: '${draft.icon}',` : `    get img(){ return img('${draft.imgSrc.split('/').pop()}'); },`)
       : `    img: null, icon: '${draft.icon}',`
-    const statsLine = (draft.type === 'companion' || draft.type === 'boss')
+    const statsLine = COMPANION_LIKE_TYPES.includes(draft.type)
       ? `    hp:${draft.hp}, atk:${draft.atk}, counter:${draft.counter},`
       : [draft.atk>0?`atk:${draft.atk}`:'', draft.snow>0?`snow:${draft.snow}`:'', draft.heal>0?`heal:${draft.heal}`:'', `target:'${draft.target}'`, draft.splash?'splash:true':''].filter(Boolean).join(', ') + ','
     const code = [`  ${id}: {`, `    id:'${id}', name:'${draft.name}', type:'${draft.type}',`, `    tribe:'${draft.tribe}',`, `    ${imgLine}`, statsLine, `    desc:'${draft.desc}',`, `  },`].join('\n')
@@ -140,7 +152,7 @@ export function CardEditorScreen() {
         </div>
         <div className="ced-required-hint">
           * Wymagane: <strong>Nazwa</strong> i <strong>Opis</strong>
-          {(draft.type === 'companion' || draft.type === 'boss') && ' · HP · Counter'}
+          {COMPANION_LIKE_TYPES.includes(draft.type) && ' · HP · Counter'}
           {draft.type === 'item_with_attack' && ' · ATK > 0'}
         </div>
         {Object.values(library).length > 0 && (
@@ -176,7 +188,7 @@ export function CardEditorScreen() {
 // ---------------------------------------------------------------------------
 interface FormPanelProps { draft: CardDraft; onChange: (p: Partial<CardDraft>) => void; editingId: string | null }
 
-// ── CARD_TYPES — tu dodawaj nowe typy po "zapisz ramkę" ──────────────────
+// ── CARD_TYPES — plugin vite-plugin-frame-config.ts dodaje tu nowe typy ──
 const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'companion',           label: 'Companion' },
   { value: 'boss',                label: 'Boss 👾' },
@@ -185,16 +197,15 @@ const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'clunker',             label: 'Clunker' },
   { value: 'shade',               label: 'Shade' },
   { value: 'charm',               label: 'Charm' },
-    { value: 'testets',         label: 'testets' },
+  { value: 'testets',             label: 'testets' },
+  { value: 'test2',               label: 'test2' },
 ]
 
 function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   const fileRef = useRef<HTMLInputElement>(null)
   const loadFile = (file: File) => { const r = new FileReader(); r.onload = e => onChange({imgSrc: e.target?.result as string}); r.readAsDataURL(file) }
 
-  const isCompanion      = draft.type === 'companion'
-  const isBoss           = draft.type === 'boss'
-  const isCompanionLike  = isCompanion || isBoss || draft.type === 'test2'
+  const isCompanionLike  = COMPANION_LIKE_TYPES.includes(draft.type)
   const isItemWithAttack = draft.type === 'item_with_attack'
   const isItemWithout    = draft.type === 'item_without_attack'
   const isItem           = isItemWithAttack || isItemWithout
@@ -223,7 +234,6 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
         </label>
       </div>
 
-      {/* Companion + Boss — HP, ATK, Counter */}
       {isCompanionLike && (
         <>
           <div className="ced-section-title">📊 Statystyki</div>

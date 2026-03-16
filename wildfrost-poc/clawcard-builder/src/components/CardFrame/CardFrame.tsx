@@ -12,6 +12,7 @@ interface CardFrameProps {
 
 export function CardFrame({ card, width = 200, height = 294, inspectable = true }: CardFrameProps) {
   const { inspect } = useDevInspector()
+  // Fallback na companion jeśli typ nie ma własnego config
   const cfg = FRAME_CONFIGS[card.type] ?? FRAME_CONFIGS.companion
   const stats = getCardStats(card)
   const px = (pct: number, dim: number) => `${(pct / 100 * dim).toFixed(1)}px`
@@ -113,15 +114,32 @@ function area(a: { left: number; top: number; width: number; height: number }, W
 
 interface CardStats { hp?: number; atk?: number; counter?: number; scrap?: number }
 
+/**
+ * Duck typing — działa dla każdego typu karty bez switch/case.
+ * Nowe typy dodane przez Frame Editor działają automatycznie.
+ */
 function getCardStats(card: AnyCard): CardStats {
-  switch (card.type) {
-    case 'companion':           return { hp: card.hp,    atk: card.attack, counter: card.counter }
-    case 'boss':                return { hp: card.hp,    atk: card.attack, counter: card.counter }
-    case 'test2':               return { hp: (card as any).hp, atk: (card as any).attack, counter: (card as any).counter }
-    case 'item_with_attack':    return { atk: card.effect.damage }
-    case 'item_without_attack': return {}
-    case 'clunker':             return { scrap: card.scrap, atk: card.attack, counter: card.counter }
-    case 'shade':               return { hp: card.hp,    atk: card.attack, counter: card.counter }
-    default:                    return {}
+  const c = card as Record<string, unknown>
+
+  // Item — specjalny case
+  if (card.type === 'item_with_attack' || card.type === 'item_without_attack') {
+    const effect = c['effect'] as Record<string, unknown> | undefined
+    return { atk: effect?.['damage'] as number | undefined }
+  }
+
+  // Clunker — ma scrap zamiast hp
+  if (card.type === 'clunker') {
+    return {
+      scrap:   c['scrap']   as number | undefined,
+      atk:     c['attack']  as number | undefined,
+      counter: c['counter'] as number | undefined,
+    }
+  }
+
+  // Wszystkie pozostałe typy (companion, boss, shade, testets, test2, i wszystkie przyszłe)
+  return {
+    hp:      c['hp']      as number | undefined,
+    atk:     c['attack']  as number | undefined,
+    counter: c['counter'] as number | undefined,
   }
 }

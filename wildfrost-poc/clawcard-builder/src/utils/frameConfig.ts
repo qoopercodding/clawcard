@@ -93,6 +93,14 @@ const TEST2_CONFIG: FrameConfig = {
   desc:    { left: 25.4, top: 50, width: 48, height: 24.6 },
 }
 
+// ── __GIT_PUSH__ — skalibrowane przez Frame Editor
+const __GIT_PUSH___CONFIG: FrameConfig = {
+  frameFile: null,
+  art:     { left: 0, top: 0, width: 100, height: 100 },
+  name:    { left: 0, top: 80, width: 100, height: 10 },
+  desc:    { left: 0, top: 90, width: 100, height: 10 },
+}
+
 export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
   companion:            COMPANION_CONFIG,
   item_with_attack:     ITEM_WITH_ATTACK_CONFIG,
@@ -103,6 +111,7 @@ export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
   boss:                 BOSS_CONFIG,
     __test_dry_run__:    __TEST_DRY_RUN___CONFIG,
     testets:             TESTETS_CONFIG,
+  __git_push__:          __GIT_PUSH___CONFIG,
 }
 
 export function getItemFrameConfig(damage: number | undefined): FrameConfig {
