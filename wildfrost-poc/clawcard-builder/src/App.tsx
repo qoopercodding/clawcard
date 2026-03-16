@@ -17,13 +17,14 @@ function App() {
 
   function renderView() {
     switch (view) {
-      case 'start':         return <StartPage onSelectView={setView} />
-      case 'battle':        return <BattleDemoScreen />
-      case 'gallery':       return <CardBuilderScreen />
-      case 'card-editor':   return <CardEditorScreen />
-      case 'frame-editor':  return <FrameEditorScreen />
-      case 'frame-test':    return <FrameConfigTest />
-      case 'game':          return <GameScreenPlaceholder />
+      case 'start':        return <StartPage onSelectView={setView} />
+      case 'battle':       return <BattleDemoScreen />
+      case 'gallery':      return <CardBuilderScreen />
+      case 'card-editor':  return <CardEditorScreen />
+      // ── TASK 2: Frame Editor dostaje onNavigate ──
+      case 'frame-editor': return <FrameEditorScreen onNavigate={setView} />
+      case 'frame-test':   return <FrameConfigTest />
+      case 'game':         return <GameScreenPlaceholder />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreenPlaceholder devMode /></>)
       default: return <StartPage onSelectView={setView} />

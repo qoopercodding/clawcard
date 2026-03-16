@@ -1,14 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
+import { useCardStore } from '../../store/cardStore'
 import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, TribeType } from '../../types/card.types'
 import './CardEditorScreen.css'
-
-// =============================================================================
-// CardEditorScreen.tsx
-// CARD_TYPES — lista typów kart w dropdownie.
-// Plugin vite-plugin-frame-config.ts dodaje nowe typy automatycznie.
-// =============================================================================
 
 // Typy które zachowują się jak companion (HP + ATK + Counter)
 const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2']
@@ -65,6 +60,10 @@ function draftToCard(draft: CardDraft): AnyCard {
   if (draft.type === 'test2') {
     return { ...base, type: 'test2', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test2Card
   }
+  // Fallback dla dynamicznie dodanych typów (companion-like)
+  if (COMPANION_LIKE_TYPES.includes(draft.type)) {
+    return { ...base, type: draft.type, hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as unknown as AnyCard
+  }
   return {
     ...base,
     type: draft.type as 'item_with_attack' | 'item_without_attack',
@@ -79,11 +78,22 @@ function draftToCard(draft: CardDraft): AnyCard {
 }
 
 export function CardEditorScreen() {
+  const { addCard, consumePendingType } = useCardStore()
+
   const [draft, setDraft]         = useState<CardDraft>({ ...DEFAULT_DRAFT })
   const [library, setLibrary]     = useState<Record<string, CardDraft>>({})
   const [savedMsg, setSavedMsg]   = useState(false)
+  const [addedToGallery, setAddedToGallery] = useState(false)
   const [editingId, setEditingId] = useState<string | null>(null)
   const [errors, setErrors]       = useState<string[]>([])
+
+  // ── TASK 2: Odbiór pending type ze store ──────────────────────────────
+  useEffect(() => {
+    const pending = consumePendingType()
+    if (pending) {
+      setDraft(prev => ({ ...prev, type: pending.typeName as CardType }))
+    }
+  }, []) // tylko przy mount
 
   useEffect(() => {
     try { setLibrary(JSON.parse(localStorage.getItem(LIBRARY_KEY) || '{}')) }
@@ -100,6 +110,20 @@ export function CardEditorScreen() {
     setLibrary(newLib); localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
     setSavedMsg(true); setErrors([])
     setTimeout(() => setSavedMsg(false), 1500)
+  }
+
+  // ── TASK 3: Dodaj do galerii przez store ──────────────────────────────
+  function addToGallery() {
+    const errs = validateDraft(draft)
+    if (errs.length) { setErrors(errs); return }
+    const card = draftToCard(draft)
+    if (card.id === '__preview__') {
+      setErrors(['Wypełnij nazwę karty przed dodaniem do galerii']); return
+    }
+    addCard(card)
+    setAddedToGallery(true)
+    setErrors([])
+    setTimeout(() => setAddedToGallery(false), 2000)
   }
 
   function loadDraft(id: string) {
@@ -138,23 +162,38 @@ export function CardEditorScreen() {
     <div className="card-editor">
       <div className="card-editor__form">
         <FormPanel draft={draft} onChange={update} editingId={editingId} />
+
         {errors.length > 0 && (
           <div className="ced-errors">
             {errors.map((e, i) => <div key={i} className="ced-error-item">⚠ {e}</div>)}
           </div>
         )}
+
         <div className="ced-actions">
-          <button className={`ced-btn ced-btn--save ${savedMsg?'ced-btn--done':''} ${!canSave?'ced-btn--muted':''}`} onClick={saveToLibrary} title={!canSave?'Wypełnij nazwę i opis':''}>
+          <button
+            className={`ced-btn ced-btn--save ${savedMsg?'ced-btn--done':''} ${!canSave?'ced-btn--muted':''}`}
+            onClick={saveToLibrary} title={!canSave?'Wypełnij nazwę i opis':''}>
             {savedMsg ? '✓ Zapisano!' : '💾 Zapisz'}
           </button>
           <button className="ced-btn ced-btn--export" onClick={exportCard}>⬇ .js</button>
           <button className="ced-btn ced-btn--reset" onClick={() => { setDraft({...DEFAULT_DRAFT}); setEditingId(null); setErrors([]) }}>✕</button>
         </div>
+
+        {/* ── TASK 3: Przycisk "Dodaj do galerii" ── */}
+        <button
+          className={`ced-gallery-btn ${addedToGallery ? 'ced-gallery-btn--done' : ''} ${!canSave ? 'ced-gallery-btn--muted' : ''}`}
+          onClick={addToGallery}
+          disabled={!canSave}
+        >
+          {addedToGallery ? '✓ Dodano do galerii!' : '🃏 Dodaj do galerii'}
+        </button>
+
         <div className="ced-required-hint">
           * Wymagane: <strong>Nazwa</strong> i <strong>Opis</strong>
           {COMPANION_LIKE_TYPES.includes(draft.type) && ' · HP · Counter'}
           {draft.type === 'item_with_attack' && ' · ATK > 0'}
         </div>
+
         {Object.values(library).length > 0 && (
           <div className="ced-library">
             <div className="ced-library__title">📚 Biblioteka ({Object.values(library).length})</div>
@@ -170,6 +209,7 @@ export function CardEditorScreen() {
           </div>
         )}
       </div>
+
       <div className="card-editor__preview">
         <div className="ced-preview">
           <div className="ced-preview__label">Podgląd na żywo</div>
@@ -188,7 +228,6 @@ export function CardEditorScreen() {
 // ---------------------------------------------------------------------------
 interface FormPanelProps { draft: CardDraft; onChange: (p: Partial<CardDraft>) => void; editingId: string | null }
 
-// ── CARD_TYPES — plugin vite-plugin-frame-config.ts dodaje tu nowe typy ──
 const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'companion',           label: 'Companion' },
   { value: 'boss',                label: 'Boss 👾' },
@@ -203,7 +242,9 @@ const CARD_TYPES: { value: CardType; label: string }[] = [
 
 function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   const fileRef = useRef<HTMLInputElement>(null)
-  const loadFile = (file: File) => { const r = new FileReader(); r.onload = e => onChange({imgSrc: e.target?.result as string}); r.readAsDataURL(file) }
+  const loadFile = (file: File) => {
+    const r = new FileReader(); r.onload = e => onChange({imgSrc: e.target?.result as string}); r.readAsDataURL(file)
+  }
 
   const isCompanionLike  = COMPANION_LIKE_TYPES.includes(draft.type)
   const isItemWithAttack = draft.type === 'item_with_attack'

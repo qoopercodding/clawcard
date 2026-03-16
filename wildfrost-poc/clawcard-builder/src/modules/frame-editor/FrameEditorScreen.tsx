@@ -1,22 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCardStore } from '../../store/cardStore'
 import './FrameEditorScreen.css'
 
 // =============================================================================
-// FrameEditorScreen.tsx — Frame Mapper z tworzeniem nowych typów ramek
+// FrameEditorScreen.tsx — Frame Mapper z pełnym handoff do Card Editor
 // =============================================================================
 //
-// WORKFLOW:
-//   1. Wpisz nazwę (np. "enemy") — tylko dla nowego typu
-//   2. Zaznacz checkboxy które pola ma mieć
-//   3. Wgraj PNG ramki (drag&drop lub przyciski szybkiego dostępu)
-//   4. Przeciągnij prostokąty na pola
-//   5. Kliknij "💾 Zapisz typ do kodu"
-//      → POST /api/save-frame-config (Vite plugin w vite-plugin-frame-config.ts)
-//      → plugin zapisuje PNG do /public/frames/ (z base64)
-//      → plugin zapisuje config do frameConfig.ts
-//      → jeśli nowy typ: card.types.ts + CardEditorScreen.tsx + CardFrame.tsx
-//      → git add . && git commit && git push
-//      → Vite hot-reload — zmiany widoczne natychmiast
+// FLOW:
+//   1. Nowy typ → wpisz nazwę → zaznacz pola → wgraj PNG → zaznacz obszary
+//   2. "💾 Zapisz typ + git push"
+//      → POST /api/save-frame-config → aktualizuje 3 pliki TS + git push
+//      → setPendingType() w store → Card Editor może odebrać
+//   3. Przycisk "→ Otwórz Card Editor" pojawia się po zapisie
 // =============================================================================
 
 interface AreaResult { left: number; top: number; width: number; height: number }
@@ -45,20 +40,26 @@ const EXISTING_TYPES = [
 
 const STORAGE_KEY = (t: string) => `frameConfig_v3_${t}`
 
-export function FrameEditorScreen() {
+interface FrameEditorScreenProps {
+  onNavigate?: (view: string) => void
+}
+
+export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
+  const { setPendingType } = useCardStore()
+
   const [mode, setMode]               = useState<'existing' | 'new'>('existing')
   const [existingType, setExistingType] = useState('companion')
   const [newTypeName, setNewTypeName]   = useState('')
   const [newTypeLabel, setNewTypeLabel] = useState('')
   const [frameFile, setFrameFile]     = useState<string | null>(null)
   const [imgSrc, setImgSrc]           = useState<string | null>(null)
-  // Czy imgSrc pochodzi z lokalnego pliku (base64) — do wysyłki na serwer
   const [imgIsLocal, setImgIsLocal]   = useState(false)
   const [result, setResult]           = useState<MapperResult>({})
   const [activeStep, setActiveStep]   = useState<StepKey>('art')
   const [loadError, setLoadError]     = useState<string | null>(null)
   const [saveStatus, setSaveStatus]   = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
   const [saveMsg, setSaveMsg]         = useState('')
+  const [savedTypeName, setSavedTypeName] = useState<string | null>(null)
   const [enabledFields, setEnabledFields] = useState<Set<StepKey>>(new Set(ALL_STEPS.map(s => s.key)))
   const [dragStart, setDragStart]     = useState<{x:number;y:number}|null>(null)
   const [dragCurrent, setDragCurrent] = useState<{x:number;y:number}|null>(null)
@@ -68,7 +69,6 @@ export function FrameEditorScreen() {
   const fileInputRef = useRef<HTMLInputElement>(null)
   const activeSteps  = ALL_STEPS.filter(s => enabledFields.has(s.key))
 
-  // ── Załaduj typ istniejący ──────────────────────────────────────────────
   useEffect(() => {
     if (mode !== 'existing') return
     const typeData = EXISTING_TYPES.find(t => t.value === existingType)
@@ -79,19 +79,15 @@ export function FrameEditorScreen() {
     setEnabledFields(new Set(typeData?.fields ?? ALL_STEPS.map(s => s.key)))
     if (typeData?.frameFile) {
       setImgSrc(typeData.frameFile); setFrameFile(typeData.frameFile.split('/').pop() ?? null); setImgIsLocal(false)
-    } else {
-      setImgSrc(null); setFrameFile(null); setImgIsLocal(false)
-    }
+    } else { setImgSrc(null); setFrameFile(null); setImgIsLocal(false) }
   }, [existingType, mode])
 
-  // ── Zapis do localStorage (cache) ──────────────────────────────────────
   useEffect(() => {
     const key = mode === 'existing' ? existingType : newTypeName
     if (!key || Object.keys(result).length === 0) return
     try { localStorage.setItem(STORAGE_KEY(key), JSON.stringify(result)) } catch { /* ignore */ }
   }, [result, existingType, newTypeName, mode])
 
-  // ── Toggle pola ────────────────────────────────────────────────────────
   function toggleField(key: StepKey) {
     setEnabledFields(prev => {
       const next = new Set(prev)
@@ -103,27 +99,17 @@ export function FrameEditorScreen() {
     })
   }
 
-  // ── Wczytywanie obrazka z pliku (lokalny → base64) ─────────────────────
   function loadFile(file: File) {
     const reader = new FileReader()
-    reader.onload = e => {
-      setImgSrc(e.target?.result as string)
-      setLoadError(null)
-      setImgIsLocal(true)   // PNG z dysku — wysyłamy base64 do serwera
-    }
+    reader.onload = e => { setImgSrc(e.target?.result as string); setLoadError(null); setImgIsLocal(true) }
     reader.readAsDataURL(file)
     setFrameFile(file.name)
   }
 
-  // ── Wczytywanie z URL (już jest w /public) ─────────────────────────────
   function loadFrameByPath(framePath: string) {
-    setImgSrc(framePath)
-    setFrameFile(framePath.split('/').pop() ?? null)
-    setImgIsLocal(false)   // plik już jest na serwerze — nie wysyłamy base64
-    setLoadError(null)
+    setImgSrc(framePath); setFrameFile(framePath.split('/').pop() ?? null); setImgIsLocal(false); setLoadError(null)
   }
 
-  // ── Coords + Drag ──────────────────────────────────────────────────────
   function getCoords(e: React.MouseEvent): {x:number;y:number}|null {
     const img = imgRef.current; if (!img) return null
     const r = img.getBoundingClientRect()
@@ -134,14 +120,12 @@ export function FrameEditorScreen() {
   }
 
   const onMouseDown = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    const c = getCoords(e); if (!c) return
+    e.preventDefault(); const c = getCoords(e); if (!c) return
     setDragStart(c); setDragCurrent(c); setIsDragging(true)
   }, [])
 
   const onMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return
-    const c = getCoords(e); if (c) setDragCurrent(c)
+    if (!isDragging) return; const c = getCoords(e); if (c) setDragCurrent(c)
   }, [isDragging])
 
   const onMouseUp = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
@@ -165,7 +149,6 @@ export function FrameEditorScreen() {
     if (isDragging) { setIsDragging(false); setDragStart(null); setDragCurrent(null) }
   }, [isDragging])
 
-  // ── SVG Overlay ────────────────────────────────────────────────────────
   function renderOverlay() {
     const img = imgRef.current; if (!img) return null
     const W = img.offsetWidth||400, H = img.offsetHeight||600
@@ -204,20 +187,18 @@ export function FrameEditorScreen() {
     )
   }
 
-  // ── GŁÓWNY ZAPIS ───────────────────────────────────────────────────────
   async function handleSaveToCode() {
     const typeName  = mode === 'existing' ? existingType : newTypeName.trim()
     const typeLabel = mode === 'new' ? (newTypeLabel.trim() || newTypeName.trim()) : existingType
 
     if (!typeName) { setSaveStatus('error'); setSaveMsg('Wpisz nazwę typu'); return }
-    if (Object.keys(result).length === 0) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej jeden obszar'); return }
     if (!result.art) { setSaveStatus('error'); setSaveMsg('Pole "Art Area" jest wymagane'); return }
+    if (Object.keys(result).length === 0) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej jeden obszar'); return }
 
     setSaveStatus('saving'); setSaveMsg('Zapisuję...')
 
     const payload = {
-      typeName,
-      typeLabel,
+      typeName, typeLabel,
       frameFile:   frameFile ? `/frames/${frameFile}` : null,
       pngFileName: imgIsLocal && frameFile ? frameFile : null,
       pngBase64:   imgIsLocal && imgSrc?.startsWith('data:') ? imgSrc : null,
@@ -236,6 +217,15 @@ export function FrameEditorScreen() {
       if (data.ok) {
         setSaveStatus('saved')
         setSaveMsg(data.message ?? `✓ Typ '${typeName}' zapisany!`)
+        setSavedTypeName(typeName)
+
+        // ── TASK 2: Przekaż do Card Editor przez store ──────────────────
+        setPendingType({
+          typeName,
+          frameFile: frameFile ? `/frames/${frameFile}` : null,
+          fields: { ...result },
+        })
+
         if (mode === 'new') {
           setNewTypeName(''); setNewTypeLabel(''); setResult({}); setImgSrc(null); setImgIsLocal(false)
         }
@@ -248,14 +238,14 @@ export function FrameEditorScreen() {
       setSaveMsg('Brak połączenia z Vite — upewnij się że dev server działa na :5175')
     }
 
-    setTimeout(() => { setSaveStatus('idle'); setSaveMsg('') }, 6000)
+    setTimeout(() => { setSaveStatus('idle'); setSaveMsg('') }, 8000)
   }
 
   function handleReset() {
     setResult({})
     const key = mode === 'existing' ? existingType : newTypeName
     if (key) localStorage.removeItem(STORAGE_KEY(key))
-    setActiveStep('art')
+    setActiveStep('art'); setSavedTypeName(null)
   }
 
   function deleteArea(key: StepKey) {
@@ -268,6 +258,7 @@ export function FrameEditorScreen() {
   return (
     <div className="frame-editor">
       <aside className="frame-editor__sidebar">
+
         <div className="fe-mode-tabs">
           <button className={`fe-mode-tab ${mode==='existing'?'fe-mode-tab--active':''}`} onClick={() => setMode('existing')}>✏ Edytuj typ</button>
           <button className={`fe-mode-tab ${mode==='new'?'fe-mode-tab--active':''}`} onClick={() => setMode('new')}>✦ Nowy typ</button>
@@ -309,16 +300,11 @@ export function FrameEditorScreen() {
           </div>
         </div>
 
-        {/* Upload — drag&drop lub klik */}
         <div className={`fe-drop ${imgSrc?'fe-drop--has-img':''}`}
           onDragOver={e => e.preventDefault()}
           onDrop={e => { e.preventDefault(); const f=e.dataTransfer.files[0]; if(f) loadFile(f) }}
           onClick={() => fileInputRef.current?.click()}>
-          {imgSrc
-            ? imgIsLocal
-              ? `✓ ${frameFile} (lokalny — zostanie zapisany)`
-              : `✓ ${frameFile} (z serwera)`
-            : '📁 Wgraj PNG ramki'}
+          {imgSrc ? (imgIsLocal ? `✓ ${frameFile} (lokalny)` : `✓ ${frameFile}`) : '📁 Wgraj PNG ramki'}
           <input ref={fileInputRef} type="file" accept="image/*" style={{display:'none'}} onChange={e => { if(e.target.files?.[0]) loadFile(e.target.files[0]) }} />
         </div>
 
@@ -379,12 +365,22 @@ export function FrameEditorScreen() {
         <button
           className={`fe-save-btn ${saveStatus==='saved'?'fe-save-btn--saved':''} ${saveStatus==='error'?'fe-save-btn--error':''} ${saveStatus==='saving'?'fe-save-btn--saving':''}`}
           onClick={handleSaveToCode}
-          disabled={saveStatus==='saving' || Object.keys(result).length===0 || (mode==='new'&&!newTypeName)}>
-          {saveStatus==='saving' ? '⏳ Zapisuję + git push...'
-          : saveStatus==='saved' ? '✓ Zapisano i wypchnięto na git!'
-          : saveStatus==='error' ? '⚠ Błąd — sprawdź komunikat'
+          disabled={saveStatus==='saving' || !result.art || (mode==='new'&&!newTypeName)}>
+          {saveStatus==='saving' ? '⏳ Zapisuję...'
+          : saveStatus==='saved' ? '✓ Zapisano!'
+          : saveStatus==='error' ? '⚠ Błąd'
           : '💾 Zapisz typ + git push'}
         </button>
+
+        {/* ── TASK 2: Przycisk handoff do Card Editor ── */}
+        {saveStatus === 'saved' && savedTypeName && onNavigate && (
+          <button
+            className="fe-goto-editor-btn"
+            onClick={() => onNavigate('card-editor')}
+          >
+            ✏ Utwórz kartę typu "{savedTypeName}" →
+          </button>
+        )}
 
         {saveMsg && (
           <div className={`fe-save-hint ${saveStatus==='error'?'fe-save-hint--error':''}`}>
@@ -424,11 +420,7 @@ export function FrameEditorScreen() {
           <div className="fe-empty">
             <div className="fe-empty__icon">🖼</div>
             <div className="fe-empty__title">{mode==='new'&&!newTypeName?'Najpierw wpisz nazwę nowego typu':'Wgraj PNG ramki żeby zacząć'}</div>
-            <div className="fe-empty__hint">
-              {mode==='new'
-                ? 'Wgraj PNG przez drag&drop — zostanie automatycznie zapisany do /public/frames/'
-                : 'Użyj przycisków "Wczytaj szybko" lub przeciągnij własny PNG.'}
-            </div>
+            <div className="fe-empty__hint">{mode==='new'?'Wgraj PNG przez drag&drop — zostanie automatycznie zapisany do /public/frames/':'Użyj przycisków "Wczytaj szybko" lub przeciągnij własny PNG.'}</div>
           </div>
         )}
       </main>

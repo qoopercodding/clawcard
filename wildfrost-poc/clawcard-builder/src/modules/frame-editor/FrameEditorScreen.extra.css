@@ -1,16 +1,27 @@
 
-/* Dodatkowe style — saving state, error hint */
-
-.fe-save-btn--saving {
-  border-color: rgba(251,191,36,0.4);
-  color: #fbbf24;
-  background: rgba(50,30,3,0.7);
-  cursor: wait;
-  animation: none;
+/* Przycisk handoff Frame Editor → Card Editor */
+.fe-goto-editor-btn {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  border: 2px solid rgba(167,139,250,0.5);
+  background: rgba(30,15,50,0.8);
+  color: #a78bfa;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+  animation: handoff-appear 0.3s ease;
 }
 
-.fe-save-hint--error {
-  background: rgba(248,113,113,0.08);
-  border-color: rgba(248,113,113,0.3);
-  color: #f87171;
+.fe-goto-editor-btn:hover {
+  border-color: #a78bfa;
+  background: rgba(50,25,80,0.9);
+  box-shadow: 0 0 20px rgba(167,139,250,0.2);
+}
+
+@keyframes handoff-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
 }

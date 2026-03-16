@@ -3,17 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { DevInspectorProvider } from './components/debug/DevInspector.tsx'
+import { CardStoreProvider } from './store/cardStore.tsx'
 
-/**
- * Punkt wejścia aplikacji.
- *
- * DevInspectorProvider owija cały App — dzięki temu useDevInspector()
- * działa w każdym komponencie w drzewie bez dodatkowej konfiguracji.
- */
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <DevInspectorProvider>
-      <App />
+      <CardStoreProvider>
+        <App />
+      </CardStoreProvider>
     </DevInspectorProvider>
   </StrictMode>,
 )

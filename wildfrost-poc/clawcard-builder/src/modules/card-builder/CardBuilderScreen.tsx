@@ -1,51 +1,78 @@
 import { useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
-import { SAMPLE_CARDS } from '../../data/sampleCards'
+import { useCardStore } from '../../store/cardStore'
 import type { AnyCard } from '../../types/card.types'
 import './CardBuilderScreen.css'
 
 // =============================================================================
-// CardBuilderScreen.tsx — Galeria wszystkich kart z PNG ramką companion
+// CardBuilderScreen.tsx — Galeria kart
+// TASK 4: Dynamiczne filtry + user_cards ze store
+// =============================================================================
+//
+// Źródła kart:
+//   - sampleCards — wbudowane karty z Wildfrost
+//   - userCards   — karty dodane przez użytkownika w Card Editorze
+//
+// Filtry generowane dynamicznie z unikalnych typów w allCards.
+// Zakładka "Moje karty" pokazuje tylko user_cards.
 // =============================================================================
 
-type FilterType = 'all' | 'companion' | 'item' | 'clunker' | 'shade' | 'charm'
-
-const FILTER_OPTIONS: { value: FilterType; label: string; emoji: string }[] = [
-  { value: 'all',       label: 'Wszystkie', emoji: '🃏' },
-  { value: 'companion', label: 'Companion', emoji: '🧝' },
-  { value: 'item',      label: 'Item',      emoji: '⚔️'  },
-  { value: 'clunker',   label: 'Clunker',   emoji: '⚙️'  },
-  { value: 'shade',     label: 'Shade',     emoji: '👻' },
-  { value: 'charm',     label: 'Charm',     emoji: '💎' },
-]
+type GalleryTab = 'all' | 'mine'
 
 export function CardBuilderScreen() {
-  const [filter, setFilter] = useState<FilterType>('all')
+  const { allCards, userCards, removeCard } = useCardStore()
+  const [tab, setTab]       = useState<GalleryTab>('all')
+  const [filter, setFilter] = useState<string>('all')
+  const [selected, setSelected] = useState<AnyCard | null>(null)
 
-  const allCards = Object.values(SAMPLE_CARDS)
+  // Dynamiczne filtry z unikalnych typów
+  const typesInAll  = ['all', ...Array.from(new Set(allCards.map(c => c.type))).sort()]
+  const typesInMine = ['all', ...Array.from(new Set(Object.values(userCards).map(c => c.type))).sort()]
+  const activeTypes = tab === 'all' ? typesInAll : typesInMine
+
+  const sourceCards = tab === 'all' ? allCards : Object.values(userCards)
   const filtered = filter === 'all'
-    ? allCards
-    : allCards.filter(c => c.type === filter)
+    ? sourceCards
+    : sourceCards.filter(c => c.type === filter)
+
+  const userCount = Object.values(userCards).length
 
   return (
     <section className="card-builder">
       <header className="card-builder__header">
         <div>
-          <p className="workspace-screen__eyebrow">Card Builder</p>
-          <h2>Galeria kart</h2>
+          <p className="workspace-screen__eyebrow">Galeria kart</p>
+          <h2>Karty</h2>
           <p className="card-builder__subtitle">
-            {allCards.length} kart · ramka companion na wszystkich · kliknij → Inspector
+            {allCards.length} kart łącznie · {userCount} moich
           </p>
         </div>
 
+        {/* Zakładki */}
+        <div className="card-builder__tabs">
+          <button
+            className={`gallery-tab ${tab==='all'?'gallery-tab--active':''}`}
+            onClick={() => { setTab('all'); setFilter('all') }}
+          >
+            🃏 Wszystkie ({allCards.length})
+          </button>
+          <button
+            className={`gallery-tab ${tab==='mine'?'gallery-tab--active':''}`}
+            onClick={() => { setTab('mine'); setFilter('all') }}
+          >
+            ✏ Moje ({userCount})
+          </button>
+        </div>
+
+        {/* Filtry typów — dynamiczne */}
         <nav className="card-builder__filters" aria-label="Filtruj po typie">
-          {FILTER_OPTIONS.map(opt => (
+          {activeTypes.map(type => (
             <button
-              key={opt.value}
-              className={`filter-btn ${filter === opt.value ? 'filter-btn--active' : ''}`}
-              onClick={() => setFilter(opt.value)}
+              key={type}
+              className={`filter-btn ${filter === type ? 'filter-btn--active' : ''}`}
+              onClick={() => setFilter(type)}
             >
-              {opt.emoji} {opt.label}
+              {type === 'all' ? '🃏 Wszystkie' : type}
             </button>
           ))}
         </nav>
@@ -54,16 +81,47 @@ export function CardBuilderScreen() {
       {filtered.length > 0 ? (
         <div className="card-grid">
           {filtered.map(card => (
-            <CardFrame
+            <div
               key={card.id}
-              card={card}
-              width={200}
-              height={294}
-            />
+              className={`card-grid__item ${selected?.id === card.id ? 'card-grid__item--selected' : ''}`}
+              onClick={() => setSelected(selected?.id === card.id ? null : card)}
+            >
+              <CardFrame card={card} width={160} height={235} />
+              {/* Przycisk usunięcia tylko dla user cards */}
+              {userCards[card.id] && (
+                <button
+                  className="card-grid__remove"
+                  onClick={e => { e.stopPropagation(); removeCard(card.id); if (selected?.id === card.id) setSelected(null) }}
+                  title="Usuń z galerii"
+                >✕</button>
+              )}
+            </div>
           ))}
         </div>
       ) : (
-        <div className="card-builder__empty">Brak kart dla tego filtra.</div>
+        <div className="card-builder__empty">
+          {tab === 'mine'
+            ? 'Brak własnych kart. Utwórz kartę w Card Editorze i kliknij "Dodaj do galerii".'
+            : 'Brak kart dla tego filtra.'}
+        </div>
+      )}
+
+      {/* Panel podglądu wybranej karty */}
+      {selected && (
+        <div className="card-preview-panel" onClick={() => setSelected(null)}>
+          <div className="card-preview-panel__inner" onClick={e => e.stopPropagation()}>
+            <button className="card-preview-panel__close" onClick={() => setSelected(null)}>✕</button>
+            <CardFrame card={selected} width={240} height={353} />
+            <div className="card-preview-panel__meta">
+              <div className="card-preview-panel__name">{selected.name}</div>
+              <div className="card-preview-panel__type">{selected.type}</div>
+              <div className="card-preview-panel__desc">{selected.description}</div>
+              {userCards[selected.id] && (
+                <div className="card-preview-panel__badge">✏ Twoja karta</div>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </section>
   )
