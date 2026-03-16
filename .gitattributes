@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+wildfrost-poc/clawcard-builder/public/cards/*.png filter=lfs diff=lfs merge=lfs -text
+wildfrost-poc/clawcard-builder/public/frames/*.png filter=lfs diff=lfs merge=lfs -text
