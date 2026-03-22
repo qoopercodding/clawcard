@@ -1,7 +1,9 @@
 import type { CompanionCard, ItemCard, TransformerCard, AnyCard } from '../types/card.types'
 
-const IMG = (name: string) => `/cards/${name}.png`
-const SVG = (name: string) => `/cards/${name}.svg`
+// BASE_URL = '/clawcard/' na GitHub Pages, '/' lokalnie
+const BASE = import.meta.env.BASE_URL
+const IMG = (name: string) => `${BASE}cards/${name}.png`
+const SVG = (name: string) => `${BASE}cards/${name}.svg`
 
 export const NAMANDI: CompanionCard = {
   id: 'namandi', name: 'Namandi Shellandi', type: 'companion', tribe: 'shelly',
@@ -95,17 +97,6 @@ export const BERRY_BLADE: ItemCard = {
   createdAt: 0, effect: { damage: 4, heal: 4 }, target: 'enemy', consume: false,
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// BONGO TRANSFORMERZY — nowe karty z custom mechaniką
-// ─────────────────────────────────────────────────────────────────────────────
-
-/**
- * BONGO PRIME — Transformer Companion
- * Mechanika: TRANSFORM — gdy HP spadnie poniżej 50%,
- * w kolejnym triggerze ATK zmienia się na transformedAttack (×2)
- * i counter resetuje do 1 (atak natychmiastowy).
- * Wizualnie: świecące niebieskie core, mechanical gorilla warrior.
- */
 export const BONGO_PRIME: TransformerCard = {
   id: 'bongo_prime',
   name: 'Bongo Prime',
@@ -131,12 +122,6 @@ export const BONGO_PRIME: TransformerCard = {
   transformed: false,
 }
 
-/**
- * BONGO CANNON — Transformer Item (z atakiem)
- * Mechanika: OVERHEAT — każde zagranie +1 ATK ale +1 Counter (nagrzewanie).
- * Przy Counter ≥ 7 wybucha: 12 dmg do wszystkich (ally + enemy), Counter reset.
- * Ryzykowna karta — duży damage ale może się zwrócić przeciwko tobie.
- */
 export const BONGO_CANNON: ItemCard = {
   id: 'bongo_cannon',
   name: 'Bongo Cannon',
@@ -151,15 +136,12 @@ export const BONGO_CANNON: ItemCard = {
   consume: false,
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-
 export const SAMPLE_CARDS: Record<string, AnyCard> = {
   namandi: NAMANDI, berry_sis: BERRY_SIS, foxee: FOXEE,
   wallop: WALLOP, snoof: SNOOF, sneezle: SNEEZLE, tusk: TUSK,
   dregg: DREGG, woodhead: WOODHEAD,
   sword: SWORD, snowball: SNOWBALL, bonesaw: BONESAW,
   healberry: HEALBERRY, berry_blade: BERRY_BLADE,
-  // Bongo Transformerzy
   bongo_prime: BONGO_PRIME,
   bongo_cannon: BONGO_CANNON,
 }

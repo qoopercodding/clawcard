@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
 import { useCardStore } from '../../store/cardStore'
-import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, TribeType, Test3Card } from '../../types/card.types'
+import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, Test3Card, TribeType } from '../../types/card.types'
 import './CardEditorScreen.css'
 
-// Typy które zachowują się jak companion (HP + ATK + Counter)
-const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2', 'test3']
+const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2', 'test3', 'transformer']
 
 interface CardDraft {
   id: string; name: string; type: CardType; tribe: TribeType
@@ -61,7 +60,9 @@ function draftToCard(draft: CardDraft): AnyCard {
   if (draft.type === 'test2') {
     return { ...base, type: 'test2', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test2Card
   }
-  // Fallback dla dynamicznie dodanych typów (companion-like)
+  if (draft.type === 'test3') {
+    return { ...base, type: 'test3', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test3Card
+  }
   if (COMPANION_LIKE_TYPES.includes(draft.type)) {
     return { ...base, type: draft.type, hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as unknown as AnyCard
   }
@@ -80,7 +81,6 @@ function draftToCard(draft: CardDraft): AnyCard {
 
 export function CardEditorScreen() {
   const { addCard, consumePendingType } = useCardStore()
-
   const [draft, setDraft]         = useState<CardDraft>({ ...DEFAULT_DRAFT })
   const [library, setLibrary]     = useState<Record<string, CardDraft>>({})
   const [savedMsg, setSavedMsg]   = useState(false)
@@ -88,13 +88,12 @@ export function CardEditorScreen() {
   const [editingId, setEditingId] = useState<string | null>(null)
   const [errors, setErrors]       = useState<string[]>([])
 
-  // ── TASK 2: Odbiór pending type ze store ──────────────────────────────
   useEffect(() => {
     const pending = consumePendingType()
     if (pending) {
       setDraft(prev => ({ ...prev, type: pending.typeName as CardType }))
     }
-  }, []) // tylko przy mount
+  }, [])
 
   useEffect(() => {
     try { setLibrary(JSON.parse(localStorage.getItem(LIBRARY_KEY) || '{}')) }
@@ -113,7 +112,6 @@ export function CardEditorScreen() {
     setTimeout(() => setSavedMsg(false), 1500)
   }
 
-  // ── TASK 3: Dodaj do galerii przez store ──────────────────────────────
   function addToGallery() {
     const errs = validateDraft(draft)
     if (errs.length) { setErrors(errs); return }
@@ -163,38 +161,29 @@ export function CardEditorScreen() {
     <div className="card-editor">
       <div className="card-editor__form">
         <FormPanel draft={draft} onChange={update} editingId={editingId} />
-
         {errors.length > 0 && (
           <div className="ced-errors">
             {errors.map((e, i) => <div key={i} className="ced-error-item">⚠ {e}</div>)}
           </div>
         )}
-
         <div className="ced-actions">
-          <button
-            className={`ced-btn ced-btn--save ${savedMsg?'ced-btn--done':''} ${!canSave?'ced-btn--muted':''}`}
+          <button className={`ced-btn ced-btn--save ${savedMsg?'ced-btn--done':''} ${!canSave?'ced-btn--muted':''}`}
             onClick={saveToLibrary} title={!canSave?'Wypełnij nazwę i opis':''}>
             {savedMsg ? '✓ Zapisano!' : '💾 Zapisz'}
           </button>
           <button className="ced-btn ced-btn--export" onClick={exportCard}>⬇ .js</button>
           <button className="ced-btn ced-btn--reset" onClick={() => { setDraft({...DEFAULT_DRAFT}); setEditingId(null); setErrors([]) }}>✕</button>
         </div>
-
-        {/* ── TASK 3: Przycisk "Dodaj do galerii" ── */}
         <button
           className={`ced-gallery-btn ${addedToGallery ? 'ced-gallery-btn--done' : ''} ${!canSave ? 'ced-gallery-btn--muted' : ''}`}
-          onClick={addToGallery}
-          disabled={!canSave}
-        >
+          onClick={addToGallery} disabled={!canSave}>
           {addedToGallery ? '✓ Dodano do galerii!' : '🃏 Dodaj do galerii'}
         </button>
-
         <div className="ced-required-hint">
           * Wymagane: <strong>Nazwa</strong> i <strong>Opis</strong>
           {COMPANION_LIKE_TYPES.includes(draft.type) && ' · HP · Counter'}
           {draft.type === 'item_with_attack' && ' · ATK > 0'}
         </div>
-
         {Object.values(library).length > 0 && (
           <div className="ced-library">
             <div className="ced-library__title">📚 Biblioteka ({Object.values(library).length})</div>
@@ -210,7 +199,6 @@ export function CardEditorScreen() {
           </div>
         )}
       </div>
-
       <div className="card-editor__preview">
         <div className="ced-preview">
           <div className="ced-preview__label">Podgląd na żywo</div>
@@ -224,14 +212,12 @@ export function CardEditorScreen() {
   )
 }
 
-// ---------------------------------------------------------------------------
-// FormPanel
-// ---------------------------------------------------------------------------
 interface FormPanelProps { draft: CardDraft; onChange: (p: Partial<CardDraft>) => void; editingId: string | null }
 
 const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'companion',           label: 'Companion' },
   { value: 'boss',                label: 'Boss 👾' },
+  { value: 'transformer',         label: 'Transformer ⚡' },
   { value: 'item_with_attack',    label: 'Item — z atakiem ⚔' },
   { value: 'item_without_attack', label: 'Item — bez ataku' },
   { value: 'clunker',             label: 'Clunker' },
@@ -239,9 +225,7 @@ const CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'charm',               label: 'Charm' },
   { value: 'testets',             label: 'testets' },
   { value: 'test2',               label: 'test2' },
-
-  { value: 'test3', label: 'test3' },
-  { value: 'test3', label: 'test3' },
+  { value: 'test3',               label: 'test3' },
 ]
 
 function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
@@ -258,7 +242,6 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   return (
     <div className="ced-form">
       {editingId && <div className="ced-editing-badge">✏ Edytujesz: {editingId}</div>}
-
       <div className="ced-section-title">📇 Identyfikacja</div>
       <label className="ced-label">Nazwa <span className="ced-required-star">*</span>
         <input className="ced-input" value={draft.name} placeholder="np. Ice Wolf" onChange={e => onChange({name: e.target.value})} />
@@ -274,11 +257,10 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
         </label>
         <label className="ced-label" style={{flex:1}}>Tribe
           <select className="ced-input" value={draft.tribe} onChange={e => onChange({tribe: e.target.value as TribeType})}>
-            {(['snowdwellers','shademancers','clunkmasters','none'] as TribeType[]).map(t => <option key={t} value={t}>{t}</option>)}
+            {(['snowdwellers','shademancers','clunkmasters','transformers','none'] as TribeType[]).map(t => <option key={t} value={t}>{t}</option>)}
           </select>
         </label>
       </div>
-
       {isCompanionLike && (
         <>
           <div className="ced-section-title">📊 Statystyki</div>
@@ -295,7 +277,6 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
-
       {isItemWithAttack && (
         <>
           <div className="ced-section-title">📊 Efekty</div>
@@ -303,10 +284,10 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
             <label className="ced-label" style={{flex:1}}>⚔ ATK <span className="ced-required-star">*</span>
               <input className="ced-input" type="number" min={1} value={draft.atk} onChange={e => onChange({atk:+e.target.value})} />
             </label>
-            <label className="ced-label" style={{flex:1}}>❄ Snow <span className="ced-optional">(opt.)</span>
+            <label className="ced-label" style={{flex:1}}>❄ Snow
               <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
             </label>
-            <label className="ced-label" style={{flex:1}}>💚 Heal <span className="ced-optional">(opt.)</span>
+            <label className="ced-label" style={{flex:1}}>💚 Heal
               <input className="ced-input" type="number" min={0} value={draft.heal} onChange={e => onChange({heal:+e.target.value})} />
             </label>
           </div>
@@ -324,10 +305,9 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
-
       {isItemWithout && (
         <>
-          <div className="ced-section-title">📊 Efekty <span className="ced-optional">(opcjonalne)</span></div>
+          <div className="ced-section-title">📊 Efekty</div>
           <div className="ced-row">
             <label className="ced-label" style={{flex:1}}>❄ Snow
               <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
@@ -344,18 +324,14 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
-
       {!isCompanionLike && !isItem && (
         <div className="ced-section-hint">Typ <strong>{draft.type}</strong> — statystyki TODO</div>
       )}
-
       <div className="ced-section-title">📝 Opis <span className="ced-required-star">*</span></div>
       <textarea className="ced-input ced-textarea" rows={3} value={draft.desc} placeholder="Opis działania karty..." onChange={e => onChange({desc:e.target.value})} />
-
       <label className="ced-label" style={{marginTop:8}}>Emoji (fallback)
         <input className="ced-input" maxLength={2} value={draft.icon} onChange={e => onChange({icon:e.target.value})} />
       </label>
-
       <div className="ced-section-title">🖼 Grafika <span className="ced-optional">(opcjonalna)</span></div>
       <div className={`ced-img-drop ${draft.imgSrc?'ced-img-drop--has-img':''}`}
         onDragOver={e => e.preventDefault()}
