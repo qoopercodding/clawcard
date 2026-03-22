@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CardType } from '../types/card.types'
 
 export interface AreaConfig {

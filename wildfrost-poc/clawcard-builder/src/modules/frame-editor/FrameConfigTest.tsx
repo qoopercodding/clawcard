@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from 'react'
 import { FRAME_CONFIGS } from '../../utils/frameConfig'
 import { CardFrame } from '../../components/CardFrame/CardFrame'

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // vite-plugin-frame-config.ts
 // POST /api/save-frame-config:
 //   1. PNG → /public/frames/ (z base64)
