@@ -1,5 +1,6 @@
 // @ts-nocheck
 import type { CardType } from '../types/card.types'
+const BASE = import.meta.env.BASE_URL
 
 export interface AreaConfig {
   left:   number
@@ -29,7 +30,7 @@ export const CARD_SIZES = {
 export type CardSizeKey = keyof typeof CARD_SIZES
 
 const COMPANION_CONFIG: FrameConfig = {
-  frameFile: '/frames/Companion Frame.png',
+  frameFile: `${BASE}frames/Companion Frame.png`,
   art:     { left: 14,   top: 10.5, width: 70.6, height: 44.4 },
   hp:      { left: 3.9,  top: 20.4, width: 12.7, height: 5.3  },
   atk:     { left: 81.3, top: 19.3, width: 9.6,  height: 5.1  },
@@ -39,7 +40,7 @@ const COMPANION_CONFIG: FrameConfig = {
 }
 
 const ITEM_WITH_ATTACK_CONFIG: FrameConfig = {
-  frameFile: '/frames/Item_with_attack.png',
+  frameFile: `${BASE}frames/Item_with_attack.png`,
   art:  { left: 10,  top: 6,  width: 78, height: 46 },
   atk:  { left: 79,  top: 8,  width: 16, height: 8  },
   name: { left: 15,  top: 54, width: 70, height: 7  },
@@ -47,14 +48,14 @@ const ITEM_WITH_ATTACK_CONFIG: FrameConfig = {
 }
 
 const ITEM_WITHOUT_ATTACK_CONFIG: FrameConfig = {
-  frameFile: '/frames/Item_without_attack.png',
+  frameFile: `${BASE}frames/Item_without_attack.png`,
   art:  { left: 10,  top: 6,  width: 78, height: 46 },
   name: { left: 15,  top: 54, width: 70, height: 7  },
   desc: { left: 12,  top: 63, width: 74, height: 28 },
 }
 
 const BOSS_CONFIG: FrameConfig = {
-  frameFile: '/frames/boss.png',
+  frameFile: `${BASE}frames/boss.png`,
   art:     { left: 22.3, top: 20.4, width: 55.9, height: 29.7 },
   hp:      { left: 9.3,  top: 25.6, width: 7.4,  height: 4.2  },
   atk:     { left: 80.3, top: 25.9, width: 5.8,  height: 4.2  },
@@ -71,7 +72,7 @@ const __TEST_DRY_RUN___CONFIG: FrameConfig = {
 }
 
 const TESTETS_CONFIG: FrameConfig = {
-  frameFile: '/frames/testetest.png',
+  frameFile: null,
   art:  { left: 28.4, top: 22.2, width: 43.7, height: 21.4 },
   hp:   { left: 14.6, top: 19.7, width: 9,    height: 6.5  },
   name: { left: 33.4, top: 43.4, width: 34.7, height: 5.7  },
@@ -80,7 +81,7 @@ const TESTETS_CONFIG: FrameConfig = {
 }
 
 const TEST2_CONFIG: FrameConfig = {
-  frameFile: '/frames/test2.png',
+  frameFile: `${BASE}frames/test2.png`,
   art:     { left: 28.4, top: 22.2, width: 43.7, height: 21.4 },
   hp:      { left: 14.6, top: 19.7, width: 9,    height: 6.5  },
   atk:     { left: 74.7, top: 18.7, width: 8,    height: 7.8  },
@@ -104,7 +105,7 @@ const __E2E_TEST___CONFIG: FrameConfig = {
 }
 
 const TEST3_CONFIG: FrameConfig = {
-  frameFile: '/frames/test2.png',
+  frameFile: `${BASE}frames/test2.png`,
   art:  { left: 26,   top: 50.2, width: 47.7, height: 24.3 },
   hp:   { left: 50,   top: 76.8, width: 3,    height: 8.5  },
   atk:  { left: 18,   top: 20.1, width: 6.5,  height: 7.5  },
@@ -114,7 +115,7 @@ const TEST3_CONFIG: FrameConfig = {
 
 // Transformer — używa ramki Companion (HP/ATK/Counter widoczne)
 const TRANSFORMER_CONFIG: FrameConfig = {
-  frameFile: '/frames/Companion Frame.png',
+  frameFile: `${BASE}frames/Companion Frame.png`,
   art:     { left: 14,   top: 10.5, width: 70.6, height: 44.4 },
   hp:      { left: 3.9,  top: 20.4, width: 12.7, height: 5.3  },
   atk:     { left: 81.3, top: 19.3, width: 9.6,  height: 5.1  },

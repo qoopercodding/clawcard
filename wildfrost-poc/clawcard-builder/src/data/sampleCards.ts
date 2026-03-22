@@ -1,7 +1,8 @@
 import type { CompanionCard, ItemCard, TransformerCard, AnyCard } from '../types/card.types'
 
-const IMG = (name: string) => `/cards/${name}.png`
-const SVG = (name: string) => `/cards/${name}.svg`
+const BASE = import.meta.env.BASE_URL
+const IMG = (name: string) => `${BASE}cards/${name}.png`
+const SVG = (name: string) => `${BASE}cards/${name}.svg`
 
 export const NAMANDI: CompanionCard = {
   id: 'namandi', name: 'Namandi Shellandi', type: 'companion', tribe: 'shelly',
