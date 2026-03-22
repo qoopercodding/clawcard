@@ -1,0 +1,8 @@
+*.import
+*.uid
+.godot/
+addons/
+*.png
+*.wav
+*.ogg
+*.ttf

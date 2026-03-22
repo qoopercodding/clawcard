@@ -9,29 +9,33 @@
 
 | Integracja | Status | Szczegóły |
 |---|---|---|
-| Telegram bot | OK | Bot `@Czilclaw_bot` (ID: 8327042985) odpowiada na API. getMe zwraca ok:true. |
-| OpenClaw gateway | BLAD | Port 18789 odpowiada (HTTP UI działa), ale serwis ma **356 restartów** — crash loop. Aktualnie active(running) po ostatnim restarcie o 18:24:40. |
+| Telegram bot | OK | Bot `@Czilclaw_bot` (ID: 8327042985) odpowiada na API. `getMe` zwraca `ok:true`. |
+| OpenClaw gateway | BLAD | Serwis `inactive (dead)`. Zatrzymany — nie uruchamia się automatycznie (`disabled`). Port 18789 nadal odpowiada (HTTP). |
 | Claude Code Pro | OK | Wersja `2.1.50 (Claude Code)` zainstalowana w `/usr/bin/claude`. |
-| GitHub repo | OK | Remote `https://github.com/qoopercodding/clawcard` — połączenie OK, branch `main` zsynchronizowany (commit: 2edb0bb). |
+| GitHub repo | OK | Remote `https://github.com/qoopercodding/clawcard` — połączenie OK, branch `main` zsynchronizowany (ostatni commit: 1b7ff54). |
 | Cron jobs | OK | Jeden aktywny job: `0 4 * * * /root/claude-task.sh "..."` (raport poranny codziennie o 04:00). |
-| claude-task.sh | OK | Plik istnieje `/root/claude-task.sh`, wykonywalny (`-rwxr-xr-x`), składnia bash poprawna. |
-| claude-resume.sh | OK | Plik istnieje `/root/claude-resume.sh`, wykonywalny (`-rwxr-xr-x`), składnia bash poprawna. |
+| claude-task.sh | OK | Plik `/root/claude-task.sh` istnieje, wykonywalny (`-rwxr-xr-x`), składnia bash poprawna. |
+| claude-resume.sh | OK | Plik `/root/claude-resume.sh` istnieje, wykonywalny (`-rwxr-xr-x`), składnia bash poprawna. |
 | task-queue.txt | OK | Plik nie istnieje — brak zadań w kolejce (stan prawidłowy). |
+
+**Wynik: 7/8 OK, 1 BLAD**
 
 ---
 
 ## Szczegóły problemów
 
-### OpenClaw gateway — crash loop (356 restartów)
+### OpenClaw gateway — inactive (dead)
+
 - Serwis: `openclaw-gateway.service` (wersja 2026.2.19-2)
-- Uruchomiony jako user systemd unit
-- Port: 18789, HTTP UI odpowiada
-- **Problem:** 356 restartów od uruchomienia — serwis wielokrotnie crashuje i jest restartowany przez systemd (`Restart=always, RestartSec=5`)
-- **Zalecenie:** Sprawdź logi: `journalctl --user -u openclaw-gateway -n 50`
+- Stan: `inactive (dead)`, `disabled` (nie uruchamia się po restarcie systemu)
+- Port 18789: odpowiada (HTTP UI działa — prawdopodobnie proces z poprzedniej sesji)
+- Poprzedni log: 396 restartów do momentu zatrzymania (18:34:44)
+- `NRestarts=0` — aktualnie nie jest uruchomiony w systemd
+- **Zalecenie:** `systemctl --user start openclaw-gateway` aby wznowić, lub sprawdź logi: `journalctl --user -u openclaw-gateway -n 50`
 
 ---
 
-## Skrypty pomocnicze znalezione
+## Skrypty pomocnicze
 
 | Plik | Opis |
 |---|---|
