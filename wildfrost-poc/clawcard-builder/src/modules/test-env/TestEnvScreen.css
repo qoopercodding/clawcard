@@ -1,0 +1,321 @@
+/* TestEnvScreen.css */
+
+.test-env {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  height: calc(100vh - 76px);
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.test-env__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-right: 1px solid rgba(255,230,184,0.1);
+  overflow-y: auto;
+  background: rgba(10,5,2,0.4);
+}
+
+.test-env__header h3 {
+  margin: 0 0 4px;
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.test-env__subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Filtry */
+.test-env__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.test-env__filter {
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,230,184,0.15);
+  background: rgba(30,15,5,0.5);
+  color: #9ca3af;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.test-env__filter:hover { color: #d8b180; border-color: rgba(255,214,150,0.3); }
+
+.test-env__filter--active {
+  border-color: #fbbf24;
+  background: rgba(80,45,3,0.7);
+  color: #fef3c7;
+  font-weight: 600;
+}
+
+/* Siatka kart */
+.test-env__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.test-env__card-slot {
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.1s;
+  border: 2px solid transparent;
+}
+
+.test-env__card-slot:hover { transform: translateY(-3px); }
+
+.test-env__card-slot--selected {
+  border-color: #fbbf24;
+  box-shadow: 0 0 12px rgba(251,191,36,0.3);
+}
+
+.test-env__check {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fbbf24;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+
+/* Akcje */
+.test-env__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255,230,184,0.1);
+}
+
+.test-env__selected-count {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.test-env__bongo-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(30,10,50,0.8);
+  border: 1px solid rgba(167,139,250,0.4);
+  color: #a78bfa;
+  font-size: 0.68rem;
+}
+
+.test-env__run-btn {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(134,239,172,0.4);
+  background: rgba(5,30,15,0.7);
+  color: #86efac;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.test-env__run-btn:hover:not(:disabled) {
+  border-color: #86efac;
+  background: rgba(10,50,25,0.9);
+}
+
+.test-env__run-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.test-env__clear-btn {
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(248,113,113,0.3);
+  background: transparent;
+  color: #f87171;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.test-env__clear-btn:hover { background: rgba(40,5,5,0.5); }
+
+/* ── Main — wyniki ── */
+.test-env__results {
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Empty */
+.test-env__empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #4b5563;
+}
+
+.test-env__empty-icon { font-size: 3rem; }
+.test-env__empty-title { font-size: 1rem; color: #6b7280; }
+.test-env__empty-hint { font-size: 0.78rem; color: #4b5563; text-align: center; max-width: 280px; }
+
+/* Summary */
+.test-env__summary h3 {
+  margin: 0 0 12px;
+  color: #d8b180;
+  font-size: 0.9rem;
+}
+
+.test-env__run-cards {
+  display: flex;
+  gap: 12px;
+}
+
+.test-env__run-card {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.test-env__run-card--win {
+  border-color: rgba(134,239,172,0.4);
+  background: rgba(5,30,15,0.6);
+}
+
+.test-env__run-card--lose {
+  border-color: rgba(248,113,113,0.4);
+  background: rgba(40,5,5,0.6);
+}
+
+.test-env__run-card--active { box-shadow: 0 0 20px rgba(251,191,36,0.15); }
+.test-env__run-card--active.test-env__run-card--win { border-color: #86efac; }
+.test-env__run-card--active.test-env__run-card--lose { border-color: #f87171; }
+
+.test-env__run-outcome {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.test-env__run-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  margin-bottom: 8px;
+}
+
+.test-env__run-cards-used {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.test-env__usage-badge {
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.72rem;
+  color: #d8b180;
+}
+
+.test-env__run-hint {
+  font-size: 0.68rem;
+  color: #4b5563;
+}
+
+/* Log */
+.test-env__log {
+  border-radius: 10px;
+  border: 1px solid rgba(255,230,184,0.1);
+  background: rgba(5,5,5,0.8);
+  overflow: hidden;
+}
+
+.test-env__log-title {
+  padding: 8px 14px;
+  background: rgba(255,230,184,0.05);
+  border-bottom: 1px solid rgba(255,230,184,0.1);
+  font-size: 0.78rem;
+  color: #d8b180;
+}
+
+.test-env__log-content {
+  padding: 12px 14px;
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  overflow-x: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Balance */
+.test-env__balance {
+  border-radius: 10px;
+  border: 1px solid rgba(251,191,36,0.2);
+  background: rgba(30,20,3,0.5);
+  padding: 14px;
+}
+
+.test-env__balance-title {
+  font-size: 0.78rem;
+  color: #fbbf24;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.test-env__balance-content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.78rem;
+}
+
+.test-env__balance-row {
+  display: flex;
+  justify-content: space-between;
+  color: #9ca3af;
+}
+
+.test-env__ok { color: #86efac; }
+.test-env__warn { color: #fbbf24; }
+.test-env__fail { color: #f87171; }
+.test-env__bongo { color: #a78bfa; font-weight: 600; }
+
+.test-env__transform-note {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(30,10,50,0.6);
+  border: 1px solid rgba(167,139,250,0.3);
+  color: #a78bfa;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}

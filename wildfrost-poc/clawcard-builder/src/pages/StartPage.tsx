@@ -5,6 +5,7 @@ export type AppView =
   | 'card-editor'
   | 'frame-editor'
   | 'frame-test'
+  | 'test-env'
   | 'game'
   | 'dev-game'
 
@@ -26,6 +27,11 @@ const START_OPTIONS: StartOption[] = [
   {
     id: 'battle', emoji: '⚔️', title: 'Battle Demo', subtitle: 'Grywalne demo',
     description: 'Pełna walka: Snow, Shield, Teeth, Poison, countery, 5 wrogów.',
+    badge: 'NOWE', highlight: true,
+  },
+  {
+    id: 'test-env', emoji: '🎮', title: 'Test Environment', subtitle: 'Symulacja runów',
+    description: 'Wybierz karty do ręki → uruchom 2 runy → sprawdź balance report.',
     badge: 'NOWE', highlight: true,
   },
   {

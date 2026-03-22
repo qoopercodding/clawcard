@@ -6,6 +6,7 @@ import { CardEditorScreen } from './modules/card-editor/CardEditorScreen'
 import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
 import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
+import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
 import { GameScreenPlaceholder } from './pages/GameScreenPlaceholder'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -21,9 +22,9 @@ function App() {
       case 'battle':       return <BattleDemoScreen />
       case 'gallery':      return <CardBuilderScreen />
       case 'card-editor':  return <CardEditorScreen />
-      // ── TASK 2: Frame Editor dostaje onNavigate ──
       case 'frame-editor': return <FrameEditorScreen onNavigate={setView} />
       case 'frame-test':   return <FrameConfigTest />
+      case 'test-env':     return <TestEnvScreen />
       case 'game':         return <GameScreenPlaceholder />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreenPlaceholder devMode /></>)
@@ -54,6 +55,7 @@ const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'card-editor': '✏️ Card Editor',
   'frame-editor':'🗺 Frame Editor',
   'frame-test':  '🧪 Frame Config Test',
+  'test-env':    '🧪 Test Environment',
   game:          'Game Screen',
   'dev-game':    'Dev Game',
 }
