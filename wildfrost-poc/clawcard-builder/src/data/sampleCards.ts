@@ -1,6 +1,7 @@
-import type { CompanionCard, ItemCard, AnyCard } from '../types/card.types'
+import type { CompanionCard, ItemCard, TransformerCard, AnyCard } from '../types/card.types'
 
 const IMG = (name: string) => `/cards/${name}.png`
+const SVG = (name: string) => `/cards/${name}.svg`
 
 export const NAMANDI: CompanionCard = {
   id: 'namandi', name: 'Namandi Shellandi', type: 'companion', tribe: 'shelly',
@@ -94,13 +95,74 @@ export const BERRY_BLADE: ItemCard = {
   createdAt: 0, effect: { damage: 4, heal: 4 }, target: 'enemy', consume: false,
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// BONGO TRANSFORMERZY — nowe karty z custom mechaniką
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * BONGO PRIME — Transformer Companion
+ * Mechanika: TRANSFORM — gdy HP spadnie poniżej 50%,
+ * w kolejnym triggerze ATK zmienia się na transformedAttack (×2)
+ * i counter resetuje do 1 (atak natychmiastowy).
+ * Wizualnie: świecące niebieskie core, mechanical gorilla warrior.
+ */
+export const BONGO_PRIME: TransformerCard = {
+  id: 'bongo_prime',
+  name: 'Bongo Prime',
+  type: 'transformer',
+  tribe: 'transformers',
+  imageUrl: SVG('Bongo_Prime'),
+  imageFallback: '🤖',
+  description: 'Transform gdy HP < 50%: ATK ×2, Counter reset do 1.',
+  createdAt: 0,
+  hp: 10,
+  attack: 3,
+  counter: 4,
+  abilities: [
+    {
+      id: 'transform',
+      label: '⚡ Transform',
+      description: 'When HP drops below 50%, ATK doubles and Counter resets to 1',
+      value: 2,
+    }
+  ],
+  transformThreshold: 0.5,
+  transformedAttack: 6,
+  transformed: false,
+}
+
+/**
+ * BONGO CANNON — Transformer Item (z atakiem)
+ * Mechanika: OVERHEAT — każde zagranie +1 ATK ale +1 Counter (nagrzewanie).
+ * Przy Counter ≥ 7 wybucha: 12 dmg do wszystkich (ally + enemy), Counter reset.
+ * Ryzykowna karta — duży damage ale może się zwrócić przeciwko tobie.
+ */
+export const BONGO_CANNON: ItemCard = {
+  id: 'bongo_cannon',
+  name: 'Bongo Cannon',
+  type: 'item_with_attack',
+  tribe: 'transformers',
+  imageUrl: SVG('Bongo_Cannon'),
+  imageFallback: '🔫',
+  description: 'Overheat: każde użycie +1 ATK +1 Counter. Przy Counter ≥ 7: 12 dmg do wszystkich.',
+  createdAt: 0,
+  effect: { damage: 5, overburn: 1 },
+  target: 'enemy',
+  consume: false,
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const SAMPLE_CARDS: Record<string, AnyCard> = {
   namandi: NAMANDI, berry_sis: BERRY_SIS, foxee: FOXEE,
   wallop: WALLOP, snoof: SNOOF, sneezle: SNEEZLE, tusk: TUSK,
   dregg: DREGG, woodhead: WOODHEAD,
   sword: SWORD, snowball: SNOWBALL, bonesaw: BONESAW,
   healberry: HEALBERRY, berry_blade: BERRY_BLADE,
+  // Bongo Transformerzy
+  bongo_prime: BONGO_PRIME,
+  bongo_cannon: BONGO_CANNON,
 }
 
 export const STARTER_DECK = ['sword','sword','sword','snowball','snowball','bonesaw','healberry','healberry']
-export const REWARD_POOL  = ['foxee','wallop','snoof','sneezle','tusk','berry_blade','snowball','healberry']
+export const REWARD_POOL  = ['foxee','wallop','snoof','sneezle','tusk','berry_blade','snowball','healberry','bongo_prime','bongo_cannon']

@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Narzędzia zewnętrzne — nie należą do repo
+Claude-Code-Usage-Monitor/

@@ -6,6 +6,7 @@ export type CardType =
   | 'shade'
   | 'charm'
   | 'boss'
+  | 'transformer'
   | 'testets'
   | 'test2'
 
@@ -13,6 +14,7 @@ export type TribeType =
   | 'snowdwellers'
   | 'shademancers'
   | 'clunkmasters'
+  | 'transformers'
   | 'none'
 
 export type Keyword =
@@ -23,6 +25,8 @@ export type Keyword =
   | 'bom'
   | 'overburn'
   | 'ink'
+  | 'transform'
+  | 'overheat'
 
 export interface CardBase {
   id: string
@@ -110,6 +114,23 @@ export interface BossCard extends CardBase {
   abilities: Ability[]
 }
 
+/**
+ * Transformer — specjalny typ Bongo Transformerów
+ * Mechanika Transform: gdy HP < 50% zmienia formę (ATK ×2, counter reset do 1)
+ * transformThreshold: próg HP (domyślnie 0.5 = 50%)
+ * transformedAttack: ATK po transformacji
+ */
+export interface TransformerCard extends CardBase {
+  type: 'transformer'
+  hp: number
+  attack: number
+  counter: number
+  abilities: Ability[]
+  transformThreshold: number   // 0.0 - 1.0, np. 0.5 = 50% HP
+  transformedAttack: number    // ATK po transformacji
+  transformed: boolean         // czy już w trybie transformed
+}
+
 /** Testets — typ testowy */
 export interface TestetsCard extends CardBase {
   type: 'testets'
@@ -128,7 +149,6 @@ export interface Test2Card extends CardBase {
   abilities: Ability[]
 }
 
-
 /** Test3 — dodany przez Frame Editor */
 export interface Test3Card extends CardBase {
   type: 'test3'
@@ -145,7 +165,7 @@ export type AnyCard =
   | ShadeCard
   | CharmCard
   | BossCard
+  | TransformerCard
   | TestetsCard
   | Test2Card
-
   | Test3Card
