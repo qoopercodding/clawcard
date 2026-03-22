@@ -188,7 +188,7 @@ Karty mają historię — immersja.
 | PNG sprity Bongo | 🟡 | Doładować fal.ai $10, odpalić gen_bongo.py |
 | Ramki clunker/shade/charm | 🟡 | Frame Editor |
 | Auth Builder Tool | 🟢 | htpasswd nginx |
-| BUG-003 OpenClaw | 🟢 | Gateway nie startuje po restarcie VMki |
+| ~~BUG-003 OpenClaw~~ | ✅ FIXED | Przeniesiony z user-level na system-level systemd. `systemctl status openclaw-gateway` działa bez --user. |
 | Session-stop hook | 🟢 | Istnieje ale pusty |
 
 ---
