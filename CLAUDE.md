@@ -1,79 +1,137 @@
-# ClawCard - Instrukcja dla Agenta
+# ClawCard — Master Configuration dla Claude Code
 
 ## Projekt
-Gra karciana roguelike inspirowana mechanikami deckbuilding games. Silnik: Godot 4, język: GDScript.
+Roguelike deckbuilder inspirowany Wildfrost. Silnik: Godot 4.6, język: GDScript.
+Builder Tool: React/Vite/TS w wildfrost-poc/clawcard-builder/ (port 5173).
+Repo: https://github.com/qoopercodding/clawcard
 
-## Zasady pracy
-- Zawsze czytaj docs/SESSION_STATE.md przed rozpoczęciem pracy
-- Po każdym zadaniu aktualizuj docs/SESSION_STATE.md
-- Każda zmiana = commit z opisem (feat/fix/docs/checkpoint)
-- Pushuj do GitHub po każdym commicie
-- NIE modyfikuj plików Godot bezpośrednio - tylko kod w src/
+---
+
+## ZANIM ZACZNIESZ — obowiązkowe
+
+1. Przeczytaj `docs/SESSION_STATE.md` — aktualny stan projektu
+2. Przeczytaj `docs/LESSONS.md` — błędy z poprzednich sesji których NIE powtarzać
+3. Sprawdź `docs/TASKS.md` — co jest do zrobienia
+4. Jeśli pracujesz nad Godot: użyj MCP (`godot-mcp:editor get_state`) do weryfikacji
+
+---
 
 ## Struktura repo
-- src/cards/ - definicje kart w GDScript
-- src/mechanics/ - logika mechanik gry
-- src/enemies/ - definicje wrogów
-- docs/SESSION_STATE.md - aktualny stan pracy
-- docs/TASK_LOG.md - historia zadań
-- docs/TASKS.md - lista zadań do zrobienia
-- docs/LESSONS.md - wnioski i ulepszenia agenta
-- docs/CARDS_REFERENCE.md - dokumentacja kart
 
-## Zarządzanie tokenami
-- Przy 80% limitu tokenów: zapisz stan i zrób commit z "checkpoint:"
-- Format checkpoint: "checkpoint: [co zrobiono] | następny krok: [co zostało]"
-
----
-
-## Workflow Orchestration
-
-### 1. Plan przed działaniem
-- Dla każdego nietrywialnego zadania (3+ kroki lub decyzje architektoniczne): napisz plan do docs/TASKS.md przed implementacją
-- Jeśli coś idzie nie tak — STOP, przeplanuj, nie pchaj dalej na ślepo
-- Szczegółowe specyfikacje z góry redukują błędy
-
-### 2. Strategia subagentów
-- Offloaduj research, eksplorację i analizę równoległą do subagentów
-- Dla złożonych problemów — użyj więcej mocy obliczeniowej przez subagenty
-- Jeden subagent = jedno skoncentrowane zadanie
-
-### 3. Pętla samodoskonalenia
-- Po każdej korekcie od użytkownika: zaktualizuj docs/LESSONS.md z wzorcem błędu
-- Zapisuj reguły które zapobiegną temu samemu błędowi w przyszłości
-- Czytaj LESSONS.md na starcie sesji dla aktywnego projektu
-
-### 4. Weryfikacja przed ukończeniem
-- Nigdy nie oznaczaj zadania jako ukończone bez udowodnienia że działa
-- Porównuj zachowanie przed i po zmianach
-- Pytaj siebie: "Czy senior developer zatwierdziłby to?"
-- Uruchamiaj testy, sprawdzaj logi, demonstruj poprawność
-
-### 5. Elegancja (wyważona)
-- Dla nietrywialnych zmian: zatrzymaj się i zapytaj "czy jest lepszy sposób?"
-- Jeśli fix wygląda hacky: "Wiedząc to co wiem, zaimplementuj eleganckie rozwiązanie"
-- Pomiń to dla prostych, oczywistych poprawek — nie over-engineeruj
-
-### 6. Autonomiczne naprawianie bugów
-- Gdy dostaniesz raport o błędzie: napraw go. Bez proszenia o prowadzenie za rękę
-- Wskaż logi, błędy, testy — potem je rozwiąż
-- Zero przełączania kontekstu wymaganego od użytkownika
+```
+clawcard_base/
+├── src/
+│   ├── cards/          # GDScript — definicje kart
+│   ├── mechanics/      # GDScript — logika walki, countery, statusy
+│   ├── enemies/        # GDScript — AI wrogów
+│   └── tools/          # Python — scrapery, narzędzia
+├── wildfrost-poc/
+│   └── clawcard-builder/   # React Builder Tool (Frame/Card Editor, Galeria)
+├── docs/               # SESSION_STATE, TASKS, LESSONS, BUGS
+├── design/             # GDD, mechaniki, balans kart
+├── assets/             # PNG, audio
+└── .claude/
+    ├── agents/         # Definicje agentów
+    └── skills/         # Slash commands
+```
 
 ---
 
-## Zarządzanie zadaniami
+## Agenci i ich domeny
 
-1. **Plan:** Napisz plan do docs/TASKS.md z elementami do odznaczenia
-2. **Weryfikacja planu:** Zamelduj się przed rozpoczęciem implementacji
-3. **Śledzenie postępu:** Oznaczaj elementy jako ukończone na bieżąco
-4. **Wyjaśniaj zmiany:** Podsumowanie wysokiego poziomu na każdym kroku
-5. **Dokumentuj wyniki:** Dodaj sekcję review do docs/TASKS.md
-6. **Zapisuj wnioski:** Aktualizuj docs/LESSONS.md po korektach
+### Strategiczny (zamawiasz od nich plan, nie kod)
+- **game-director** — wizja gry, spójność, blokuje feature creep
+- **creative-director** — klimat, narracja, spójność artystyczna
+
+### Operacyjny (robią konkretną pracę)
+- **gameplay-lead** → **combat-designer** — mechaniki walki, countery, statusy
+- **gameplay-lead** → **balance-designer** — wartości kart, HP, ATK, krzywa trudności
+- **tech-lead** → **godot-specialist** — GDScript, sceny, architektura
+- **tech-lead** → **tools-programmer** — Builder Tool (React/Vite), Vite plugin, pipeline
+- **art-lead** → **technical-artist** — ramki kart PNG, UI, CardFrame renderer
+
+### QA i Produkcja
+- **qa-tester** — testy walki, edge case'y, raporty bugów
+- **devops-engineer** — VPS (Hetzner 46.62.231.237), nginx, deployment, git hooks
 
 ---
 
-## Zasady główne
+## Slash Commands (najważniejsze dla ClawCard)
 
-- **Prostota przede wszystkim:** Każda zmiana powinna być tak prosta jak to możliwe. Minimalny wpływ na kod.
-- **Bez lenistwa:** Znajdź przyczyny źródłowe. Bez tymczasowych fiksów. Standardy senior developera.
-- **Minimalny wpływ:** Zmiany powinny dotykać tylko tego co konieczne. Nie wprowadzaj nowych bugów.
+```
+/balance-check      — sprawdź balans kart (HP/ATK/Counter wartości)
+/design-review      — review systemu mechanik pod kątem fun i spójności
+/scope-check        — czy ta zmiana jest niezbędna dla MVP?
+/prototype          — zrób throwaway prototype w prototypes/ (NIE w src/)
+/brainstorm         — sesja ideacji z game-director i creative-director
+/team-combat        — cały team (combat + balance + godot) nad systemem walki
+/bug-report         — stwórz raport buga do docs/BUGS.md
+/sprint-plan        — zaplanuj sprint (co robimy do następnego spotkania)
+```
+
+---
+
+## Zasady pracy
+
+### Godot
+- Zawsze użyj `godot-mcp:editor get_state` przed zmianami
+- NIE edytuj .tscn ręcznie — przez MCP albo przez Godot editor
+- `content_scale_factor` w autoload/ui_scale.gd = 7.5 (UIScale dla 1920x1080)
+- Viewport: 1920x1080 (NIE 256x144)
+
+### Builder Tool
+- Vite plugin (`vite-plugin-frame-config.ts`) obsługuje POST /api/save-frame-config
+- Plugin zapisuje PNG + aktualizuje 3 pliki TS + git push
+- Restart `npm run dev` wymagany po zmianie pluginu
+- Port dev: 5173 (lokalnie) lub 80/nginx (VPS)
+
+### Git
+- Każda zmiana = commit: `feat/fix/docs/checkpoint: opis`
+- Push po każdym commicie
+- Przy 80% limitu tokenów: `checkpoint: [co zrobiono] | następny krok: [co zostało]`
+
+### Balans kart
+- Karty mają: HP (1-20), ATK (0-10), Counter (1-9)
+- Status effects: Snow ❄ (blokuje atak), Shield 🛡 (absorb dmg), Teeth 🦷 (dmg zwrotny), Poison ☠
+- Starter deck: 8 kart (3× Sword, 2× Snowball, 1× Bonesaw, 2× Healberry)
+
+---
+
+## VPS (Hetzner)
+- IP: 46.62.231.237
+- OS: Ubuntu 24.04
+- Builder Tool: nginx → /var/www/clawcard/wildfrost-poc/clawcard-builder/dist
+- ClawMetry: port 8900
+- Telegram bot: @Czilclaw_bot
+- Credentials: /root/clawcard/secrets/ (NIE w repo)
+
+---
+
+## Aktualny stan (2026-03)
+
+### ✅ Zrobione
+- Builder Tool (Frame Editor + Card Editor + Galeria) — pełny pipeline
+- Typy kart: companion, item_with_attack, item_without_attack, boss (+ testets, test2)
+- CardStore (React context) — userCards, pendingType handoff
+- Frame Editor → Card Editor handoff (pending_card_type)
+- Galeria: zakładki Wszystkie/Moje, dynamiczne filtry
+- Vite plugin: POST /api/save-frame-config → zapisuje PNG + TS + git push
+- Battle Demo: Snow, Shield, Teeth, Poison, 5 wrogów, counter ring
+
+### 🔴 Blokery
+- UIScale w Godot NIE zaimplementowany (content_scale_factor = 7.5 czeka)
+- Manualne edycje .tscn z x7.5 multiplier w ~15 scenach do rewertu
+
+### 📋 Następne kroki (priorytet)
+1. UIScale.gd autoload w Godot (content_scale_factor)
+2. Core battle loop w Godot (3 companion karty vs 3 wrogów, counter tick, win/lose)
+3. Reward screen po walce (wybierz 1 z 3 kart)
+4. Deployment Builder Tool na VPS dla designerów
+
+---
+
+## Pętla samodoskonalenia
+
+Po każdej korekcie od użytkownika → zaktualizuj `docs/LESSONS.md`.
+Po każdym zakończonym zadaniu → zaktualizuj `docs/SESSION_STATE.md`.
+Przed każdą sesją → przeczytaj oba pliki.
