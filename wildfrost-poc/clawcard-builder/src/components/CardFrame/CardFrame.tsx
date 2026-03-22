@@ -1,3 +1,4 @@
+import type React from 'react'
 import { useDevInspector } from '../debug/DevInspector'
 import { FRAME_CONFIGS } from '../../utils/frameConfig'
 import type { AnyCard } from '../../types/card.types'
@@ -12,7 +13,6 @@ interface CardFrameProps {
 
 export function CardFrame({ card, width = 200, height = 294, inspectable = true }: CardFrameProps) {
   const { inspect } = useDevInspector()
-  // Fallback na companion jeśli typ nie ma własnego config
   const cfg = FRAME_CONFIGS[card.type] ?? FRAME_CONFIGS.companion
   const stats = getCardStats(card)
   const px = (pct: number, dim: number) => `${(pct / 100 * dim).toFixed(1)}px`
@@ -24,10 +24,8 @@ export function CardFrame({ card, width = 200, height = 294, inspectable = true 
       onClick={() => inspectable && inspect(card, 'CardFrame')}
       title={inspectable ? 'Kliknij → Inspector' : undefined}
     >
-      {/* 1. Białe tło */}
       <div style={{ position: 'absolute', inset: 0, background: '#ffffff', borderRadius: 8 }} />
 
-      {/* 2. Art */}
       <div style={{
         position: 'absolute',
         left: px(cfg.art.left, width), top: px(cfg.art.top, height),
@@ -57,7 +55,6 @@ export function CardFrame({ card, width = 200, height = 294, inspectable = true 
         </div>
       </div>
 
-      {/* 3. PNG ramka */}
       {cfg.frameFile && (
         <img src={cfg.frameFile} alt="" aria-hidden style={{
           position: 'absolute', inset: 0,
@@ -66,7 +63,6 @@ export function CardFrame({ card, width = 200, height = 294, inspectable = true 
         }} />
       )}
 
-      {/* 4. Statystyki */}
       {cfg.hp && stats.hp !== undefined && (
         <div className="cf-stat" style={area(cfg.hp, width, height)}>
           <span className="cf-stat__val">{stats.hp}</span>
@@ -114,20 +110,15 @@ function area(a: { left: number; top: number; width: number; height: number }, W
 
 interface CardStats { hp?: number; atk?: number; counter?: number; scrap?: number }
 
-/**
- * Duck typing — działa dla każdego typu karty bez switch/case.
- * Nowe typy dodane przez Frame Editor działają automatycznie.
- */
 function getCardStats(card: AnyCard): CardStats {
-  const c = card as Record<string, unknown>
+  // cast przez unknown — bezpieczny duck typing dla wszystkich typów kart
+  const c = card as unknown as Record<string, unknown>
 
-  // Item — specjalny case
   if (card.type === 'item_with_attack' || card.type === 'item_without_attack') {
     const effect = c['effect'] as Record<string, unknown> | undefined
     return { atk: effect?.['damage'] as number | undefined }
   }
 
-  // Clunker — ma scrap zamiast hp
   if (card.type === 'clunker') {
     return {
       scrap:   c['scrap']   as number | undefined,
@@ -136,7 +127,6 @@ function getCardStats(card: AnyCard): CardStats {
     }
   }
 
-  // Wszystkie pozostałe typy (companion, boss, shade, testets, test2, i wszystkie przyszłe)
   return {
     hp:      c['hp']      as number | undefined,
     atk:     c['attack']  as number | undefined,

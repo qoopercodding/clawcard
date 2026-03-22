@@ -16,13 +16,17 @@ function App() {
   const [view, setView] = useState<AppView>('start')
   const { toggle: toggleInspector, isOpen: inspectorOpen } = useDevInspector()
 
+  const handleNavigate = (v: string) => {
+    setView(v as AppView)
+  }
+
   function renderView() {
     switch (view) {
       case 'start':        return <StartPage onSelectView={setView} />
       case 'battle':       return <BattleDemoScreen />
       case 'gallery':      return <CardBuilderScreen />
       case 'card-editor':  return <CardEditorScreen />
-      case 'frame-editor': return <FrameEditorScreen onNavigate={setView} />
+      case 'frame-editor': return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':   return <FrameConfigTest />
       case 'test-env':     return <TestEnvScreen />
       case 'game':         return <GameScreenPlaceholder />
@@ -55,7 +59,7 @@ const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'card-editor': '✏️ Card Editor',
   'frame-editor':'🗺 Frame Editor',
   'frame-test':  '🧪 Frame Config Test',
-  'test-env':    '🧪 Test Environment',
+  'test-env':    '🎮 Test Environment',
   game:          'Game Screen',
   'dev-game':    'Dev Game',
 }
