@@ -56,6 +56,11 @@ const START_OPTIONS: StartOption[] = [
     id: 'dev-game', emoji: '🔬', title: 'Dev Game', subtitle: 'Hover inspector',
     description: 'Game screen z aktywnym Hover Inspector.',
   },
+  {
+    id: 'map-editor', emoji: '🗺️', title: 'Map Editor', subtitle: 'Edytor mapy',
+    description: 'Circular map z 4 arcami mitologii, drag & drop nodow.',
+    badge: 'NOWE', highlight: true,
+  },
 ]
 
 export function StartPage({ onSelectView }: StartPageProps) {
