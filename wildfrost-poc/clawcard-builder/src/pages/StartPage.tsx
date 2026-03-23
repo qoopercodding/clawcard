@@ -6,6 +6,7 @@ export type AppView =
   | 'frame-editor'
   | 'frame-test'
   | 'test-env'
+  | 'map-editor'
   | 'game'
   | 'dev-game'
 

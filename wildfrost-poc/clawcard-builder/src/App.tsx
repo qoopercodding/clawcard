@@ -7,6 +7,7 @@ import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
 import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
+import MapEditorScreen from './modules/map-editor/MapEditorScreen'
 import { GameScreenPlaceholder } from './pages/GameScreenPlaceholder'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -28,7 +29,8 @@ function App() {
       case 'card-editor':  return <CardEditorScreen />
       case 'frame-editor': return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':   return <FrameConfigTest />
-      case 'test-env':     return <TestEnvScreen />
+      case 'test-env': return <TestEnvScreen />
+      case 'map-editor': return <MapEditorScreen />
       case 'game':         return <GameScreenPlaceholder />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreenPlaceholder devMode /></>)
@@ -61,7 +63,8 @@ const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'frame-test':  '🧪 Frame Config Test',
   'test-env':    '🎮 Test Environment',
   game:          'Game Screen',
-  'dev-game':    'Dev Game',
+  'dev-game':   'Dev Game',
+  'map-editor': 'Map Editor',
 }
 
 export default App
