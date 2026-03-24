@@ -7,7 +7,8 @@ import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
 import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
-import { GameScreenPlaceholder } from './pages/GameScreenPlaceholder'
+import MapEditorScreen from './modules/map-editor/MapEditorScreen'
+import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
 import './App.css'
@@ -29,9 +30,10 @@ function App() {
       case 'frame-editor': return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':   return <FrameConfigTest />
       case 'test-env':     return <TestEnvScreen />
-      case 'game':         return <GameScreenPlaceholder />
+      case 'map-editor':   return <MapEditorScreen />
+      case 'game':         return <GameScreen />
       case 'dev-game':
-        return (<><HoverTooltip /><GameScreenPlaceholder devMode /></>)
+        return (<><HoverTooltip /><GameScreen /></>)
       default: return <StartPage onSelectView={setView} />
     }
   }
@@ -60,7 +62,8 @@ const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'frame-editor':'🗺 Frame Editor',
   'frame-test':  '🧪 Frame Config Test',
   'test-env':    '🎮 Test Environment',
-  game:          'Game Screen',
+  'map-editor':  '🗺️ Map Editor',
+  game:          '🎮 Zagraj',
   'dev-game':    'Dev Game',
 }
 
