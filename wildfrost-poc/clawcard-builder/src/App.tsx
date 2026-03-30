@@ -6,6 +6,7 @@ import { CardEditorScreen } from './modules/card-editor/CardEditorScreen'
 import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
 import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
+import { GridBattleScreen } from './modules/battle-demo/GridBattleScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
 import { LastLanguageScreen } from './modules/last-language/LastLanguageScreen'
 import MapEditorScreen from './modules/map-editor/MapEditorScreen'
@@ -27,6 +28,7 @@ function App() {
       case 'start':          return <StartPage onSelectView={setView} />
       case 'last-language':  return <LastLanguageScreen />
       case 'battle':         return <BattleDemoScreen />
+      case 'grid-battle':    return <GridBattleScreen />
       case 'gallery':        return <CardBuilderScreen />
       case 'card-editor':    return <CardEditorScreen />
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
@@ -59,7 +61,8 @@ function App() {
 
 const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'last-language': '📖 Ostatni Język',
-  battle:          '⚔️ Battle Demo',
+  battle:          '🗡️ Battle Demo',
+  'grid-battle':   '⚔️ Grid Battle 3×2',
   gallery:         '🃏 Galeria kart',
   'card-editor':   '✏️ Card Editor',
   'frame-editor':  '🗺 Frame Editor',

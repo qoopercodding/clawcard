@@ -9,8 +9,6 @@ export interface AreaConfig {
   top:    number
   width:  number
   height: number
-  1test_companon: 1TEST_COMPANON_USER_CONFIG,
-  1testtt_basic_card: 1TESTTT_BASIC_CARD_USER_CONFIG,
 }
 export interface FrameConfig {
   frameFile: string | null
@@ -126,7 +124,7 @@ const TRANSFORMER_CONFIG: FrameConfig = {
   desc:    { left: 19.8, top: 61.2, width: 58.4, height: 23.9 },
 }
 
-const 1TEST_COMPANON_USER_CONFIG: FrameConfig = {
+const TEST_COMPANON_USER_CONFIG: FrameConfig = {
   frameFile: `${BASE}frames/Companion Frame.png`,
   name   : { left: 17.1, top: 53.3, width: 63.8, height: 7.2 },
   desc   : { left: 19.5, top: 61.3, width: 59.1, height: 23.9 },
@@ -137,7 +135,7 @@ const 1TEST_COMPANON_USER_CONFIG: FrameConfig = {
   frame  : { left: 0.8, top: 0.4, width: 98.7, height: 98.5 },
 }
 
-const 1TESTTT_BASIC_CARD_USER_CONFIG: FrameConfig = {
+const TESTTT_BASIC_CARD_USER_CONFIG: FrameConfig = {
   frameFile: `${BASE}frames/Item_without_atatck.png`,
   name   : { left: 20.5, top: 50.8, width: 60, height: 7.7 },
   desc   : { left: 23.3, top: 59.4, width: 54.7, height: 25.5 },

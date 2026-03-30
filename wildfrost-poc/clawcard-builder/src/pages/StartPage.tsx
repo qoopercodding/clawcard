@@ -2,6 +2,7 @@ export type AppView =
   | 'start'
   | 'last-language'
   | 'battle'
+  | 'grid-battle'
   | 'gallery'
   | 'card-editor'
   | 'frame-editor'
@@ -32,9 +33,13 @@ const START_OPTIONS: StartOption[] = [
     badge: 'NOWE', highlight: true,
   },
   {
-    id: 'battle', emoji: '⚔️', title: 'Battle Demo', subtitle: 'Grywalne demo',
-    description: 'Pełna walka: Snow, Shield, Teeth, Poison, countery, 5 wrogów.',
+    id: 'grid-battle', emoji: '⚔️', title: 'Grid Battle', subtitle: 'Siatka 3×2 vs 3×2',
+    description: 'Wildfrost-style walka na siatce. Countery, targetowanie, energy system, 4 fale wrogów.',
     badge: 'NOWE', highlight: true,
+  },
+  {
+    id: 'battle', emoji: '🗡️', title: 'Battle Demo', subtitle: '1v1 demo',
+    description: 'Klasyczna walka 1v1: Snow, Shield, Teeth, Poison, countery.',
   },
   {
     id: 'test-env', emoji: '🎮', title: 'Test Environment', subtitle: 'Symulacja runów',
