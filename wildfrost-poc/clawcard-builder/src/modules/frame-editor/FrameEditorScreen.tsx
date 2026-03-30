@@ -53,7 +53,8 @@ function generateFrameConfigEntry(typeName: string, frameFile: string | null, re
   return `const ${constName}: FrameConfig = {\n${frameFileLine}\n${fieldLines}\n}`
 }
 
-async function saveFrameConfigToGit(typeName: string, typeLabel: string, frameFile: string | null, result: MapperResult, isNew: boolean): Promise<void> {
+// typeLabel usunięty — nie był używany wewnątrz
+async function saveFrameConfigToGit(typeName: string, frameFile: string | null, result: MapperResult, isNew: boolean): Promise<void> {
   const REPO_PATH = 'wildfrost-poc/clawcard-builder/src/utils/frameConfig.ts'
   const res = await fetch(
     `https://api.github.com/repos/qoopercodding/clawcard/contents/${REPO_PATH}?ref=main`,
@@ -246,8 +247,7 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   }
 
   async function handleSaveToCode() {
-    const typeName  = mode === 'existing' ? existingType : newTypeName.trim()
-    const typeLabel = mode === 'new' ? (newTypeLabel.trim() || newTypeName.trim()) : existingType
+    const typeName = mode === 'existing' ? existingType : newTypeName.trim()
     if (!typeName) { setSaveStatus('error'); setSaveMsg('Wpisz nazwę typu'); return }
     if (!result.art && !result.frame) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej Frame lub Art Area'); return }
     localStorage.setItem(STORAGE_KEY(typeName), JSON.stringify(result))
@@ -255,7 +255,7 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     if (hasPAT) {
       setSaveStatus('saving'); setSaveMsg('Commitowanie do GitHub...')
       try {
-        await saveFrameConfigToGit(typeName, typeLabel, frameFile ? `/frames/${frameFile}` : null, result, mode === 'new')
+        await saveFrameConfigToGit(typeName, frameFile ? `/frames/${frameFile}` : null, result, mode === 'new')
         setSaveStatus('saved'); setSaveMsg(`✓ Typ '${typeName}' wcommitowany!`)
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err)
@@ -283,6 +283,9 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   const completedCount = activeSteps.filter(s => result[s.key]).length
   const typeName = mode === 'existing' ? existingType : newTypeName
   const currentStepDef = allSteps.find(s => s.key === activeStep)
+
+  // imgIsLocal używany w fe-drop display
+  void imgIsLocal
 
   return (
     <div className="frame-editor">
@@ -325,7 +328,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           <div className="fe-label" style={{marginBottom:6}}>Pola na tej ramce:</div>
 
           <div className="fe-fields-grid">
-            {/* Builtin */}
             {BUILTIN_STEPS.map(step => (
               <label key={step.key}
                 className={`fe-field-check ${enabledKeys.has(step.key)?'fe-field-check--on':''}`}
@@ -335,7 +337,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
               </label>
             ))}
 
-            {/* Custom pola jako checkboxy z X */}
             {allSteps.filter(s => s.custom).map(s => (
               <label key={s.key}
                 className={`fe-field-check ${enabledKeys.has(s.key)?'fe-field-check--on':''}`}
@@ -352,7 +353,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
             ))}
           </div>
 
-          {/* Input do dodawania nowego pola — na dole sekcji */}
           <div style={{marginTop:8, display:'flex', gap:5, alignItems:'center'}}>
             <input
               value={customFieldName}
@@ -381,12 +381,11 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           </div>
         </div>
 
-        {/* PNG */}
         <div className={`fe-drop ${imgSrc?'fe-drop--has-img':''}`}
           onDragOver={e => e.preventDefault()}
           onDrop={e => { e.preventDefault(); const f=e.dataTransfer.files[0]; if(f) loadFile(f) }}
           onClick={() => fileInputRef.current?.click()}>
-          {imgSrc ? (imgIsLocal ? `✓ ${frameFile} (lokalny)` : `✓ ${frameFile}`) : '📁 Wgraj PNG ramki'}
+          {imgSrc ? `✓ ${frameFile}` : '📁 Wgraj PNG ramki'}
           <input ref={fileInputRef} type="file" accept="image/*" style={{display:'none'}} onChange={e => { if(e.target.files?.[0]) loadFile(e.target.files[0]) }} />
         </div>
 

@@ -15,12 +15,14 @@ interface CardDraft {
   hp: number; atk: number; counter: number
   snow: number; heal: number; target: 'enemy' | 'ally'
   splash: boolean; desc: string; icon: string; imgSrc: string | null
+  customFields: Record<string, string>   // ← custom pola key:value
 }
 
 const DEFAULT_DRAFT: CardDraft = {
   id: '', name: '', type: 'companion', tribe: 'none',
   hp: 5, atk: 2, counter: 3, snow: 0, heal: 0,
   target: 'enemy', splash: false, desc: '', icon: '❓', imgSrc: null,
+  customFields: {},
 }
 
 const LIBRARY_KEY = 'ced_library'
@@ -51,6 +53,7 @@ function draftToCard(draft: CardDraft): AnyCard {
     imageUrl: draft.imgSrc?.startsWith('data:') ? null : draft.imgSrc,
     imageFallback: draft.icon || '❓',
     description: draft.desc, createdAt: Date.now(),
+    ...draft.customFields,   // ← custom pola trafiają do obiektu karty
   }
   if (draft.type === 'companion') {
     return { ...base, type: 'companion', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as CompanionCard
@@ -83,10 +86,7 @@ function draftToCard(draft: CardDraft): AnyCard {
   } as ItemCard
 }
 
-// ─── GITHUB COMMIT ───────────────────────────────────────────────────────────
-
 async function commitCardLibrary(library: Record<string, CardDraft>): Promise<void> {
-  // Serializuj bez imgSrc (base64 za duże do commita)
   const clean = Object.fromEntries(
     Object.entries(library).map(([k, v]) => [k, { ...v, imgSrc: v.imgSrc?.startsWith('data:') ? null : v.imgSrc }])
   )
@@ -116,8 +116,14 @@ export function CardEditorScreen() {
   }, [])
 
   useEffect(() => {
-    try { setLibrary(JSON.parse(localStorage.getItem(LIBRARY_KEY) || '{}')) }
-    catch { /* ignore */ }
+    try {
+      const raw = JSON.parse(localStorage.getItem(LIBRARY_KEY) || '{}')
+      // Migracja starych wpisów bez customFields
+      const migrated = Object.fromEntries(
+        Object.entries(raw).map(([k, v]) => [k, { customFields: {}, ...(v as CardDraft) }])
+      )
+      setLibrary(migrated)
+    } catch { /* ignore */ }
   }, [])
 
   const update = (patch: Partial<CardDraft>) => { setDraft(prev => ({ ...prev, ...patch })); setErrors([]) }
@@ -127,16 +133,12 @@ export function CardEditorScreen() {
     if (errs.length) { setErrors(errs); return }
     const id = draft.id || nameToId(draft.name)
     const newLib = { ...library, [id]: { ...draft, id } }
-
-    // 1. Zapisz do localStorage
     setLibrary(newLib)
     localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
     setErrors([])
 
-    // 2. Commituj do GitHub jeśli mamy PAT
     if (hasPAT) {
-      setSavedMsg('git')
-      setSavedNote('Commitowanie...')
+      setSavedMsg('git'); setSavedNote('Commitowanie...')
       try {
         await commitCardLibrary(newLib)
         setSavedNote(`✓ Karta '${draft.name}' zapisana i wcommitowana!`)
@@ -145,10 +147,8 @@ export function CardEditorScreen() {
         setSavedNote(`✓ Lokalnie OK. Git: ${msg}`)
       }
     } else {
-      setSavedMsg('local')
-      setSavedNote(`✓ Zapisano lokalnie (brak PAT)`)
+      setSavedMsg('local'); setSavedNote(`✓ Zapisano lokalnie (brak PAT)`)
     }
-
     setTimeout(() => { setSavedMsg('idle'); setSavedNote('') }, 4000)
   }
 
@@ -156,29 +156,21 @@ export function CardEditorScreen() {
     const errs = validateDraft(draft)
     if (errs.length) { setErrors(errs); return }
     const card = draftToCard(draft)
-    if (card.id === '__preview__') {
-      setErrors(['Wypełnij nazwę karty przed dodaniem do galerii']); return
-    }
-    addCard(card)
-    setAddedToGallery(true)
-    setErrors([])
+    if (card.id === '__preview__') { setErrors(['Wypełnij nazwę karty przed dodaniem do galerii']); return }
+    addCard(card); setAddedToGallery(true); setErrors([])
     setTimeout(() => setAddedToGallery(false), 2000)
   }
 
   function loadDraft(id: string) {
     const saved = library[id]
-    if (saved) { setDraft({ ...saved }); setEditingId(id); setErrors([]) }
+    if (saved) { setDraft({ customFields: {}, ...saved }); setEditingId(id); setErrors([]) }
   }
 
   async function deleteSaved(id: string) {
     const newLib = { ...library }; delete newLib[id]
-    setLibrary(newLib)
-    localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
+    setLibrary(newLib); localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
     if (editingId === id) { setDraft({ ...DEFAULT_DRAFT }); setEditingId(null) }
-    // Commituj usunięcie jeśli mamy PAT
-    if (hasPAT) {
-      try { await commitCardLibrary(newLib) } catch { /* nie blokuj UX */ }
-    }
+    if (hasPAT) { try { await commitCardLibrary(newLib) } catch { /* nie blokuj */ } }
   }
 
   function exportCard() {
@@ -191,7 +183,8 @@ export function CardEditorScreen() {
     const statsLine = COMPANION_LIKE_TYPES.includes(draft.type)
       ? `    hp:${draft.hp}, atk:${draft.atk}, counter:${draft.counter},`
       : [draft.atk>0?`atk:${draft.atk}`:'', draft.snow>0?`snow:${draft.snow}`:'', draft.heal>0?`heal:${draft.heal}`:'', `target:'${draft.target}'`, draft.splash?'splash:true':''].filter(Boolean).join(', ') + ','
-    const code = [`  ${id}: {`, `    id:'${id}', name:'${draft.name}', type:'${draft.type}',`, `    tribe:'${draft.tribe}',`, `    ${imgLine}`, statsLine, `    desc:'${draft.desc}',`, `  },`].join('\n')
+    const customLines = Object.entries(draft.customFields).map(([k, v]) => `    ${k}: '${v}',`).join('\n')
+    const code = [`  ${id}: {`, `    id:'${id}', name:'${draft.name}', type:'${draft.type}',`, `    tribe:'${draft.tribe}',`, `    ${imgLine}`, statsLine, `    desc:'${draft.desc}',`, customLines, `  },`].join('\n')
     const blob = new Blob([`// Wklej do CARDS{} w src/cards.js\n${code}\n`], { type: 'text/javascript' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a'); a.href = url; a.download = `card_${id}.js`
@@ -204,14 +197,12 @@ export function CardEditorScreen() {
 
   const saveLabel = savedMsg === 'git' && savedNote === 'Commitowanie...'
     ? '⏳ Commitowanie...'
-    : savedMsg !== 'idle'
-      ? savedNote
-      : hasPAT ? '💾 Zapisz + git commit' : '💾 Zapisz lokalnie'
+    : savedMsg !== 'idle' ? savedNote
+    : hasPAT ? '💾 Zapisz + git commit' : '💾 Zapisz lokalnie'
 
   return (
     <div className="card-editor">
       <div className="card-editor__form">
-        {/* PAT INPUT */}
         <div style={{marginBottom: 10}}>
           <GithubPATInput onTokenChange={setHasPAT} />
         </div>
@@ -297,6 +288,9 @@ const CARD_TYPES: { value: CardType; label: string }[] = [
 
 function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   const fileRef = useRef<HTMLInputElement>(null)
+  const [newFieldKey, setNewFieldKey] = useState('')
+  const [newFieldVal, setNewFieldVal] = useState('')
+
   const loadFile = (file: File) => {
     const r = new FileReader(); r.onload = e => onChange({imgSrc: e.target?.result as string}); r.readAsDataURL(file)
   }
@@ -306,9 +300,27 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   const isItemWithout    = draft.type === 'item_without_attack'
   const isItem           = isItemWithAttack || isItemWithout
 
+  function addCustomField() {
+    const key = newFieldKey.trim().toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'')
+    if (!key) return
+    onChange({ customFields: { ...draft.customFields, [key]: newFieldVal } })
+    setNewFieldKey(''); setNewFieldVal('')
+  }
+
+  function updateCustomField(key: string, val: string) {
+    onChange({ customFields: { ...draft.customFields, [key]: val } })
+  }
+
+  function removeCustomField(key: string) {
+    const next = { ...draft.customFields }
+    delete next[key]
+    onChange({ customFields: next })
+  }
+
   return (
     <div className="ced-form">
       {editingId && <div className="ced-editing-badge">✏ Edytujesz: {editingId}</div>}
+
       <div className="ced-section-title">📇 Identyfikacja</div>
       <label className="ced-label">Nazwa <span className="ced-required-star">*</span>
         <input className="ced-input" value={draft.name} placeholder="np. Ice Wolf" onChange={e => onChange({name: e.target.value})} />
@@ -328,6 +340,7 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </select>
         </label>
       </div>
+
       {isCompanionLike && (
         <>
           <div className="ced-section-title">📊 Statystyki</div>
@@ -344,6 +357,7 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
+
       {isItemWithAttack && (
         <>
           <div className="ced-section-title">📊 Efekty</div>
@@ -372,6 +386,7 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
+
       {isItemWithout && (
         <>
           <div className="ced-section-title">📊 Efekty</div>
@@ -391,14 +406,18 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
           </div>
         </>
       )}
+
       {!isCompanionLike && !isItem && (
         <div className="ced-section-hint">Typ <strong>{draft.type}</strong> — statystyki TODO</div>
       )}
+
       <div className="ced-section-title">📝 Opis <span className="ced-required-star">*</span></div>
       <textarea className="ced-input ced-textarea" rows={3} value={draft.desc} placeholder="Opis działania karty..." onChange={e => onChange({desc:e.target.value})} />
+
       <label className="ced-label" style={{marginTop:8}}>Emoji (fallback)
         <input className="ced-input" maxLength={2} value={draft.icon} onChange={e => onChange({icon:e.target.value})} />
       </label>
+
       <div className="ced-section-title">🖼 Grafika <span className="ced-optional">(opcjonalna)</span></div>
       <div className={`ced-img-drop ${draft.imgSrc?'ced-img-drop--has-img':''}`}
         onDragOver={e => e.preventDefault()}
@@ -410,6 +429,60 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
       <label className="ced-label" style={{marginTop:6}}>lub URL
         <input className="ced-input" value={draft.imgSrc?.startsWith('data:')?'':(draft.imgSrc??'')} placeholder="/cards/NazwaPliku.png" onChange={e => onChange({imgSrc:e.target.value||null})} />
       </label>
+
+      {/* ── CUSTOM POLA ── */}
+      <div className="ced-section-title" style={{marginTop:12}}>➕ Własne pola</div>
+
+      {/* Istniejące custom pola */}
+      {Object.entries(draft.customFields).map(([k, v]) => (
+        <div key={k} className="ced-row" style={{alignItems:'center', gap:6}}>
+          <span style={{fontSize:11, color:'#c8902a', width:80, flexShrink:0, fontFamily:'monospace'}}>{k}</span>
+          <input
+            className="ced-input"
+            value={v}
+            onChange={e => updateCustomField(k, e.target.value)}
+            style={{flex:1}}
+          />
+          <button onClick={() => removeCustomField(k)} style={{
+            background:'none', border:'none', color:'#c03030',
+            cursor:'pointer', fontSize:14, padding:'0 4px', flexShrink:0,
+          }}>✕</button>
+        </div>
+      ))}
+
+      {/* Dodaj nowe pole */}
+      <div className="ced-row" style={{gap:6, marginTop:4}}>
+        <input
+          className="ced-input"
+          value={newFieldKey}
+          onChange={e => setNewFieldKey(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && addCustomField()}
+          placeholder="klucz (np. mana)"
+          style={{flex:1}}
+        />
+        <input
+          className="ced-input"
+          value={newFieldVal}
+          onChange={e => setNewFieldVal(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && addCustomField()}
+          placeholder="wartość"
+          style={{flex:1}}
+        />
+        <button
+          onClick={addCustomField}
+          disabled={!newFieldKey.trim()}
+          style={{
+            padding:'4px 10px', fontSize:13, fontWeight:'bold',
+            background: newFieldKey.trim() ? '#3a5a10' : '#1e1208',
+            border:`1px solid ${newFieldKey.trim() ? '#6a9030' : '#3a2510'}`,
+            color: newFieldKey.trim() ? '#b0d870' : '#4a4030',
+            cursor: newFieldKey.trim() ? 'pointer' : 'not-allowed',
+            borderRadius:4, flexShrink:0,
+          }}>+</button>
+      </div>
+      <div style={{fontSize:10, color:'#6a5040', marginTop:3}}>
+        Klucz: snake_case · Wartość: tekst lub liczba · Enter lub + żeby dodać
+      </div>
     </div>
   )
 }
