@@ -8,6 +8,8 @@ import { GithubPATInput } from '../../components/GithubPATInput'
 import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, Test3Card, TribeType } from '../../types/card.types'
 import './CardEditorScreen.css'
 
+const VERSION = 'Card Editor v1.4 · 2026-03-30'
+
 const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2', 'test3', 'transformer']
 
 interface CardDraft {
@@ -15,7 +17,7 @@ interface CardDraft {
   hp: number; atk: number; counter: number
   snow: number; heal: number; target: 'enemy' | 'ally'
   splash: boolean; desc: string; icon: string; imgSrc: string | null
-  customFields: Record<string, string>   // ← custom pola key:value
+  customFields: Record<string, string>
 }
 
 const DEFAULT_DRAFT: CardDraft = {
@@ -53,51 +55,34 @@ function draftToCard(draft: CardDraft): AnyCard {
     imageUrl: draft.imgSrc?.startsWith('data:') ? null : draft.imgSrc,
     imageFallback: draft.icon || '❓',
     description: draft.desc, createdAt: Date.now(),
-    ...draft.customFields,   // ← custom pola trafiają do obiektu karty
+    ...draft.customFields,
   }
-  if (draft.type === 'companion') {
-    return { ...base, type: 'companion', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as CompanionCard
-  }
-  if (draft.type === 'boss') {
-    return { ...base, type: 'boss', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as BossCard
-  }
-  if (draft.type === 'testets') {
-    return { ...base, type: 'testets', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as TestetsCard
-  }
-  if (draft.type === 'test2') {
-    return { ...base, type: 'test2', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test2Card
-  }
-  if (draft.type === 'test3') {
-    return { ...base, type: 'test3', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test3Card
-  }
-  if (COMPANION_LIKE_TYPES.includes(draft.type)) {
-    return { ...base, type: draft.type, hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as unknown as AnyCard
-  }
+  if (draft.type === 'companion') return { ...base, type: 'companion', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as CompanionCard
+  if (draft.type === 'boss') return { ...base, type: 'boss', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as BossCard
+  if (draft.type === 'testets') return { ...base, type: 'testets', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as TestetsCard
+  if (draft.type === 'test2') return { ...base, type: 'test2', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test2Card
+  if (draft.type === 'test3') return { ...base, type: 'test3', hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as Test3Card
+  if (COMPANION_LIKE_TYPES.includes(draft.type)) return { ...base, type: draft.type, hp: draft.hp, attack: draft.atk, counter: draft.counter, abilities: [] } as unknown as AnyCard
   return {
-    ...base,
-    type: draft.type as 'item_with_attack' | 'item_without_attack',
-    effect: {
-      damage: draft.atk  > 0 ? draft.atk  : undefined,
-      snow:   draft.snow > 0 ? draft.snow  : undefined,
-      heal:   draft.heal > 0 ? draft.heal  : undefined,
-    },
-    target: draft.target === 'ally' ? 'ally' : 'enemy',
-    consume: false,
+    ...base, type: draft.type as 'item_with_attack' | 'item_without_attack',
+    effect: { damage: draft.atk>0?draft.atk:undefined, snow: draft.snow>0?draft.snow:undefined, heal: draft.heal>0?draft.heal:undefined },
+    target: draft.target === 'ally' ? 'ally' : 'enemy', consume: false,
   } as ItemCard
 }
 
 async function commitCardLibrary(library: Record<string, CardDraft>): Promise<void> {
-  const clean = Object.fromEntries(
-    Object.entries(library).map(([k, v]) => [k, { ...v, imgSrc: v.imgSrc?.startsWith('data:') ? null : v.imgSrc }])
-  )
-  const content = JSON.stringify(clean, null, 2)
-  await commitFiles(
-    [{ path: CARD_LIBRARY_REPO_PATH, content }],
-    `feat(card-editor): zaktualizowana biblioteka kart (${Object.keys(library).length} kart)`
-  )
+  const clean = Object.fromEntries(Object.entries(library).map(([k, v]) => [k, { ...v, imgSrc: v.imgSrc?.startsWith('data:') ? null : v.imgSrc }]))
+  await commitFiles([{ path: CARD_LIBRARY_REPO_PATH, content: JSON.stringify(clean, null, 2) }],
+    `feat(card-editor): zaktualizowana biblioteka kart (${Object.keys(library).length} kart)`)
 }
 
-// ─── KOMPONENT ────────────────────────────────────────────────────────────────
+const BADGE_STYLE: React.CSSProperties = {
+  position: 'fixed', bottom: 8, right: 8, zIndex: 9999,
+  background: '#1a1208dd', border: '1px solid #3a2510',
+  borderRadius: 4, padding: '3px 8px',
+  fontSize: 10, color: '#6a5040', fontFamily: 'monospace',
+  pointerEvents: 'none', userSelect: 'none',
+}
 
 export function CardEditorScreen() {
   const { addCard, consumePendingType } = useCardStore()
@@ -118,10 +103,7 @@ export function CardEditorScreen() {
   useEffect(() => {
     try {
       const raw = JSON.parse(localStorage.getItem(LIBRARY_KEY) || '{}')
-      // Migracja starych wpisów bez customFields
-      const migrated = Object.fromEntries(
-        Object.entries(raw).map(([k, v]) => [k, { customFields: {}, ...(v as CardDraft) }])
-      )
+      const migrated = Object.fromEntries(Object.entries(raw).map(([k, v]) => [k, { customFields: {}, ...(v as CardDraft) }]))
       setLibrary(migrated)
     } catch { /* ignore */ }
   }, [])
@@ -129,32 +111,20 @@ export function CardEditorScreen() {
   const update = (patch: Partial<CardDraft>) => { setDraft(prev => ({ ...prev, ...patch })); setErrors([]) }
 
   async function saveToLibrary() {
-    const errs = validateDraft(draft)
-    if (errs.length) { setErrors(errs); return }
+    const errs = validateDraft(draft); if (errs.length) { setErrors(errs); return }
     const id = draft.id || nameToId(draft.name)
     const newLib = { ...library, [id]: { ...draft, id } }
-    setLibrary(newLib)
-    localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
-    setErrors([])
-
+    setLibrary(newLib); localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib)); setErrors([])
     if (hasPAT) {
       setSavedMsg('git'); setSavedNote('Commitowanie...')
-      try {
-        await commitCardLibrary(newLib)
-        setSavedNote(`✓ Karta '${draft.name}' zapisana i wcommitowana!`)
-      } catch (err: unknown) {
-        const msg = err instanceof Error ? err.message : String(err)
-        setSavedNote(`✓ Lokalnie OK. Git: ${msg}`)
-      }
-    } else {
-      setSavedMsg('local'); setSavedNote(`✓ Zapisano lokalnie (brak PAT)`)
-    }
+      try { await commitCardLibrary(newLib); setSavedNote(`✓ Karta '${draft.name}' wcommitowana!`) }
+      catch (err: unknown) { setSavedNote(`✓ Lokalnie OK. Git: ${err instanceof Error ? err.message : String(err)}`) }
+    } else { setSavedMsg('local'); setSavedNote('✓ Zapisano lokalnie (brak PAT)') }
     setTimeout(() => { setSavedMsg('idle'); setSavedNote('') }, 4000)
   }
 
   function addToGallery() {
-    const errs = validateDraft(draft)
-    if (errs.length) { setErrors(errs); return }
+    const errs = validateDraft(draft); if (errs.length) { setErrors(errs); return }
     const card = draftToCard(draft)
     if (card.id === '__preview__') { setErrors(['Wypełnij nazwę karty przed dodaniem do galerii']); return }
     addCard(card); setAddedToGallery(true); setErrors([])
@@ -174,8 +144,7 @@ export function CardEditorScreen() {
   }
 
   function exportCard() {
-    const errs = validateDraft(draft)
-    if (errs.length) { setErrors(errs); return }
+    const errs = validateDraft(draft); if (errs.length) { setErrors(errs); return }
     const id = draft.id || nameToId(draft.name)
     const imgLine = draft.imgSrc
       ? (draft.imgSrc.startsWith('data:') ? `    img: null, icon: '${draft.icon}',` : `    get img(){ return img('${draft.imgSrc.split('/').pop()}'); },`)
@@ -194,9 +163,7 @@ export function CardEditorScreen() {
   const card = draftToCard(draft)
   const { inspect } = useDevInspector()
   const canSave = draft.name.trim().length > 0 && draft.desc.trim().length > 0
-
-  const saveLabel = savedMsg === 'git' && savedNote === 'Commitowanie...'
-    ? '⏳ Commitowanie...'
+  const saveLabel = savedMsg === 'git' && savedNote === 'Commitowanie...' ? '⏳ Commitowanie...'
     : savedMsg !== 'idle' ? savedNote
     : hasPAT ? '💾 Zapisz + git commit' : '💾 Zapisz lokalnie'
 
@@ -264,6 +231,9 @@ export function CardEditorScreen() {
           <div className="ced-preview__hint">Kliknij kartę → Inspector</div>
         </div>
       </div>
+
+      {/* ── VERSION BADGE ── */}
+      <div style={BADGE_STYLE}>{VERSION}</div>
     </div>
   )
 }
@@ -312,8 +282,7 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   }
 
   function removeCustomField(key: string) {
-    const next = { ...draft.customFields }
-    delete next[key]
+    const next = { ...draft.customFields }; delete next[key]
     onChange({ customFields: next })
   }
 
@@ -341,71 +310,62 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
         </label>
       </div>
 
-      {isCompanionLike && (
-        <>
-          <div className="ced-section-title">📊 Statystyki</div>
-          <div className="ced-row">
-            <label className="ced-label" style={{flex:1}}>❤ HP <span className="ced-required-star">*</span>
-              <input className="ced-input" type="number" min={1} max={99} value={draft.hp} onChange={e => onChange({hp:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>⚔ ATK
-              <input className="ced-input" type="number" min={0} max={20} value={draft.atk} onChange={e => onChange({atk:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>⏱ Counter <span className="ced-required-star">*</span>
-              <input className="ced-input" type="number" min={1} max={9} value={draft.counter} onChange={e => onChange({counter:+e.target.value})} />
-            </label>
-          </div>
-        </>
-      )}
+      {isCompanionLike && (<>
+        <div className="ced-section-title">📊 Statystyki</div>
+        <div className="ced-row">
+          <label className="ced-label" style={{flex:1}}>❤ HP <span className="ced-required-star">*</span>
+            <input className="ced-input" type="number" min={1} max={99} value={draft.hp} onChange={e => onChange({hp:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>⚔ ATK
+            <input className="ced-input" type="number" min={0} max={20} value={draft.atk} onChange={e => onChange({atk:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>⏱ Counter <span className="ced-required-star">*</span>
+            <input className="ced-input" type="number" min={1} max={9} value={draft.counter} onChange={e => onChange({counter:+e.target.value})} />
+          </label>
+        </div>
+      </>)}
 
-      {isItemWithAttack && (
-        <>
-          <div className="ced-section-title">📊 Efekty</div>
-          <div className="ced-row">
-            <label className="ced-label" style={{flex:1}}>⚔ ATK <span className="ced-required-star">*</span>
-              <input className="ced-input" type="number" min={1} value={draft.atk} onChange={e => onChange({atk:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>❄ Snow
-              <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>💚 Heal
-              <input className="ced-input" type="number" min={0} value={draft.heal} onChange={e => onChange({heal:+e.target.value})} />
-            </label>
-          </div>
-          <div className="ced-row">
-            <label className="ced-label" style={{flex:1}}>Cel
-              <select className="ced-input" value={draft.target} onChange={e => onChange({target: e.target.value as 'enemy'|'ally'})}>
-                <option value="enemy">Wróg</option>
-                <option value="ally">Sojusznik</option>
-              </select>
-            </label>
-            <label className="ced-label ced-label--check">
-              <input type="checkbox" checked={draft.splash} onChange={e => onChange({splash:e.target.checked})} />
-              Splash
-            </label>
-          </div>
-        </>
-      )}
+      {isItemWithAttack && (<>
+        <div className="ced-section-title">📊 Efekty</div>
+        <div className="ced-row">
+          <label className="ced-label" style={{flex:1}}>⚔ ATK <span className="ced-required-star">*</span>
+            <input className="ced-input" type="number" min={1} value={draft.atk} onChange={e => onChange({atk:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>❄ Snow
+            <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>💚 Heal
+            <input className="ced-input" type="number" min={0} value={draft.heal} onChange={e => onChange({heal:+e.target.value})} />
+          </label>
+        </div>
+        <div className="ced-row">
+          <label className="ced-label" style={{flex:1}}>Cel
+            <select className="ced-input" value={draft.target} onChange={e => onChange({target: e.target.value as 'enemy'|'ally'})}>
+              <option value="enemy">Wróg</option><option value="ally">Sojusznik</option>
+            </select>
+          </label>
+          <label className="ced-label ced-label--check">
+            <input type="checkbox" checked={draft.splash} onChange={e => onChange({splash:e.target.checked})} /> Splash
+          </label>
+        </div>
+      </>)}
 
-      {isItemWithout && (
-        <>
-          <div className="ced-section-title">📊 Efekty</div>
-          <div className="ced-row">
-            <label className="ced-label" style={{flex:1}}>❄ Snow
-              <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>💚 Heal
-              <input className="ced-input" type="number" min={0} value={draft.heal} onChange={e => onChange({heal:+e.target.value})} />
-            </label>
-            <label className="ced-label" style={{flex:1}}>Cel
-              <select className="ced-input" value={draft.target} onChange={e => onChange({target: e.target.value as 'enemy'|'ally'})}>
-                <option value="enemy">Wróg</option>
-                <option value="ally">Sojusznik</option>
-              </select>
-            </label>
-          </div>
-        </>
-      )}
+      {isItemWithout && (<>
+        <div className="ced-section-title">📊 Efekty</div>
+        <div className="ced-row">
+          <label className="ced-label" style={{flex:1}}>❄ Snow
+            <input className="ced-input" type="number" min={0} value={draft.snow} onChange={e => onChange({snow:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>💚 Heal
+            <input className="ced-input" type="number" min={0} value={draft.heal} onChange={e => onChange({heal:+e.target.value})} />
+          </label>
+          <label className="ced-label" style={{flex:1}}>Cel
+            <select className="ced-input" value={draft.target} onChange={e => onChange({target: e.target.value as 'enemy'|'ally'})}>
+              <option value="enemy">Wróg</option><option value="ally">Sojusznik</option>
+            </select>
+          </label>
+        </div>
+      </>)}
 
       {!isCompanionLike && !isItem && (
         <div className="ced-section-hint">Typ <strong>{draft.type}</strong> — statystyki TODO</div>
@@ -433,52 +393,26 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
       {/* ── CUSTOM POLA ── */}
       <div className="ced-section-title" style={{marginTop:12}}>➕ Własne pola</div>
 
-      {/* Istniejące custom pola */}
       {Object.entries(draft.customFields).map(([k, v]) => (
         <div key={k} className="ced-row" style={{alignItems:'center', gap:6}}>
           <span style={{fontSize:11, color:'#c8902a', width:80, flexShrink:0, fontFamily:'monospace'}}>{k}</span>
-          <input
-            className="ced-input"
-            value={v}
-            onChange={e => updateCustomField(k, e.target.value)}
-            style={{flex:1}}
-          />
-          <button onClick={() => removeCustomField(k)} style={{
-            background:'none', border:'none', color:'#c03030',
-            cursor:'pointer', fontSize:14, padding:'0 4px', flexShrink:0,
-          }}>✕</button>
+          <input className="ced-input" value={v} onChange={e => updateCustomField(k, e.target.value)} style={{flex:1}} />
+          <button onClick={() => removeCustomField(k)} style={{background:'none', border:'none', color:'#c03030', cursor:'pointer', fontSize:14, padding:'0 4px', flexShrink:0}}>✕</button>
         </div>
       ))}
 
-      {/* Dodaj nowe pole */}
       <div className="ced-row" style={{gap:6, marginTop:4}}>
-        <input
-          className="ced-input"
-          value={newFieldKey}
-          onChange={e => setNewFieldKey(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && addCustomField()}
-          placeholder="klucz (np. mana)"
-          style={{flex:1}}
-        />
-        <input
-          className="ced-input"
-          value={newFieldVal}
-          onChange={e => setNewFieldVal(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && addCustomField()}
-          placeholder="wartość"
-          style={{flex:1}}
-        />
-        <button
-          onClick={addCustomField}
-          disabled={!newFieldKey.trim()}
-          style={{
-            padding:'4px 10px', fontSize:13, fontWeight:'bold',
-            background: newFieldKey.trim() ? '#3a5a10' : '#1e1208',
-            border:`1px solid ${newFieldKey.trim() ? '#6a9030' : '#3a2510'}`,
-            color: newFieldKey.trim() ? '#b0d870' : '#4a4030',
-            cursor: newFieldKey.trim() ? 'pointer' : 'not-allowed',
-            borderRadius:4, flexShrink:0,
-          }}>+</button>
+        <input className="ced-input" value={newFieldKey} onChange={e => setNewFieldKey(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && addCustomField()} placeholder="klucz (np. mana)" style={{flex:1}} />
+        <input className="ced-input" value={newFieldVal} onChange={e => setNewFieldVal(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && addCustomField()} placeholder="wartość" style={{flex:1}} />
+        <button onClick={addCustomField} disabled={!newFieldKey.trim()} style={{
+          padding:'4px 10px', fontSize:13, fontWeight:'bold', borderRadius:4, flexShrink:0,
+          background: newFieldKey.trim() ? '#3a5a10' : '#1e1208',
+          border:`1px solid ${newFieldKey.trim() ? '#6a9030' : '#3a2510'}`,
+          color: newFieldKey.trim() ? '#b0d870' : '#4a4030',
+          cursor: newFieldKey.trim() ? 'pointer' : 'not-allowed',
+        }}>+</button>
       </div>
       <div style={{fontSize:10, color:'#6a5040', marginTop:3}}>
         Klucz: snake_case · Wartość: tekst lub liczba · Enter lub + żeby dodać

@@ -4,6 +4,8 @@ import { commitFiles, getStoredPAT } from '../../utils/githubCommit'
 import { GithubPATInput } from '../../components/GithubPATInput'
 import './FrameEditorScreen.css'
 
+const VERSION = 'Frame Editor v1.4 · 2026-03-30'
+
 interface AreaResult { left: number; top: number; width: number; height: number }
 type MapperResult = Record<string, AreaResult>
 
@@ -53,7 +55,6 @@ function generateFrameConfigEntry(typeName: string, frameFile: string | null, re
   return `const ${constName}: FrameConfig = {\n${frameFileLine}\n${fieldLines}\n}`
 }
 
-// typeLabel usunięty — nie był używany wewnątrz
 async function saveFrameConfigToGit(typeName: string, frameFile: string | null, result: MapperResult, isNew: boolean): Promise<void> {
   const REPO_PATH = 'wildfrost-poc/clawcard-builder/src/utils/frameConfig.ts'
   const res = await fetch(
@@ -284,7 +285,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   const typeName = mode === 'existing' ? existingType : newTypeName
   const currentStepDef = allSteps.find(s => s.key === activeStep)
 
-  // imgIsLocal używany w fe-drop display
   void imgIsLocal
 
   return (
@@ -323,7 +323,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           </div>
         )}
 
-        {/* ── POLA NA TEJ RAMCE — builtin + custom + input ── */}
         <div className="fe-fields-section">
           <div className="fe-label" style={{marginBottom:6}}>Pola na tej ramce:</div>
 
@@ -500,6 +499,16 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           </div>
         )}
       </main>
+
+      <div style={{
+        position:'fixed', bottom:8, right:8, zIndex:9999,
+        background:'#1a1208dd', border:'1px solid #3a2510',
+        borderRadius:4, padding:'3px 8px',
+        fontSize:10, color:'#6a5040', fontFamily:'monospace',
+        pointerEvents:'none', userSelect:'none',
+      }}>
+        {VERSION}
+      </div>
     </div>
   )
 }
