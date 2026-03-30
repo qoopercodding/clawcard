@@ -4,10 +4,6 @@ import { commitFiles, getStoredPAT } from '../../utils/githubCommit'
 import { GithubPATInput } from '../../components/GithubPATInput'
 import './FrameEditorScreen.css'
 
-// =============================================================================
-// FrameEditorScreen.tsx — Frame Mapper z zapisem do GitHub
-// =============================================================================
-
 interface AreaResult { left: number; top: number; width: number; height: number }
 type MapperResult = Record<string, AreaResult>
 
@@ -17,10 +13,9 @@ interface StepDef {
   icon: string
   color: string
   hint: string
-  custom?: boolean  // true = dodane przez użytkownika, można usunąć z listy
+  custom?: boolean
 }
 
-// Kolory dla custom pól (rotują)
 const CUSTOM_COLORS = ['#f87171','#fb923c','#a3e635','#34d399','#22d3ee','#818cf8','#e879f9','#f472b6']
 let customColorIdx = 0
 function nextColor() { return CUSTOM_COLORS[(customColorIdx++) % CUSTOM_COLORS.length] }
@@ -47,8 +42,6 @@ const EXISTING_TYPES = [
 
 const STORAGE_KEY = (t: string) => `frameConfig_v4_${t}`
 
-// ─── GitHub commit ────────────────────────────────────────────────────────────
-
 function generateFrameConfigEntry(typeName: string, frameFile: string | null, result: MapperResult): string {
   const constName = typeName.toUpperCase().replace(/[^A-Z0-9]/g, '_') + '_USER_CONFIG'
   const frameFileLine = frameFile
@@ -69,7 +62,6 @@ async function saveFrameConfigToGit(typeName: string, typeLabel: string, frameFi
   if (!res.ok) throw new Error(`Nie mogę pobrać frameConfig.ts: ${res.status}`)
   const fileData = await res.json() as { content: string }
   const currentContent = decodeURIComponent(escape(atob(fileData.content.replace(/\n/g, ''))))
-
   const constName = typeName.toUpperCase().replace(/[^A-Z0-9]/g, '_') + '_USER_CONFIG'
   const entry = generateFrameConfigEntry(typeName, frameFile, result)
   const oldEntryRegex = new RegExp(`const ${constName}: FrameConfig = \\{[^}]+\\}\\n?`, 'g')
@@ -79,51 +71,45 @@ async function saveFrameConfigToGit(typeName: string, typeLabel: string, frameFi
   let newContent = insertPos === -1
     ? withoutOld + '\n' + entry + '\n'
     : withoutOld.slice(0, insertPos) + entry + '\n\n' + withoutOld.slice(insertPos)
-
   if (!newContent.includes(`${typeName}:`)) {
     newContent = newContent.replace(/(\}\s*$)/m, `  ${typeName}: ${constName},\n}`)
   } else {
     newContent = newContent.replace(new RegExp(`  ${typeName}:[^,\n]+,`), `  ${typeName}: ${constName},`)
   }
-
   await commitFiles([{ path: REPO_PATH, content: newContent }],
     `feat(frame-editor): ${isNew ? 'nowy' : 'zaktualizowany'} typ ramki '${typeName}'`)
 }
-
-// ─── KOMPONENT ────────────────────────────────────────────────────────────────
 
 interface FrameEditorScreenProps { onNavigate?: (view: string) => void }
 
 export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   const { setPendingType } = useCardStore()
 
-  const [mode, setMode]               = useState<'existing' | 'new'>('existing')
-  const [existingType, setExistingType] = useState('companion')
-  const [newTypeName, setNewTypeName]   = useState('')
-  const [newTypeLabel, setNewTypeLabel] = useState('')
-  const [frameFile, setFrameFile]     = useState<string | null>(null)
-  const [imgSrc, setImgSrc]           = useState<string | null>(null)
-  const [imgIsLocal, setImgIsLocal]   = useState(false)
-  const [result, setResult]           = useState<MapperResult>({})
-  const [activeStep, setActiveStep]   = useState<string>('frame')
-  const [loadError, setLoadError]     = useState<string | null>(null)
-  const [saveStatus, setSaveStatus]   = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
-  const [saveMsg, setSaveMsg]         = useState('')
+  const [mode, setMode]                 = useState<'existing' | 'new'>('existing')
+  const [existingType, setExistingType]   = useState('companion')
+  const [newTypeName, setNewTypeName]     = useState('')
+  const [newTypeLabel, setNewTypeLabel]   = useState('')
+  const [frameFile, setFrameFile]       = useState<string | null>(null)
+  const [imgSrc, setImgSrc]             = useState<string | null>(null)
+  const [imgIsLocal, setImgIsLocal]     = useState(false)
+  const [result, setResult]             = useState<MapperResult>({})
+  const [activeStep, setActiveStep]     = useState<string>('frame')
+  const [loadError, setLoadError]       = useState<string | null>(null)
+  const [saveStatus, setSaveStatus]     = useState<'idle' | 'saving' | 'saved' | 'error'>('idle')
+  const [saveMsg, setSaveMsg]           = useState('')
   const [savedTypeName, setSavedTypeName] = useState<string | null>(null)
-  const [allSteps, setAllSteps]       = useState<StepDef[]>(BUILTIN_STEPS)
-  const [enabledKeys, setEnabledKeys] = useState<Set<string>>(new Set(BUILTIN_STEPS.map(s => s.key)))
-  const [dragStart, setDragStart]     = useState<{x:number;y:number}|null>(null)
-  const [dragCurrent, setDragCurrent] = useState<{x:number;y:number}|null>(null)
-  const [isDragging, setIsDragging]   = useState(false)
-  const [hasPAT, setHasPAT]           = useState(!!getStoredPAT())
-  // Dodawanie custom pola
+  const [allSteps, setAllSteps]         = useState<StepDef[]>(BUILTIN_STEPS)
+  const [enabledKeys, setEnabledKeys]   = useState<Set<string>>(new Set(BUILTIN_STEPS.map(s => s.key)))
+  const [dragStart, setDragStart]       = useState<{x:number;y:number}|null>(null)
+  const [dragCurrent, setDragCurrent]   = useState<{x:number;y:number}|null>(null)
+  const [isDragging, setIsDragging]     = useState(false)
+  const [hasPAT, setHasPAT]             = useState(!!getStoredPAT())
   const [customFieldName, setCustomFieldName] = useState('')
 
   const imgRef       = useRef<HTMLImageElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const activeSteps  = allSteps.filter(s => enabledKeys.has(s.key))
 
-  // Gdy zmienia się typ existing — załaduj konfigurację
   useEffect(() => {
     if (mode !== 'existing') return
     const typeData = EXISTING_TYPES.find(t => t.value === existingType)
@@ -131,35 +117,23 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
       const stored = localStorage.getItem(STORAGE_KEY(existingType))
       setResult(stored ? JSON.parse(stored) : {})
     } catch { setResult({}) }
-    const fields = typeData?.fields ?? BUILTIN_STEPS.map(s => s.key)
-    setEnabledKeys(new Set(fields))
+    setEnabledKeys(new Set(typeData?.fields ?? BUILTIN_STEPS.map(s => s.key)))
     if (typeData?.frameFile) {
       setImgSrc(typeData.frameFile); setFrameFile(typeData.frameFile.split('/').pop() ?? null); setImgIsLocal(false)
     } else { setImgSrc(null); setFrameFile(null); setImgIsLocal(false) }
     setActiveStep('frame')
   }, [existingType, mode])
 
-  // Auto-save do localStorage
   useEffect(() => {
     const key = mode === 'existing' ? existingType : newTypeName
     if (!key || Object.keys(result).length === 0) return
     try { localStorage.setItem(STORAGE_KEY(key), JSON.stringify(result)) } catch { /* ignore */ }
   }, [result, existingType, newTypeName, mode])
 
-  // ─── CUSTOM POLA ────────────────────────────────────────────────────────────
-
   function addCustomField() {
     const raw = customFieldName.trim().toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'')
-    if (!raw) return
-    if (allSteps.some(s => s.key === raw)) return  // już istnieje
-    const newStep: StepDef = {
-      key: raw,
-      label: customFieldName.trim(),
-      icon: '📐',
-      color: nextColor(),
-      hint: `Custom pole: ${raw}`,
-      custom: true,
-    }
+    if (!raw || allSteps.some(s => s.key === raw)) return
+    const newStep: StepDef = { key: raw, label: customFieldName.trim(), icon: '📐', color: nextColor(), hint: `Custom: ${raw}`, custom: true }
     setAllSteps(prev => [...prev, newStep])
     setEnabledKeys(prev => new Set([...prev, raw]))
     setActiveStep(raw)
@@ -173,37 +147,27 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     if (activeStep === key) setActiveStep('frame')
   }
 
-  // ─── TOGGLE POLA ────────────────────────────────────────────────────────────
-
   function toggleField(key: string) {
     setEnabledKeys(prev => {
       const next = new Set(prev)
       if (next.has(key)) {
         next.delete(key)
         setResult(r => { const nr={...r}; delete nr[key]; return nr })
-        if (activeStep === key) setActiveStep(allSteps.find(s => s.key !== key)?.key ?? 'frame')
-      } else {
-        next.add(key)
-        setActiveStep(key)
-      }
+        if (activeStep === key) setActiveStep(allSteps.find(s => next.has(s.key) && s.key !== key)?.key ?? 'frame')
+      } else { next.add(key); setActiveStep(key) }
       return next
     })
   }
 
-  // ─── OBRAZ ──────────────────────────────────────────────────────────────────
-
   function loadFile(file: File) {
     const reader = new FileReader()
     reader.onload = e => { setImgSrc(e.target?.result as string); setLoadError(null); setImgIsLocal(true) }
-    reader.readAsDataURL(file)
-    setFrameFile(file.name)
+    reader.readAsDataURL(file); setFrameFile(file.name)
   }
 
   function loadFrameByPath(framePath: string) {
     setImgSrc(framePath); setFrameFile(framePath.split('/').pop() ?? null); setImgIsLocal(false); setLoadError(null)
   }
-
-  // ─── DRAG ────────────────────────────────────────────────────────────────────
 
   function getCoords(e: React.MouseEvent): {x:number;y:number}|null {
     const img = imgRef.current; if (!img) return null
@@ -233,7 +197,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     const height = parseFloat(Math.abs(end.y-dragStart.y).toFixed(1))
     if (width > 0.5 && height > 0.5) {
       setResult(prev => ({ ...prev, [activeStep]: { left, top, width, height } }))
-      // Auto-przejdź do następnego niezaznaczonego
       const idx = activeSteps.findIndex(s => s.key === activeStep)
       const next = activeSteps.slice(idx+1).find(s => !result[s.key])
       if (next) setActiveStep(next.key)
@@ -245,33 +208,24 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     if (isDragging) { setIsDragging(false); setDragStart(null); setDragCurrent(null) }
   }, [isDragging])
 
-  // ─── OVERLAY SVG ─────────────────────────────────────────────────────────────
-
   function renderOverlay() {
     const img = imgRef.current; if (!img) return null
     const W = img.offsetWidth||400, H = img.offsetHeight||600
     const px = (p:number,d:number) => p/100*d
     const shapes: React.ReactNode[] = []
-
     for (const step of activeSteps) {
-      const area = result[step.key]
-      if (!area) continue
+      const area = result[step.key]; if (!area) continue
       const isAct = step.key === activeStep
       const x=px(area.left,W), y=px(area.top,H), w=px(area.width,W), h=px(area.height,H)
       shapes.push(
         <g key={step.key}>
-          <rect x={x} y={y} width={w} height={h}
-            fill={step.color+(isAct?'30':'18')} stroke={step.color}
-            strokeWidth={isAct?2.5:1.5} strokeDasharray={isAct?'none':'4 2'} rx={3} />
+          <rect x={x} y={y} width={w} height={h} fill={step.color+(isAct?'30':'18')} stroke={step.color} strokeWidth={isAct?2.5:1.5} strokeDasharray={isAct?'none':'4 2'} rx={3} />
           <rect x={x} y={y-18} width={(step.label.length*6)+20} height={18} fill={step.color} rx={3} />
-          <text x={x+6} y={y-5} fill="#000" fontSize={10} fontWeight="bold" fontFamily="monospace">
-            {step.icon} {step.key.toUpperCase()}
-          </text>
+          <text x={x+6} y={y-5} fill="#000" fontSize={10} fontWeight="bold" fontFamily="monospace">{step.icon} {step.key.toUpperCase()}</text>
           <rect x={x+w-8} y={y+h-8} width={8} height={8} fill={step.color} rx={2} />
         </g>
       )
     }
-
     if (isDragging && dragStart && dragCurrent) {
       const s = allSteps.find(s => s.key === activeStep) ?? allSteps[0]
       const l=Math.min(dragStart.x,dragCurrent.x), t=Math.min(dragStart.y,dragCurrent.y)
@@ -280,9 +234,7 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
       shapes.push(
         <g key="drag">
           <rect x={x} y={y} width={pw} height={ph} fill={s.color+'33'} stroke={s.color} strokeWidth={2} strokeDasharray="6 3" rx={3} />
-          <text x={x+pw/2} y={y+ph/2} fill={s.color} fontSize={11} fontWeight="bold" fontFamily="monospace" textAnchor="middle" dominantBaseline="middle">
-            {w.toFixed(1)}% × {h.toFixed(1)}%
-          </text>
+          <text x={x+pw/2} y={y+ph/2} fill={s.color} fontSize={11} fontWeight="bold" fontFamily="monospace" textAnchor="middle" dominantBaseline="middle">{w.toFixed(1)}% × {h.toFixed(1)}%</text>
         </g>
       )
     }
@@ -293,22 +245,18 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     )
   }
 
-  // ─── ZAPIS ────────────────────────────────────────────────────────────────────
-
   async function handleSaveToCode() {
     const typeName  = mode === 'existing' ? existingType : newTypeName.trim()
     const typeLabel = mode === 'new' ? (newTypeLabel.trim() || newTypeName.trim()) : existingType
     if (!typeName) { setSaveStatus('error'); setSaveMsg('Wpisz nazwę typu'); return }
     if (!result.art && !result.frame) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej Frame lub Art Area'); return }
-
     localStorage.setItem(STORAGE_KEY(typeName), JSON.stringify(result))
     setPendingType({ typeName, frameFile: frameFile ? `/frames/${frameFile}` : null, fields: { ...result } })
-
     if (hasPAT) {
       setSaveStatus('saving'); setSaveMsg('Commitowanie do GitHub...')
       try {
         await saveFrameConfigToGit(typeName, typeLabel, frameFile ? `/frames/${frameFile}` : null, result, mode === 'new')
-        setSaveStatus('saved'); setSaveMsg(`✓ Typ '${typeName}' wcommitowany do repo!`)
+        setSaveStatus('saved'); setSaveMsg(`✓ Typ '${typeName}' wcommitowany!`)
       } catch (err: unknown) {
         const msg = err instanceof Error ? err.message : String(err)
         setSaveStatus('saved'); setSaveMsg(`✓ Lokalnie OK. Git: ${msg}`)
@@ -316,7 +264,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     } else {
       setSaveStatus('saved'); setSaveMsg(`✓ Zapisano lokalnie (brak PAT)`)
     }
-
     setSavedTypeName(typeName)
     if (mode === 'new') { setNewTypeName(''); setNewTypeLabel(''); setResult({}); setImgSrc(null); setImgIsLocal(false) }
     setTimeout(() => { setSaveStatus('idle'); setSaveMsg('') }, 8000)
@@ -341,12 +288,10 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     <div className="frame-editor">
       <aside className="frame-editor__sidebar">
 
-        {/* PAT */}
         <div style={{marginBottom: 10}}>
           <GithubPATInput onTokenChange={setHasPAT} />
         </div>
 
-        {/* Tryb */}
         <div className="fe-mode-tabs">
           <button className={`fe-mode-tab ${mode==='existing'?'fe-mode-tab--active':''}`} onClick={() => setMode('existing')}>✏ Edytuj typ</button>
           <button className={`fe-mode-tab ${mode==='new'?'fe-mode-tab--active':''}`} onClick={() => setMode('new')}>✦ Nowy typ</button>
@@ -375,10 +320,12 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           </div>
         )}
 
-        {/* Pola — builtin */}
+        {/* ── POLA NA TEJ RAMCE — builtin + custom + input ── */}
         <div className="fe-fields-section">
           <div className="fe-label" style={{marginBottom:6}}>Pola na tej ramce:</div>
+
           <div className="fe-fields-grid">
+            {/* Builtin */}
             {BUILTIN_STEPS.map(step => (
               <label key={step.key}
                 className={`fe-field-check ${enabledKeys.has(step.key)?'fe-field-check--on':''}`}
@@ -387,59 +334,54 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
                 {step.icon} {step.label}
               </label>
             ))}
-          </div>
-        </div>
 
-        {/* Custom pola */}
-        <div style={{background:'#1a1810', border:'1px solid #3a2510', borderRadius:6, padding:'8px 10px', marginBottom:8}}>
-          <div style={{fontSize:10, color:'#c8902a', marginBottom:6, textTransform:'uppercase', fontWeight:'bold'}}>
-            ➕ Dodaj własne pole
+            {/* Custom pola jako checkboxy z X */}
+            {allSteps.filter(s => s.custom).map(s => (
+              <label key={s.key}
+                className={`fe-field-check ${enabledKeys.has(s.key)?'fe-field-check--on':''}`}
+                style={{'--fc':s.color} as React.CSSProperties}>
+                <input type="checkbox" checked={enabledKeys.has(s.key)} onChange={() => toggleField(s.key)} />
+                {s.icon} {s.label}
+                <button
+                  onClick={e => { e.preventDefault(); e.stopPropagation(); removeCustomField(s.key) }}
+                  title="Usuń pole"
+                  style={{ marginLeft:'auto', background:'none', border:'none', color:'#c03030', cursor:'pointer', fontSize:11, padding:'0 2px', lineHeight:1 }}>
+                  ✕
+                </button>
+              </label>
+            ))}
           </div>
-          <div style={{display:'flex', gap:5}}>
+
+          {/* Input do dodawania nowego pola — na dole sekcji */}
+          <div style={{marginTop:8, display:'flex', gap:5, alignItems:'center'}}>
             <input
               value={customFieldName}
               onChange={e => setCustomFieldName(e.target.value)}
               onKeyDown={e => e.key === 'Enter' && addCustomField()}
-              placeholder="np. mana, shield, scrap..."
-              style={{flex:1, background:'#2a1a0a', border:'1px solid #5a3a1a', color:'#e8d5b0', padding:'4px 6px', borderRadius:4, fontSize:11}}
+              placeholder="+ nowe pole (np. mana, scrap)…"
+              style={{
+                flex:1, background:'#2a1a0a', border:'1px solid #4a2a10',
+                color:'#e8d5b0', padding:'4px 7px', borderRadius:4, fontSize:10,
+              }}
             />
-            <button onClick={addCustomField} disabled={!customFieldName.trim()} style={{
-              padding:'4px 10px', fontSize:11, fontWeight:'bold',
-              background: customFieldName.trim() ? '#3a5a10' : '#1a1208',
-              border:`1px solid ${customFieldName.trim() ? '#6a9030' : '#3a2510'}`,
-              color: customFieldName.trim() ? '#b0d870' : '#4a4030',
-              cursor: customFieldName.trim() ? 'pointer' : 'not-allowed', borderRadius:4,
-            }}>
+            <button
+              onClick={addCustomField}
+              disabled={!customFieldName.trim()}
+              title="Dodaj pole"
+              style={{
+                width:28, height:28, fontSize:16, fontWeight:'bold',
+                background: customFieldName.trim() ? '#3a5a10' : '#1e1208',
+                border:`1px solid ${customFieldName.trim() ? '#6a9030' : '#3a2510'}`,
+                color: customFieldName.trim() ? '#b0d870' : '#4a4030',
+                cursor: customFieldName.trim() ? 'pointer' : 'not-allowed',
+                borderRadius:4, display:'flex', alignItems:'center', justifyContent:'center',
+              }}>
               +
             </button>
           </div>
-          {/* Lista custom pól */}
-          {allSteps.filter(s => s.custom).length > 0 && (
-            <div style={{marginTop:6, display:'flex', flexWrap:'wrap', gap:4}}>
-              {allSteps.filter(s => s.custom).map(s => (
-                <div key={s.key} style={{
-                  display:'flex', alignItems:'center', gap:4,
-                  background: enabledKeys.has(s.key) ? s.color+'22' : '#1a1208',
-                  border:`1px solid ${s.color}`,
-                  borderRadius:4, padding:'2px 6px',
-                }}>
-                  <span
-                    onClick={() => toggleField(s.key)}
-                    style={{fontSize:10, color:s.color, cursor:'pointer'}}
-                  >
-                    {enabledKeys.has(s.key) ? '✓' : '○'} {s.key}
-                  </span>
-                  <button onClick={() => removeCustomField(s.key)} style={{
-                    background:'none', border:'none', color:'#c03030',
-                    cursor:'pointer', fontSize:10, padding:'0 2px', lineHeight:1,
-                  }}>✕</button>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
-        {/* Wgranie PNG */}
+        {/* PNG */}
         <div className={`fe-drop ${imgSrc?'fe-drop--has-img':''}`}
           onDragOver={e => e.preventDefault()}
           onDrop={e => { e.preventDefault(); const f=e.dataTransfer.files[0]; if(f) loadFile(f) }}
@@ -469,7 +411,6 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           </div>
         )}
 
-        {/* Lista kroków */}
         <div className="fe-steps">
           <div className="fe-steps__header">Obszary do zaznaczenia:</div>
           {activeSteps.length === 0 && <div className="fe-steps__empty">Zaznacz pola powyżej</div>}
