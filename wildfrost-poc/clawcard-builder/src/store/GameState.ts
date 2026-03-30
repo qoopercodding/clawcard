@@ -1,5 +1,5 @@
 import type { BattleCard, HandCard, Phase } from '../modules/battle-demo/battleEngine'
-import type { CardType, TribeType } from '../types/card.types'
+import type { TribeType } from '../types/card.types'
 
 // =============================================================================
 // GameState.ts — Central RunState interface

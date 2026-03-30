@@ -53,7 +53,7 @@ export function slotToRowCol(slot: number): { row: number; col: number } {
   return { row: Math.floor(slot / GRID_COLS), col: slot % GRID_COLS }
 }
 
-function isFrontRow(slot: number): boolean {
+export function isFrontRow(slot: number): boolean {
   return slot < GRID_COLS // 0, 1, 2
 }
 

@@ -1,61 +1,161 @@
 .app-shell {
   min-height: 100vh;
-  padding: 24px;
   transition: padding-right 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.app-shell__topbar {
+.app-shell--with-sidebar {
+  display: flex;
+}
+
+.app-shell__content {
+  flex: 1;
+  min-height: 100vh;
+  padding: 24px;
+  overflow: auto;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: linear-gradient(180deg, #1c0f06 0%, #130a03 100%);
+  border-right: 1px solid rgba(200, 144, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 12px 8px;
+  gap: 4px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  flex-shrink: 0;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar { display: none; }
+
+.sidebar--expanded {
+  width: 200px;
+}
+
+.sidebar__home {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.app-shell__back {
-  border: 1px solid rgba(255, 230, 184, 0.18);
-  border-radius: 999px;
-  background: rgba(47, 23, 9, 0.66);
-  color: #fff1dd;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(200, 144, 42, 0.15), rgba(200, 144, 42, 0.05));
+  color: var(--color-gold);
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s;
+  transition: background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.app-shell__back:hover {
-  border-color: rgba(255, 214, 150, 0.44);
-  background: rgba(70, 34, 12, 0.8);
+.sidebar__home:hover {
+  background: linear-gradient(135deg, rgba(200, 144, 42, 0.25), rgba(200, 144, 42, 0.1));
 }
 
-.app-shell__view-label {
-  flex: 1;
-  color: #d8b180;
+.sidebar__home-icon {
+  font-family: var(--font-gothic);
+  font-size: 1.1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.sidebar__home-label {
+  font-family: var(--font-gothic);
   font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-.app-shell__dev-btn {
-  border: 1px solid #2d3348;
+.sidebar__divider {
+  height: 1px;
+  margin: 6px 8px;
+  background: linear-gradient(90deg, transparent, rgba(200, 144, 42, 0.2), transparent);
+}
+
+.sidebar__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar__group + .sidebar__group {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 230, 184, 0.06);
+}
+
+.sidebar__group-label {
+  color: var(--color-text-dim);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  padding: 4px 12px 2px;
+  white-space: nowrap;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
   border-radius: 8px;
-  background: #13171f;
-  color: #6b7280;
-  padding: 7px 13px;
-  font-size: 0.75rem;
-  font-family: 'Courier New', monospace;
+  background: transparent;
+  color: var(--color-text-dim);
   cursor: pointer;
   transition: all 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.app-shell__dev-btn:hover { border-color: #4b9eff; color: #4b9eff; background: #0f1620; }
-.app-shell__dev-btn--active { border-color: #7ee787; color: #7ee787; background: #0f1a0f; }
+.sidebar__item:hover {
+  background: rgba(200, 144, 42, 0.08);
+  color: var(--color-text);
+  border-color: rgba(200, 144, 42, 0.12);
+}
+
+.sidebar__item--active {
+  background: rgba(200, 144, 42, 0.12);
+  color: var(--color-gold);
+  border-color: rgba(200, 144, 42, 0.25);
+  box-shadow: inset 2px 0 0 var(--color-gold);
+}
+
+.sidebar__item-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+  line-height: 1;
+}
+
+.sidebar__item-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+.sidebar__item--inspector {
+  margin-top: auto;
+}
 
 /* ── StartPage — Dark Fantasy Landing ── */
 .start-page {
   position: relative;
   display: grid;
   gap: 48px;
-  padding: 48px 0 64px;
-  min-height: calc(100vh - 48px);
+  padding: 48px 24px 64px;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -76,6 +176,55 @@
   50% { opacity: 0.7; }
 }
 
+/* ── Floating embers / particles ── */
+.start-page__particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.start-page__particle {
+  position: absolute;
+  width: var(--size, 3px);
+  height: var(--size, 3px);
+  background: radial-gradient(circle, var(--color-gold) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ember-float var(--duration, 8s) var(--delay, 0s) ease-in-out infinite;
+}
+
+@keyframes ember-float {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) scale(0.3);
+  }
+  15% {
+    opacity: var(--peak-opacity, 0.6);
+  }
+  50% {
+    opacity: var(--peak-opacity, 0.4);
+    transform: translateY(calc(var(--drift-y, -120px))) translateX(var(--drift-x, 20px)) scale(1);
+  }
+  85% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(calc(var(--drift-y, -120px) * 2)) translateX(calc(var(--drift-x, 20px) * 1.5)) scale(0.2);
+  }
+}
+
+/* ── Horizontal gold line separator ── */
+.start-page__divider {
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
+  opacity: 0.4;
+}
+
 .start-page__hero {
   display: grid;
   gap: 16px;
@@ -87,6 +236,7 @@
 .workspace-screen__eyebrow {
   margin: 0;
   color: #c8902a;
+  font-family: var(--font-gothic);
   font-size: 0.78rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -95,11 +245,11 @@
 
 .start-page__title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-gothic-decorative);
   font-size: clamp(2.4rem, 5vw, 3.8rem);
   color: #e8d5b0;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.02em;
 }
 
 .start-page__gold {
@@ -194,7 +344,8 @@
 }
 
 .start-option__title {
-  font-size: 1.1rem;
+  font-family: var(--font-gothic);
+  font-size: 1.05rem;
   color: #f0dcc0;
 }
 

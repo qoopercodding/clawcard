@@ -1,12 +1,22 @@
 :root {
   --color-bg: #1a0e05;
   --color-surface: #281608;
+  --color-surface-raised: #321c0a;
   --color-gold: #c8902a;
+  --color-gold-bright: #f5c563;
   --color-gold-dim: #8a6320;
   --color-text: #e8d5b0;
   --color-text-dim: #9a8060;
+  --color-danger: #e05555;
+  --color-success: #86efac;
+  --color-border: rgba(255, 230, 184, 0.12);
+  --color-border-hover: rgba(255, 214, 150, 0.44);
+  --font-gothic: 'Cinzel', Georgia, 'Times New Roman', serif;
+  --font-gothic-decorative: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+  --font-body: 'Trebuchet MS', Verdana, sans-serif;
+  --sidebar-width: 64px;
 
-  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
   color: var(--color-text);
@@ -34,7 +44,7 @@ body {
 }
 
 h1 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-gothic);
   font-size: clamp(2.6rem, 5vw, 4.2rem);
   line-height: 0.95;
   letter-spacing: -0.04em;

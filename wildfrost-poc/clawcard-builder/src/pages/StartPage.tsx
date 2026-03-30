@@ -73,10 +73,29 @@ const START_OPTIONS: StartOption[] = [
   },
 ]
 
+const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
+  id: i,
+  style: {
+    '--size': `${2 + Math.random() * 4}px`,
+    '--duration': `${6 + Math.random() * 8}s`,
+    '--delay': `${Math.random() * 6}s`,
+    '--drift-y': `${-80 - Math.random() * 160}px`,
+    '--drift-x': `${-40 + Math.random() * 80}px`,
+    '--peak-opacity': `${0.25 + Math.random() * 0.45}`,
+    left: `${5 + Math.random() * 90}%`,
+    bottom: `${-5 + Math.random() * 30}%`,
+  } as React.CSSProperties,
+}))
+
 export function StartPage({ onSelectView }: StartPageProps) {
   return (
     <main className="start-page">
       <div className="start-page__bg-pulse" />
+      <div className="start-page__particles">
+        {PARTICLES.map(p => (
+          <div key={p.id} className="start-page__particle" style={p.style} />
+        ))}
+      </div>
       <section className="start-page__hero">
         <p className="start-page__eyebrow">ClawCard Builder</p>
         <h1 className="start-page__title">
@@ -85,6 +104,7 @@ export function StartPage({ onSelectView }: StartPageProps) {
         <p className="start-page__lead">
           Narzędzia do tworzenia kart, ramek, map i mechanik dark fantasy deck buildera
         </p>
+        <div className="start-page__divider" />
       </section>
       <section className="start-page__grid">
         {START_OPTIONS.map(option => (

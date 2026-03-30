@@ -15,8 +15,29 @@ import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
 import './App.css'
 
+interface NavItem {
+  id: Exclude<AppView, 'start'>
+  icon: string
+  label: string
+  group: 'play' | 'tools' | 'dev'
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { id: 'last-language', icon: '\u{1F4D6}', label: 'Ostatni Jezyk', group: 'play' },
+  { id: 'grid-battle',   icon: '\u{2694}\uFE0F',  label: 'Grid Battle',    group: 'play' },
+  { id: 'battle',        icon: '\u{1F5E1}\uFE0F',  label: 'Battle Demo',    group: 'play' },
+  { id: 'test-env',      icon: '\u{1F3AE}', label: 'Test Env',       group: 'play' },
+  { id: 'card-editor',   icon: '\u{270F}\uFE0F',  label: 'Card Editor',    group: 'tools' },
+  { id: 'frame-editor',  icon: '\u{1F5BC}',  label: 'Frame Editor',   group: 'tools' },
+  { id: 'map-editor',    icon: '\u{1F5FA}\uFE0F',  label: 'Map Editor',     group: 'tools' },
+  { id: 'gallery',       icon: '\u{1F0CF}', label: 'Galeria',        group: 'tools' },
+  { id: 'frame-test',    icon: '\u{1F9EA}', label: 'Frame Test',     group: 'dev' },
+  { id: 'dev-game',      icon: '\u{1F52C}', label: 'Dev Game',       group: 'dev' },
+]
+
 function App() {
   const [view, setView] = useState<AppView>('start')
+  const [sidebarExpanded, setSidebarExpanded] = useState(false)
   const { toggle: toggleInspector, isOpen: inspectorOpen } = useDevInspector()
 
   const handleNavigate = (v: string) => {
@@ -42,35 +63,69 @@ function App() {
     }
   }
 
+  const isStart = view === 'start'
+
   return (
-    <div className="app-shell">
-      {view !== 'start' && (
-        <header className="app-shell__topbar">
-          <button className="app-shell__back" type="button" onClick={() => setView('start')}>← Start</button>
-          <span className="app-shell__view-label">{VIEW_LABELS[view] ?? ''}</span>
+    <div className={`app-shell ${!isStart ? 'app-shell--with-sidebar' : ''}`}>
+      {!isStart && (
+        <nav
+          className={`sidebar ${sidebarExpanded ? 'sidebar--expanded' : ''}`}
+          onMouseEnter={() => setSidebarExpanded(true)}
+          onMouseLeave={() => setSidebarExpanded(false)}
+        >
           <button
-            className={`app-shell__dev-btn ${inspectorOpen ? 'app-shell__dev-btn--active' : ''}`}
-            type="button" onClick={toggleInspector} title="Dev Inspector (Ctrl+Shift+D)"
-          >🔍 Inspector</button>
-        </header>
+            className="sidebar__home"
+            type="button"
+            onClick={() => setView('start')}
+            title="Start"
+          >
+            <span className="sidebar__home-icon">CC</span>
+            {sidebarExpanded && <span className="sidebar__home-label">ClawCard</span>}
+          </button>
+
+          <div className="sidebar__divider" />
+
+          {(['play', 'tools', 'dev'] as const).map(group => (
+            <div key={group} className="sidebar__group">
+              {sidebarExpanded && (
+                <span className="sidebar__group-label">
+                  {group === 'play' ? 'Play' : group === 'tools' ? 'Tools' : 'Dev'}
+                </span>
+              )}
+              {NAV_ITEMS.filter(n => n.group === group).map(item => (
+                <button
+                  key={item.id}
+                  className={`sidebar__item ${view === item.id ? 'sidebar__item--active' : ''}`}
+                  type="button"
+                  onClick={() => setView(item.id)}
+                  title={item.label}
+                >
+                  <span className="sidebar__item-icon">{item.icon}</span>
+                  {sidebarExpanded && <span className="sidebar__item-label">{item.label}</span>}
+                </button>
+              ))}
+            </div>
+          ))}
+
+          <div style={{ flex: 1 }} />
+
+          <button
+            className={`sidebar__item sidebar__item--inspector ${inspectorOpen ? 'sidebar__item--active' : ''}`}
+            type="button"
+            onClick={toggleInspector}
+            title="Dev Inspector (Ctrl+Shift+D)"
+          >
+            <span className="sidebar__item-icon">{'\u{1F50D}'}</span>
+            {sidebarExpanded && <span className="sidebar__item-label">Inspector</span>}
+          </button>
+        </nav>
       )}
-      {renderView()}
+
+      <div className="app-shell__content">
+        {renderView()}
+      </div>
     </div>
   )
-}
-
-const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
-  'last-language': '📖 Ostatni Język',
-  battle:          '🗡️ Battle Demo',
-  'grid-battle':   '⚔️ Grid Battle 3×2',
-  gallery:         '🃏 Galeria kart',
-  'card-editor':   '✏️ Card Editor',
-  'frame-editor':  '🗺 Frame Editor',
-  'frame-test':    '🧪 Frame Config Test',
-  'test-env':      '🎮 Test Environment',
-  'map-editor':    '🗺️ Map Editor',
-  game:            '🎮 Zagraj',
-  'dev-game':      'Dev Game',
 }
 
 export default App

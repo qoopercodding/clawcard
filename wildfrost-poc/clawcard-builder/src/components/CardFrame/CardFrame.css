@@ -37,17 +37,18 @@
 .cf-stat { pointer-events: none; }
 
 .cf-stat__val {
-  font-family: 'Georgia', serif;
+  font-family: var(--font-gothic, 'Georgia', serif);
   font-weight: 900;
   line-height: 1;
   color: #000000;
   font-size: 90%;
   white-space: nowrap;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* Nazwa */
 .cf-name {
-  font-family: 'Georgia', serif;
+  font-family: var(--font-gothic, 'Georgia', serif);
   font-weight: 700;
   font-size: 60%;
   color: #000000;
