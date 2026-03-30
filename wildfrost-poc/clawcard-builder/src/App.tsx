@@ -7,6 +7,7 @@ import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
 import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
+import { LastLanguageScreen } from './modules/last-language/LastLanguageScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -22,14 +23,15 @@ function App() {
 
   function renderView() {
     switch (view) {
-      case 'start':        return <StartPage onSelectView={setView} />
-      case 'battle':       return <BattleDemoScreen />
-      case 'gallery':      return <CardBuilderScreen />
-      case 'card-editor':  return <CardEditorScreen />
-      case 'frame-editor': return <FrameEditorScreen onNavigate={handleNavigate} />
-      case 'frame-test':   return <FrameConfigTest />
-      case 'test-env':     return <TestEnvScreen />
-      case 'game':         return <GameScreen />
+      case 'start':          return <StartPage onSelectView={setView} />
+      case 'last-language':  return <LastLanguageScreen />
+      case 'battle':         return <BattleDemoScreen />
+      case 'gallery':        return <CardBuilderScreen />
+      case 'card-editor':    return <CardEditorScreen />
+      case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
+      case 'frame-test':     return <FrameConfigTest />
+      case 'test-env':       return <TestEnvScreen />
+      case 'game':           return <GameScreen />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreen /></>)
       default: return <StartPage onSelectView={setView} />
@@ -54,14 +56,15 @@ function App() {
 }
 
 const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
-  battle:        '⚔️ Battle Demo',
-  gallery:       '🃏 Galeria kart',
-  'card-editor': '✏️ Card Editor',
-  'frame-editor':'🗺 Frame Editor',
-  'frame-test':  '🧪 Frame Config Test',
-  'test-env':    '🎮 Test Environment',
-  game:          '🎮 Zagraj',
-  'dev-game':    'Dev Game',
+  'last-language': '📖 Ostatni Język',
+  battle:          '⚔️ Battle Demo',
+  gallery:         '🃏 Galeria kart',
+  'card-editor':   '✏️ Card Editor',
+  'frame-editor':  '🗺 Frame Editor',
+  'frame-test':    '🧪 Frame Config Test',
+  'test-env':      '🎮 Test Environment',
+  game:            '🎮 Zagraj',
+  'dev-game':      'Dev Game',
 }
 
 export default App

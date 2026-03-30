@@ -8,6 +8,7 @@ export type AppView =
   | 'test-env'
   | 'game'
   | 'dev-game'
+  | 'last-language'
 
 interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void
@@ -24,6 +25,11 @@ interface StartOption {
 }
 
 const START_OPTIONS: StartOption[] = [
+  {
+    id: 'last-language', emoji: '📖', title: 'Ostatni Język', subtitle: 'Dark fantasy deck builder',
+    description: 'Dwa decki: Karty + Słowa. Hive Mind. Tabu. Zapominanie.',
+    badge: 'NOWE', highlight: true,
+  },
   {
     id: 'battle', emoji: '⚔️', title: 'Battle Demo', subtitle: 'Grywalne demo',
     description: 'Pełna walka: Snow, Shield, Teeth, Poison, countery, 5 wrogów.',
