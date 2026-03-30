@@ -8,6 +8,7 @@ import { FrameConfigTest } from './modules/frame-editor/FrameConfigTest'
 import { BattleDemoScreen } from './modules/battle-demo/BattleDemoScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
 import { LastLanguageScreen } from './modules/last-language/LastLanguageScreen'
+import MapEditorScreen from './modules/map-editor/MapEditorScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -31,6 +32,7 @@ function App() {
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
+      case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreen /></>)
@@ -63,6 +65,7 @@ const VIEW_LABELS: Record<Exclude<AppView, 'start'>, string> = {
   'frame-editor':  '🗺 Frame Editor',
   'frame-test':    '🧪 Frame Config Test',
   'test-env':      '🎮 Test Environment',
+  'map-editor':    '🗺️ Map Editor',
   game:            '🎮 Zagraj',
   'dev-game':      'Dev Game',
 }

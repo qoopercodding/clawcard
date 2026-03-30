@@ -1,14 +1,15 @@
 export type AppView =
   | 'start'
+  | 'last-language'
   | 'battle'
   | 'gallery'
   | 'card-editor'
   | 'frame-editor'
   | 'frame-test'
   | 'test-env'
+  | 'map-editor'
   | 'game'
   | 'dev-game'
-  | 'last-language'
 
 interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void
@@ -41,11 +42,15 @@ const START_OPTIONS: StartOption[] = [
     badge: 'NOWE', highlight: true,
   },
   {
+    id: 'map-editor', emoji: '🗺️', title: 'Map Editor', subtitle: 'Edytor mapy',
+    description: 'Twórz węzły i ścieżki. Przeciągaj, łącz, zmieniaj typy. Eksport JSON.',
+  },
+  {
     id: 'card-editor', emoji: '✏️', title: 'Card Editor', subtitle: 'Tworzenie kart',
     description: 'Formularz z live preview. Zapis do biblioteki, eksport .js do kodu.',
   },
   {
-    id: 'frame-editor', emoji: '🗺', title: 'Frame Editor', subtitle: 'Kalibracja ramek',
+    id: 'frame-editor', emoji: '🖼', title: 'Frame Editor', subtitle: 'Kalibracja ramek',
     description: 'Przeciągaj prostokąty na PNG ramki. Zapisz nowy typ do kodu.',
   },
   {
