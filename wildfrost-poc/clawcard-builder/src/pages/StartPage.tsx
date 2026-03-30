@@ -71,10 +71,15 @@ const START_OPTIONS: StartOption[] = [
 export function StartPage({ onSelectView }: StartPageProps) {
   return (
     <main className="start-page">
+      <div className="start-page__bg-pulse" />
       <section className="start-page__hero">
         <p className="start-page__eyebrow">ClawCard Builder</p>
-        <h1>Wybierz moduł</h1>
-        <p className="start-page__lead">Battle Demo · Card Editor · Frame Editor · Galeria</p>
+        <h1 className="start-page__title">
+          Forge Your <span className="start-page__gold">Destiny</span>
+        </h1>
+        <p className="start-page__lead">
+          Narzędzia do tworzenia kart, ramek, map i mechanik dark fantasy deck buildera
+        </p>
       </section>
       <section className="start-page__grid">
         {START_OPTIONS.map(option => (
@@ -85,19 +90,26 @@ export function StartPage({ onSelectView }: StartPageProps) {
             onClick={() => onSelectView(option.id)}
           >
             <span className="start-option__emoji">{option.emoji}</span>
-            <div className="start-option__header">
-              <strong className="start-option__title">{option.title}</strong>
-              {option.badge && (
-                <span className={`start-option__badge ${option.highlight ? 'start-option__badge--hot' : ''}`}>
-                  {option.badge}
-                </span>
-              )}
+            <div className="start-option__body">
+              <div className="start-option__header">
+                <strong className="start-option__title">{option.title}</strong>
+                {option.badge && (
+                  <span className={`start-option__badge ${option.highlight ? 'start-option__badge--hot' : ''}`}>
+                    {option.badge}
+                  </span>
+                )}
+              </div>
+              <span className="start-option__subtitle">{option.subtitle}</span>
+              <span className="start-option__description">{option.description}</span>
             </div>
-            <span className="start-option__subtitle">{option.subtitle}</span>
-            <span className="start-option__description">{option.description}</span>
           </button>
         ))}
       </section>
+      <footer className="start-page__footer">
+        <span>ClawCard v1.4</span>
+        <span className="start-page__separator">·</span>
+        <span>Dark Fantasy Deck Builder</span>
+      </footer>
     </main>
   )
 }
