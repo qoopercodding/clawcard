@@ -1,11 +1,16 @@
 :root {
+  --color-bg: #1a0e05;
+  --color-surface: #281608;
+  --color-gold: #c8902a;
+  --color-text: #e8d5b0;
+
   font-family: 'Trebuchet MS', Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #fff4e4;
+  color: var(--color-text);
   background:
-    radial-gradient(circle at top, rgba(225, 144, 62, 0.22), transparent 35%),
-    linear-gradient(180deg, #23140a 0%, #140b07 100%);
+    radial-gradient(circle at top, rgba(200, 144, 42, 0.18), transparent 35%),
+    linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
