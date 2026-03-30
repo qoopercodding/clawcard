@@ -10,6 +10,7 @@ export interface AreaConfig {
   width:  number
   height: number
   1test_companon: 1TEST_COMPANON_USER_CONFIG,
+  1testtt_basic_card: 1TESTTT_BASIC_CARD_USER_CONFIG,
 }
 export interface FrameConfig {
   frameFile: string | null
@@ -134,6 +135,13 @@ const 1TEST_COMPANON_USER_CONFIG: FrameConfig = {
   hp     : { left: 3.5, top: 19.2, width: 11.7, height: 7.1 },
   art    : { left: 14.4, top: 4.3, width: 69.1, height: 47.9 },
   frame  : { left: 0.8, top: 0.4, width: 98.7, height: 98.5 },
+}
+
+const 1TESTTT_BASIC_CARD_USER_CONFIG: FrameConfig = {
+  frameFile: `${BASE}frames/Item_without_atatck.png`,
+  name   : { left: 20.5, top: 50.8, width: 60, height: 7.7 },
+  desc   : { left: 23.3, top: 59.4, width: 54.7, height: 25.5 },
+  art    : { left: 16.6, top: 8, width: 67.9, height: 42.5 },
 }
 
 export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
