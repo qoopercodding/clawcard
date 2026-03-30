@@ -9,8 +9,8 @@ export interface AreaConfig {
   top:    number
   width:  number
   height: number
+  1test_companon: 1TEST_COMPANON_USER_CONFIG,
 }
-
 export interface FrameConfig {
   frameFile: string | null
   art:      AreaConfig
@@ -123,6 +123,17 @@ const TRANSFORMER_CONFIG: FrameConfig = {
   counter: { left: 42.9, top: 88.1, width: 12.7, height: 7.3  },
   name:    { left: 17.7, top: 53.4, width: 63.1, height: 6.7  },
   desc:    { left: 19.8, top: 61.2, width: 58.4, height: 23.9 },
+}
+
+const 1TEST_COMPANON_USER_CONFIG: FrameConfig = {
+  frameFile: `${BASE}frames/Companion Frame.png`,
+  name   : { left: 17.1, top: 53.3, width: 63.8, height: 7.2 },
+  desc   : { left: 19.5, top: 61.3, width: 59.1, height: 23.9 },
+  counter: { left: 42.6, top: 87.3, width: 13.1, height: 8.6 },
+  atk    : { left: 82.5, top: 19, width: 8.2, height: 6.6 },
+  hp     : { left: 3.5, top: 19.2, width: 11.7, height: 7.1 },
+  art    : { left: 14.4, top: 4.3, width: 69.1, height: 47.9 },
+  frame  : { left: 0.8, top: 0.4, width: 98.7, height: 98.5 },
 }
 
 export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
