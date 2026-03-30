@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
 import { useCardStore } from '../../store/cardStore'
+import { commitFiles, getStoredPAT } from '../../utils/githubCommit'
+import { GithubPATInput } from '../../components/GithubPATInput'
 import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, Test3Card, TribeType } from '../../types/card.types'
 import './CardEditorScreen.css'
 
@@ -22,6 +24,7 @@ const DEFAULT_DRAFT: CardDraft = {
 }
 
 const LIBRARY_KEY = 'ced_library'
+const CARD_LIBRARY_REPO_PATH = 'wildfrost-poc/clawcard-builder/src/data/cardLibrary.json'
 
 function nameToId(name: string): string {
   return name.trim().toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '')
@@ -45,7 +48,8 @@ function draftToCard(draft: CardDraft): AnyCard {
   const resolvedId = draft.id || nameToId(draft.name) || '__preview__'
   const base = {
     id: resolvedId, name: draft.name || '???', tribe: draft.tribe,
-    imageUrl: draft.imgSrc, imageFallback: draft.icon || '❓',
+    imageUrl: draft.imgSrc?.startsWith('data:') ? null : draft.imgSrc,
+    imageFallback: draft.icon || '❓',
     description: draft.desc, createdAt: Date.now(),
   }
   if (draft.type === 'companion') {
@@ -79,20 +83,36 @@ function draftToCard(draft: CardDraft): AnyCard {
   } as ItemCard
 }
 
+// ─── GITHUB COMMIT ───────────────────────────────────────────────────────────
+
+async function commitCardLibrary(library: Record<string, CardDraft>): Promise<void> {
+  // Serializuj bez imgSrc (base64 za duże do commita)
+  const clean = Object.fromEntries(
+    Object.entries(library).map(([k, v]) => [k, { ...v, imgSrc: v.imgSrc?.startsWith('data:') ? null : v.imgSrc }])
+  )
+  const content = JSON.stringify(clean, null, 2)
+  await commitFiles(
+    [{ path: CARD_LIBRARY_REPO_PATH, content }],
+    `feat(card-editor): zaktualizowana biblioteka kart (${Object.keys(library).length} kart)`
+  )
+}
+
+// ─── KOMPONENT ────────────────────────────────────────────────────────────────
+
 export function CardEditorScreen() {
   const { addCard, consumePendingType } = useCardStore()
-  const [draft, setDraft]         = useState<CardDraft>({ ...DEFAULT_DRAFT })
-  const [library, setLibrary]     = useState<Record<string, CardDraft>>({})
-  const [savedMsg, setSavedMsg]   = useState(false)
+  const [draft, setDraft]           = useState<CardDraft>({ ...DEFAULT_DRAFT })
+  const [library, setLibrary]       = useState<Record<string, CardDraft>>({})
+  const [savedMsg, setSavedMsg]     = useState<'idle' | 'local' | 'git' | 'error'>('idle')
+  const [savedNote, setSavedNote]   = useState('')
   const [addedToGallery, setAddedToGallery] = useState(false)
-  const [editingId, setEditingId] = useState<string | null>(null)
-  const [errors, setErrors]       = useState<string[]>([])
+  const [editingId, setEditingId]   = useState<string | null>(null)
+  const [errors, setErrors]         = useState<string[]>([])
+  const [hasPAT, setHasPAT]         = useState(!!getStoredPAT())
 
   useEffect(() => {
     const pending = consumePendingType()
-    if (pending) {
-      setDraft(prev => ({ ...prev, type: pending.typeName as CardType }))
-    }
+    if (pending) setDraft(prev => ({ ...prev, type: pending.typeName as CardType }))
   }, [])
 
   useEffect(() => {
@@ -102,14 +122,34 @@ export function CardEditorScreen() {
 
   const update = (patch: Partial<CardDraft>) => { setDraft(prev => ({ ...prev, ...patch })); setErrors([]) }
 
-  function saveToLibrary() {
+  async function saveToLibrary() {
     const errs = validateDraft(draft)
     if (errs.length) { setErrors(errs); return }
     const id = draft.id || nameToId(draft.name)
     const newLib = { ...library, [id]: { ...draft, id } }
-    setLibrary(newLib); localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
-    setSavedMsg(true); setErrors([])
-    setTimeout(() => setSavedMsg(false), 1500)
+
+    // 1. Zapisz do localStorage
+    setLibrary(newLib)
+    localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
+    setErrors([])
+
+    // 2. Commituj do GitHub jeśli mamy PAT
+    if (hasPAT) {
+      setSavedMsg('git')
+      setSavedNote('Commitowanie...')
+      try {
+        await commitCardLibrary(newLib)
+        setSavedNote(`✓ Karta '${draft.name}' zapisana i wcommitowana!`)
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : String(err)
+        setSavedNote(`✓ Lokalnie OK. Git: ${msg}`)
+      }
+    } else {
+      setSavedMsg('local')
+      setSavedNote(`✓ Zapisano lokalnie (brak PAT)`)
+    }
+
+    setTimeout(() => { setSavedMsg('idle'); setSavedNote('') }, 4000)
   }
 
   function addToGallery() {
@@ -130,10 +170,15 @@ export function CardEditorScreen() {
     if (saved) { setDraft({ ...saved }); setEditingId(id); setErrors([]) }
   }
 
-  function deleteSaved(id: string) {
+  async function deleteSaved(id: string) {
     const newLib = { ...library }; delete newLib[id]
-    setLibrary(newLib); localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
+    setLibrary(newLib)
+    localStorage.setItem(LIBRARY_KEY, JSON.stringify(newLib))
     if (editingId === id) { setDraft({ ...DEFAULT_DRAFT }); setEditingId(null) }
+    // Commituj usunięcie jeśli mamy PAT
+    if (hasPAT) {
+      try { await commitCardLibrary(newLib) } catch { /* nie blokuj UX */ }
+    }
   }
 
   function exportCard() {
@@ -157,33 +202,52 @@ export function CardEditorScreen() {
   const { inspect } = useDevInspector()
   const canSave = draft.name.trim().length > 0 && draft.desc.trim().length > 0
 
+  const saveLabel = savedMsg === 'git' && savedNote === 'Commitowanie...'
+    ? '⏳ Commitowanie...'
+    : savedMsg !== 'idle'
+      ? savedNote
+      : hasPAT ? '💾 Zapisz + git commit' : '💾 Zapisz lokalnie'
+
   return (
     <div className="card-editor">
       <div className="card-editor__form">
+        {/* PAT INPUT */}
+        <div style={{marginBottom: 10}}>
+          <GithubPATInput onTokenChange={setHasPAT} />
+        </div>
+
         <FormPanel draft={draft} onChange={update} editingId={editingId} />
+
         {errors.length > 0 && (
           <div className="ced-errors">
             {errors.map((e, i) => <div key={i} className="ced-error-item">⚠ {e}</div>)}
           </div>
         )}
+
         <div className="ced-actions">
-          <button className={`ced-btn ced-btn--save ${savedMsg?'ced-btn--done':''} ${!canSave?'ced-btn--muted':''}`}
-            onClick={saveToLibrary} title={!canSave?'Wypełnij nazwę i opis':''}>
-            {savedMsg ? '✓ Zapisano!' : '💾 Zapisz'}
+          <button
+            className={`ced-btn ced-btn--save ${savedMsg !== 'idle' ? 'ced-btn--done' : ''} ${!canSave ? 'ced-btn--muted' : ''}`}
+            onClick={saveToLibrary}
+            disabled={savedMsg === 'git' && savedNote === 'Commitowanie...'}
+            title={!canSave ? 'Wypełnij nazwę i opis' : ''}>
+            {saveLabel}
           </button>
           <button className="ced-btn ced-btn--export" onClick={exportCard}>⬇ .js</button>
           <button className="ced-btn ced-btn--reset" onClick={() => { setDraft({...DEFAULT_DRAFT}); setEditingId(null); setErrors([]) }}>✕</button>
         </div>
+
         <button
           className={`ced-gallery-btn ${addedToGallery ? 'ced-gallery-btn--done' : ''} ${!canSave ? 'ced-gallery-btn--muted' : ''}`}
           onClick={addToGallery} disabled={!canSave}>
           {addedToGallery ? '✓ Dodano do galerii!' : '🃏 Dodaj do galerii'}
         </button>
+
         <div className="ced-required-hint">
           * Wymagane: <strong>Nazwa</strong> i <strong>Opis</strong>
           {COMPANION_LIKE_TYPES.includes(draft.type) && ' · HP · Counter'}
           {draft.type === 'item_with_attack' && ' · ATK > 0'}
         </div>
+
         {Object.values(library).length > 0 && (
           <div className="ced-library">
             <div className="ced-library__title">📚 Biblioteka ({Object.values(library).length})</div>
@@ -199,6 +263,7 @@ export function CardEditorScreen() {
           </div>
         )}
       </div>
+
       <div className="card-editor__preview">
         <div className="ced-preview">
           <div className="ced-preview__label">Podgląd na żywo</div>
@@ -211,6 +276,8 @@ export function CardEditorScreen() {
     </div>
   )
 }
+
+// ─── FORM PANEL ──────────────────────────────────────────────────────────────
 
 interface FormPanelProps { draft: CardDraft; onChange: (p: Partial<CardDraft>) => void; editingId: string | null }
 

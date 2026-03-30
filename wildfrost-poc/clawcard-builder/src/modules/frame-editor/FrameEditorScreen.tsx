@@ -1,17 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useCardStore } from '../../store/cardStore'
+import { commitFiles, getStoredPAT } from '../../utils/githubCommit'
+import { GithubPATInput } from '../../components/GithubPATInput'
 import './FrameEditorScreen.css'
 
 // =============================================================================
-// FrameEditorScreen.tsx — Frame Mapper z pełnym handoff do Card Editor
-// =============================================================================
-//
-// FLOW:
-//   1. Nowy typ → wpisz nazwę → zaznacz pola → wgraj PNG → zaznacz obszary
-//   2. "💾 Zapisz typ + git push"
-//      → POST /api/save-frame-config → aktualizuje 3 pliki TS + git push
-//      → setPendingType() w store → Card Editor może odebrać
-//   3. Przycisk "→ Otwórz Card Editor" pojawia się po zapisie
+// FrameEditorScreen.tsx — Frame Mapper z zapisem do GitHub
 // =============================================================================
 
 interface AreaResult { left: number; top: number; width: number; height: number }
@@ -40,6 +34,110 @@ const EXISTING_TYPES = [
 
 const STORAGE_KEY = (t: string) => `frameConfig_v3_${t}`
 
+// ─── GitHub commit helper — generuje nowy wpis w frameConfig.ts ──────────────
+
+function generateFrameConfigEntry(typeName: string, frameFile: string | null, result: MapperResult, enabledFields: string[]): string {
+  const constName = typeName.toUpperCase().replace(/[^A-Z0-9]/g, '_') + '_USER_CONFIG'
+  const frameFileLine = frameFile
+    ? `  frameFile: \`\${BASE}${frameFile.replace('/frames/', 'frames/')}\`,`
+    : `  frameFile: null,`
+
+  const fieldLines = Object.entries(result)
+    .filter(([k]) => enabledFields.includes(k))
+    .map(([k, v]) => {
+      const a = v as AreaResult
+      return `  ${k.padEnd(7)}: { left: ${a.left}, top: ${a.top}, width: ${a.width}, height: ${a.height} },`
+    })
+    .join('\n')
+
+  return `const ${constName}: FrameConfig = {\n${frameFileLine}\n${fieldLines}\n}`
+}
+
+async function saveFrameConfigToGit(
+  typeName: string,
+  typeLabel: string,
+  frameFile: string | null,
+  result: MapperResult,
+  enabledFields: string[],
+  isNew: boolean,
+  imgIsLocal: boolean,
+  imgSrc: string | null,
+  frameFileName: string | null,
+): Promise<void> {
+  const REPO_PATH = 'wildfrost-poc/clawcard-builder/src/utils/frameConfig.ts'
+
+  // Pobierz aktualny frameConfig.ts z GitHub
+  const res = await fetch(
+    `https://api.github.com/repos/qoopercodding/clawcard/contents/${REPO_PATH}?ref=main`,
+    {
+      headers: {
+        Authorization: `Bearer ${getStoredPAT()}`,
+        Accept: 'application/vnd.github+json',
+      },
+    }
+  )
+  if (!res.ok) throw new Error(`Nie mogę pobrać frameConfig.ts: ${res.status}`)
+  const fileData = await res.json() as { content: string }
+  const currentContent = decodeURIComponent(escape(atob(fileData.content.replace(/\n/g, ''))))
+
+  const constName = typeName.toUpperCase().replace(/[^A-Z0-9]/g, '_') + '_USER_CONFIG'
+  const entry = generateFrameConfigEntry(typeName, frameFile, result, enabledFields)
+
+  // Sprawdź czy wpis już istnieje, jeśli tak — zastąp, jeśli nie — dodaj
+  let newContent: string
+
+  // Usuń stary wpis tego typu jeśli istnieje
+  const oldEntryRegex = new RegExp(
+    `const ${constName}: FrameConfig = \\{[^}]+\\}\\n?`,
+    'g'
+  )
+  const withoutOld = currentContent.replace(oldEntryRegex, '')
+
+  // Dodaj nowy wpis przed eksportem FRAME_CONFIGS
+  const exportLine = 'export const FRAME_CONFIGS'
+  const insertPos = withoutOld.indexOf(exportLine)
+
+  if (insertPos === -1) {
+    // Fallback — dodaj na końcu pliku
+    newContent = withoutOld + '\n' + entry + '\n'
+  } else {
+    newContent = withoutOld.slice(0, insertPos) + entry + '\n\n' + withoutOld.slice(insertPos)
+  }
+
+  // Dodaj wpis do FRAME_CONFIGS jeśli nie ma
+  if (!newContent.includes(`${typeName}:`)) {
+    // Znajdź koniec FRAME_CONFIGS i wstaw nowy wpis
+    newContent = newContent.replace(
+      /(\}\s*$)/m,
+      `  ${typeName}: ${constName},\n}`
+    )
+  } else {
+    // Zaktualizuj istniejący wpis
+    newContent = newContent.replace(
+      new RegExp(`  ${typeName}:[^,\n]+,`),
+      `  ${typeName}: ${constName},`
+    )
+  }
+
+  const files = [
+    {
+      path: REPO_PATH,
+      content: newContent,
+    },
+  ]
+
+  // Jeśli PNG jest lokalny — zapisz do public/frames/
+  if (imgIsLocal && imgSrc && frameFileName) {
+    const base64Data = imgSrc.split(',')[1]
+    // PNG zapisujemy jako base64 — commitFiles musi obsługiwać binary
+    // Na razie pomijamy PNG — samo TS wystarczy
+  }
+
+  await commitFiles(files, `feat(frame-editor): ${isNew ? 'nowy' : 'zaktualizowany'} typ ramki '${typeName}'`)
+}
+
+// ─── KOMPONENT ────────────────────────────────────────────────────────────────
+
 interface FrameEditorScreenProps {
   onNavigate?: (view: string) => void
 }
@@ -64,6 +162,7 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   const [dragStart, setDragStart]     = useState<{x:number;y:number}|null>(null)
   const [dragCurrent, setDragCurrent] = useState<{x:number;y:number}|null>(null)
   const [isDragging, setIsDragging]   = useState(false)
+  const [hasPAT, setHasPAT]           = useState(!!getStoredPAT())
 
   const imgRef       = useRef<HTMLImageElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -193,49 +292,49 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
 
     if (!typeName) { setSaveStatus('error'); setSaveMsg('Wpisz nazwę typu'); return }
     if (!result.art) { setSaveStatus('error'); setSaveMsg('Pole "Art Area" jest wymagane'); return }
-    if (Object.keys(result).length === 0) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej jeden obszar'); return }
 
-    setSaveStatus('saving'); setSaveMsg('Zapisuję...')
+    // 1. Zawsze zapisz do localStorage
+    localStorage.setItem(STORAGE_KEY(typeName), JSON.stringify(result))
 
-    const payload = {
-      typeName, typeLabel,
-      frameFile:   frameFile ? `/frames/${frameFile}` : null,
-      pngFileName: imgIsLocal && frameFile ? frameFile : null,
-      pngBase64:   imgIsLocal && imgSrc?.startsWith('data:') ? imgSrc : null,
-      fields:      { ...result },
-      enabledFields: Array.from(enabledFields),
-      isNew: mode === 'new',
+    // 2. Przekaż do Card Editor przez store
+    setPendingType({
+      typeName,
+      frameFile: frameFile ? `/frames/${frameFile}` : null,
+      fields: { ...result },
+    })
+
+    // 3. Jeśli mamy PAT — commituj do GitHub
+    if (hasPAT) {
+      setSaveStatus('saving'); setSaveMsg('Commitowanie do GitHub...')
+      try {
+        await saveFrameConfigToGit(
+          typeName,
+          typeLabel,
+          frameFile ? `/frames/${frameFile}` : null,
+          result,
+          Array.from(enabledFields),
+          mode === 'new',
+          imgIsLocal,
+          imgSrc,
+          frameFile,
+        )
+        setSaveStatus('saved')
+        setSaveMsg(`✓ Typ '${typeName}' zapisany i wcommitowany do repo!`)
+      } catch (err: unknown) {
+        const msg = err instanceof Error ? err.message : String(err)
+        // Git push nie powiódł się — ale localStorage jest OK
+        setSaveStatus('saved')
+        setSaveMsg(`✓ Zapisano lokalnie. Git commit nie powiódł się: ${msg}`)
+      }
+    } else {
+      setSaveStatus('saved')
+      setSaveMsg(`✓ Zapisano lokalnie (brak PAT — nie commitowano do git)`)
     }
 
-    try {
-      const res = await fetch('/api/save-frame-config', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-      const data = await res.json()
-      if (data.ok) {
-        setSaveStatus('saved')
-        setSaveMsg(data.message ?? `✓ Typ '${typeName}' zapisany!`)
-        setSavedTypeName(typeName)
+    setSavedTypeName(typeName)
 
-        // ── TASK 2: Przekaż do Card Editor przez store ──────────────────
-        setPendingType({
-          typeName,
-          frameFile: frameFile ? `/frames/${frameFile}` : null,
-          fields: { ...result },
-        })
-
-        if (mode === 'new') {
-          setNewTypeName(''); setNewTypeLabel(''); setResult({}); setImgSrc(null); setImgIsLocal(false)
-        }
-      } else {
-        setSaveStatus('error')
-        setSaveMsg(data.error ?? 'Błąd zapisu')
-      }
-    } catch {
-      setSaveStatus('error')
-      setSaveMsg('Brak połączenia z Vite — upewnij się że dev server działa na :5175')
+    if (mode === 'new') {
+      setNewTypeName(''); setNewTypeLabel(''); setResult({}); setImgSrc(null); setImgIsLocal(false)
     }
 
     setTimeout(() => { setSaveStatus('idle'); setSaveMsg('') }, 8000)
@@ -258,6 +357,11 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
   return (
     <div className="frame-editor">
       <aside className="frame-editor__sidebar">
+
+        {/* PAT INPUT */}
+        <div style={{marginBottom: 10}}>
+          <GithubPATInput onTokenChange={setHasPAT} />
+        </div>
 
         <div className="fe-mode-tabs">
           <button className={`fe-mode-tab ${mode==='existing'?'fe-mode-tab--active':''}`} onClick={() => setMode('existing')}>✏ Edytuj typ</button>
@@ -366,18 +470,14 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
           className={`fe-save-btn ${saveStatus==='saved'?'fe-save-btn--saved':''} ${saveStatus==='error'?'fe-save-btn--error':''} ${saveStatus==='saving'?'fe-save-btn--saving':''}`}
           onClick={handleSaveToCode}
           disabled={saveStatus==='saving' || !result.art || (mode==='new'&&!newTypeName)}>
-          {saveStatus==='saving' ? '⏳ Zapisuję...'
+          {saveStatus==='saving' ? '⏳ Commitowanie...'
           : saveStatus==='saved' ? '✓ Zapisano!'
           : saveStatus==='error' ? '⚠ Błąd'
-          : '💾 Zapisz typ + git push'}
+          : hasPAT ? '💾 Zapisz + git commit' : '💾 Zapisz lokalnie'}
         </button>
 
-        {/* ── TASK 2: Przycisk handoff do Card Editor ── */}
         {saveStatus === 'saved' && savedTypeName && onNavigate && (
-          <button
-            className="fe-goto-editor-btn"
-            onClick={() => onNavigate('card-editor')}
-          >
+          <button className="fe-goto-editor-btn" onClick={() => onNavigate('card-editor')}>
             ✏ Utwórz kartę typu "{savedTypeName}" →
           </button>
         )}
