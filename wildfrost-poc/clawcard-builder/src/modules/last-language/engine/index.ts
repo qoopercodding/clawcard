@@ -1,4 +1,4 @@
-import type { LLBattleState, LLCard, LLWord, ResolvedEffect, Keyword, Effect } from '../types'
+import type { LLBattleState, LLCard, LLWord, ResolvedEffect, Keyword, EnemyState } from '../types'
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -11,15 +11,23 @@ function shuffle<T>(arr: T[]): T[] {
 
 // ─── EFFECTS ─────────────────────────────────────────────────────────────────
 
-function applyKeywordToEffect(effect: ResolvedEffect, kw: Keyword, state: LLBattleState): ResolvedEffect {
+function applyKeywordToEffect(
+  effect: ResolvedEffect,
+  kw: Keyword,
+  state: LLBattleState
+): ResolvedEffect {
   switch (kw.type) {
     case 'strengthen': return { ...effect, damage: (effect.damage ?? 0) + kw.value }
     case 'void': return { ...effect, multiplier: 3, exhaustCard: true }
     case 'invert': return { ...effect, inverted: true }
     case 'exhaust': return { ...effect, exhaustCard: true }
     case 'silence': return { ...effect, silentToHiveMind: true }
-    case 'pastEcho': return state.lastPlayedEffect ? { ...state.lastPlayedEffect } as ResolvedEffect : effect
-    default: return { ...effect, applyKeywords: [...(effect.applyKeywords ?? []), kw] }
+    case 'pastEcho':
+      return state.lastPlayedEffect
+        ? ({ ...state.lastPlayedEffect } as ResolvedEffect)
+        : effect
+    default:
+      return { ...effect, applyKeywords: [...(effect.applyKeywords ?? []), kw] }
   }
 }
 
@@ -27,11 +35,19 @@ function invertEffect(e: ResolvedEffect): ResolvedEffect {
   return { ...e, damage: e.heal, heal: e.damage, inverted: false }
 }
 
-export function applyEffectToState(state: LLBattleState, effect: ResolvedEffect, targetId?: string): LLBattleState {
-  let s = { ...state, log: [...state.log] }
+export function applyEffectToState(
+  state: LLBattleState,
+  effect: ResolvedEffect,
+  targetId?: string
+): LLBattleState {
+  let s: LLBattleState = { ...state, log: [...state.log] }
   const target = targetId ? s.enemies.find(e => e.id === targetId) : s.enemies[0]
 
-  const dmg = effect.damage ? (effect.multiplier ? effect.damage * effect.multiplier : effect.damage) : 0
+  const dmg = effect.damage
+    ? effect.multiplier
+      ? effect.damage * effect.multiplier
+      : effect.damage
+    : 0
 
   // Heal player
   if (effect.heal) {
@@ -49,34 +65,48 @@ export function applyEffectToState(state: LLBattleState, effect: ResolvedEffect,
 
   // Damage enemies
   if (effect.targetType === 'all') {
-    s.enemies.forEach(e => { if (e.hp > 0) s = damageEnemy(s, e.id, dmg, effect) })
+    for (const e of s.enemies) {
+      if (e.hp > 0) s = damageEnemy(s, e.id, dmg, effect)
+    }
   } else if (target && dmg > 0) {
     s = damageEnemy(s, target.id, dmg, effect)
   }
 
-  // Apply stack keywords
+  // Apply stack keywords (frost, poison, weaken, root)
   if (target && effect.applyKeywords) {
-    const stackKws = effect.applyKeywords.filter(k => ['frost','poison','weaken','root'].includes(k.type))
+    const stackKws = effect.applyKeywords.filter(k =>
+      ['frost', 'poison', 'weaken', 'root'].includes(k.type)
+    )
     if (stackKws.length > 0) {
-      s = { ...s, enemies: s.enemies.map(e => {
-        if (e.id !== target.id) return e
-        const effs = [...e.activeEffects]
-        for (const kw of stackKws) {
-          const ex = effs.find(ae => ae.keyword.type === kw.type)
-          const stacks = 'stacks' in kw ? kw.stacks : 1
-          if (ex) ex.stacks += stacks
-          else effs.push({ keyword: kw, stacks })
-          s.log.push(`${kw.type} ×${stacks} na ${e.name ?? e.id}.`)
-        }
-        return { ...e, activeEffects: effs }
-      }) }
+      s = {
+        ...s,
+        enemies: s.enemies.map(e => {
+          if (e.id !== target.id) return e
+          const effs = [...e.activeEffects]
+          for (const kw of stackKws) {
+            const ex = effs.find(ae => ae.keyword.type === kw.type)
+            const stacks = 'stacks' in kw ? kw.stacks : 1
+            if (ex) {
+              ex.stacks += stacks
+            } else {
+              effs.push({ keyword: kw, stacks })
+            }
+            s.log.push(`${kw.type} ×${stacks} na ${e.name ?? e.id}.`)
+          }
+          return { ...e, activeEffects: effs }
+        }),
+      }
     }
   }
 
   // Draw words
   if (effect.drawWords) {
     const drawn = s.wordDeck.slice(0, effect.drawWords)
-    s = { ...s, wordHand: [...s.wordHand, ...drawn], wordDeck: s.wordDeck.slice(effect.drawWords) }
+    s = {
+      ...s,
+      wordHand: [...s.wordHand, ...drawn],
+      wordDeck: s.wordDeck.slice(effect.drawWords),
+    }
     if (drawn.length) s.log.push(`Dobierasz ${drawn.length} Słów.`)
   }
 
@@ -85,20 +115,32 @@ export function applyEffectToState(state: LLBattleState, effect: ResolvedEffect,
   return s
 }
 
-function damageEnemy(s: LLBattleState, id: string, dmg: number, effect: ResolvedEffect): LLBattleState {
+function damageEnemy(
+  s: LLBattleState,
+  id: string,
+  dmg: number,
+  effect: ResolvedEffect
+): LLBattleState {
   const pierce = effect.applyKeywords?.find(k => k.type === 'pierce')
-  const enemy = s.enemies.find(e => e.id === id)!
-  let actual = dmg
-  let block = enemy.block
+  const enemy = s.enemies.find(e => e.id === id)
+  if (!enemy) return s
 
-  if (!pierce && block > 0) {
-    const absorbed = Math.min(actual, block)
+  let actual = dmg
+  let enemyBlock = enemy.block
+
+  if (!pierce && enemyBlock > 0) {
+    const absorbed = Math.min(actual, enemyBlock)
     actual -= absorbed
-    block -= absorbed
-    s = { ...s, enemies: s.enemies.map(e => e.id === id ? { ...e, block } : e) }
+    enemyBlock -= absorbed
+    s = { ...s, enemies: s.enemies.map(e => (e.id === id ? { ...e, block: enemyBlock } : e)) }
   }
 
-  s = { ...s, enemies: s.enemies.map(e => e.id === id ? { ...e, hp: Math.max(0, e.hp - actual) } : e) }
+  s = {
+    ...s,
+    enemies: s.enemies.map(e =>
+      e.id === id ? { ...e, hp: Math.max(0, e.hp - actual) } : e
+    ),
+  }
   s.log.push(`${actual} dmg → ${enemy.name ?? id}.`)
 
   // Lifesteal
@@ -120,24 +162,32 @@ export function playCard(
   wordFirst: boolean,
   targetId?: string
 ): LLBattleState {
-  let s = { ...state, log: [...state.log] }
+  let s: LLBattleState = { ...state, log: [...state.log] }
 
-  if (s.actionsRemaining < card.cost) { s.log.push('Brak akcji.'); return s }
+  if (s.actionsRemaining < card.cost) {
+    s.log.push('Brak akcji.')
+    return s
+  }
   s = { ...s, actionsRemaining: s.actionsRemaining - card.cost }
 
   let effect: ResolvedEffect = { ...card.baseEffect }
 
+  // Karta → Słowo (opóźnione)
   if (word && !wordFirst) {
     s = { ...s, pendingDelayedWord: word.keyword }
     s.log.push(`Opóźnione: ${word.name} zadziała w następnej turze.`)
   }
 
+  // Słowo → Karta (natychmiastowe)
   if (word && wordFirst) {
     effect = applyKeywordToEffect(effect, word.keyword, s)
-    if (card.id === 'zlamane-zdanie') { effect = { ...effect, damage: (effect.damage ?? 0) * 2, exhaustCard: true } }
+    if (card.id === 'zlamane-zdanie') {
+      effect = { ...effect, damage: (effect.damage ?? 0) * 2, exhaustCard: true }
+    }
     if (effect.inverted) effect = invertEffect(effect)
   }
 
+  // Pendingowe Słowo z poprzedniej tury
   if (!word && s.pendingDelayedWord) {
     effect = applyKeywordToEffect(effect, s.pendingDelayedWord, s)
     s = { ...s, pendingDelayedWord: undefined }
@@ -155,26 +205,35 @@ export function playCard(
     }
   }
 
-  // Discard card
+  // Discard lub exhaust karty
   if (!card.exhaustOnPlay && !effect.exhaustCard) {
     s = { ...s, discardPile: [...s.discardPile, card] }
   }
   s = { ...s, hand: s.hand.filter(c => c.id !== card.id) }
 
-  // Forget word
-  if (word) s = { ...s, wordHand: s.wordHand.filter(w => w.id !== word.id) }
+  // Słowo znika
+  if (word) {
+    s = { ...s, wordHand: s.wordHand.filter(w => w.id !== word.id) }
+  }
 
   s = { ...s, lastPlayedEffect: effect }
   return s
 }
 
-// ─── TABU ─────────────────────────────────────────────────────────────────────
+// ─── TABU ────────────────────────────────────────────────────────────────────
 
-export function playTabu(state: LLBattleState, w1: LLWord, w2: LLWord): LLBattleState {
-  let s = { ...state, log: [...state.log] }
+export function playTabu(
+  state: LLBattleState,
+  w1: LLWord,
+  w2: LLWord
+): LLBattleState {
+  let s: LLBattleState = { ...state, log: [...state.log] }
   s.log.push(`TABU: ${w1.name} + ${w2.name}!`)
 
-  const effect: ResolvedEffect = { targetType: 'single', applyKeywords: [w1.keyword, w2.keyword] }
+  const effect: ResolvedEffect = {
+    targetType: 'single',
+    applyKeywords: [w1.keyword, w2.keyword],
+  }
   s = applyEffectToState(s, effect, s.enemies[0]?.id)
   s = { ...s, tabulaMarks: s.tabulaMarks + 1 }
   s.log.push(`Znamię Tabu: ${s.tabulaMarks}/3`)
@@ -184,65 +243,97 @@ export function playTabu(state: LLBattleState, w1: LLWord, w2: LLWord): LLBattle
 
 // ─── TURN END ────────────────────────────────────────────────────────────────
 
-export function endTurn(state: LLBattleState): LLBattleState {
-  let s = { ...state, log: [] }
-
-  // Tick enemy effects
-  s = { ...s, enemies: s.enemies.map(e => tickEffects(e)) }
-  s = { ...s, enemies: s.enemies.filter(e => e.hp > 0) }
-
-  // Enemy attacks
-  s = { ...s, enemies: s.enemies.map(e => ({ ...e, counter: Math.max(0, e.counter - 1) })) }
-  for (const e of s.enemies) {
-    if (e.counter <= 0) {
-      s = enemyAttack(s, e)
-      s = { ...s, enemies: s.enemies.map(en => en.id === e.id ? { ...en, counter: en.counterMax } : en) }
-    }
-  }
-
-  // Forget unplayed words
-  if (s.wordHand.length > 0) {
-    s.log.push(`Zapominasz ${s.wordHand.length} Słów: ${s.wordHand.map(w => w.name).join(', ')}.`)
-    s = { ...s, forgottenWords: [...s.forgottenWords, ...s.wordHand], wordHand: [] }
-  }
-
-  // Discard hand
-  s = { ...s, discardPile: [...s.discardPile, ...s.hand], hand: [] }
-
-  // Shuffle discard if deck empty
-  if (s.deck.length === 0 && s.discardPile.length > 0) {
-    s = { ...s, deck: shuffle(s.discardPile), discardPile: [] }
-  }
-
-  // Draw 4 cards + 2 words
-  const drawn = s.deck.slice(0, 4)
-  s = { ...s, hand: drawn, deck: s.deck.slice(4) }
-  const drawnW = s.wordDeck.slice(0, 2)
-  s = { ...s, wordHand: drawnW, wordDeck: s.wordDeck.slice(2) }
-
-  s = { ...s, player: { ...s.player, block: 0 }, actionsRemaining: s.maxActions, turn: s.turn + 1 }
-  s.log.push(`─── Tura ${s.turn} ───`)
-  return s
-}
-
-function tickEffects(e: typeof undefined extends never ? never : Parameters<typeof endTurn>[0]['enemies'][0]): typeof e {
+function tickEffects(e: EnemyState): EnemyState {
   let hp = e.hp
   const effs = e.activeEffects.filter(ae => {
-    if (ae.keyword.type === 'poison') { hp = Math.max(0, hp - ae.stacks); return ae.stacks > 1 ? (ae.stacks--, true) : false }
-    if (ae.keyword.type === 'frost') { hp = Math.max(0, hp - ae.stacks); return (ae.keyword as any).deep || ae.stacks > 1 ? (ae.stacks > 1 && ae.stacks--, true) : false }
+    if (ae.keyword.type === 'poison') {
+      hp = Math.max(0, hp - ae.stacks)
+      if (ae.stacks > 1) { ae.stacks--; return true }
+      return false
+    }
+    if (ae.keyword.type === 'frost') {
+      hp = Math.max(0, hp - ae.stacks)
+      const deep = (ae.keyword as { type: 'frost'; stacks: number; deep?: boolean }).deep
+      if (deep) return true
+      if (ae.stacks > 1) { ae.stacks--; return true }
+      return false
+    }
     return true
   })
   return { ...e, hp, activeEffects: effs }
 }
 
-function enemyAttack(s: LLBattleState, e: LLBattleState['enemies'][0]): LLBattleState {
-  let dmg = e.damage
-  const block = s.player.block + s.player.hardBlock
+function enemyAttack(s: LLBattleState, e: EnemyState): LLBattleState {
+  const dmg = e.damage
   const softAbs = Math.min(dmg, s.player.block)
   const hardAbs = Math.min(dmg - softAbs, s.player.hardBlock)
   const actual = Math.max(0, dmg - softAbs - hardAbs)
-  s = { ...s, player: { ...s.player, hp: Math.max(0, s.player.hp - actual), block: Math.max(0, s.player.block - softAbs), hardBlock: Math.max(0, s.player.hardBlock - hardAbs) } }
+  s = {
+    ...s,
+    player: {
+      ...s.player,
+      hp: Math.max(0, s.player.hp - actual),
+      block: Math.max(0, s.player.block - softAbs),
+      hardBlock: Math.max(0, s.player.hardBlock - hardAbs),
+    },
+  }
   s.log.push(`${e.name ?? e.id} atakuje: ${dmg} dmg (${actual} po bloku).`)
+  return s
+}
+
+export function endTurn(state: LLBattleState): LLBattleState {
+  let s: LLBattleState = { ...state, log: [] }
+
+  // Tick efektów wrogów
+  s = { ...s, enemies: s.enemies.map(tickEffects) }
+  s = { ...s, enemies: s.enemies.filter(e => e.hp > 0) }
+
+  // Counter wrogów -1, atak gdy =0
+  s = {
+    ...s,
+    enemies: s.enemies.map(e => ({ ...e, counter: Math.max(0, e.counter - 1) })),
+  }
+  for (const e of [...s.enemies]) {
+    if (e.counter <= 0) {
+      s = enemyAttack(s, e)
+      s = {
+        ...s,
+        enemies: s.enemies.map(en =>
+          en.id === e.id ? { ...en, counter: en.counterMax } : en
+        ),
+      }
+    }
+  }
+
+  // Zapomnij niezagrane Słowa
+  if (s.wordHand.length > 0) {
+    s.log.push(
+      `Zapominasz ${s.wordHand.length} Słów: ${s.wordHand.map(w => w.name).join(', ')}.`
+    )
+    s = { ...s, forgottenWords: [...s.forgottenWords, ...s.wordHand], wordHand: [] }
+  }
+
+  // Discard ręki
+  s = { ...s, discardPile: [...s.discardPile, ...s.hand], hand: [] }
+
+  // Przetasuj discard jeśli deck pusty
+  if (s.deck.length === 0 && s.discardPile.length > 0) {
+    s = { ...s, deck: shuffle(s.discardPile), discardPile: [] }
+  }
+
+  // Dobierz 4 karty + 2 Słowa
+  const drawn = s.deck.slice(0, 4)
+  s = { ...s, hand: drawn, deck: s.deck.slice(4) }
+  const drawnW = s.wordDeck.slice(0, 2)
+  s = { ...s, wordHand: drawnW, wordDeck: s.wordDeck.slice(2) }
+
+  s = {
+    ...s,
+    player: { ...s.player, block: 0 },
+    actionsRemaining: s.maxActions,
+    turn: s.turn + 1,
+  }
+  s.log.push(`─── Tura ${s.turn} ───`)
   return s
 }
 
@@ -252,10 +343,23 @@ export function createInitialState(cards: LLCard[], words: LLWord[]): LLBattleSt
   const deck = shuffle([...cards])
   const wordDeck = shuffle([...words])
   return {
-    player: { hp: 50, maxHp: 50, block: 0, hardBlock: 0, position: 'mid', activeEffects: [], tabulaMarks: 0 },
+    player: {
+      hp: 50, maxHp: 50, block: 0, hardBlock: 0,
+      position: 'mid', activeEffects: [], tabulaMarks: 0,
+    },
     enemies: [
-      { id: 'stroz-1', name: 'Strażnik Ciszy', hp: 30, maxHp: 30, block: 0, position: 'front', counter: 3, counterMax: 3, activeEffects: [], faction: 'niemowi', intent: 'attack', damage: 8, adaptations: [] },
-      { id: 'stroz-2', name: 'Echoludek', hp: 20, maxHp: 20, block: 0, position: 'mid', counter: 2, counterMax: 2, activeEffects: [], faction: 'echoludzie', intent: 'attack', damage: 5, adaptations: [] },
+      {
+        id: 'stroz-1', name: 'Strażnik Ciszy',
+        hp: 30, maxHp: 30, block: 0, position: 'front',
+        counter: 3, counterMax: 3, activeEffects: [],
+        faction: 'niemowi', intent: 'attack', damage: 8, adaptations: [],
+      },
+      {
+        id: 'stroz-2', name: 'Echoludek',
+        hp: 20, maxHp: 20, block: 0, position: 'mid',
+        counter: 2, counterMax: 2, activeEffects: [],
+        faction: 'echoludzie', intent: 'attack', damage: 5, adaptations: [],
+      },
     ],
     hand: deck.slice(0, 4),
     wordHand: wordDeck.slice(0, 2),
