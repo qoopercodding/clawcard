@@ -1,6 +1,6 @@
 // Komponent do wpisania i zapamiętania GitHub PAT
 import { useState, useEffect } from 'react'
-import { getStoredPAT, storePAT, clearPAT } from '../../utils/githubCommit'
+import { getStoredPAT, storePAT, clearPAT } from '../utils/githubCommit'
 
 interface GithubPATInputProps {
   onTokenChange?: (hasToken: boolean) => void
