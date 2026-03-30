@@ -53,6 +53,10 @@ export interface HandCard {
     snow?: number
     shield?: number
     addTeeth?: number
+    poison?: number
+    strength?: number
+    weak?: number
+    vulnerable?: number
   }
   target: 'enemy' | 'ally' | 'all_enemies' | 'self'
 }

@@ -291,11 +291,15 @@ interface HandCardElProps {
 
 function HandCardEl({ card, isSelected, disabled, onClick }: HandCardElProps) {
   const effectStr = [
-    card.effect.damage   ? `⚔${card.effect.damage}` : '',
-    card.effect.snow     ? `❄${card.effect.snow}` : '',
-    card.effect.heal     ? `💚+${card.effect.heal}` : '',
-    card.effect.shield   ? `🛡+${card.effect.shield}` : '',
-    card.effect.addTeeth ? `🦷+${card.effect.addTeeth}` : '',
+    card.effect.damage     ? `⚔${card.effect.damage}` : '',
+    card.effect.snow       ? `❄${card.effect.snow}` : '',
+    card.effect.heal       ? `💚+${card.effect.heal}` : '',
+    card.effect.shield     ? `🛡+${card.effect.shield}` : '',
+    card.effect.addTeeth   ? `🦷+${card.effect.addTeeth}` : '',
+    card.effect.poison     ? `☠${card.effect.poison}` : '',
+    card.effect.strength   ? `💪+${card.effect.strength}` : '',
+    card.effect.weak       ? `😵${card.effect.weak}` : '',
+    card.effect.vulnerable ? `🎯${card.effect.vulnerable}` : '',
   ].filter(Boolean).join(' ')
 
   return (

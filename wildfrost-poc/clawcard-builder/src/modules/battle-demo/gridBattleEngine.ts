@@ -166,6 +166,10 @@ const GRID_DECK: HandCard[] = [
   { id: 'healberry2',name:'Healberry', emoji: '🍓', type: 'item', effect: { heal: 4 },   target: 'ally' },
   { id: 'teeth_r',  name: 'Teeth Ring',emoji: '🦷', type: 'item', effect: { addTeeth: 2 }, target: 'ally' },
   { id: 'fireball', name: 'Fireball',  emoji: '🔥', type: 'item', effect: { damage: 3 }, target: 'all_enemies' },
+  { id: 'venom',    name: 'Venom Flask',emoji:'☠️', type: 'item', effect: { poison: 3 }, target: 'enemy' },
+  { id: 'warhorn',  name: 'War Horn',  emoji: '📯', type: 'item', effect: { strength: 2 }, target: 'ally' },
+  { id: 'hex',      name: 'Hex Curse', emoji: '🎯', type: 'item', effect: { vulnerable: 2 }, target: 'enemy' },
+  { id: 'weaken',   name: 'Weaken',    emoji: '😵', type: 'item', effect: { weak: 2 }, target: 'enemy' },
 ]
 
 // ---------------------------------------------------------------------------
@@ -324,6 +328,51 @@ export function gridPlayCard(state: GridBattleState, cardId: string, targetSlot?
       pg[targetSlot] = { ...target, teeth: target.teeth + card.effect.addTeeth }
       s = { ...s, playerGrid: pg }
       s = addLog(s, 'teeth', `${card.name}: 🦷 +${card.effect.addTeeth} Teeth na ${target.name}`, card.effect.addTeeth)
+    }
+  }
+
+  // Poison on enemy
+  if (card.effect.poison && card.target === 'enemy' && targetSlot !== undefined) {
+    const target = s.enemyGrid[targetSlot]
+    if (target) {
+      const eg = [...s.enemyGrid]
+      eg[targetSlot] = { ...target, poison: target.poison + card.effect.poison }
+      s = { ...s, enemyGrid: eg }
+      s = addLog(s, 'poison', `${card.name}: ☠️ +${card.effect.poison} Poison na ${target.name}`, card.effect.poison)
+    }
+  }
+
+  // Strength on ally
+  if (card.effect.strength && card.target === 'ally' && targetSlot !== undefined) {
+    const target = s.playerGrid[targetSlot]
+    if (target) {
+      const pg = [...s.playerGrid]
+      pg[targetSlot] = { ...target, attack: target.attack + card.effect.strength }
+      s = { ...s, playerGrid: pg }
+      s = addLog(s, 'system', `${card.name}: 💪 +${card.effect.strength} ATK dla ${target.name}`)
+    }
+  }
+
+  // Weak on enemy (reduces attack)
+  if (card.effect.weak && card.target === 'enemy' && targetSlot !== undefined) {
+    const target = s.enemyGrid[targetSlot]
+    if (target) {
+      const eg = [...s.enemyGrid]
+      const reduced = Math.max(0, target.attack - card.effect.weak)
+      eg[targetSlot] = { ...target, attack: reduced }
+      s = { ...s, enemyGrid: eg }
+      s = addLog(s, 'system', `${card.name}: 😵 ${target.name} ATK -${card.effect.weak}`)
+    }
+  }
+
+  // Vulnerable on enemy (reduce shield, increase damage taken — simplified as -2 shield)
+  if (card.effect.vulnerable && card.target === 'enemy' && targetSlot !== undefined) {
+    const target = s.enemyGrid[targetSlot]
+    if (target) {
+      const eg = [...s.enemyGrid]
+      eg[targetSlot] = { ...target, shield: Math.max(0, target.shield - card.effect.vulnerable) }
+      s = { ...s, enemyGrid: eg }
+      s = addLog(s, 'system', `${card.name}: 🎯 ${target.name} Vulnerable! Shield -${card.effect.vulnerable}`)
     }
   }
 
