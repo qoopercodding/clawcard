@@ -9,10 +9,10 @@
 - [x] Dodaj global dark theme CSS variables (--color-bg, --color-gold, --color-dark)
 
 ## PRIORYTET 2: Card Library Scraper
-- [ ] Napraw scraper StS1 — API jest offline, użyj MediaWiki API z wiki.gg
-- [ ] Scraper Monster Train — pobierz 282 karty przez MediaWiki API fandom
-- [ ] Merge wszystkich kart do card_library.json
-- [ ] Dodaj przeglądarkę kart w Card Editor z filtrowaniem po grze/typie
+- [x] Napraw scraper StS1 — API jest offline, użyj MediaWiki API z wiki.gg
+- [x] Scraper Monster Train — pobierz 282 karty przez MediaWiki API fandom
+- [x] Merge wszystkich kart do card_library.json
+- [x] Dodaj przeglądarkę kart w Card Editor z filtrowaniem po grze/typie
 
 ## PRIORYTET 3: Frame Editor → Card Editor handoff
 - [ ] Po zapisaniu ramki w Frame Editor, Card Editor dynamicznie ładuje nowe typy

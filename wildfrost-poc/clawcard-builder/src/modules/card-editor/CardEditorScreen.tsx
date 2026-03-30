@@ -1,14 +1,31 @@
 // @ts-nocheck
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { CardFrame } from '../../components/CardFrame/CardFrame'
 import { useDevInspector } from '../../components/debug/DevInspector'
 import { useCardStore } from '../../store/cardStore'
 import { commitFiles, getStoredPAT } from '../../utils/githubCommit'
 import { GithubPATInput } from '../../components/GithubPATInput'
 import type { AnyCard, CardType, CompanionCard, ItemCard, BossCard, TestetsCard, Test2Card, Test3Card, TribeType } from '../../types/card.types'
+import cardLibraryData from '../../data/cardLibrary.json'
 import './CardEditorScreen.css'
 
-const VERSION = 'Card Editor v1.4 · 2026-03-30'
+const VERSION = 'Card Editor v1.5 · 2026-03-31'
+
+interface LibraryCard {
+  id: string; name: string; source: string; category: string
+  type: string; rarity: string; cost: number | null
+  attack?: number | null; health?: number | null; counter?: number | null
+  description: string; image?: string | null
+  traits?: string[]; tags?: string[]
+}
+
+const CARD_LIBRARY = cardLibraryData as LibraryCard[]
+const SOURCES = [...new Set(CARD_LIBRARY.map(c => c.source))].sort()
+const SOURCE_LABELS: Record<string, string> = {
+  slay_the_spire: 'Slay the Spire',
+  monster_train: 'Monster Train',
+  wildfrost: 'Wildfrost',
+}
 
 const COMPANION_LIKE_TYPES: CardType[] = ['companion', 'boss', 'testets', 'test2', 'test3', 'transformer']
 
@@ -232,6 +249,17 @@ export function CardEditorScreen() {
         </div>
       </div>
 
+      <CardBrowser onSelectCard={(c) => {
+        update({
+          name: c.name,
+          desc: c.description,
+          hp: c.health ?? 5,
+          atk: c.attack ?? 0,
+          counter: c.counter ?? 3,
+          icon: '📋',
+        })
+      }} />
+
       {/* ── VERSION BADGE ── */}
       <div style={BADGE_STYLE}>{VERSION}</div>
     </div>
@@ -417,6 +445,115 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
       <div style={{fontSize:10, color:'#6a5040', marginTop:3}}>
         Klucz: snake_case · Wartość: tekst lub liczba · Enter lub + żeby dodać
       </div>
+    </div>
+  )
+}
+
+// ─── CARD BROWSER ──────────────────────────────────────────────────────────────
+
+const PAGE_SIZE = 30
+
+function CardBrowser({ onSelectCard }: { onSelectCard: (c: LibraryCard) => void }) {
+  const [open, setOpen] = useState(false)
+  const [search, setSearch] = useState('')
+  const [sourceFilter, setSourceFilter] = useState<string>('all')
+  const [typeFilter, setTypeFilter] = useState<string>('all')
+  const [page, setPage] = useState(0)
+
+  const types = useMemo(() => {
+    const filtered = sourceFilter === 'all' ? CARD_LIBRARY : CARD_LIBRARY.filter(c => c.source === sourceFilter)
+    return [...new Set(filtered.map(c => c.type))].sort()
+  }, [sourceFilter])
+
+  const filtered = useMemo(() => {
+    let result = CARD_LIBRARY
+    if (sourceFilter !== 'all') result = result.filter(c => c.source === sourceFilter)
+    if (typeFilter !== 'all') result = result.filter(c => c.type === typeFilter)
+    if (search.trim()) {
+      const q = search.toLowerCase()
+      result = result.filter(c =>
+        c.name.toLowerCase().includes(q) ||
+        c.description.toLowerCase().includes(q) ||
+        c.category.toLowerCase().includes(q)
+      )
+    }
+    return result
+  }, [search, sourceFilter, typeFilter])
+
+  const pageCards = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+
+  useEffect(() => { setPage(0) }, [search, sourceFilter, typeFilter])
+
+  if (!open) {
+    return (
+      <div className="card-browser--collapsed">
+        <button className="card-browser__toggle" onClick={() => setOpen(true)}>
+          📚 Przeglądarka kart ({CARD_LIBRARY.length})
+        </button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="card-browser">
+      <div className="card-browser__header">
+        <span className="card-browser__title">📚 Przeglądarka kart</span>
+        <span className="card-browser__count">{filtered.length} kart</span>
+        <button className="card-browser__close" onClick={() => setOpen(false)}>✕</button>
+      </div>
+
+      <div className="card-browser__filters">
+        <input
+          className="ced-input card-browser__search"
+          placeholder="Szukaj karty..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+        <div className="card-browser__filter-row">
+          <select className="ced-input" value={sourceFilter} onChange={e => { setSourceFilter(e.target.value); setTypeFilter('all') }}>
+            <option value="all">Wszystkie gry</option>
+            {SOURCES.map(s => <option key={s} value={s}>{SOURCE_LABELS[s] || s}</option>)}
+          </select>
+          <select className="ced-input" value={typeFilter} onChange={e => setTypeFilter(e.target.value)}>
+            <option value="all">Wszystkie typy</option>
+            {types.map(t => <option key={t} value={t}>{t}</option>)}
+          </select>
+        </div>
+      </div>
+
+      <div className="card-browser__list">
+        {pageCards.map(c => (
+          <button key={c.id} className="card-browser__item" onClick={() => onSelectCard(c)}>
+            <div className="card-browser__item-header">
+              <span className="card-browser__item-name">{c.name}</span>
+              <span className={`card-browser__source card-browser__source--${c.source}`}>
+                {SOURCE_LABELS[c.source]?.substring(0, 3) || c.source.substring(0, 3)}
+              </span>
+            </div>
+            <div className="card-browser__item-meta">
+              <span className="card-browser__item-type">{c.type}</span>
+              {c.cost !== null && <span className="card-browser__item-cost">{c.cost}⚡</span>}
+              {c.attack != null && <span className="card-browser__item-stat">⚔{c.attack}</span>}
+              {c.health != null && <span className="card-browser__item-stat">❤{c.health}</span>}
+            </div>
+            {c.description && (
+              <div className="card-browser__item-desc">{c.description.substring(0, 80)}{c.description.length > 80 ? '...' : ''}</div>
+            )}
+          </button>
+        ))}
+        {pageCards.length === 0 && (
+          <div className="card-browser__empty">Brak wyników</div>
+        )}
+      </div>
+
+      {totalPages > 1 && (
+        <div className="card-browser__pagination">
+          <button disabled={page === 0} onClick={() => setPage(p => p - 1)}>←</button>
+          <span>{page + 1} / {totalPages}</span>
+          <button disabled={page >= totalPages - 1} onClick={() => setPage(p => p + 1)}>→</button>
+        </div>
+      )}
     </div>
   )
 }

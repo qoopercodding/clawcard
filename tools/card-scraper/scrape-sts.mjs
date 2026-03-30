@@ -1,136 +1,107 @@
 #!/usr/bin/env node
 
 /**
- * Slay the Spire card scraper — uses MediaWiki API from slay-the-spire.fandom.com
+ * Slay the Spire card scraper — parses Module:Cards/data from fandom wiki
  * Usage: node scrape-sts.mjs [--output cards.json]
  */
 
 const WIKI_API = 'https://slay-the-spire.fandom.com/api.php'
 
-const CATEGORIES = [
-  'Ironclad_Cards',
-  'Silent_Cards',
-  'Defect_Cards',
-  'Watcher_Cards',
-  'Colorless_Cards',
-  'Curse_Cards',
-  'Status_Cards',
-]
-
-async function fetchCategoryMembers(category, cmcontinue = '') {
+async function fetchLuaModule(title) {
   const params = new URLSearchParams({
     action: 'query',
-    list: 'categorymembers',
-    cmtitle: `Category:${category}`,
-    cmlimit: '500',
-    format: 'json',
-  })
-  if (cmcontinue) params.set('cmcontinue', cmcontinue)
-
-  const res = await fetch(`${WIKI_API}?${params}`)
-  if (!res.ok) throw new Error(`API error: ${res.status} ${res.statusText}`)
-  return res.json()
-}
-
-async function fetchPageContent(titles) {
-  const params = new URLSearchParams({
-    action: 'query',
-    titles: titles.join('|'),
+    titles: title,
     prop: 'revisions',
     rvprop: 'content',
     rvslots: 'main',
     format: 'json',
   })
-
   const res = await fetch(`${WIKI_API}?${params}`)
-  if (!res.ok) throw new Error(`API error: ${res.status} ${res.statusText}`)
-  return res.json()
+  if (!res.ok) throw new Error(`API error: ${res.status}`)
+  const data = await res.json()
+  const page = Object.values(data.query.pages)[0]
+  return page.revisions?.[0]?.slots?.main?.['*'] || ''
 }
 
-function parseInfobox(wikitext) {
-  const card = {}
-
-  const fieldRegex = /\|\s*(\w+)\s*=\s*(.+)/g
+function parseLuaCardData(lua) {
+  const cards = []
+  // Match each card block: { Name = "...", ... }
+  const cardPattern = /\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}/g
   let match
-  while ((match = fieldRegex.exec(wikitext)) !== null) {
-    const key = match[1].trim().toLowerCase()
-    const value = match[2].trim()
-      .replace(/\[\[([^\]|]+)\|?([^\]]*)\]\]/g, (_, link, label) => label || link)
-      .replace(/'''(.+?)'''/g, '$1')
-      .replace(/''(.+?)''/g, '$1')
-      .replace(/<br\s*\/?>/gi, '\n')
-      .trim()
 
-    if (value) card[key] = value
-  }
+  while ((match = cardPattern.exec(lua)) !== null) {
+    const block = match[1]
+    const card = {}
 
-  return card
-}
-
-async function getAllCardsInCategory(category) {
-  const pages = []
-  let cmcontinue = ''
-
-  do {
-    const data = await fetchCategoryMembers(category, cmcontinue)
-    const members = data.query?.categorymembers || []
-    pages.push(...members.map(m => m.title))
-    cmcontinue = data.continue?.cmcontinue || ''
-  } while (cmcontinue)
-
-  return pages
-}
-
-async function scrapeAll() {
-  const allCards = []
-  const seen = new Set()
-
-  for (const category of CATEGORIES) {
-    console.log(`Fetching category: ${category}...`)
-    const titles = await getAllCardsInCategory(category)
-    console.log(`  Found ${titles.length} pages`)
-
-    // Fetch in batches of 20 (MediaWiki limit)
-    for (let i = 0; i < titles.length; i += 20) {
-      const batch = titles.slice(i, i + 20)
-      const data = await fetchPageContent(batch)
-      const pages = data.query?.pages || {}
-
-      for (const page of Object.values(pages)) {
-        if (seen.has(page.title)) continue
-        seen.add(page.title)
-
-        const content = page.revisions?.[0]?.slots?.main?.['*'] || ''
-        if (!content) continue
-
-        const card = parseInfobox(content)
-        card._title = page.title
-        card._category = category.replace('_Cards', '')
-        allCards.push(card)
-      }
+    // Parse string fields: Key = "value"
+    const strField = /(\w+)\s*=\s*"([^"]*)"/g
+    let fm
+    while ((fm = strField.exec(block)) !== null) {
+      card[fm[1].toLowerCase()] = fm[2]
     }
 
-    // small delay between categories
-    await new Promise(r => setTimeout(r, 500))
+    // Parse number fields: Key = 123
+    const numField = /(\w+)\s*=\s*(\d+)\s*[,\n}]/g
+    while ((fm = numField.exec(block)) !== null) {
+      card[fm[1].toLowerCase()] = parseInt(fm[2], 10)
+    }
+
+    // Parse traits: Traits = {"foo", "bar"}
+    const traitsMatch = block.match(/Traits\s*=\s*\{([^}]*)\}/)
+    if (traitsMatch) {
+      const traits = traitsMatch[1].match(/"([^"]+)"/g)
+      card.traits = traits ? traits.map(t => t.replace(/"/g, '')) : []
+    }
+
+    if (card.name) {
+      card._source = 'slay_the_spire'
+      card._category = card.color || 'Unknown'
+      // Clean text field — convert wiki markup
+      if (card.text) {
+        card.text = card.text
+          .replace(/#(\w+)/g, '$1')  // Remove # prefix from keywords
+          .replace(/\[([^|[\]]+)\|([^[\]]+)\]/g, '$1/$2')  // [base|upgraded] → base/upgraded
+          .replace(/\[([^[\]]+)\|/g, '$1')  // [value| → value
+          .replace(/\|([^[\]]+)\]/g, '$1')  // |value] → value
+          .replace(/\\n/g, '\n')
+      }
+      cards.push(card)
+    }
   }
 
-  return allCards
+  return cards
 }
 
 // --- Main ---
 const outputFlag = process.argv.indexOf('--output')
 const outputFile = outputFlag !== -1 ? process.argv[outputFlag + 1] : 'sts-cards.json'
 
-console.log('Slay the Spire Card Scraper (MediaWiki API)')
-console.log('============================================')
+console.log('Slay the Spire Card Scraper (Module:Cards/data)')
+console.log('================================================')
 
-scrapeAll()
-  .then(async cards => {
-    const { writeFile } = await import('node:fs/promises')
-    await writeFile(outputFile, JSON.stringify(cards, null, 2))
-    console.log(`\nDone! Scraped ${cards.length} cards → ${outputFile}`)
-  })
-  .catch(err => {
-    console.error('Scrape failed:', err.message)
-    process.exit(1)
-  })
+try {
+  console.log('Fetching Module:Cards/data...')
+  const lua = await fetchLuaModule('Module:Cards/data')
+  console.log(`  Module size: ${(lua.length / 1024).toFixed(1)}KB`)
+
+  const cards = parseLuaCardData(lua)
+  console.log(`  Parsed ${cards.length} cards`)
+
+  // Stats
+  const byColor = {}
+  for (const c of cards) {
+    const col = c._category || 'Unknown'
+    byColor[col] = (byColor[col] || 0) + 1
+  }
+  console.log('\n  Cards by class:')
+  for (const [k, v] of Object.entries(byColor).sort((a, b) => b[1] - a[1])) {
+    console.log(`    ${k}: ${v}`)
+  }
+
+  const { writeFile } = await import('node:fs/promises')
+  await writeFile(outputFile, JSON.stringify(cards, null, 2))
+  console.log(`\nDone! → ${outputFile}`)
+} catch (err) {
+  console.error('Scrape failed:', err.message)
+  process.exit(1)
+}
