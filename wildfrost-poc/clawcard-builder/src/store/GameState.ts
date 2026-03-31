@@ -36,8 +36,20 @@ export interface MapState {
   maxFloor: number  // boss row
 }
 
+export interface RunCard {
+  id: string
+  name: string
+  emoji: string
+  cost: number
+  attack: number
+  hp: number
+  description: string
+  rarity: 'common' | 'uncommon' | 'rare'
+  upgraded: boolean
+}
+
 export interface DeckState {
-  cards: HandCard[]
+  cards: RunCard[]
   drawPile: string[]    // card ids
   hand: string[]
   discardPile: string[]
@@ -81,6 +93,17 @@ export interface RunState {
   status: 'active' | 'won' | 'lost' | 'abandoned'
 }
 
+const STARTER_DECK: RunCard[] = [
+  { id: 'sk1', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common', upgraded: false },
+  { id: 'sk2', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common', upgraded: false },
+  { id: 'sk3', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common', upgraded: false },
+  { id: 'df1', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common', upgraded: false },
+  { id: 'df2', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common', upgraded: false },
+  { id: 'df3', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common', upgraded: false },
+  { id: 'ew1', name: 'Ember Wisp', emoji: '🔥', cost: 1, attack: 3, hp: 3, description: '3 ATK / 3 HP companion.', rarity: 'common', upgraded: false },
+  { id: 'fb1', name: 'Frostbite', emoji: '❄️', cost: 1, attack: 2, hp: 0, description: 'Deal 2 damage. Apply Snow 2.', rarity: 'common', upgraded: false },
+]
+
 export function createInitialRunState(seed?: number): RunState {
   const s = seed ?? Math.floor(Math.random() * 1_000_000)
   return {
@@ -97,8 +120,8 @@ export function createInitialRunState(seed?: number): RunState {
       companions: [],
     },
     deck: {
-      cards: [],
-      drawPile: [],
+      cards: [...STARTER_DECK],
+      drawPile: STARTER_DECK.map(c => c.id),
       hand: [],
       discardPile: [],
     },

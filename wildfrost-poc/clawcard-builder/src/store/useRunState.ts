@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { createInitialRunState } from './GameState'
-import type { RunState, MapNodeType } from './GameState'
+import type { RunState, RunCard, MapNodeType } from './GameState'
 
 export function useRunState() {
   const [run, setRun] = useState<RunState | null>(null)
@@ -73,6 +73,38 @@ export function useRunState() {
     })
   }, [])
 
+  const addCardToDeck = useCallback((card: RunCard) => {
+    setRun(prev => {
+      if (!prev) return prev
+      return {
+        ...prev,
+        deck: {
+          ...prev.deck,
+          cards: [...prev.deck.cards, card],
+          drawPile: [...prev.deck.drawPile, card.id],
+        },
+      }
+    })
+  }, [])
+
+  const removeCardFromDeck = useCallback((cardId: string) => {
+    setRun(prev => {
+      if (!prev) return prev
+      const idx = prev.deck.cards.findIndex(c => c.id === cardId)
+      if (idx === -1) return prev
+      const newCards = [...prev.deck.cards]
+      newCards.splice(idx, 1)
+      return {
+        ...prev,
+        deck: {
+          ...prev.deck,
+          cards: newCards,
+          drawPile: prev.deck.drawPile.filter(id => id !== cardId),
+        },
+      }
+    })
+  }, [])
+
   const addRelic = useCallback((_relicId: string) => {
     setRun(prev => prev)
   }, [])
@@ -111,6 +143,8 @@ export function useRunState() {
     heal,
     takeDamage,
     addMaxHp,
+    addCardToDeck,
+    removeCardFromDeck,
     addRelic,
     addScore,
     nodeTypeToView,

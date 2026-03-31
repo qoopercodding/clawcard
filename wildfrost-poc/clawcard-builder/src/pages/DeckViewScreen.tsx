@@ -1,14 +1,4 @@
-interface DeckCard {
-  id: string
-  name: string
-  emoji: string
-  cost: number
-  attack: number
-  hp: number
-  description: string
-  rarity: 'common' | 'uncommon' | 'rare'
-  upgraded?: boolean
-}
+import type { RunCard } from '../store/GameState'
 
 const RARITY_COLORS: Record<string, string> = {
   common: 'var(--color-text-dim)',
@@ -16,23 +6,12 @@ const RARITY_COLORS: Record<string, string> = {
   rare: '#f5c563',
 }
 
-const STARTER_DECK: DeckCard[] = [
-  { id: 'd1', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common' },
-  { id: 'd2', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common' },
-  { id: 'd3', name: 'Strike', emoji: '🗡️', cost: 1, attack: 6, hp: 0, description: 'Deal 6 damage.', rarity: 'common' },
-  { id: 'd4', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common' },
-  { id: 'd5', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common' },
-  { id: 'd6', name: 'Defend', emoji: '🛡️', cost: 1, attack: 0, hp: 0, description: 'Gain 5 block.', rarity: 'common' },
-  { id: 'd7', name: 'Ember Wisp', emoji: '🔥', cost: 1, attack: 3, hp: 3, description: '3 ATK / 3 HP companion.', rarity: 'common' },
-  { id: 'd8', name: 'Frostbite', emoji: '❄️', cost: 1, attack: 2, hp: 0, description: 'Deal 2 damage. Apply Snow 2.', rarity: 'common' },
-]
-
 interface DeckViewScreenProps {
-  cards?: DeckCard[]
+  cards?: RunCard[]
   onClose?: () => void
 }
 
-export default function DeckViewScreen({ cards = STARTER_DECK, onClose }: DeckViewScreenProps) {
+export default function DeckViewScreen({ cards = [], onClose }: DeckViewScreenProps) {
   const sorted = [...cards].sort((a, b) => {
     if (a.rarity !== b.rarity) {
       const order = { rare: 0, uncommon: 1, common: 2 }

@@ -150,7 +150,7 @@ function App() {
         onRestart={handleNewRun}
         onMenu={() => setView('start')}
       />
-      case 'deck-view':      return <DeckViewScreen onClose={() => setView(prevView)} />
+      case 'deck-view':      return <DeckViewScreen cards={runState.run?.deck.cards} onClose={() => setView(prevView)} />
       case 'victory':        return <GameOverScreen
         victory={true}
         stats={{ floorsCleared: runState.run?.floor ?? 0, goldEarned: runState.run?.gold ?? 0 }}
