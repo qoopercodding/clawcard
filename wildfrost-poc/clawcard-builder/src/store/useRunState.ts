@@ -1,16 +1,51 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { createInitialRunState } from './GameState'
 import type { RunState, RunCard, MapNodeType } from './GameState'
 
+const STORAGE_KEY = 'clawcard_run'
+
+function loadRun(): RunState | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return null
+    const parsed = JSON.parse(raw) as RunState
+    if (parsed.status !== 'active') return null
+    return parsed
+  } catch {
+    return null
+  }
+}
+
+function saveRun(run: RunState | null) {
+  if (!run) {
+    localStorage.removeItem(STORAGE_KEY)
+  } else {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(run))
+  }
+}
+
 export function useRunState() {
-  const [run, setRun] = useState<RunState | null>(null)
+  const [run, setRun] = useState<RunState | null>(() => loadRun())
+
+  // Auto-save on every run change
+  useEffect(() => { saveRun(run) }, [run])
 
   const startRun = useCallback((seed?: number) => {
     setRun(createInitialRunState(seed))
   }, [])
 
   const endRun = useCallback((status: 'won' | 'lost' | 'abandoned') => {
-    setRun(prev => prev ? { ...prev, status } : null)
+    setRun(prev => {
+      if (!prev) return null
+      const ended = { ...prev, status }
+      localStorage.removeItem(STORAGE_KEY)
+      return ended
+    })
+  }, [])
+
+  const abandonRun = useCallback(() => {
+    localStorage.removeItem(STORAGE_KEY)
+    setRun(null)
   }, [])
 
   const advanceFloor = useCallback(() => {
@@ -131,13 +166,16 @@ export function useRunState() {
 
   const isRunActive = run !== null && run.status === 'active'
   const isRunOver = run !== null && (run.status === 'won' || run.status === 'lost')
+  const hasSavedRun = run !== null && run.status === 'active'
 
   return {
     run,
     isRunActive,
     isRunOver,
+    hasSavedRun,
     startRun,
     endRun,
+    abandonRun,
     advanceFloor,
     addGold,
     heal,
