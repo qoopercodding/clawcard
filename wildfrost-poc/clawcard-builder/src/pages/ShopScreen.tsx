@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import type { RunCard } from '../store/GameState'
 
 interface ShopItem {
   id: string
@@ -47,13 +48,18 @@ function pickShopItems(seed: number): ShopItem[] {
 interface ShopScreenProps {
   playerGold?: number
   seed?: number
+  deckCards?: RunCard[]
   onBuy?: (item: ShopItem) => void
+  onRemoveCard?: (cardId: string) => void
   onLeave?: () => void
 }
 
-export default function ShopScreen({ playerGold = 150, seed, onBuy, onLeave }: ShopScreenProps) {
+const REMOVE_COST = 50
+
+export default function ShopScreen({ playerGold = 150, seed, deckCards = [], onBuy, onRemoveCard, onLeave }: ShopScreenProps) {
   const [gold, setGold] = useState(playerGold)
   const [bought, setBought] = useState<Set<string>>(new Set())
+  const [removedCards, setRemovedCards] = useState<Set<string>>(new Set())
   const items = useMemo(() => pickShopItems(seed ?? Date.now()), [seed])
 
   function handleBuy(item: ShopItem) {
@@ -136,6 +142,52 @@ export default function ShopScreen({ playerGold = 150, seed, onBuy, onLeave }: S
           )
         })}
       </div>
+
+      {/* Card removal */}
+      {deckCards.length > 0 && (
+        <div style={{ width: '100%', maxWidth: 800 }}>
+          <h3 style={{
+            fontFamily: 'var(--font-gothic)', fontSize: '0.72rem',
+            letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: '#e05555', margin: '0 0 12px',
+            borderTop: '1px solid rgba(200,144,42,0.08)',
+            paddingTop: 16,
+          }}>Remove a Card — {REMOVE_COST} gold</h3>
+          <div style={{
+            display: 'flex', gap: 8, flexWrap: 'wrap',
+          }}>
+            {deckCards.filter(c => !removedCards.has(c.id)).map((card, idx) => {
+              const canRemove = gold >= REMOVE_COST
+              return (
+                <button
+                  key={`${card.id}-${idx}`}
+                  type="button"
+                  disabled={!canRemove}
+                  onClick={() => {
+                    if (!canRemove) return
+                    setGold(g => g - REMOVE_COST)
+                    setRemovedCards(prev => new Set([...prev, card.id]))
+                    onRemoveCard?.(card.id)
+                  }}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 6,
+                    padding: '6px 12px', fontSize: '0.72rem',
+                    border: '1px solid rgba(224,85,85,0.15)',
+                    borderRadius: 6,
+                    background: 'rgba(42,26,10,0.6)',
+                    color: 'var(--color-text)',
+                    cursor: canRemove ? 'pointer' : 'default',
+                    opacity: canRemove ? 1 : 0.4,
+                  }}
+                >
+                  <span>{card.emoji}</span>
+                  <span>{card.name}</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      )}
 
       <button
         type="button"

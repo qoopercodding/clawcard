@@ -134,6 +134,7 @@ function App() {
       />
       case 'shop':           return <ShopScreen
         playerGold={runState.run?.player.gold}
+        deckCards={runState.run?.deck.cards}
         onBuy={(item) => {
           runState.addGold(-item.price)
           if (item.type === 'card') {
@@ -145,6 +146,7 @@ function App() {
             })
           }
         }}
+        onRemoveCard={(cardId) => runState.removeCardFromDeck(cardId)}
         onLeave={handleReturnToMap}
       />
       case 'campfire':       return <CampfireScreen
