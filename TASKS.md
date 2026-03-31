@@ -25,7 +25,7 @@
 - [ ] openclaw Telegram gateway (DONE)
 - [ ] Scraper kart odpalony na VPS
 
-## PRIORYTET 5: Roguelike Game Loop (CC-001 → CC-022)
+## PRIORYTET 5: Roguelike Game Loop (CC-001 → CC-030)
 - [x] CC-001: StartPage redesign — grouped nav cards, glow hover, section headers
 - [x] CC-002: Global CSS variables aligned with design system
 - [x] CC-003: GameState.ts — RunState, PlayerState, BattleState, MapNode interfaces
@@ -52,3 +52,7 @@
 - [x] CC-024: Card removal at shop za 50 gold
 - [x] CC-025: Campfire upgrades uzywaja prawdziwych kart z decku
 - [x] CC-026: TASKS.md update
+- [x] CC-027: Map seed z run state — deterministyczna mapa
+- [x] CC-028: Potion i relic system z HUD display
+- [x] CC-029: Shop/treasure wire do potion/relic systems
+- [x] CC-030: Final TASKS.md update
