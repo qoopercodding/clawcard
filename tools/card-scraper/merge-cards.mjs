@@ -31,7 +31,7 @@ function normalizeSts(cards) {
     cost: c.cost ?? null,
     description: c.text || '',
     traits: c.traits || [],
-    image: c.image ? `https://slay-the-spire.fandom.com/wiki/Special:FilePath/${c.image}` : null,
+    image: c.image?.startsWith('http') ? c.image : c.image ? `https://slay-the-spire.fandom.com/wiki/Special:FilePath/${c.image}` : null,
   }))
 }
 
@@ -48,7 +48,7 @@ function normalizeMt(cards) {
     health: c.health ?? null,
     description: c.desc || '',
     tags: c.tags || [],
-    image: null,
+    image: c.image || null,
   }))
 }
 
