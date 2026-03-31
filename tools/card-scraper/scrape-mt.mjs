@@ -74,12 +74,40 @@ function parseLuaCardData(lua) {
   return cards
 }
 
+async function fetchImageUrls(cardNames) {
+  const imageMap = {}
+  const BATCH = 50
+  for (let i = 0; i < cardNames.length; i += BATCH) {
+    const batch = cardNames.slice(i, i + BATCH)
+    const titles = batch.join('|')
+    const params = new URLSearchParams({
+      action: 'query',
+      titles,
+      prop: 'pageimages',
+      pithumbsize: '400',
+      format: 'json',
+    })
+    try {
+      const res = await fetch(`${WIKI_API}?${params}`)
+      if (!res.ok) continue
+      const data = await res.json()
+      for (const page of Object.values(data.query.pages)) {
+        if (page.thumbnail?.source) {
+          imageMap[page.title] = page.thumbnail.source
+        }
+      }
+    } catch { /* skip batch on error */ }
+    if (i + BATCH < cardNames.length) await new Promise(r => setTimeout(r, 500))
+  }
+  return imageMap
+}
+
 // --- Main ---
 const outputFlag = process.argv.indexOf('--output')
 const outputFile = outputFlag !== -1 ? process.argv[outputFlag + 1] : 'mt-cards.json'
 
-console.log('Monster Train Card Scraper (Module:Cards/Data)')
-console.log('===============================================')
+console.log('Monster Train Card Scraper (Module:Cards/Data + images)')
+console.log('=======================================================')
 
 try {
   console.log('Fetching Module:Cards/Data...')
@@ -88,6 +116,17 @@ try {
 
   const cards = parseLuaCardData(lua)
   console.log(`  Parsed ${cards.length} cards`)
+
+  console.log('\nFetching card images via pageimages API...')
+  const imageMap = await fetchImageUrls(cards.map(c => c.name))
+  let imgCount = 0
+  for (const card of cards) {
+    if (imageMap[card.name]) {
+      card.image = imageMap[card.name]
+      imgCount++
+    }
+  }
+  console.log(`  Found images for ${imgCount}/${cards.length} cards`)
 
   const byClan = {}
   for (const c of cards) {

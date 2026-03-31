@@ -9,7 +9,8 @@
     "attack": 6,
     "health": 6,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/80/Hornbreaker_Prince.png/revision/latest/scale-to-width-down/400?cb=20200526022946"
   },
   {
     "name": "Shardtail Queen",
@@ -21,7 +22,8 @@
     "attack": 10,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/52/Shardtail_Queen.png/revision/latest/scale-to-width-down/333?cb=20200903185806"
   },
   {
     "name": "Queen's Impling",
@@ -44,7 +46,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/01/Spike_of_the_Hellhorned.png/revision/latest/scale-to-width-down/239?cb=20201216023239"
   },
   {
     "name": "Vent",
@@ -53,7 +56,8 @@
     "rarity": "Common",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/db/Vent.png/revision/latest/scale-to-width-down/239?cb=20201216024439"
   },
   {
     "name": "Dark Deal",
@@ -63,7 +67,8 @@
     "desc": "Deal 5 damage, Apply Rage 7.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/3a/Dark_Deal.png/revision/latest/scale-to-width-down/239?cb=20201215060159"
   },
   {
     "name": "Fortify",
@@ -73,7 +78,8 @@
     "desc": "Apply Armor 5.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c7/Fortify.png/revision/latest/scale-to-width-down/239?cb=20201215090428"
   },
   {
     "name": "Imp-in-a-Box",
@@ -83,7 +89,8 @@
     "desc": "Consume.\nAdd 2 random Imp units to your hand.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/14/Imp-in-a-Box.png/revision/latest/scale-to-width-down/239?cb=20201215092037"
   },
   {
     "name": "Imp-portant Work",
@@ -92,7 +99,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4f/Imp-portant_Work.png/revision/latest/scale-to-width-down/239?cb=20210328023941"
   },
   {
     "name": "Rage Serum",
@@ -102,7 +110,8 @@
     "desc": "Consume.\nApply Rage 3.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a2/Rage_Serum.png/revision/latest/scale-to-width-down/239?cb=20201216021747"
   },
   {
     "name": "Alloy of the Ancients",
@@ -112,7 +121,8 @@
     "desc": "Consume.\nApply Armor 25.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a9/Alloy_of_the_Ancients.png/revision/latest/scale-to-width-down/239?cb=20201215054316"
   },
   {
     "name": "Branded Warrior",
@@ -127,7 +137,8 @@
     "attack": 10,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/91/Branded_Warrior.png/revision/latest/scale-to-width-down/400?cb=20200527190507"
   },
   {
     "name": "Deranged Brute",
@@ -137,7 +148,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/ca/Deranged_Brute.png/revision/latest/scale-to-width-down/264?cb=20200527190507"
   },
   {
     "name": "Fledgling Imp",
@@ -151,7 +163,8 @@
     "attack": 1,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/9a/Fledgling_Imp.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Hidden Passage",
@@ -161,7 +174,8 @@
     "desc": "Ascend a unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b4/Hidden_Passage.png/revision/latest/scale-to-width-down/239?cb=20201215091918"
   },
   {
     "name": "Horn Break",
@@ -171,7 +185,8 @@
     "desc": "Piercing.\nDeal 5 damage, twice.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e5/Horn_Break.png/revision/latest/scale-to-width-down/239?cb=20210328023902"
   },
   {
     "name": "Horned Warrior",
@@ -186,7 +201,8 @@
     "capacity": 2,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/89/Horned_Warrior.png/revision/latest/scale-to-width-down/400?cb=20200527190644"
   },
   {
     "name": "Impish Scholar",
@@ -200,7 +216,8 @@
     "attack": 1,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5f/Impish_Scholar.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Imp-olate",
@@ -210,7 +227,8 @@
     "desc": "Deal damage to the front enemy unit equal to 15x the number of Imp units in your deck.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c4/Imp-olate.png/revision/latest/scale-to-width-down/239?cb=20201215092047"
   },
   {
     "name": "Imp-pressive",
@@ -220,7 +238,8 @@
     "desc": "Attuned. Sacrifice Imp.\nDeal 50 damage to the front enemy unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/13/Imp-pressive.png/revision/latest/scale-to-width-down/239?cb=20201215092110"
   },
   {
     "name": "March of Shields",
@@ -230,7 +249,8 @@
     "desc": "Move a unit to the front and apply Armor 10.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/8e/March_of_Shields.png/revision/latest/scale-to-width-down/239?cb=20201216005850"
   },
   {
     "name": "Molting Imp",
@@ -244,7 +264,8 @@
     "attack": 1,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d4/Molting_Imp.png/revision/latest?cb=20200527190659"
   },
   {
     "name": "Pyre Chomper",
@@ -253,7 +274,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c8/Pyre_Chomper.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Railbeater",
@@ -268,7 +290,8 @@
     "attack": 10,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/88/Railbeater.png/revision/latest/scale-to-width-down/400?cb=20200527190507"
   },
   {
     "name": "Steelworker",
@@ -283,7 +306,8 @@
     "attack": 10,
     "health": 15,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/ce/Steelworker.png/revision/latest?cb=20200527190705"
   },
   {
     "name": "Torch",
@@ -293,7 +317,8 @@
     "desc": "Deal 2 damage.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b2/Torch.png/revision/latest/scale-to-width-down/239?cb=20201216024244"
   },
   {
     "name": "Transcendimp",
@@ -307,7 +332,8 @@
     "attack": 1,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/00/Transcendimp.png/revision/latest?cb=20200527190508"
   },
   {
     "name": "Welder Helper",
@@ -321,7 +347,8 @@
     "attack": 1,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c1/Welder_Helper.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Alpha Fiend",
@@ -331,7 +358,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/21/Alpha_Fiend.png/revision/latest/scale-to-width-down/341?cb=20200610105035"
   },
   {
     "name": "Branding Rite",
@@ -341,7 +369,8 @@
     "desc": "Piercing.\nDeal 5 damage. Apply Armor 20.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c5/Branding_Rite.png/revision/latest/scale-to-width-down/239?cb=20201215060851"
   },
   {
     "name": "Enflame",
@@ -351,7 +380,8 @@
     "desc": "Apply Rage 4 and Armor 5.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c0/Enflame.png/revision/latest/scale-to-width-down/239?cb=20201215090201"
   },
   {
     "name": "Tiresome Climb",
@@ -361,7 +391,8 @@
     "desc": "Ascend a unit and apply Dazed 2.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/1a/Tiresome_Climb.png/revision/latest/scale-to-width-down/239?cb=20201216023503"
   },
   {
     "name": "Battering Ram",
@@ -371,7 +402,8 @@
     "desc": "Deal damage to the front enemy unit equal to 4x the amount of Armor on friendly units.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d9/Battering_Ram.png/revision/latest/scale-to-width-down/239?cb=20201215060619"
   },
   {
     "name": "Inferno",
@@ -381,7 +413,8 @@
     "desc": "Piercing.\nDeal 100 damage to friendly and enemy units.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/be/Inferno.png/revision/latest/scale-to-width-down/239?cb=20201215092121"
   },
   {
     "name": "Last Stand",
@@ -391,7 +424,8 @@
     "desc": "Consume.\nDouble the amount of Rage on friendly units.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/41/Last_Stand.png/revision/latest/scale-to-width-down/239?cb=20201216005835"
   },
   {
     "name": "Reinforce",
@@ -401,7 +435,8 @@
     "desc": "Consume.\nDouble Armor on a unit.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/26/Reinforce.png/revision/latest/scale-to-width-down/239?cb=20201216021815"
   },
   {
     "name": "Ritual of Battle",
@@ -411,7 +446,8 @@
     "desc": "Apply Rage 10.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e8/Ritual_of_Battle.png/revision/latest/scale-to-width-down/239?cb=20201216022012"
   },
   {
     "name": "Demon Fiend",
@@ -421,7 +457,8 @@
     "isbanner": "true",
     "cost": 4,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/90/Demon_Fiend.png/revision/latest/scale-to-width-down/343?cb=20200527190507"
   },
   {
     "name": "Onehorn's Tome",
@@ -431,7 +468,8 @@
     "desc": "Consume.\nApply Multistrike 1 and Fragile to a friendly unit.",
     "cost": 5,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b2/Onehorn%27s_Tome.png/revision/latest/scale-to-width-down/239?cb=20201216005950"
   },
   {
     "name": "Consumer of Crowns",
@@ -441,7 +479,8 @@
     "isbanner": "true",
     "cost": 10,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/46/Consumer_of_Crowns.png/revision/latest/scale-to-width-down/379?cb=20200527190633"
   },
   {
     "name": "Apex Imp",
@@ -456,7 +495,8 @@
     "attack": 10,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Hellhorned"
+    "_category": "Hellhorned",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/31/Apex_Imp.png/revision/latest?cb=20210329105825"
   },
   {
     "name": "The Sentient",
@@ -468,7 +508,8 @@
     "attack": 0,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/38/The_Sentient.png/revision/latest/scale-to-width-down/355?cb=20200526054404"
   },
   {
     "name": "Wyldenten",
@@ -480,7 +521,8 @@
     "attack": 5,
     "health": 30,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a4/Wyldenten.png/revision/latest/scale-to-width-down/400?cb=20200903185717"
   },
   {
     "name": "Awoken's Rail Spike",
@@ -489,7 +531,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/43/Awoken%27s_Rail_Spike.png/revision/latest/scale-to-width-down/239?cb=20210328023723"
   },
   {
     "name": "Ensnare",
@@ -499,7 +542,8 @@
     "desc": "Apply Rooted 1 to an enemy unit.\nDraw +1 next turn.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/87/Ensnare.png/revision/latest/scale-to-width-down/239?cb=20201215090251"
   },
   {
     "name": "Invigorating Solution",
@@ -509,7 +553,8 @@
     "desc": "Consume.\nDraw +3 next turn.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/0c/Invigorating_Solution.png/revision/latest/scale-to-width-down/239?cb=20210328024304"
   },
   {
     "name": "Preserved Thorns",
@@ -519,7 +564,8 @@
     "desc": "Consume.\nAdd 3 Sting spells to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ed/Preserved_Thorns.png/revision/latest/scale-to-width-down/239?cb=20201216010047"
   },
   {
     "name": "Sting",
@@ -529,7 +575,8 @@
     "desc": "Deal 10 damage to the front enemy unit.\nDraw +1 next turn.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e7/Sting.png/revision/latest/scale-to-width-down/239?cb=20201215052150"
   },
   {
     "name": "Unleash the Wildwood",
@@ -539,7 +586,8 @@
     "desc": "Restore friendly units to full health.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c7/Unleash_the_Wildwood.png/revision/latest/scale-to-width-down/239?cb=20210328024404"
   },
   {
     "name": "Vine Grasp",
@@ -549,7 +597,8 @@
     "desc": "Deal 3 damage. Move that unit to the front.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7f/Vine_Grasp.png/revision/latest/scale-to-width-down/239?cb=20201216024456"
   },
   {
     "name": "Animus of Speed",
@@ -564,7 +613,8 @@
     "attack": 25,
     "health": 3,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d7/Animus_of_Speed.png/revision/latest/scale-to-width-down/269?cb=20200901052448"
   },
   {
     "name": "Animus of Will",
@@ -575,7 +625,8 @@
     "desc": "Multistrike 2.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/73/Animus_of_Will.png/revision/latest/scale-to-width-down/288?cb=20200901053002"
   },
   {
     "name": "Awoken Hollow",
@@ -586,7 +637,8 @@
     "desc": "Summon: Gain 60 max health.\nRejuvenate: Cultivate 2",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/9a/Awoken_Hollow.png/revision/latest/scale-to-width-down/400?cb=20200527190508"
   },
   {
     "name": "Channelsong",
@@ -595,7 +647,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/9c/Channelsong.png/revision/latest/scale-to-width-down/239?cb=20201215055519"
   },
   {
     "name": "Edge Prior",
@@ -604,7 +657,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/66/Edge_Prior.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Engraft",
@@ -613,7 +667,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/3c/Engraft.png/revision/latest/scale-to-width-down/239?cb=20201215090226"
   },
   {
     "name": "Glimmer",
@@ -623,7 +678,8 @@
     "desc": "Restore 2 health to all friendly units and deal 2 damage to all enemy units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c5/Glimmer.png/revision/latest/scale-to-width-down/239?cb=20201215091126"
   },
   {
     "name": "Husk Hermit",
@@ -634,7 +690,8 @@
     "desc": "Sweep.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/50/Husk_Hermit.png/revision/latest/scale-to-width-down/400?cb=20200527190508"
   },
   {
     "name": "Pyre Shards",
@@ -644,7 +701,8 @@
     "desc": "Consume.\nApply Spikes 4.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/09/Pyre_Shards.png/revision/latest/scale-to-width-down/239?cb=20201216021710"
   },
   {
     "name": "Razorsharp Edge",
@@ -653,7 +711,8 @@
     "rarity": "Common",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7b/Razorsharp_Edge.png/revision/latest/scale-to-width-down/239?cb=20201216021801"
   },
   {
     "name": "Restoration Detonation",
@@ -663,7 +722,8 @@
     "desc": "Restore 10 health to a friendly unit. Deal damage to the front enemy unit equal to 5x the amount healed.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a7/Restoration_Detonation.png/revision/latest/scale-to-width-down/239?cb=20201216021919"
   },
   {
     "name": "Restore",
@@ -673,7 +733,8 @@
     "desc": "Restore 2 health. Apply Regen 1.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/47/Restore.png/revision/latest/scale-to-width-down/239?cb=20201216025635"
   },
   {
     "name": "Rootseeds",
@@ -682,7 +743,8 @@
     "rarity": "Common",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ea/Rootseeds.png/revision/latest/scale-to-width-down/239?cb=20201216022025"
   },
   {
     "name": "Shard Channeler",
@@ -706,7 +768,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/64/Shattered_Shell.png/revision/latest?cb=20200527190508"
   },
   {
     "name": "Steel Enhancer",
@@ -715,7 +778,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/62/Steel_Enhancer.png/revision/latest/scale-to-width-down/239?cb=20201216023340"
   },
   {
     "name": "Thorned Hollow",
@@ -726,7 +790,8 @@
     "desc": "Summon: Gain 60 max health.\nRejuvenate: Gain Spikes 3.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/78/Thorned_Hollow.png/revision/latest/scale-to-width-down/400?cb=20200527190509"
   },
   {
     "name": "Vinemother",
@@ -737,7 +802,8 @@
     "desc": "Resolve: Add a Sting spell to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7d/Vinemother.png/revision/latest/scale-to-width-down/355?cb=20200527190509"
   },
   {
     "name": "Wildwood Custodian",
@@ -751,7 +817,8 @@
     "attack": 0,
     "health": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a5/Wildwood_Custodian.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Wildwood Sap",
@@ -761,7 +828,8 @@
     "desc": "Consume.\nApply Regen 5.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/1a/Wildwood_Sap.png/revision/latest/scale-to-width-down/239?cb=20201216024657"
   },
   {
     "name": "Wildwood Tome",
@@ -771,7 +839,8 @@
     "desc": "Consume.\nApply Quick.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Wildwood_Tome.png/revision/latest/scale-to-width-down/239?cb=20201216024715"
   },
   {
     "name": "Adaptive Mutation",
@@ -781,7 +850,8 @@
     "desc": "Consume.\nRestore a friendly unit to full health and then swap Attack and Health.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/df/Adaptive_Mutation.png/revision/latest/scale-to-width-down/239?cb=20201215054216"
   },
   {
     "name": "Bramble Lash",
@@ -791,7 +861,8 @@
     "desc": "Deal damage to the front enemy unit equal to 10x the amount of Spikes on friendly units.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7b/Bramble_Lash.png/revision/latest/scale-to-width-down/239?cb=20201215060837"
   },
   {
     "name": "Focused Growth",
@@ -801,7 +872,8 @@
     "desc": "Restore 25 health.\nDraw +2 next turn.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b4/Focused_Growth.png/revision/latest/scale-to-width-down/239?cb=20201215090348"
   },
   {
     "name": "Pyre-Gro",
@@ -810,7 +882,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/93/Pyre-Gro.png/revision/latest/scale-to-width-down/239?cb=20201216021726"
   },
   {
     "name": "Restoring Retreat",
@@ -820,7 +893,8 @@
     "desc": "Descend a unit and restore 10 health.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d0/Restoring_Retreat.png/revision/latest/scale-to-width-down/239?cb=20201216021948"
   },
   {
     "name": "Sharpen",
@@ -829,7 +903,8 @@
     "rarity": "Common",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/99/Sharpen.png/revision/latest/scale-to-width-down/239?cb=20201216023102"
   },
   {
     "name": "Spreading Spores",
@@ -839,7 +914,8 @@
     "desc": "Apply Regen 2 and Spikes 2. Add a copy of this card to your discard pile.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2b/Spreading_Spores.png/revision/latest/scale-to-width-down/239?cb=20201216023321"
   },
   {
     "name": "Wilting Sapwood",
@@ -849,7 +925,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/ad/Wilting_Sapwood.png/revision/latest/scale-to-width-down/343?cb=20200527190509"
   },
   {
     "name": "Awake",
@@ -859,7 +936,8 @@
     "desc": "Restore 30 health. Apply Regen 3.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/15/Awake.png/revision/latest/scale-to-width-down/239?cb=20201215054954"
   },
   {
     "name": "Cycle of Life",
@@ -868,7 +946,8 @@
     "rarity": "Rare",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5a/Cycle_of_Life.png/revision/latest/scale-to-width-down/239?cb=20201215060014"
   },
   {
     "name": "Steelsinger",
@@ -878,7 +957,8 @@
     "isbanner": "true",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Awoken"
+    "_category": "Awoken",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7e/Steelsinger.png/revision/latest/scale-to-width-down/358?cb=20210329110109"
   },
   {
     "name": "Tethys Titansbane",
@@ -890,7 +970,8 @@
     "attack": 5,
     "health": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cf/Tethys_Titansbane.png/revision/latest?cb=20200526054112"
   },
   {
     "name": "Solgard the Martyr",
@@ -903,7 +984,8 @@
     "attack": 0,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5c/Solgard_the_Martyr.png/revision/latest?cb=20200903185823"
   },
   {
     "name": "Spike of the Stygian",
@@ -912,7 +994,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e5/Spike_of_the_Stygian.png/revision/latest/scale-to-width-down/239?cb=20201216023301"
   },
   {
     "name": "Crystalline Seeds",
@@ -922,7 +1005,8 @@
     "desc": "Consume.\nApply Frostbite 6 to enemy units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/be/Crystalline_Seeds.png/revision/latest/scale-to-width-down/239?cb=20201215055959"
   },
   {
     "name": "Energy Siphon",
@@ -932,7 +1016,8 @@
     "desc": "Apply Spell Weakness 1 to an enemy unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d2/Energy_Siphon.png/revision/latest/scale-to-width-down/239?cb=20201215090151"
   },
   {
     "name": "Offering Token",
@@ -942,7 +1027,8 @@
     "desc": "Draw 1. Discard 1.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/be/Offering_Token.png/revision/latest/scale-to-width-down/239?cb=20201216005943"
   },
   {
     "name": "Preserve",
@@ -952,7 +1038,8 @@
     "desc": "Permafrost.\nApply Frozen to a card in your hand.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d1/Preserve.png/revision/latest/scale-to-width-down/239?cb=20201216010040"
   },
   {
     "name": "Unnamed Tome",
@@ -962,7 +1049,8 @@
     "desc": "Permafrost. Consume.\nApply Silence to enemy units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/91/Unnamed_Tome.png/revision/latest/scale-to-width-down/239?cb=20201216024349"
   },
   {
     "name": "Urchin Spines",
@@ -972,7 +1060,8 @@
     "desc": "Consume.\nApply Spell Weakness 2 to enemy units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c1/Urchin_Spines.png/revision/latest/scale-to-width-down/239?cb=20201216024405"
   },
   {
     "name": "Coldcaelia",
@@ -983,7 +1072,8 @@
     "desc": "Sweep.\nStrike: Apply Frostbite 3 to the attacked unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/03/Coldcaelia.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Cuttlehex",
@@ -993,7 +1083,8 @@
     "desc": "End of Turn: Apply Frozen to a random card in your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/89/Cuttlehex.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Drain",
@@ -1003,7 +1094,8 @@
     "desc": "Apply Sap 3.\nDiscard a card at random.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Drain.png/revision/latest/scale-to-width-down/239?cb=20201215060336"
   },
   {
     "name": "Flash Freeze",
@@ -1013,7 +1105,8 @@
     "desc": "Deal 3 damage. Apply Frostbite 8.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7a/Flash_Freeze.png/revision/latest/scale-to-width-down/239?cb=20201215090336"
   },
   {
     "name": "Forgone Power",
@@ -1023,7 +1116,8 @@
     "desc": "Apply Frostbite 6 to the front enemy unit.\nDiscard a card at random",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/77/Forgone_Power.png/revision/latest/scale-to-width-down/239?cb=20201215090413"
   },
   {
     "name": "Frenzied Swarm",
@@ -1033,7 +1127,8 @@
     "desc": "Apply Dazed 1 to enemy units.\nDiscard your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7d/Frenzied_Swarm.png/revision/latest/scale-to-width-down/239?cb=20201215090438"
   },
   {
     "name": "Frozen Lance",
@@ -1043,7 +1138,8 @@
     "desc": "Deal 6 damage to the front enemy unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f9/Frozen_Lance.png/revision/latest/scale-to-width-down/239?cb=20201215090449"
   },
   {
     "name": "Glacial Seal",
@@ -1057,7 +1153,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4f/Glacial_Seal.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Guard of the Unnamed",
@@ -1068,7 +1165,8 @@
     "desc": "Incant: Gain Armor 3.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/80/Guard_of_the_Unnamed.png/revision/latest/scale-to-width-down/400?cb=20200527190507"
   },
   {
     "name": "Guardian Stone",
@@ -1078,7 +1176,8 @@
     "desc": "Incant: Apply Armor 1 to friendly units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Guardian_Stone.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Harness the Titan",
@@ -1088,7 +1187,8 @@
     "desc": "Apply +5 Magic Power to spells in hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/ff/Harness_the_Titan.png/revision/latest/scale-to-width-down/239?cb=20201215091854"
   },
   {
     "name": "Ice and Pyre",
@@ -1098,7 +1198,8 @@
     "desc": "Pyrebound. Attuned.\nDeal 90 damage to the front enemy unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/93/Ice_and_Pyre.png/revision/latest/scale-to-width-down/239?cb=20201215091951"
   },
   {
     "name": "Icestorm",
@@ -1108,7 +1209,8 @@
     "desc": "Deal 1 damage to a random enemy unit, five times.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cd/Icestorm.png/revision/latest/scale-to-width-down/239?cb=20201215092012"
   },
   {
     "name": "Icy Cilophyte",
@@ -1119,7 +1221,8 @@
     "desc": "Sweep.\nStrike: Apply Spell Weakness 1 to the attacked unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/19/Icy_Cilophyte.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Lodestone Totem",
@@ -1130,7 +1233,8 @@
     "desc": "Incant: Apply Sap 1 to enemy units.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/6b/Lodestone_Totem.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Molluscmage",
@@ -1140,7 +1244,8 @@
     "desc": "+10 Magic Power on this floor.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d3/Molluscmage.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Nameless Siren",
@@ -1151,7 +1256,8 @@
     "desc": "Incant: Gain Rage 2.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/74/Nameless_Siren.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Offering Monument",
@@ -1161,7 +1267,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/3b/Offering_Monument.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Siren of the Sea",
@@ -1171,7 +1278,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/de/Siren_of_the_Sea.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Siren's Song",
@@ -1181,7 +1289,8 @@
     "desc": "Pyrebound.\nAscend all enemy units on this floor and apply Dazed 3.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f9/Siren%27s_Song.png/revision/latest/scale-to-width-down/239?cb=20201216023159"
   },
   {
     "name": "Titan Sentry",
@@ -1192,7 +1301,8 @@
     "desc": "Revenge: Apply Frostbite 3 to enemy units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/75/Titan_Sentry.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Titan's Gratitude",
@@ -1202,7 +1312,8 @@
     "desc": "Attuned.\nDeal 25 damage to the front enemy unit.\nDiscard a card at random.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Titan%27s_Gratitude.png/revision/latest/scale-to-width-down/239?cb=20201216024213"
   },
   {
     "name": "Deep Offering",
@@ -1212,7 +1323,8 @@
     "desc": "Consume.\nDiscard your hand. Draw 5.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/87/Deep_Offering.png/revision/latest/scale-to-width-down/239?cb=20201215060220"
   },
   {
     "name": "Gifts for a Guard",
@@ -1221,7 +1333,8 @@
     "rarity": "Rare",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b1/Gifts_for_a_Guard.png/revision/latest/scale-to-width-down/239?cb=20201215091116"
   },
   {
     "name": "Helical Crystalis",
@@ -1231,7 +1344,8 @@
     "desc": "Deal 25 damage to the front enemy unit, twice.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e9/Helical_Crystalis.png/revision/latest/scale-to-width-down/239?cb=20201215091906"
   },
   {
     "name": "Hoarfrost Effigy",
@@ -1241,7 +1355,8 @@
     "desc": "Transfer all Frostbite on this floor to a unit, then double the amount of Frostbite.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/22/Hoarfrost_Effigy.png/revision/latest/scale-to-width-down/239?cb=20201215091929"
   },
   {
     "name": "Ancient Synergy",
@@ -1251,7 +1366,8 @@
     "desc": "Deal damage to the front enemy unit equal to 2x the number of spells in your deck, three times.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f7/Ancient_Synergy.png/revision/latest/scale-to-width-down/239?cb=20201215054447"
   },
   {
     "name": "Crypt Builder",
@@ -1261,7 +1377,8 @@
     "desc": "Offering. Attuned.\nDeal 60 damage to the front enemy unit and push it to the back.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/9e/Crypt_Builder.png/revision/latest/scale-to-width-down/239?cb=20201215055745"
   },
   {
     "name": "Guardian's Amulet",
@@ -1271,7 +1388,8 @@
     "desc": "Offering.\nApply Sap 2 to enemy units.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/88/Guardian%27s_Amulet.png/revision/latest/scale-to-width-down/239?cb=20201215091146"
   },
   {
     "name": "Ice Tornado",
@@ -1281,7 +1399,8 @@
     "desc": "Permafrost. Deal 20 damage to a random enemy unit, three times. ",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/33/Ice_Tornado.png/revision/latest/scale-to-width-down/239?cb=20201215092001"
   },
   {
     "name": "Titanstooth",
@@ -1291,7 +1410,8 @@
     "desc": "Offering.\nDeal 5 damage to enemy units and apply Frostbite 10.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/24/Titanstooth.png/revision/latest/scale-to-width-down/239?cb=20201216024232"
   },
   {
     "name": "Eel Gorgon",
@@ -1302,7 +1422,8 @@
     "desc": "Incant: Gain Multistrike 1.\nResolve: Remove all status effects.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Stygian Guard"
+    "_category": "Stygian Guard",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e0/Eel_Gorgon.png/revision/latest?cb=20210329105924"
   },
   {
     "name": "Penumbra",
@@ -1314,7 +1435,8 @@
     "attack": 20,
     "health": 20,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/93/Penumbra.png/revision/latest/scale-to-width-down/400?cb=20200526054322"
   },
   {
     "name": "Primordium",
@@ -1327,7 +1449,8 @@
     "attack": 3,
     "health": 3,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/19/Primordium.png/revision/latest/scale-to-width-down/400?cb=20200903185743"
   },
   {
     "name": "Forever Consumed",
@@ -1336,7 +1459,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/06/Forever_Consumed.png/revision/latest/scale-to-width-down/239?cb=20201215090400"
   },
   {
     "name": "Kindle",
@@ -1345,7 +1469,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f3/Kindle.png/revision/latest/scale-to-width-down/239?cb=20201216005828"
   },
   {
     "name": "Mine Collapse",
@@ -1354,7 +1479,8 @@
     "rarity": "Common",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/0f/Mine_Collapse.png/revision/latest/scale-to-width-down/239?cb=20201216005913"
   },
   {
     "name": "Prism Retrieval",
@@ -1363,7 +1489,8 @@
     "rarity": "Uncommon",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/12/Prism_Retrieval.png/revision/latest/scale-to-width-down/239?cb=20201216021620"
   },
   {
     "name": "Prismal Dust",
@@ -1372,7 +1499,8 @@
     "rarity": "Common",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/da/Prismal_Dust.png/revision/latest/scale-to-width-down/239?cb=20201216021633"
   },
   {
     "name": "Shroud Spike",
@@ -1381,7 +1509,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/20/Shroud_Spike.png/revision/latest/scale-to-width-down/239?cb=20201216023130"
   },
   {
     "name": "Antumbra Morsel",
@@ -1400,7 +1529,8 @@
     "desc": "Consume.\nAdd 3 Excavated Ember cards to your discard pile.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/87/Ember_Cache.png/revision/latest/scale-to-width-down/239?cb=20210328023822"
   },
   {
     "name": "Feast",
@@ -1410,7 +1540,8 @@
     "desc": "Trigger feeding on units with Eaten abilities.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2f/Feast.png/revision/latest/scale-to-width-down/239?cb=20201215090326"
   },
   {
     "name": "Immortal Trade",
@@ -1420,7 +1551,8 @@
     "desc": "Apply Lifesteal 3 and Emberdrain 2 to a friendly unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4c/Immortal_Trade.png/revision/latest/scale-to-width-down/239?cb=20201215092026"
   },
   {
     "name": "Magma Morsel",
@@ -1447,7 +1579,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a5/Morsel_Jeweler.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Morsel Miner",
@@ -1456,7 +1589,8 @@
     "rarity": "Rare",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5a/Morsel_Miner.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Packed Morsels",
@@ -1466,7 +1600,8 @@
     "desc": "Consume.\nAdd 3 uncommon or rare Morsel units to your hand.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4a/Packed_Morsels.png/revision/latest/scale-to-width-down/239?cb=20201216005957"
   },
   {
     "name": "Perils of Production",
@@ -1475,7 +1610,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Perils_of_Production.png/revision/latest/scale-to-width-down/239?cb=20201216010008"
   },
   {
     "name": "Retch",
@@ -1485,7 +1621,8 @@
     "desc": "Return consumed Morsel units to your hand.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b0/Retch.png/revision/latest/scale-to-width-down/239?cb=20201216022000"
   },
   {
     "name": "Rubble Morsel",
@@ -1503,7 +1640,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/15/Space_Prism.png/revision/latest/scale-to-width-down/239?cb=20201216023216"
   },
   {
     "name": "Void Binding",
@@ -1513,7 +1651,8 @@
     "desc": "Apply Damage Shield 2, Rage 6, and Emberdrain 3.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Void_Binding.png/revision/latest/scale-to-width-down/239?cb=20201216024511"
   },
   {
     "name": "Antumbra Assault",
@@ -1523,7 +1662,8 @@
     "desc": "Deal 3 damage.\nSlay: Add 2 uncommon or rare Morsel units to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/76/Antumbra_Assault.png/revision/latest/scale-to-width-down/239?cb=20201215054549"
   },
   {
     "name": "Cannibalize",
@@ -1533,7 +1673,8 @@
     "desc": "Sacrifice.\nAdd 3 random uncommon or rare Morsel units to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Cannibalize.png/revision/latest/scale-to-width-down/239?cb=20201215055446"
   },
   {
     "name": "Crucible Collector",
@@ -1544,7 +1685,8 @@
     "desc": "Gorge: Gain Lifesteal 1.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/6c/Crucible_Collector.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Crucible Warden",
@@ -1555,7 +1697,8 @@
     "desc": "Gorge: Gain Damage Shield 1.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b9/Crucible_Warden.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Ember Forge",
@@ -1564,7 +1707,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/17/Ember_Forge.png/revision/latest/scale-to-width-down/400?cb=20200527190507"
   },
   {
     "name": "Engine Upgrade",
@@ -1573,7 +1717,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b1/Engine_Upgrade.png/revision/latest/scale-to-width-down/239?cb=20201215090213"
   },
   {
     "name": "Morselmaster",
@@ -1588,7 +1733,8 @@
     "attack": 10,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/41/Morselmaster.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Plink",
@@ -1598,7 +1744,8 @@
     "desc": "Deal 1 damage to a random enemy unit, twice.\nSlay: Add a common or uncommon Morsel unit to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/90/Plink.png/revision/latest/scale-to-width-down/239?cb=20201216010033"
   },
   {
     "name": "Shadesplitter",
@@ -1608,7 +1755,8 @@
     "desc": "Add a common or uncommon Morsel unit to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5f/Shadesplitter.png/revision/latest/scale-to-width-down/239?cb=20201216022130"
   },
   {
     "name": "Shroud Mitosis",
@@ -1618,7 +1766,8 @@
     "desc": "Create 3 copies of a Morsel unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c8/Shroud_Mitosis.png/revision/latest/scale-to-width-down/239?cb=20201216023114"
   },
   {
     "name": "Alloyed Construct",
@@ -1633,7 +1782,8 @@
     "capacity": 2,
     "health": 25,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/68/Alloyed_Construct.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Cave In",
@@ -1643,7 +1793,8 @@
     "desc": "Descend friendly and enemy units on this floor.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d3/Cave_In.png/revision/latest/scale-to-width-down/239?cb=20201215055503"
   },
   {
     "name": "Crucible Extension",
@@ -1652,7 +1803,8 @@
     "rarity": "Uncommon",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/58/Crucible_Extension.png/revision/latest/scale-to-width-down/239?cb=20201215055721"
   },
   {
     "name": "Furnace Tap",
@@ -1662,7 +1814,8 @@
     "desc": "Consume.\nApply Multistrike 1. Apply Emberdrain 4.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d3/Furnace_Tap.png/revision/latest/scale-to-width-down/239?cb=20201215090500"
   },
   {
     "name": "Grovel",
@@ -1672,7 +1825,8 @@
     "desc": "Apply Damage Shield 1. Add 2 uncommon or rare Morsel units to your hand.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/44/Grovel.png/revision/latest/scale-to-width-down/239?cb=20201215091135"
   },
   {
     "name": "Making of a Morsel",
@@ -1682,7 +1836,8 @@
     "desc": "Add a Morsel Miner to your hand.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/64/Making_of_a_Morsel.png/revision/latest/scale-to-width-down/239?cb=20210328024331"
   },
   {
     "name": "Morselmaker",
@@ -1693,7 +1848,8 @@
     "desc": "Resolve: Summon an Antumbra Morsel and Magma Morsel in this room.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d2/Morselmaker.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Overgorger",
@@ -1703,7 +1859,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/02/Overgorger.png/revision/latest?cb=20200527190510"
   },
   {
     "name": "Shadoweater",
@@ -1714,7 +1871,8 @@
     "desc": "Gorge: Restore 10 health. Deal 10 damage to enemy units.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5c/Shadoweater.png/revision/latest?cb=20200528202118"
   },
   {
     "name": "Umbra Stone",
@@ -1724,7 +1882,8 @@
     "desc": "Consume.\nApply Trample.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/aa/Umbra_Stone.png/revision/latest/scale-to-width-down/239?cb=20201216024312"
   },
   {
     "name": "Blazing Bolts",
@@ -1734,7 +1893,8 @@
     "desc": "Purge.\nDeal 30 damage to the front enemy unit. Add a stronger version of this card to your discard.<hr>Purge.\nDeal 30 damage to a random unit, two times. Add a stronger version of this card to your discard.<hr>Deal 30 damage to a random unit, four times.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/1d/Blazing_Bolts_1.png/revision/latest/scale-to-width-down/239?cb=20210710113550"
   },
   {
     "name": "Excavation Eruption",
@@ -1743,7 +1903,8 @@
     "rarity": "Uncommon",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/79/Excavation_Eruption.png/revision/latest/scale-to-width-down/239?cb=20201215090312"
   },
   {
     "name": "Gem Trove",
@@ -1753,7 +1914,8 @@
     "desc": "Apply Damage Shield 1 to friendly units. Add 3 uncommon or rare Morsel units to your hand.",
     "cost": 4,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/9a/Gem_Trove.png/revision/latest/scale-to-width-down/239?cb=20201215091049"
   },
   {
     "name": "Shadowsiege",
@@ -1763,7 +1925,8 @@
     "isbanner": "true",
     "cost": 6,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f7/Shadowsiege.png/revision/latest/scale-to-width-down/400?cb=20200530093546"
   },
   {
     "name": "Morsel-Made",
@@ -1773,7 +1936,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Umbra"
+    "_category": "Umbra",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f8/Morsel-Made.png/revision/latest?cb=20210329110028"
   },
   {
     "name": "Rector Flicker",
@@ -1785,7 +1949,8 @@
     "attack": 10,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Rector_Flicker.png/revision/latest?cb=20200526054339"
   },
   {
     "name": "Little Fade",
@@ -1797,7 +1962,8 @@
     "attack": 5,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Little_Fade.png/revision/latest?cb=20200903185731"
   },
   {
     "name": "Waxen Spike",
@@ -1806,7 +1972,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/0f/Waxen_Spike.png/revision/latest/scale-to-width-down/239?cb=20210328024430"
   },
   {
     "name": "Dreg",
@@ -1816,7 +1983,8 @@
     "desc": "Burnout 2.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Dreg.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Primitive Mold",
@@ -1826,7 +1994,8 @@
     "desc": "Reform a random unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/27/Primitive_Mold.png/revision/latest/scale-to-width-down/239?cb=20201216010057"
   },
   {
     "name": "Hallowed Drippings",
@@ -1836,7 +2005,8 @@
     "desc": "Consume.\nApply Burnout 5 to friendly Burnout units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/68/Hallowed_Drippings.png/revision/latest/scale-to-width-down/239?cb=20201215091841"
   },
   {
     "name": "Intent on Death",
@@ -1846,7 +2016,8 @@
     "desc": "Consume.\nTrigger a unit's Extinguish ability without killing it.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/11/Intent_on_Death.png/revision/latest/scale-to-width-down/239?cb=20210328024020"
   },
   {
     "name": "Memories of the Melted",
@@ -1855,7 +2026,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/0a/Memories_of_the_Melted.png/revision/latest/scale-to-width-down/239?cb=20201216005906"
   },
   {
     "name": "Purifying Cleanse",
@@ -1865,7 +2037,8 @@
     "desc": "Restore 15 health and apply Burnout 3 to a friendly unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/6c/Purifying_Cleanse.png/revision/latest/scale-to-width-down/239?cb=20201216021651"
   },
   {
     "name": "Sacred Wicks",
@@ -1875,7 +2048,8 @@
     "desc": "Consume.\nReform 2 random units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Sacred_Wicks.png/revision/latest/scale-to-width-down/239?cb=20201216022044"
   },
   {
     "name": "Sacrificial Resurrection",
@@ -1884,7 +2058,8 @@
     "rarity": "Rare",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e9/Sacrificial_Resurrection.png/revision/latest/scale-to-width-down/239?cb=20201216022100"
   },
   {
     "name": "Wickless Recruitment",
@@ -1894,7 +2069,8 @@
     "desc": "Remove all Burnout and Debuff effects from a unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f3/Wickless_Recruitment.png/revision/latest/scale-to-width-down/239?cb=20201216024640"
   },
   {
     "name": "Bounty Stalker",
@@ -1904,7 +2080,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2b/Bounty_Stalker.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Crushing Demise",
@@ -1914,7 +2091,8 @@
     "desc": "Kill a random non-boss enemy unit.\nKill a random friendly unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2b/Crushing_Demise.png/revision/latest/scale-to-width-down/239?cb=20201215055733"
   },
   {
     "name": "Devourer of Death",
@@ -1928,7 +2106,8 @@
     "attack": 0,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4a/Devourer_of_Death.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Draff",
@@ -1942,7 +2121,8 @@
     "capacity": 1,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/50/Draff.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Engulfed in Smoke",
@@ -1952,7 +2132,8 @@
     "desc": "Apply Stealth 2 to friendly units.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d9/Engulfed_in_Smoke.png/revision/latest/scale-to-width-down/239?cb=20201215090239"
   },
   {
     "name": "Entombed Explosive",
@@ -1966,7 +2147,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b0/Entombed_Explosive.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Lady of the House",
@@ -1977,7 +2159,8 @@
     "desc": "Burnout 3.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a0/Lady_of_the_House.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Lady of the Reformed",
@@ -1988,7 +2171,8 @@
     "desc": "Burnout 3.\nRevenge: Friendly Burnout units gain Burnout 1.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/36/Lady_of_the_Reformed.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Molded",
@@ -1998,7 +2182,8 @@
     "desc": "Reform a unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c8/Molded.png/revision/latest/scale-to-width-down/239?cb=20201216005921"
   },
   {
     "name": "Molten Encasement",
@@ -2012,7 +2197,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/34/Molten_Encasement.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Paraffin Enforcer",
@@ -2027,7 +2213,8 @@
     "attack": 15,
     "health": 25,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Paraffin_Enforcer.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Paraffin Thug",
@@ -2037,7 +2224,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cb/Paraffin_Thug.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Remnant Host",
@@ -2051,7 +2239,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2f/Remnant_Host.png/revision/latest?cb=20200527190507"
   },
   {
     "name": "Remnant Pact",
@@ -2061,7 +2250,8 @@
     "desc": "Consume.\nApply Endless to a friendly unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d8/Remnant_Pact.png/revision/latest/scale-to-width-down/239?cb=20201216021833"
   },
   {
     "name": "Resin Removal",
@@ -2071,7 +2261,8 @@
     "desc": "Remove all Debuff effects from friendly units and all Buff effects from enemy units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/92/Resin_Removal.png/revision/latest/scale-to-width-down/239?cb=20201216021848"
   },
   {
     "name": "Votivary",
@@ -2094,7 +2285,8 @@
     "rarity": "Common",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/44/Wicklash.png/revision/latest/scale-to-width-down/239?cb=20201216024620"
   },
   {
     "name": "Wickless Baron",
@@ -2104,7 +2296,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ef/Wickless_Baron.png/revision/latest?cb=20200527190506"
   },
   {
     "name": "Wickless Tycoon",
@@ -2114,7 +2307,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/8/87/Wickless_Tycoon.png/revision/latest/scale-to-width-down/349?cb=20200527190506"
   },
   {
     "name": "A Fatal Melting",
@@ -2124,7 +2318,8 @@
     "desc": "Deal damage to enemy units equal to 3x the number of friendly unit deaths this battle.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f3/A_Fatal_Melting.png/revision/latest/scale-to-width-down/239?cb=20201215054112"
   },
   {
     "name": "Big Sludge",
@@ -2135,7 +2330,8 @@
     "desc": "Harvest: Gain Rage 5.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/96/Big_Sludge.png/revision/latest/scale-to-width-down/400?cb=20200527190506"
   },
   {
     "name": "Dripfall",
@@ -2145,7 +2341,8 @@
     "desc": "Descend a unit and apply Dazed 1.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b9/Dripfall.png/revision/latest/scale-to-width-down/239?cb=20201215060354"
   },
   {
     "name": "Formless Child",
@@ -2154,7 +2351,8 @@
     "rarity": "Rare",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2b/Formless_Child.png/revision/latest?cb=20200527190505"
   },
   {
     "name": "Legion of Wax",
@@ -2165,7 +2363,8 @@
     "desc": "Extinguish: Summon 2 Twin of Wax and apply this unit's upgrades and stat changes.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d0/Legion_of_Wax.png/revision/latest/scale-to-width-down/400?cb=20200527190506"
   },
   {
     "name": "Subsuming Blade",
@@ -2175,7 +2374,8 @@
     "desc": "Piercing.\nDeal 5 damage.\nSlay: Increase damage by 3 permanently.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/37/Subsuming_Blade.png/revision/latest/scale-to-width-down/239?cb=20201216023409"
   },
   {
     "name": "Wicked Blaze",
@@ -2184,7 +2384,8 @@
     "rarity": "Uncommon",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/0f/Wicked_Blaze.png/revision/latest/scale-to-width-down/239?cb=20201216024559"
   },
   {
     "name": "Memento Mori",
@@ -2194,7 +2395,8 @@
     "desc": "Deal damage to the front enemy unit equal to 10x the number of friendly unit deaths this battle.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/05/Memento_Mori.png/revision/latest/scale-to-width-down/239?cb=20201216005858"
   },
   {
     "name": "Mortal Entrapment",
@@ -2204,7 +2406,8 @@
     "desc": "Attuned.\nDeal 25 damage and apply Dazed 3 to an already damaged unit.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Mortal_Entrapment.png/revision/latest/scale-to-width-down/239?cb=20201216005929"
   },
   {
     "name": "Hallowed Halls",
@@ -2213,7 +2416,8 @@
     "rarity": "Rare",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Melting Remnant"
+    "_category": "Melting Remnant",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/95/Hallowed_Halls.png/revision/latest/scale-to-width-down/239?cb=20210326001048"
   },
   {
     "name": "Spine Chief",
@@ -2225,7 +2429,8 @@
     "attack": 5,
     "health": 20,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c7/Spine_Chief.png/revision/latest/scale-to-width-down/400?cb=20210329110054"
   },
   {
     "name": "Echowright",
@@ -2237,7 +2442,8 @@
     "attack": 10,
     "health": 5,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Echowright.png/revision/latest?cb=20210329105911"
   },
   {
     "name": "Fracture",
@@ -2247,7 +2453,8 @@
     "desc": "Apply Reap 2.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ed/Fracture.png/revision/latest/scale-to-width-down/239?cb=20210328020651"
   },
   {
     "name": "Echo Break",
@@ -2257,7 +2464,8 @@
     "desc": "Deal 1 damage per Echo",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/94/Echo_Break.png/revision/latest/scale-to-width-down/239?cb=20210328020400"
   },
   {
     "name": "Bog Fly",
@@ -2266,7 +2474,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/12/Bog_Fly.png/revision/latest?cb=20210329105836"
   },
   {
     "name": "Bounding Echoes",
@@ -2276,7 +2485,8 @@
     "desc": "Consume.\nApply Infused to cards in hand.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/bf/Bounding_Echoes.png/revision/latest/scale-to-width-down/239?cb=20210328020346"
   },
   {
     "name": "Echo Infusion",
@@ -2285,7 +2495,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/08/Echo_Infusion.png/revision/latest/scale-to-width-down/239?cb=20210328020418"
   },
   {
     "name": "Echo Snare",
@@ -2295,7 +2506,8 @@
     "desc": "Consume.\nApply Reap 2 to enemy units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Echo_Snare.png/revision/latest/scale-to-width-down/239?cb=20210328020432"
   },
   {
     "name": "Echo Transfer",
@@ -2304,7 +2516,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cf/Echo_Transfer.png/revision/latest/scale-to-width-down/239?cb=20210328020648"
   },
   {
     "name": "Hosting Kin",
@@ -2314,7 +2527,8 @@
     "desc": "Consume.\nDeal 13 damage to a unit and move it to the back.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/63/Hosting_Kin.png/revision/latest/scale-to-width-down/239?cb=20210328020653"
   },
   {
     "name": "Proclamation",
@@ -2324,7 +2538,8 @@
     "desc": "Attuned. Extract 2.\nDeal 50 damage to the front enemy unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/df/Proclamation.png/revision/latest/scale-to-width-down/239?cb=20210328020656"
   },
   {
     "name": "Shelter",
@@ -2334,7 +2549,8 @@
     "desc": "Consume.\nApply Armor 2 per Echo to friendly units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/72/Shelter.png/revision/latest/scale-to-width-down/239?cb=20210328020657"
   },
   {
     "name": "Bog Chrysalis",
@@ -2349,7 +2565,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/44/Bog_Chrysalis.png/revision/latest?cb=20210329110119"
   },
   {
     "name": "Keeper of Echoes",
@@ -2359,7 +2576,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4a/Keeper_of_Echoes.png/revision/latest?cb=20210329105955"
   },
   {
     "name": "Kinhost Carapace",
@@ -2369,7 +2587,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/54/Kinhost_Carapace.png/revision/latest?cb=20210329110007"
   },
   {
     "name": "Kinhost Vessel",
@@ -2384,7 +2603,8 @@
     "attack": 0,
     "health": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/72/Kinhost_Vessel.png/revision/latest?cb=20210329110020"
   },
   {
     "name": "Kinhost Pupa",
@@ -2397,7 +2617,8 @@
     "capacity": 2,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Kinhost_Pupa.png/revision/latest?cb=20210329110013"
   },
   {
     "name": "First of Kin",
@@ -2407,7 +2628,8 @@
     "isbanner": "true",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/9/97/First_of_Kin.png/revision/latest/scale-to-width-down/400?cb=20210329110524"
   },
   {
     "name": "Shardsoul Carver",
@@ -2417,7 +2639,8 @@
     "isbanner": "true",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/45/Shardsoul_Carver.png/revision/latest?cb=20210329110043"
   },
   {
     "name": "Ambient Charge",
@@ -2427,7 +2650,8 @@
     "desc": "Extract 3.\nDraw 3. Apply Consume to drawn spells.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ed/Ambient_Charge.png/revision/latest/scale-to-width-down/239?cb=20210328021534"
   },
   {
     "name": "Ancient Resonance",
@@ -2437,7 +2661,8 @@
     "desc": "Deal 5 damage to enemy units per Echo.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d6/Ancient_Resonance.png/revision/latest/scale-to-width-down/239?cb=20210328021535"
   },
   {
     "name": "Broken Memories",
@@ -2447,7 +2672,8 @@
     "desc": "Consume.\nReturn a consumed spell to the top of your draw pile.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cf/Broken_Memories.png/revision/latest/scale-to-width-down/239?cb=20210328021536"
   },
   {
     "name": "Forced Contamination",
@@ -2457,7 +2683,8 @@
     "desc": "Extract 3.\nApply Melee Weakness 3.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/53/Forced_Contamination.png/revision/latest/scale-to-width-down/239?cb=20210328021539"
   },
   {
     "name": "Forgotten Trade",
@@ -2466,7 +2693,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/48/Forgotten_Trade.png/revision/latest/scale-to-width-down/239?cb=20210328021541"
   },
   {
     "name": "Power of Knowledge",
@@ -2476,7 +2704,8 @@
     "desc": "Deal 15 damage for each spell in the Consume pile.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/da/Power_of_Knowledge.png/revision/latest/scale-to-width-down/239?cb=20210328021544"
   },
   {
     "name": "Returned Soul",
@@ -2485,7 +2714,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a4/Returned_Soul.png/revision/latest/scale-to-width-down/239?cb=20210328021545"
   },
   {
     "name": "Revenge of the Damned",
@@ -2494,7 +2724,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/43/Revenge_of_the_Damned.png/revision/latest/scale-to-width-down/239?cb=20210328021546"
   },
   {
     "name": "Soul Cripple",
@@ -2504,7 +2735,8 @@
     "desc": "Consume.\nApply Reap 13.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/33/Soul_Cripple.png/revision/latest/scale-to-width-down/239?cb=20210328021547"
   },
   {
     "name": "Soul Siphon",
@@ -2514,7 +2746,8 @@
     "desc": "Consume.\nFill EchoSlot with Echo. Apply Emberdrain 1 to friendly units.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f7/Soul_Siphon.png/revision/latest/scale-to-width-down/239?cb=20210328021548"
   },
   {
     "name": "Soulcrushing Guilt",
@@ -2524,7 +2757,8 @@
     "desc": "Extract 3.\nApply Dazed 3 to a unit and move it to the back.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ec/Soulcrushing_Guilt.png/revision/latest/scale-to-width-down/239?cb=20210328021549"
   },
   {
     "name": "Total Recall",
@@ -2534,7 +2768,8 @@
     "desc": "Consume.\nReturn 3 random spell cards from the discard pile to your hand and apply Consume.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/ba/Total_Recall.png/revision/latest/scale-to-width-down/239?cb=20210328021551"
   },
   {
     "name": "Bogdeep Cocoon",
@@ -2545,7 +2780,8 @@
     "desc": "Shell 12.\nHatch: Summon Bog Wurmling",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Bogdeep_Cocoon.png/revision/latest/scale-to-width-down/400?cb=20210329105853"
   },
   {
     "name": "Bog Wurmling",
@@ -2554,7 +2790,8 @@
     "rarity": "Rare",
     "cost": "-",
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/5c/Bog_Wurmling.png/revision/latest/scale-to-width-down/400?cb=20210329105844"
   },
   {
     "name": "Glareminder",
@@ -2565,7 +2802,8 @@
     "desc": "Sweep.\nEtch: Apply Reap 2 to enemy units.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/ef/Glareminder.png/revision/latest?cb=20210329105943"
   },
   {
     "name": "Glugsider",
@@ -2576,7 +2814,8 @@
     "desc": "Extract 4.\nInspire: Restore 5 health.\nRevenge: Apply Reap 5 to the attacking unit.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/63/Glugsider.png/revision/latest/scale-to-width-down/400?cb=20210326184220"
   },
   {
     "name": "Accelerated Incubation",
@@ -2586,7 +2825,8 @@
     "desc": "Consume.\nRemove 3 Shell from Eggs.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/68/Accelerated_Incubation.png/revision/latest/scale-to-width-down/239?cb=20210328021533"
   },
   {
     "name": "Echoes of the Past",
@@ -2595,7 +2835,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/bf/Echoes_of_the_Past.png/revision/latest/scale-to-width-down/239?cb=20210328021537"
   },
   {
     "name": "Eternal Kinstone",
@@ -2604,7 +2845,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/7a/Eternal_Kinstone.png/revision/latest/scale-to-width-down/239?cb=20210328020649"
   },
   {
     "name": "Perfect Insanity",
@@ -2613,7 +2855,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/24/Perfect_Insanity.png/revision/latest/scale-to-width-down/239?cb=20210328021543"
   },
   {
     "name": "Symphony of the Soul",
@@ -2623,7 +2866,8 @@
     "desc": "Extract 5.\nDouble buffs and Armor on a unit.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cf/Symphony_of_the_Soul.png/revision/latest/scale-to-width-down/239?cb=20210328021550"
   },
   {
     "name": "Unearthed Remains",
@@ -2632,7 +2876,8 @@
     "rarity": "Rare",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/53/Unearthed_Remains.png/revision/latest/scale-to-width-down/239?cb=20210328021552"
   },
   {
     "name": "Wurmkin Spike",
@@ -2641,7 +2886,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c8/Wurmkin_Spike.png/revision/latest/scale-to-width-down/239?cb=20210328021554"
   },
   {
     "name": "Wurmkin Etchings",
@@ -2651,7 +2897,8 @@
     "desc": "Consume.\nReturn 5 consumed spells to the top of your draw pile.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Wurmkin"
+    "_category": "Wurmkin",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/7/76/Wurmkin_Etchings.png/revision/latest/scale-to-width-down/239?cb=20210328021553"
   },
   {
     "name": "Automatic Railspikes",
@@ -2660,7 +2907,8 @@
     "rarity": "Uncommon",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Automatic_Railspikes.png/revision/latest/scale-to-width-down/239?cb=20201215054722"
   },
   {
     "name": "Bone Rattler",
@@ -2669,7 +2917,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cb/Bone_Rattler.png/revision/latest/scale-to-width-down/239?cb=20201215060913"
   },
   {
     "name": "Boneshine",
@@ -2678,7 +2927,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a5/Boneshine.png/revision/latest/scale-to-width-down/239?cb=20201215055205"
   },
   {
     "name": "Gift of Gratitude",
@@ -2687,7 +2937,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b4/Gift_of_Gratitude.png/revision/latest/scale-to-width-down/239?cb=20201215091103"
   },
   {
     "name": "Most Blessed Sword",
@@ -2696,7 +2947,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a8/Most_Blessed_Sword.png/revision/latest/scale-to-width-down/239?cb=20201216005936"
   },
   {
     "name": "Thy Holiest Shield",
@@ -2705,7 +2957,8 @@
     "rarity": "Rare",
     "cost": "X",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e1/Thy_Holiest_Shield.png/revision/latest/scale-to-width-down/239?cb=20201216023446"
   },
   {
     "name": "Bone Dog's Favor",
@@ -2714,7 +2967,8 @@
     "rarity": "Rare",
     "desc": "Unplayable.\nReserve: Restore 5 Pyre health.",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/d3/Bone_Dog%27s_Favor.png/revision/latest/scale-to-width-down/239?cb=20201215060819"
   },
   {
     "name": "Deadweight",
@@ -2722,7 +2976,8 @@
     "type": "Blight",
     "desc": "Unplayable. Unpurgeable.",
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/67/Deadweight.png/revision/latest/scale-to-width-down/239?cb=20201216195751"
   },
   {
     "name": "Excavated Ember",
@@ -2731,7 +2986,8 @@
     "rarity": "Common",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/0/04/Excavated_Ember.png/revision/latest/scale-to-width-down/239?cb=20201215090301"
   },
   {
     "name": "Petrified Skull",
@@ -2741,7 +2997,8 @@
     "desc": "Purge.\nKill a non-boss unit.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/31/Petrified_Skull.png/revision/latest/scale-to-width-down/239?cb=20201216010016"
   },
   {
     "name": "Spikedriver Colony",
@@ -2750,7 +3007,8 @@
     "rarity": "Uncommon",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/6/69/Spikedriver_Colony.png/revision/latest?cb=20200527190504"
   },
   {
     "name": "Trap Chute",
@@ -2760,7 +3018,8 @@
     "desc": "Consume.\nDescend a unit to the bottom floor. Apply Dazed 2.",
     "cost": 0,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b2/Trap_Chute.png/revision/latest/scale-to-width-down/239?cb=20201216024257"
   },
   {
     "name": "Dante the Deceptive",
@@ -2775,7 +3034,8 @@
     "attack": 3,
     "health": 10,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/3c/Dante_the_Deceptive.png/revision/latest?cb=20200527190503"
   },
   {
     "name": "Dante's Candle",
@@ -2784,7 +3044,8 @@
     "desc": "Unpurgeable.\nReserve: Your Pyre takes 3 damage.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/f9/Dante%27s_Candle.png/revision/latest/scale-to-width-down/239?cb=20201215060027"
   },
   {
     "name": "Petty Theft",
@@ -2793,7 +3054,8 @@
     "rarity": "Uncommon",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/a/a0/Petty_Theft.png/revision/latest/scale-to-width-down/239?cb=20201216010026"
   },
   {
     "name": "Self-Mutilation",
@@ -2802,7 +3064,8 @@
     "desc": "Purge.\nReserve: Your Pyre takes 5 damage.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/e/e8/Self-Mutilation.png/revision/latest/scale-to-width-down/239?cb=20201216022117"
   },
   {
     "name": "Sinner's Burden",
@@ -2811,7 +3074,8 @@
     "desc": "Purge.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/3/35/Sinner%27s_Burden.png/revision/latest/scale-to-width-down/239?cb=20201216023144"
   },
   {
     "name": "Train Steward",
@@ -2820,7 +3084,8 @@
     "rarity": "Common",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/5/50/Train_Steward.png/revision/latest?cb=20200527190504"
   },
   {
     "name": "Vengeful Shard",
@@ -2829,7 +3094,8 @@
     "desc": "Reserve: Your Pyre takes 1 damage.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/2/2d/Vengeful_Shard.png/revision/latest/scale-to-width-down/239?cb=20201216024421"
   },
   {
     "name": "Weight of Contrition",
@@ -2838,7 +3104,8 @@
     "desc": "Purge.\nReserve: Your Pyre takes 3 damage.",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/c5/Weight_of_Contrition.png/revision/latest/scale-to-width-down/239?cb=20201216024540"
   },
   {
     "name": "Steel Pulleyclaw",
@@ -2848,7 +3115,8 @@
     "desc": "Consume.\nAscend an enemy unit to the Pyre room. Apply Dazed 3.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Steel_Pulleyclaw.png/revision/latest/scale-to-width-down/239?cb=20201216023356"
   },
   {
     "name": "The Ultimate Penance",
@@ -2857,7 +3125,8 @@
     "desc": "Purge.\nReserve: Your Pyre takes 5 damage.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/4d/The_Ultimate_Penance.png/revision/latest/scale-to-width-down/239?cb=20201216023428"
   },
   {
     "name": "Calcified Ember",
@@ -2866,7 +3135,8 @@
     "desc": "Purge.",
     "cost": 3,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/c/ca/Calcified_Ember.png/revision/latest/scale-to-width-down/239?cb=20201215055303"
   },
   {
     "name": "Good Ol' Wingmaker",
@@ -2875,7 +3145,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/d/dc/Good_Ol%27_Wingmaker.png/revision/latest/scale-to-width-down/239?cb=20210328020652"
   },
   {
     "name": "Heph the Blacksmith",
@@ -2885,7 +3156,8 @@
     "isbanner": "true",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/1/1d/Heph_the_Blacksmith.png/revision/latest/scale-to-width-down/243?cb=20210329110647"
   },
   {
     "name": "Olde Magic",
@@ -2894,7 +3166,8 @@
     "rarity": "Rare",
     "cost": 1,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/b/b6/Olde_Magic.png/revision/latest/scale-to-width-down/239?cb=20210328020655"
   },
   {
     "name": "Nexus Spike",
@@ -2904,7 +3177,8 @@
     "desc": "Consume.\nDoes not affect bosses.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/4/40/Nexus_Spike.png/revision/latest/scale-to-width-down/239?cb=20210328020654"
   },
   {
     "name": "For the Greater Good",
@@ -2914,6 +3188,7 @@
     "desc": "Summon a friendly Rebel unit to the front of this floor.",
     "cost": 2,
     "_source": "monster_train",
-    "_category": "Clanless"
+    "_category": "Clanless",
+    "image": "https://static.wikia.nocookie.net/monster_train/images/f/fa/For_the_Greater_Good.png/revision/latest/scale-to-width-down/239?cb=20210520024437"
   }
 ]
