@@ -20,6 +20,7 @@ import EventScreen from './pages/EventScreen'
 import TreasureScreen from './pages/TreasureScreen'
 import GameOverScreen from './pages/GameOverScreen'
 import DeckViewScreen from './pages/DeckViewScreen'
+import CombatScreen from './pages/CombatScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -62,6 +63,7 @@ const RUN_VIEWS = new Set<AppView>(['map', 'reward', 'shop', 'campfire', 'event'
 function App() {
   const [view, setView] = useState<AppView>('start')
   const [prevView, setPrevView] = useState<AppView>('map')
+  const [combatTier, setCombatTier] = useState<'combat' | 'elite' | 'boss'>('combat')
   const [sidebarExpanded, setSidebarExpanded] = useState(false)
   const { toggle: toggleInspector, isOpen: inspectorOpen } = useDevInspector()
   const runState = useRunState()
@@ -77,8 +79,13 @@ function App() {
 
   const handleMapNode = useCallback((_nodeId: string, type: MapNodeType) => {
     runState.advanceFloor()
-    const target = NODE_VIEW_MAP[type]
-    if (target) setView(target)
+    if (type === 'combat' || type === 'elite' || type === 'boss') {
+      setCombatTier(type)
+      setView('combat')
+    } else {
+      const target = NODE_VIEW_MAP[type]
+      if (target) setView(target)
+    }
   }, [runState.advanceFloor])
 
   const handleReturnToMap = useCallback(() => {
@@ -149,6 +156,20 @@ function App() {
         stats={{ floorsCleared: runState.run?.floor ?? 0, goldEarned: runState.run?.gold ?? 0 }}
         onRestart={handleNewRun}
         onMenu={() => setView('start')}
+      />
+      case 'combat':         return <CombatScreen
+        tier={combatTier}
+        playerHp={p?.hp}
+        playerMaxHp={p?.maxHp}
+        deckSize={runState.run?.deck.cards.length}
+        onVictory={(_dealt, taken) => {
+          runState.takeDamage(taken)
+          runState.addGold(15 + (combatTier === 'elite' ? 20 : combatTier === 'boss' ? 50 : 0))
+          runState.addScore(combatTier === 'boss' ? 200 : combatTier === 'elite' ? 100 : 50)
+          if (combatTier === 'boss') { setView('victory') }
+          else { setView('reward') }
+        }}
+        onDefeat={() => { runState.endRun('lost'); setView('game-over') }}
       />
       case 'deck-view':      return <DeckViewScreen cards={runState.run?.deck.cards} onClose={() => setView(prevView)} />
       case 'victory':        return <GameOverScreen
