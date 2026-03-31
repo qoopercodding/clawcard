@@ -7,8 +7,11 @@ import type { CustomFrameType } from '../../store/cardStore'
 import './CardFrame.css'
 
 const CUSTOM_FRAME_TYPES_KEY = 'custom_frame_types'
+const BUILTIN_AREA_KEYS = new Set(['frame', 'art', 'name', 'desc', 'hp', 'atk', 'counter', 'scrap'])
 
-function getCustomFrameConfig(cardType: string): FrameConfig | null {
+type AreaDef = { left: number; top: number; width: number; height: number }
+
+function getCustomFrameData(cardType: string): { config: FrameConfig; extraAreas: Record<string, AreaDef> } | null {
   try {
     const raw = localStorage.getItem(CUSTOM_FRAME_TYPES_KEY)
     if (!raw) return null
@@ -16,19 +19,24 @@ function getCustomFrameConfig(cardType: string): FrameConfig | null {
     const custom = customs[cardType]
     if (!custom) return null
     const { areas, frameFile, frameDataUrl } = custom as CustomFrameType & { frameDataUrl?: string }
-    return {
-      frameFile: frameDataUrl || frameFile || null,
-      art:     areas.art     ?? { left: 10, top: 10, width: 80, height: 40 },
-      name:    areas.name    ?? { left: 10, top: 55, width: 80, height: 8 },
-      desc:    areas.desc    ?? { left: 10, top: 65, width: 80, height: 25 },
-      hp:      areas.hp,
-      atk:     areas.atk,
-      counter: areas.counter,
-      scrap:   areas.scrap,
+    const extraAreas: Record<string, AreaDef> = {}
+    for (const [key, val] of Object.entries(areas)) {
+      if (!BUILTIN_AREA_KEYS.has(key)) extraAreas[key] = val
     }
-  } catch {
-    return null
-  }
+    return {
+      config: {
+        frameFile: frameDataUrl || frameFile || null,
+        art:     areas.art     ?? { left: 10, top: 10, width: 80, height: 40 },
+        name:    areas.name    ?? { left: 10, top: 55, width: 80, height: 8 },
+        desc:    areas.desc    ?? { left: 10, top: 65, width: 80, height: 25 },
+        hp:      areas.hp,
+        atk:     areas.atk,
+        counter: areas.counter,
+        scrap:   areas.scrap,
+      },
+      extraAreas,
+    }
+  } catch { return null }
 }
 
 interface CardFrameProps {
@@ -40,7 +48,9 @@ interface CardFrameProps {
 
 export function CardFrame({ card, width = 200, height = 294, inspectable = true }: CardFrameProps) {
   const { inspect } = useDevInspector()
-  const cfg = FRAME_CONFIGS[card.type] ?? getCustomFrameConfig(card.type) ?? FRAME_CONFIGS.companion
+  const customData = !FRAME_CONFIGS[card.type] ? getCustomFrameData(card.type) : null
+  const cfg = FRAME_CONFIGS[card.type] ?? customData?.config ?? FRAME_CONFIGS.companion
+  const extraAreas = customData?.extraAreas ?? {}
   const stats = getCardStats(card)
   const px = (pct: number, dim: number) => `${(pct / 100 * dim).toFixed(1)}px`
 
@@ -118,6 +128,16 @@ export function CardFrame({ card, width = 200, height = 294, inspectable = true 
           {card.description}
         </div>
       )}
+
+      {Object.entries(extraAreas).map(([key, areaDef]) => {
+        const val = (card as unknown as Record<string, unknown>)[key] ?? (card as unknown as Record<string, unknown>)['customFields']?.[key as never]
+        if (val === undefined && val === null) return null
+        return (
+          <div key={key} className="cf-stat" style={area(areaDef, width, height)}>
+            <span className="cf-stat__val">{String(val ?? '')}</span>
+          </div>
+        )
+      })}
 
       {inspectable && <div className="card-frame__hint" aria-hidden>🔍</div>}
     </div>
