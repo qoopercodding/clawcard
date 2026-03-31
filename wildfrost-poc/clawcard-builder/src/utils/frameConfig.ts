@@ -9,6 +9,7 @@ export interface AreaConfig {
   top:    number
   width:  number
   height: number
+  basic_card: BASIC_CARD_USER_CONFIG,
 }
 export interface FrameConfig {
   frameFile: string | null
@@ -140,6 +141,14 @@ const TESTTT_BASIC_CARD_USER_CONFIG: FrameConfig = {
   name   : { left: 20.5, top: 50.8, width: 60, height: 7.7 },
   desc   : { left: 23.3, top: 59.4, width: 54.7, height: 25.5 },
   art    : { left: 16.6, top: 8, width: 67.9, height: 42.5 },
+}
+
+const BASIC_CARD_USER_CONFIG: FrameConfig = {
+  frameFile: `${BASE}frames/Item_without_atatck.png`,
+  frame  : { left: 0.9, top: 0.9, width: 97.8, height: 97.6 },
+  art    : { left: 16.9, top: 7.9, width: 67.1, height: 43 },
+  name   : { left: 19.8, top: 51.2, width: 61.3, height: 7.4 },
+  desc   : { left: 21.5, top: 58.3, width: 56.9, height: 27 },
 }
 
 export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
