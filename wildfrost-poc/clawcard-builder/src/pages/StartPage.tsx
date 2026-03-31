@@ -16,7 +16,7 @@ interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void
 }
 
-interface StartOption {
+interface NavCard {
   id: Exclude<AppView, 'start'>
   emoji: string
   title: string
@@ -24,68 +24,83 @@ interface StartOption {
   description: string
   badge?: string
   highlight?: boolean
+  group: 'play' | 'tools' | 'dev'
 }
 
-const START_OPTIONS: StartOption[] = [
+const NAV_CARDS: NavCard[] = [
   {
     id: 'last-language', emoji: '📖', title: 'Ostatni Język', subtitle: 'Dark fantasy deck builder',
     description: 'Dwa decki: Karty + Słowa. Hive Mind. Tabu. Zapominanie.',
-    badge: 'NOWE', highlight: true,
+    badge: 'NOWE', highlight: true, group: 'play',
   },
   {
     id: 'grid-battle', emoji: '⚔️', title: 'Grid Battle', subtitle: 'Siatka 3×2 vs 3×2',
-    description: 'Wildfrost-style walka na siatce. Countery, targetowanie, energy system, 4 fale wrogów.',
-    badge: 'NOWE', highlight: true,
+    description: 'Wildfrost-style walka na siatce. Countery, targetowanie, energy system.',
+    badge: 'NOWE', highlight: true, group: 'play',
   },
   {
     id: 'battle', emoji: '🗡️', title: 'Battle Demo', subtitle: '1v1 demo',
     description: 'Klasyczna walka 1v1: Snow, Shield, Teeth, Poison, countery.',
+    group: 'play',
   },
   {
     id: 'test-env', emoji: '🎮', title: 'Test Environment', subtitle: 'Symulacja runów',
     description: 'Wybierz karty do ręki → uruchom 2 runy → sprawdź balance report.',
-    badge: 'NOWE', highlight: true,
+    badge: 'NOWE', highlight: true, group: 'play',
   },
   {
     id: 'map-editor', emoji: '🗺️', title: 'Map Editor', subtitle: 'Edytor mapy',
     description: 'Twórz węzły i ścieżki. Przeciągaj, łącz, zmieniaj typy. Eksport JSON.',
+    group: 'tools',
   },
   {
     id: 'card-editor', emoji: '✏️', title: 'Card Editor', subtitle: 'Tworzenie kart',
     description: 'Formularz z live preview. Zapis do biblioteki, eksport .js do kodu.',
+    group: 'tools',
   },
   {
     id: 'frame-editor', emoji: '🖼', title: 'Frame Editor', subtitle: 'Kalibracja ramek',
     description: 'Przeciągaj prostokąty na PNG ramki. Zapisz nowy typ do kodu.',
+    group: 'tools',
   },
   {
     id: 'frame-test', emoji: '🧪', title: 'Frame Test', subtitle: 'Test e2e',
     description: 'Weryfikuje PNG, FRAME_CONFIGS, Vite plugin i render kart.',
-    badge: 'DEV',
+    badge: 'DEV', group: 'dev',
   },
   {
     id: 'gallery', emoji: '🃏', title: 'Galeria kart', subtitle: 'Browse & inspect',
     description: 'Karty z vanilla POC. Kliknij kartę → dane w Dev Inspector.',
+    group: 'tools',
   },
   {
     id: 'dev-game', emoji: '🔬', title: 'Dev Game', subtitle: 'Hover inspector',
     description: 'Game screen z aktywnym Hover Inspector.',
+    badge: 'DEV', group: 'dev',
   },
 ]
 
-const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
+const GROUP_LABELS: Record<string, string> = {
+  play: 'Play & Battle',
+  tools: 'Builder Tools',
+  dev: 'Developer',
+}
+
+const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
   id: i,
   style: {
-    '--size': `${2 + Math.random() * 4}px`,
-    '--duration': `${6 + Math.random() * 8}s`,
-    '--delay': `${Math.random() * 6}s`,
-    '--drift-y': `${-80 - Math.random() * 160}px`,
-    '--drift-x': `${-40 + Math.random() * 80}px`,
-    '--peak-opacity': `${0.25 + Math.random() * 0.45}`,
+    '--size': `${2 + Math.random() * 5}px`,
+    '--duration': `${6 + Math.random() * 10}s`,
+    '--delay': `${Math.random() * 8}s`,
+    '--drift-y': `${-100 - Math.random() * 200}px`,
+    '--drift-x': `${-50 + Math.random() * 100}px`,
+    '--peak-opacity': `${0.2 + Math.random() * 0.5}`,
     left: `${5 + Math.random() * 90}%`,
-    bottom: `${-5 + Math.random() * 30}%`,
+    bottom: `${-5 + Math.random() * 25}%`,
   } as React.CSSProperties,
 }))
+
+const groups = ['play', 'tools', 'dev'] as const
 
 export function StartPage({ onSelectView }: StartPageProps) {
   return (
@@ -96,42 +111,56 @@ export function StartPage({ onSelectView }: StartPageProps) {
           <div key={p.id} className="start-page__particle" style={p.style} />
         ))}
       </div>
+
       <section className="start-page__hero">
         <p className="start-page__eyebrow">ClawCard Builder</p>
         <h1 className="start-page__title">
           Forge Your <span className="start-page__gold">Destiny</span>
         </h1>
         <p className="start-page__lead">
-          Narzędzia do tworzenia kart, ramek, map i mechanik dark fantasy deck buildera
+          Dark fantasy roguelike deck builder — twórz karty, mechaniki i mapy
         </p>
         <div className="start-page__divider" />
       </section>
-      <section className="start-page__grid">
-        {START_OPTIONS.map(option => (
-          <button
-            key={option.id}
-            className={`start-option ${option.highlight ? 'start-option--highlight' : ''}`}
-            type="button"
-            onClick={() => onSelectView(option.id)}
-          >
-            <span className="start-option__emoji">{option.emoji}</span>
-            <div className="start-option__body">
-              <div className="start-option__header">
-                <strong className="start-option__title">{option.title}</strong>
-                {option.badge && (
-                  <span className={`start-option__badge ${option.highlight ? 'start-option__badge--hot' : ''}`}>
-                    {option.badge}
-                  </span>
-                )}
-              </div>
-              <span className="start-option__subtitle">{option.subtitle}</span>
-              <span className="start-option__description">{option.description}</span>
+
+      {groups.map(group => {
+        const cards = NAV_CARDS.filter(c => c.group === group)
+        return (
+          <section key={group} className="start-page__section">
+            <h2 className="start-page__section-title">{GROUP_LABELS[group]}</h2>
+            <div className="start-page__grid">
+              {cards.map(card => (
+                <button
+                  key={card.id}
+                  className={`nav-card ${card.highlight ? 'nav-card--highlight' : ''}`}
+                  type="button"
+                  onClick={() => onSelectView(card.id)}
+                >
+                  <div className="nav-card__icon-wrap">
+                    <span className="nav-card__emoji">{card.emoji}</span>
+                  </div>
+                  <div className="nav-card__body">
+                    <div className="nav-card__header">
+                      <strong className="nav-card__title">{card.title}</strong>
+                      {card.badge && (
+                        <span className={`nav-card__badge ${card.badge === 'NOWE' ? 'nav-card__badge--hot' : 'nav-card__badge--dev'}`}>
+                          {card.badge}
+                        </span>
+                      )}
+                    </div>
+                    <span className="nav-card__subtitle">{card.subtitle}</span>
+                    <span className="nav-card__description">{card.description}</span>
+                  </div>
+                  <div className="nav-card__glow" />
+                </button>
+              ))}
             </div>
-          </button>
-        ))}
-      </section>
+          </section>
+        )
+      })}
+
       <footer className="start-page__footer">
-        <span>ClawCard v1.4</span>
+        <span>ClawCard v1.5</span>
         <span className="start-page__separator">·</span>
         <span>Dark Fantasy Deck Builder</span>
       </footer>
