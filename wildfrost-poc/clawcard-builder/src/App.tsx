@@ -10,6 +10,7 @@ import { GridBattleScreen } from './modules/battle-demo/GridBattleScreen'
 import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
 import { LastLanguageScreen } from './modules/last-language/LastLanguageScreen'
 import MapEditorScreen from './modules/map-editor/MapEditorScreen'
+import MapScreen from './pages/MapScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -27,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'grid-battle',   icon: '\u{2694}\uFE0F',  label: 'Grid Battle',    group: 'play' },
   { id: 'battle',        icon: '\u{1F5E1}\uFE0F',  label: 'Battle Demo',    group: 'play' },
   { id: 'test-env',      icon: '\u{1F3AE}', label: 'Test Env',       group: 'play' },
+  { id: 'map',           icon: '\u{1F3F0}', label: 'Dungeon Map',    group: 'play' },
   { id: 'card-editor',   icon: '\u{270F}\uFE0F',  label: 'Card Editor',    group: 'tools' },
   { id: 'frame-editor',  icon: '\u{1F5BC}',  label: 'Frame Editor',   group: 'tools' },
   { id: 'map-editor',    icon: '\u{1F5FA}\uFE0F',  label: 'Map Editor',     group: 'tools' },
@@ -55,6 +57,7 @@ function App() {
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
+      case 'map':            return <MapScreen />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':

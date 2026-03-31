@@ -9,6 +9,7 @@ export type AppView =
   | 'frame-test'
   | 'test-env'
   | 'map-editor'
+  | 'map'
   | 'game'
   | 'dev-game'
 
@@ -46,6 +47,11 @@ const NAV_CARDS: NavCard[] = [
   {
     id: 'test-env', emoji: '🎮', title: 'Test Environment', subtitle: 'Symulacja runów',
     description: 'Wybierz karty do ręki → uruchom 2 runy → sprawdź balance report.',
+    badge: 'NOWE', highlight: true, group: 'play',
+  },
+  {
+    id: 'map', emoji: '🏰', title: 'Dungeon Map', subtitle: 'Proceduralna mapa',
+    description: 'SVG mapa z 7 typami węzłów. Losowe generowanie, nawigacja po ścieżkach.',
     badge: 'NOWE', highlight: true, group: 'play',
   },
   {
