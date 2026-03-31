@@ -14,6 +14,7 @@ import MapScreen from './pages/MapScreen'
 import RewardScreen from './pages/RewardScreen'
 import ShopScreen from './pages/ShopScreen'
 import CampfireScreen from './pages/CampfireScreen'
+import EventScreen from './pages/EventScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -64,6 +65,7 @@ function App() {
       case 'reward':         return <RewardScreen onSkip={() => setView('map')} />
       case 'shop':           return <ShopScreen onLeave={() => setView('map')} />
       case 'campfire':       return <CampfireScreen onLeave={() => setView('map')} />
+      case 'event':          return <EventScreen onLeave={() => setView('map')} />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':
