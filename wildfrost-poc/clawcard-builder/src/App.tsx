@@ -148,6 +148,19 @@ function App() {
               attack: 0, hp: 0, description: item.description,
               rarity: item.rarity, upgraded: false,
             })
+          } else if (item.type === 'potion') {
+            runState.addPotion({
+              id: `pot-${item.id}-${Date.now()}`,
+              name: item.name, emoji: item.emoji,
+              description: item.description,
+              effect: 'heal', value: 15,
+            })
+          } else if (item.type === 'relic') {
+            runState.addRelic({
+              id: `rel-${item.id}-${Date.now()}`,
+              name: item.name, emoji: item.emoji,
+              description: item.description,
+            })
           }
         }}
         onRemoveCard={(cardId) => runState.removeCardFromDeck(cardId)}
@@ -174,6 +187,13 @@ function App() {
       case 'treasure':       return <TreasureScreen
         onTake={(item) => {
           if (item.type === 'gold') runState.addGold(item.value)
+          else if (item.type === 'relic') {
+            runState.addRelic({
+              id: `treas-${item.id}-${Date.now()}`,
+              name: item.name, emoji: item.emoji,
+              description: item.description,
+            })
+          }
           runState.addScore(30)
         }}
         onLeave={handleReturnToMap}
