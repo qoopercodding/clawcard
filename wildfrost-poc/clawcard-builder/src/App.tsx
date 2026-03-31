@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { HoverTooltip } from './components/debug/HoverTooltip'
 import { useDevInspector } from './components/debug/DevInspector'
 import { CardBuilderScreen } from './modules/card-builder/CardBuilderScreen'
@@ -19,6 +19,7 @@ import TreasureScreen from './pages/TreasureScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
+import type { MapNodeType } from './store/GameState'
 import './App.css'
 
 interface NavItem {
@@ -51,6 +52,21 @@ function App() {
     setView(v as AppView)
   }
 
+  const NODE_VIEW_MAP: Record<MapNodeType, AppView> = {
+    combat: 'grid-battle',
+    elite: 'grid-battle',
+    boss: 'grid-battle',
+    shop: 'shop',
+    campfire: 'campfire',
+    event: 'event',
+    treasure: 'treasure',
+  }
+
+  const handleMapNode = useCallback((_nodeId: string, type: MapNodeType) => {
+    const target = NODE_VIEW_MAP[type]
+    if (target) setView(target)
+  }, [])
+
   function renderView() {
     switch (view) {
       case 'start':          return <StartPage onSelectView={setView} />
@@ -62,7 +78,7 @@ function App() {
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
-      case 'map':            return <MapScreen />
+      case 'map':            return <MapScreen onSelectNode={handleMapNode} />
       case 'reward':         return <RewardScreen onSkip={() => setView('map')} />
       case 'shop':           return <ShopScreen onLeave={() => setView('map')} />
       case 'campfire':       return <CampfireScreen onLeave={() => setView('map')} />
