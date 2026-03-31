@@ -1,7 +1,7 @@
 [
   {
     "name": "Apparition",
-    "image": "Apparition.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/Apparition.png/revision/latest/scale-to-width-down/310?cb=20181016212247",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -13,7 +13,7 @@
   },
   {
     "name": "Beta",
-    "image": "Beta.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/Beta.png/revision/latest/scale-to-width-down/310?cb=20191017204216",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -26,7 +26,7 @@
   },
   {
     "name": "Bite",
-    "image": "Bite.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Bite.png/revision/latest/scale-to-width-down/310?cb=20181016212249",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -38,7 +38,7 @@
   },
   {
     "name": "Expunger",
-    "image": "Expunger.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Expunger.png/revision/latest/scale-to-width-down/310?cb=20191028223750",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -50,7 +50,7 @@
   },
   {
     "name": "Insight",
-    "image": "Insight.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Insight.png/revision/latest/scale-to-width-down/310?cb=20191017204228",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -62,7 +62,7 @@
   },
   {
     "name": "J.A.X.",
-    "image": "J.A.X..png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/08/J.A.X..png/revision/latest/scale-to-width-down/310?cb=20181016212611",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -74,7 +74,7 @@
   },
   {
     "name": "Miracle",
-    "image": "Miracle.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/Miracle.png/revision/latest/scale-to-width-down/310?cb=20190918002430",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -86,7 +86,7 @@
   },
   {
     "name": "Omega",
-    "image": "Omega.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Omega.png/revision/latest/scale-to-width-down/310?cb=20191017204230",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Power",
@@ -98,7 +98,7 @@
   },
   {
     "name": "Ritual Dagger",
-    "image": "RitualDagger.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a9/RitualDagger.png/revision/latest/scale-to-width-down/310?cb=20200121024453",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -110,7 +110,7 @@
   },
   {
     "name": "Safety",
-    "image": "Safety.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Safety.png/revision/latest/scale-to-width-down/310?cb=20200117164821",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Skill",
@@ -122,7 +122,7 @@
   },
   {
     "name": "Shiv",
-    "image": "Shiv.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/Shiv.png/revision/latest/scale-to-width-down/310?cb=20181016212733",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -134,7 +134,7 @@
   },
   {
     "name": "Smite",
-    "image": "Smite.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/05/Smite.png/revision/latest/scale-to-width-down/310?cb=20200117164813",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -146,7 +146,7 @@
   },
   {
     "name": "Through Violence",
-    "image": "ThroughViolence.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e6/ThroughViolence.png/revision/latest/scale-to-width-down/310?cb=20191017204248",
     "color": "Colorless",
     "rarity": "Special",
     "type": "Attack",
@@ -158,7 +158,7 @@
   },
   {
     "name": "Bandage Up",
-    "image": "BandageUp.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/BandageUp.png/revision/latest/scale-to-width-down/310?cb=20181016212248",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -170,7 +170,7 @@
   },
   {
     "name": "Blind",
-    "image": "Blind.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/Blind.png/revision/latest/scale-to-width-down/310?cb=20181016212250",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -182,7 +182,7 @@
   },
   {
     "name": "Dark Shackles",
-    "image": "DarkShackles.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/79/DarkShackles.png/revision/latest/scale-to-width-down/310?cb=20181016212502",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -194,7 +194,7 @@
   },
   {
     "name": "Deep Breath",
-    "image": "DeepBreath.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/62/DeepBreath.png/revision/latest/scale-to-width-down/310?cb=20181016212504",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -206,7 +206,7 @@
   },
   {
     "name": "Discovery",
-    "image": "Discovery.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Discovery.png/revision/latest/scale-to-width-down/310?cb=20181016212506",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -218,7 +218,7 @@
   },
   {
     "name": "Dramatic Entrance",
-    "image": "DramaticEntrance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/42/DramaticEntrance.png/revision/latest/scale-to-width-down/310?cb=20210408071041",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -230,7 +230,7 @@
   },
   {
     "name": "Enlightenment",
-    "image": "Enlightenment.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fa/Enlightenment.png/revision/latest/scale-to-width-down/310?cb=20181016212509",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -242,7 +242,7 @@
   },
   {
     "name": "Finesse",
-    "image": "Finesse.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/Finesse.png/revision/latest/scale-to-width-down/310?cb=20181016212510",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -254,7 +254,7 @@
   },
   {
     "name": "Flash of Steel",
-    "image": "FlashofSteel.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9c/FlashofSteel.png/revision/latest/scale-to-width-down/310?cb=20181016212610",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -266,7 +266,7 @@
   },
   {
     "name": "Forethought",
-    "image": "Forethought.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/Forethought.png/revision/latest/scale-to-width-down/310?cb=20181025011404",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -278,7 +278,7 @@
   },
   {
     "name": "Good Instincts",
-    "image": "GoodInstincts.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/GoodInstincts.png/revision/latest/scale-to-width-down/310?cb=20210408071232",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -290,7 +290,7 @@
   },
   {
     "name": "Impatience",
-    "image": "Impatience.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/Impatience.png/revision/latest/scale-to-width-down/310?cb=20181016212611",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -302,7 +302,7 @@
   },
   {
     "name": "Jack of All Trades",
-    "image": "JackOfAllTrades.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d9/JackOfAllTrades.png/revision/latest/scale-to-width-down/310?cb=20190902014527",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -314,7 +314,7 @@
   },
   {
     "name": "Madness",
-    "image": "Madness.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ee/Madness.png/revision/latest/scale-to-width-down/310?cb=20181016212612",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -327,7 +327,7 @@
   },
   {
     "name": "Mind Blast",
-    "image": "MindBlast.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/26/MindBlast.png/revision/latest/scale-to-width-down/310?cb=20181016212654",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -340,7 +340,7 @@
   },
   {
     "name": "Panacea",
-    "image": "Panacea.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/37/Panacea.png/revision/latest/scale-to-width-down/310?cb=20181016212654",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -352,7 +352,7 @@
   },
   {
     "name": "Panic Button",
-    "image": "PanicButton.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/08/PanicButton.png/revision/latest/scale-to-width-down/310?cb=20181016212657",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -364,7 +364,7 @@
   },
   {
     "name": "Purity",
-    "image": "Purity.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Purity.png/revision/latest/scale-to-width-down/310?cb=20181025011424",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -376,7 +376,7 @@
   },
   {
     "name": "Swift Strike",
-    "image": "SwiftStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8b/SwiftStrike.png/revision/latest/scale-to-width-down/310?cb=20210408072147",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -388,7 +388,7 @@
   },
   {
     "name": "Trip",
-    "image": "Trip.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cf/Trip.png/revision/latest/scale-to-width-down/310?cb=20181016212740",
     "color": "Colorless",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -400,7 +400,7 @@
   },
   {
     "name": "Apotheosis",
-    "image": "Apotheosis.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Apotheosis.png/revision/latest/scale-to-width-down/310?cb=20181016212247",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -413,7 +413,7 @@
   },
   {
     "name": "Chrysalis",
-    "image": "Chrysalis.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/01/Chrysalis.png/revision/latest/scale-to-width-down/310?cb=20181016212500",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -425,7 +425,7 @@
   },
   {
     "name": "Hand of Greed",
-    "image": "HandOfGreed.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/HandOfGreed.png/revision/latest/scale-to-width-down/310?cb=20200121203550",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Attack",
@@ -437,7 +437,7 @@
   },
   {
     "name": "Magnetism",
-    "image": "Magnetism.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8d/Magnetism.png/revision/latest/scale-to-width-down/310?cb=20181016212613",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Power",
@@ -450,7 +450,7 @@
   },
   {
     "name": "Master of Strategy",
-    "image": "MasterofStrategy.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0f/MasterofStrategy.png/revision/latest/scale-to-width-down/310?cb=20181016212614",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -462,7 +462,7 @@
   },
   {
     "name": "Mayhem",
-    "image": "Mayhem.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/Mayhem.png/revision/latest/scale-to-width-down/310?cb=20181016212653",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Power",
@@ -475,7 +475,7 @@
   },
   {
     "name": "Metamorphosis",
-    "image": "Metamorphosis.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/Metamorphosis.png/revision/latest/scale-to-width-down/310?cb=20181016212654",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -487,7 +487,7 @@
   },
   {
     "name": "Panache",
-    "image": "Panache.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/Panache.png/revision/latest/scale-to-width-down/310?cb=20181016212656",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Power",
@@ -499,7 +499,7 @@
   },
   {
     "name": "Sadistic Nature",
-    "image": "SadisticNature.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/SadisticNature.png/revision/latest/scale-to-width-down/310?cb=20210408071741",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Power",
@@ -511,7 +511,7 @@
   },
   {
     "name": "Secret Technique",
-    "image": "SecretTechnique.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/SecretTechnique.png/revision/latest/scale-to-width-down/310?cb=20181016212658",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -523,7 +523,7 @@
   },
   {
     "name": "Secret Weapon",
-    "image": "SecretWeapon.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/SecretWeapon.png/revision/latest/scale-to-width-down/310?cb=20181016212733",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -535,7 +535,7 @@
   },
   {
     "name": "The Bomb",
-    "image": "TheBomb.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/69/TheBomb.png/revision/latest/scale-to-width-down/310?cb=20190111234432",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -547,7 +547,7 @@
   },
   {
     "name": "Thinking Ahead",
-    "image": "ThinkingAhead.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/ThinkingAhead.png/revision/latest/scale-to-width-down/310?cb=20181016212739",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -559,7 +559,7 @@
   },
   {
     "name": "Transmutation",
-    "image": "Transmutation.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Transmutation.png/revision/latest/scale-to-width-down/310?cb=20181016212739",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -570,7 +570,7 @@
   },
   {
     "name": "Violence",
-    "image": "Violence.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e4/Violence.png/revision/latest/scale-to-width-down/310?cb=20181016212740",
     "color": "Colorless",
     "rarity": "Rare",
     "type": "Skill",
@@ -596,7 +596,7 @@
   },
   {
     "name": "Neutralize",
-    "image": "Neutralize.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/Neutralize.png/revision/latest/scale-to-width-down/310?cb=20181016211836",
     "color": "Green",
     "rarity": "Basic",
     "type": "Attack",
@@ -622,7 +622,7 @@
   },
   {
     "name": "Survivor",
-    "image": "Survivor.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fa/Survivor.png/revision/latest/scale-to-width-down/310?cb=20181016212112",
     "color": "Green",
     "rarity": "Basic",
     "type": "Skill",
@@ -634,7 +634,7 @@
   },
   {
     "name": "Acrobatics",
-    "image": "Acrobatics.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/db/Acrobatics.png/revision/latest/scale-to-width-down/310?cb=20181016211209",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -646,7 +646,7 @@
   },
   {
     "name": "Backflip",
-    "image": "Backflip.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/74/Backflip.png/revision/latest/scale-to-width-down/310?cb=20181016211210",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -658,7 +658,7 @@
   },
   {
     "name": "Bane",
-    "image": "Bane.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9a/Bane.png/revision/latest/scale-to-width-down/310?cb=20181016211210",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -670,7 +670,7 @@
   },
   {
     "name": "Blade Dance",
-    "image": "BladeDance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/BladeDance.png/revision/latest/scale-to-width-down/310?cb=20210408070901",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -682,7 +682,7 @@
   },
   {
     "name": "Cloak and Dagger",
-    "image": "CloakAndDagger.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/CloakAndDagger.png/revision/latest/scale-to-width-down/310?cb=20190821181224",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -694,7 +694,7 @@
   },
   {
     "name": "Dagger Spray",
-    "image": "DaggerSpray.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/DaggerSpray.png/revision/latest/scale-to-width-down/310?cb=20181016211436",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -706,7 +706,7 @@
   },
   {
     "name": "Dagger Throw",
-    "image": "DaggerThrow.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/DaggerThrow.png/revision/latest/scale-to-width-down/310?cb=20181016211437",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -718,7 +718,7 @@
   },
   {
     "name": "Deadly Poison",
-    "image": "DeadlyPoison.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/DeadlyPoison.png/revision/latest/scale-to-width-down/310?cb=20181016211437",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -730,7 +730,7 @@
   },
   {
     "name": "Deflect",
-    "image": "Deflect.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Deflect.png/revision/latest/scale-to-width-down/310?cb=20181016211437",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -742,7 +742,7 @@
   },
   {
     "name": "Dodge and Roll",
-    "image": "DodgeandRoll.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/DodgeandRoll.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -754,7 +754,7 @@
   },
   {
     "name": "Flying Knee",
-    "image": "FlyingKnee.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlyingKnee.png/revision/latest/scale-to-width-down/310?cb=20181016211833",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -766,7 +766,7 @@
   },
   {
     "name": "Outmaneuver",
-    "image": "Outmaneuver.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Outmaneuver.png/revision/latest/scale-to-width-down/310?cb=20181016211924",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -778,7 +778,7 @@
   },
   {
     "name": "Piercing Wail",
-    "image": "PiercingWail.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/PiercingWail.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -790,7 +790,7 @@
   },
   {
     "name": "Poisoned Stab",
-    "image": "PoisonedStab.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/PoisonedStab.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -802,7 +802,7 @@
   },
   {
     "name": "Prepared",
-    "image": "Prepared.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/83/Prepared.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
     "color": "Green",
     "rarity": "Common",
     "type": "Skill",
@@ -814,7 +814,7 @@
   },
   {
     "name": "Quick Slash",
-    "image": "QuickSlash.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/QuickSlash.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -826,7 +826,7 @@
   },
   {
     "name": "Slice",
-    "image": "Slice.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/ad/Slice.png/revision/latest/scale-to-width-down/310?cb=20210408071928",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -838,7 +838,7 @@
   },
   {
     "name": "Sneaky Strike",
-    "image": "SneakyStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ed/SneakyStrike.png/revision/latest/scale-to-width-down/310?cb=20210408072002",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -850,7 +850,7 @@
   },
   {
     "name": "Sucker Punch",
-    "image": "SuckerPunch.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/SuckerPunch.png/revision/latest/scale-to-width-down/310?cb=20181016212112",
     "color": "Green",
     "rarity": "Common",
     "type": "Attack",
@@ -862,7 +862,7 @@
   },
   {
     "name": "Accuracy",
-    "image": "Accuracy.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Accuracy.png/revision/latest/scale-to-width-down/310?cb=20210408070714",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -874,7 +874,7 @@
   },
   {
     "name": "All-Out Attack",
-    "image": "All-OutAttack.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/All-OutAttack.png/revision/latest/scale-to-width-down/310?cb=20181016211210",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -886,7 +886,7 @@
   },
   {
     "name": "Backstab",
-    "image": "Backstab.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7a/Backstab.png/revision/latest/scale-to-width-down/310?cb=20181016211210",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -898,7 +898,7 @@
   },
   {
     "name": "Blur",
-    "image": "Blur.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f4/Blur.png/revision/latest/scale-to-width-down/310?cb=20181016211321",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -910,7 +910,7 @@
   },
   {
     "name": "Bouncing Flask",
-    "image": "BouncingFlask.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3c/BouncingFlask.png/revision/latest/scale-to-width-down/310?cb=20181016211321",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -922,7 +922,7 @@
   },
   {
     "name": "Calculated Gamble",
-    "image": "CalculatedGamble.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/CalculatedGamble.png/revision/latest/scale-to-width-down/310?cb=20181016211321",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -934,7 +934,7 @@
   },
   {
     "name": "Caltrops",
-    "image": "Caltrops.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/31/Caltrops.png/revision/latest/scale-to-width-down/310?cb=20181016211322",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -946,7 +946,7 @@
   },
   {
     "name": "Catalyst",
-    "image": "Catalyst.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Catalyst.png/revision/latest/scale-to-width-down/310?cb=20181016211322",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -958,7 +958,7 @@
   },
   {
     "name": "Choke",
-    "image": "Choke.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/Choke.png/revision/latest/scale-to-width-down/310?cb=20181016211322",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -970,7 +970,7 @@
   },
   {
     "name": "Concentrate",
-    "image": "Concentrate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Concentrate.png/revision/latest/scale-to-width-down/310?cb=20181016211436",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -982,7 +982,7 @@
   },
   {
     "name": "Crippling Cloud",
-    "image": "CripplingCloud.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/CripplingCloud.png/revision/latest/scale-to-width-down/310?cb=20181016211436",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -994,7 +994,7 @@
   },
   {
     "name": "Dash",
-    "image": "Dash.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Dash.png/revision/latest/scale-to-width-down/310?cb=20181016211437",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1006,7 +1006,7 @@
   },
   {
     "name": "Distraction",
-    "image": "Distraction.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Distraction.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1019,7 +1019,7 @@
   },
   {
     "name": "Endless Agony",
-    "image": "EndlessAgony.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/EndlessAgony.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1031,7 +1031,7 @@
   },
   {
     "name": "Escape Plan",
-    "image": "EscapePlan.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/EscapePlan.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1043,7 +1043,7 @@
   },
   {
     "name": "Eviscerate",
-    "image": "Eviscerate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Eviscerate.png/revision/latest/scale-to-width-down/310?cb=20210408071124",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1055,7 +1055,7 @@
   },
   {
     "name": "Expertise",
-    "image": "Expertise.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/Expertise.png/revision/latest/scale-to-width-down/310?cb=20181016211545",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1067,7 +1067,7 @@
   },
   {
     "name": "Finisher",
-    "image": "Finisher.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Finisher.png/revision/latest/scale-to-width-down/310?cb=20181016211545",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1079,7 +1079,7 @@
   },
   {
     "name": "Flechettes",
-    "image": "Flechettes.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Flechettes.png/revision/latest/scale-to-width-down/310?cb=20181016211545",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1091,7 +1091,7 @@
   },
   {
     "name": "Footwork",
-    "image": "Footwork.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Footwork.png/revision/latest/scale-to-width-down/310?cb=20181016211833",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1103,7 +1103,7 @@
   },
   {
     "name": "Heel Hook",
-    "image": "HeelHook.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/HeelHook.png/revision/latest/scale-to-width-down/310?cb=20181016211834",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1115,7 +1115,7 @@
   },
   {
     "name": "Infinite Blades",
-    "image": "InfiniteBlades.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cb/InfiniteBlades.png/revision/latest/scale-to-width-down/310?cb=20181016211834",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1129,7 +1129,7 @@
   },
   {
     "name": "Leg Sweep",
-    "image": "LegSweep.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/65/LegSweep.png/revision/latest/scale-to-width-down/310?cb=20181016211834",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1141,7 +1141,7 @@
   },
   {
     "name": "Masterful Stab",
-    "image": "MasterfulStab.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/MasterfulStab.png/revision/latest/scale-to-width-down/310?cb=20181016211836",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1153,7 +1153,7 @@
   },
   {
     "name": "Noxious Fumes",
-    "image": "NoxiousFumes.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/NoxiousFumes.png/revision/latest/scale-to-width-down/310?cb=20181016211924",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1165,7 +1165,7 @@
   },
   {
     "name": "Predator",
-    "image": "Predator.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e9/Predator.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1177,7 +1177,7 @@
   },
   {
     "name": "Reflex",
-    "image": "Reflex.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Reflex.png/revision/latest/scale-to-width-down/310?cb=20210408071454",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1188,7 +1188,7 @@
   },
   {
     "name": "Riddle with Holes",
-    "image": "RiddleWithHoles.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/RiddleWithHoles.png/revision/latest/scale-to-width-down/310?cb=20190821181236",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1200,7 +1200,7 @@
   },
   {
     "name": "Setup",
-    "image": "Setup.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/98/Setup.png/revision/latest/scale-to-width-down/310?cb=20181016212111",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1213,7 +1213,7 @@
   },
   {
     "name": "Skewer",
-    "image": "Skewer.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Skewer.png/revision/latest/scale-to-width-down/310?cb=20181016212111",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1224,7 +1224,7 @@
   },
   {
     "name": "Tactician",
-    "image": "Tactician.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/Tactician.png/revision/latest/scale-to-width-down/310?cb=20181016212112",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1235,7 +1235,7 @@
   },
   {
     "name": "Terror",
-    "image": "Terror.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Terror.png/revision/latest/scale-to-width-down/310?cb=20181016212245",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1248,7 +1248,7 @@
   },
   {
     "name": "Well-Laid Plans",
-    "image": "Well-LaidPlans.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/85/Well-LaidPlans.png/revision/latest/scale-to-width-down/310?cb=20200121024340",
     "color": "Green",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1260,7 +1260,7 @@
   },
   {
     "name": "A Thousand Cuts",
-    "image": "AThousandCuts.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/AThousandCuts.png/revision/latest/scale-to-width-down/310?cb=20181016211210",
     "color": "Green",
     "rarity": "Rare",
     "type": "Power",
@@ -1272,7 +1272,7 @@
   },
   {
     "name": "Adrenaline",
-    "image": "Adrenaline.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Adrenaline.png/revision/latest/scale-to-width-down/310?cb=20181016211209",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1284,7 +1284,7 @@
   },
   {
     "name": "After Image",
-    "image": "AfterImage.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/73/AfterImage.png/revision/latest/scale-to-width-down/310?cb=20181016211209",
     "color": "Green",
     "rarity": "Rare",
     "type": "Power",
@@ -1296,7 +1296,7 @@
   },
   {
     "name": "Alchemize",
-    "image": "Alchemize.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Alchemize.png/revision/latest/scale-to-width-down/310?cb=20181016211209",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1309,7 +1309,7 @@
   },
   {
     "name": "Bullet Time",
-    "image": "BulletTime.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/BulletTime.png/revision/latest/scale-to-width-down/310?cb=20181016211321",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1322,7 +1322,7 @@
   },
   {
     "name": "Burst",
-    "image": "Burst.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Burst.png/revision/latest/scale-to-width-down/310?cb=20181016211321",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1334,7 +1334,7 @@
   },
   {
     "name": "Corpse Explosion",
-    "image": "CorpseExplosion.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/CorpseExplosion.png/revision/latest/scale-to-width-down/310?cb=20181016211436",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1346,7 +1346,7 @@
   },
   {
     "name": "Die Die Die",
-    "image": "DieDieDie.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/25/DieDieDie.png/revision/latest/scale-to-width-down/310?cb=20181016211437",
     "color": "Green",
     "rarity": "Rare",
     "type": "Attack",
@@ -1358,7 +1358,7 @@
   },
   {
     "name": "Doppelganger",
-    "image": "Doppelganger.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/Doppelganger.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1369,7 +1369,7 @@
   },
   {
     "name": "Envenom",
-    "image": "Envenom.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/17/Envenom.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
     "color": "Green",
     "rarity": "Rare",
     "type": "Power",
@@ -1382,7 +1382,7 @@
   },
   {
     "name": "Glass Knife",
-    "image": "GlassKnife.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/62/GlassKnife.png/revision/latest/scale-to-width-down/310?cb=20181016211833",
     "color": "Green",
     "rarity": "Rare",
     "type": "Attack",
@@ -1394,7 +1394,7 @@
   },
   {
     "name": "Grand Finale",
-    "image": "GrandFinale.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/94/GrandFinale.png/revision/latest/scale-to-width-down/310?cb=20181019121104",
     "color": "Green",
     "rarity": "Rare",
     "type": "Attack",
@@ -1406,7 +1406,7 @@
   },
   {
     "name": "Malaise",
-    "image": "Malaise.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d1/Malaise.png/revision/latest/scale-to-width-down/310?cb=20181016211834",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1417,7 +1417,7 @@
   },
   {
     "name": "Nightmare",
-    "image": "Nightmare.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9b/Nightmare.png/revision/latest/scale-to-width-down/310?cb=20181016211924",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1430,7 +1430,7 @@
   },
   {
     "name": "Phantasmal Killer",
-    "image": "PhantasmalKiller.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/87/PhantasmalKiller.png/revision/latest/scale-to-width-down/310?cb=20210408071417",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1443,7 +1443,7 @@
   },
   {
     "name": "Storm of Steel",
-    "image": "StormofSteel.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bd/StormofSteel.png/revision/latest/scale-to-width-down/310?cb=20210408072101",
     "color": "Green",
     "rarity": "Rare",
     "type": "Skill",
@@ -1455,7 +1455,7 @@
   },
   {
     "name": "Tools of the Trade",
-    "image": "ToolsoftheTrade.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/db/ToolsoftheTrade.png/revision/latest/scale-to-width-down/310?cb=20181016212246",
     "color": "Green",
     "rarity": "Rare",
     "type": "Power",
@@ -1468,7 +1468,7 @@
   },
   {
     "name": "Unload",
-    "image": "Unload.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f0/Unload.png/revision/latest/scale-to-width-down/310?cb=20181016212246",
     "color": "Green",
     "rarity": "Rare",
     "type": "Attack",
@@ -1480,7 +1480,7 @@
   },
   {
     "name": "Wraith Form",
-    "image": "WraithForm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png/revision/latest/scale-to-width-down/310?cb=20181016212246",
     "color": "Green",
     "rarity": "Rare",
     "type": "Power",
@@ -1492,7 +1492,7 @@
   },
   {
     "name": "Bash",
-    "image": "Bash.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/Bash.png/revision/latest/scale-to-width-down/310?cb=20181016205628",
     "color": "Red",
     "rarity": "Basic",
     "type": "Attack",
@@ -1532,7 +1532,7 @@
   },
   {
     "name": "Anger",
-    "image": "Anger.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/Anger.png/revision/latest/scale-to-width-down/310?cb=20181016205628",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1544,7 +1544,7 @@
   },
   {
     "name": "Armaments",
-    "image": "Armaments.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c3/Armaments.png/revision/latest/scale-to-width-down/310?cb=20181016205628",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1556,7 +1556,7 @@
   },
   {
     "name": "Body Slam",
-    "image": "BodySlam.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/10/BodySlam.png/revision/latest/scale-to-width-down/310?cb=20181016205629",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1569,7 +1569,7 @@
   },
   {
     "name": "Clash",
-    "image": "Clash.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Clash.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1581,7 +1581,7 @@
   },
   {
     "name": "Cleave",
-    "image": "Cleave.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/Cleave.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1593,7 +1593,7 @@
   },
   {
     "name": "Clothesline",
-    "image": "Clothesline.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Clothesline.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1605,7 +1605,7 @@
   },
   {
     "name": "Flex",
-    "image": "Flex.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Flex.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1617,7 +1617,7 @@
   },
   {
     "name": "Havoc",
-    "image": "Havoc.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Havoc.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1630,7 +1630,7 @@
   },
   {
     "name": "Headbutt",
-    "image": "Headbutt.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/Headbutt.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1642,7 +1642,7 @@
   },
   {
     "name": "Heavy Blade",
-    "image": "HeavyBlade.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/58/HeavyBlade.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1654,7 +1654,7 @@
   },
   {
     "name": "Iron Wave",
-    "image": "IronWave.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/IronWave.png/revision/latest/scale-to-width-down/310?cb=20181016210817",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1666,7 +1666,7 @@
   },
   {
     "name": "Perfected Strike",
-    "image": "PerfectedStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/PerfectedStrike.png/revision/latest/scale-to-width-down/310?cb=20181016210818",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1678,7 +1678,7 @@
   },
   {
     "name": "Pommel Strike",
-    "image": "PommelStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/PommelStrike.png/revision/latest/scale-to-width-down/310?cb=20181016210950",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1690,7 +1690,7 @@
   },
   {
     "name": "Shrug It Off",
-    "image": "ShrugItOff.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/ShrugItOff.png/revision/latest/scale-to-width-down/310?cb=20181016211044",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1702,7 +1702,7 @@
   },
   {
     "name": "Sword Boomerang",
-    "image": "SwordBoomerang.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/18/SwordBoomerang.png/revision/latest/scale-to-width-down/310?cb=20181016211045",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1714,7 +1714,7 @@
   },
   {
     "name": "Thunderclap",
-    "image": "Thunderclap.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8a/Thunderclap.png/revision/latest/scale-to-width-down/310?cb=20181016211045",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1726,7 +1726,7 @@
   },
   {
     "name": "True Grit",
-    "image": "TrueGrit.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/TrueGrit.png/revision/latest/scale-to-width-down/310?cb=20181016211045",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1738,7 +1738,7 @@
   },
   {
     "name": "Twin Strike",
-    "image": "TwinStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/18/TwinStrike.png/revision/latest/scale-to-width-down/310?cb=20181016211122",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1750,7 +1750,7 @@
   },
   {
     "name": "Warcry",
-    "image": "Warcry.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9a/Warcry.png/revision/latest/scale-to-width-down/310?cb=20181016211122",
     "color": "Red",
     "rarity": "Common",
     "type": "Skill",
@@ -1762,7 +1762,7 @@
   },
   {
     "name": "Wild Strike",
-    "image": "WildStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/WildStrike.png/revision/latest/scale-to-width-down/310?cb=20181016211122",
     "color": "Red",
     "rarity": "Common",
     "type": "Attack",
@@ -1774,7 +1774,7 @@
   },
   {
     "name": "Battle Trance",
-    "image": "BattleTrance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3a/BattleTrance.png/revision/latest/scale-to-width-down/310?cb=20181016205629",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1786,7 +1786,7 @@
   },
   {
     "name": "Blood for Blood",
-    "image": "BloodforBlood.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/BloodforBlood.png/revision/latest/scale-to-width-down/310?cb=20181016205629",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1799,7 +1799,7 @@
   },
   {
     "name": "Bloodletting",
-    "image": "Bloodletting.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Bloodletting.png/revision/latest/scale-to-width-down/310?cb=20210408070953",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1811,7 +1811,7 @@
   },
   {
     "name": "Burning Pact",
-    "image": "BurningPact.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/98/BurningPact.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1823,7 +1823,7 @@
   },
   {
     "name": "Carnage",
-    "image": "Carnage.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/Carnage.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1835,7 +1835,7 @@
   },
   {
     "name": "Combust",
-    "image": "Combust.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/Combust.png/revision/latest/scale-to-width-down/310?cb=20181016205732",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1847,7 +1847,7 @@
   },
   {
     "name": "Dark Embrace",
-    "image": "DarkEmbrace.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a6/DarkEmbrace.png/revision/latest/scale-to-width-down/310?cb=20200128065538",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1860,7 +1860,7 @@
   },
   {
     "name": "Disarm",
-    "image": "Disarm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Disarm.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1872,7 +1872,7 @@
   },
   {
     "name": "Dropkick",
-    "image": "Dropkick.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Dropkick.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1884,7 +1884,7 @@
   },
   {
     "name": "Dual Wield",
-    "image": "DualWield.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/61/DualWield.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1896,7 +1896,7 @@
   },
   {
     "name": "Entrench",
-    "image": "Entrench.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Entrench.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1909,7 +1909,7 @@
   },
   {
     "name": "Evolve",
-    "image": "Evolve.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5d/Evolve.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1921,7 +1921,7 @@
   },
   {
     "name": "Feel No Pain",
-    "image": "FeelNoPain.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/41/FeelNoPain.png/revision/latest/scale-to-width-down/310?cb=20181016205820",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1933,7 +1933,7 @@
   },
   {
     "name": "Fire Breathing",
-    "image": "FireBreathing.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/FireBreathing.png/revision/latest/scale-to-width-down/310?cb=20200121024142",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -1945,7 +1945,7 @@
   },
   {
     "name": "Flame Barrier",
-    "image": "FlameBarrier.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/FlameBarrier.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1957,7 +1957,7 @@
   },
   {
     "name": "Ghostly Armor",
-    "image": "GhostlyArmor.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/GhostlyArmor.png/revision/latest/scale-to-width-down/310?cb=20181016205957",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1969,7 +1969,7 @@
   },
   {
     "name": "Hemokinesis",
-    "image": "Hemokinesis.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/17/Hemokinesis.png/revision/latest/scale-to-width-down/310?cb=20210408071312",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -1981,7 +1981,7 @@
   },
   {
     "name": "Infernal Blade",
-    "image": "InfernalBlade.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/InfernalBlade.png/revision/latest/scale-to-width-down/310?cb=20181016210817",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -1994,7 +1994,7 @@
   },
   {
     "name": "Inflame",
-    "image": "Inflame.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Inflame.png/revision/latest/scale-to-width-down/310?cb=20181016210817",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -2006,7 +2006,7 @@
   },
   {
     "name": "Intimidate",
-    "image": "Intimidate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Intimidate.png/revision/latest/scale-to-width-down/310?cb=20181016210817",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2018,7 +2018,7 @@
   },
   {
     "name": "Metallicize",
-    "image": "Metallicize.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Metallicize.png/revision/latest/scale-to-width-down/310?cb=20181016210818",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -2030,7 +2030,7 @@
   },
   {
     "name": "Power Through",
-    "image": "PowerThrough.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/PowerThrough.png/revision/latest/scale-to-width-down/310?cb=20181016210950",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2042,7 +2042,7 @@
   },
   {
     "name": "Pummel",
-    "image": "Pummel.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/Pummel.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2054,7 +2054,7 @@
   },
   {
     "name": "Rage",
-    "image": "Rage.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Rage.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2066,7 +2066,7 @@
   },
   {
     "name": "Rampage",
-    "image": "Rampage.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e4/Rampage.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2078,7 +2078,7 @@
   },
   {
     "name": "Reckless Charge",
-    "image": "RecklessCharge.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f7/RecklessCharge.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2090,7 +2090,7 @@
   },
   {
     "name": "Rupture",
-    "image": "Rupture.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/38/Rupture.png/revision/latest/scale-to-width-down/310?cb=20210408071643",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Power",
@@ -2102,7 +2102,7 @@
   },
   {
     "name": "Searing Blow",
-    "image": "SearingBlow.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dc/SearingBlow.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2114,7 +2114,7 @@
   },
   {
     "name": "Second Wind",
-    "image": "SecondWind.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/ba/SecondWind.png/revision/latest/scale-to-width-down/310?cb=20181016210952",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2126,7 +2126,7 @@
   },
   {
     "name": "Seeing Red",
-    "image": "SeeingRed.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c2/SeeingRed.png/revision/latest/scale-to-width-down/310?cb=20181016211044",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2139,7 +2139,7 @@
   },
   {
     "name": "Sentinel",
-    "image": "Sentinel.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/91/Sentinel.png/revision/latest/scale-to-width-down/310?cb=20181016211044",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2151,7 +2151,7 @@
   },
   {
     "name": "Sever Soul",
-    "image": "SeverSoul.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/11/SeverSoul.png/revision/latest/scale-to-width-down/310?cb=20181016211044",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2163,7 +2163,7 @@
   },
   {
     "name": "Shockwave",
-    "image": "Shockwave.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/65/Shockwave.png/revision/latest/scale-to-width-down/310?cb=20181016211044",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2175,7 +2175,7 @@
   },
   {
     "name": "Spot Weakness",
-    "image": "SpotWeakness.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/56/SpotWeakness.png/revision/latest/scale-to-width-down/310?cb=20181016211045",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2187,7 +2187,7 @@
   },
   {
     "name": "Uppercut",
-    "image": "Uppercut.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Uppercut.png/revision/latest/scale-to-width-down/310?cb=20181016211122",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2199,7 +2199,7 @@
   },
   {
     "name": "Whirlwind",
-    "image": "Whirlwind.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e0/Whirlwind.png/revision/latest/scale-to-width-down/310?cb=20181016211122",
     "color": "Red",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2210,7 +2210,7 @@
   },
   {
     "name": "Barricade",
-    "image": "Barricade.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/12/Barricade.png/revision/latest/scale-to-width-down/310?cb=20181016205628",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2223,7 +2223,7 @@
   },
   {
     "name": "Berserk",
-    "image": "Berserk.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/Berserk.png/revision/latest/scale-to-width-down/310?cb=20190829162548",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2235,7 +2235,7 @@
   },
   {
     "name": "Bludgeon",
-    "image": "Bludgeon.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/96/Bludgeon.png/revision/latest/scale-to-width-down/310?cb=20181016205629",
     "color": "Red",
     "rarity": "Rare",
     "type": "Attack",
@@ -2247,7 +2247,7 @@
   },
   {
     "name": "Brutality",
-    "image": "Brutality.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/ba/Brutality.png/revision/latest/scale-to-width-down/310?cb=20181016205731",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2259,7 +2259,7 @@
   },
   {
     "name": "Corruption",
-    "image": "Corruption.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/Corruption.png/revision/latest/scale-to-width-down/310?cb=20200128065608",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2272,7 +2272,7 @@
   },
   {
     "name": "Demon Form",
-    "image": "DemonForm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a1/DemonForm.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2284,7 +2284,7 @@
   },
   {
     "name": "Double Tap",
-    "image": "DoubleTap.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/DoubleTap.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
     "color": "Red",
     "rarity": "Rare",
     "type": "Skill",
@@ -2296,7 +2296,7 @@
   },
   {
     "name": "Exhume",
-    "image": "Exhume.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1b/Exhume.png/revision/latest/scale-to-width-down/310?cb=20181016205820",
     "color": "Red",
     "rarity": "Rare",
     "type": "Skill",
@@ -2309,7 +2309,7 @@
   },
   {
     "name": "Feed",
-    "image": "Feed.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/Feed.png/revision/latest/scale-to-width-down/310?cb=20200121024417",
     "color": "Red",
     "rarity": "Rare",
     "type": "Attack",
@@ -2321,7 +2321,7 @@
   },
   {
     "name": "Fiend Fire",
-    "image": "FiendFire.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/FiendFire.png/revision/latest/scale-to-width-down/310?cb=20181016205956",
     "color": "Red",
     "rarity": "Rare",
     "type": "Attack",
@@ -2333,7 +2333,7 @@
   },
   {
     "name": "Immolate",
-    "image": "Immolate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5f/Immolate.png/revision/latest/scale-to-width-down/310?cb=20181016205958",
     "color": "Red",
     "rarity": "Rare",
     "type": "Attack",
@@ -2345,7 +2345,7 @@
   },
   {
     "name": "Impervious",
-    "image": "Impervious.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Impervious.png/revision/latest/scale-to-width-down/310?cb=20181016210816",
     "color": "Red",
     "rarity": "Rare",
     "type": "Skill",
@@ -2357,7 +2357,7 @@
   },
   {
     "name": "Juggernaut",
-    "image": "Juggernaut.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Juggernaut.png/revision/latest/scale-to-width-down/310?cb=20181016210817",
     "color": "Red",
     "rarity": "Rare",
     "type": "Power",
@@ -2369,7 +2369,7 @@
   },
   {
     "name": "Limit Break",
-    "image": "LimitBreak.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8c/LimitBreak.png/revision/latest/scale-to-width-down/310?cb=20181016210818",
     "color": "Red",
     "rarity": "Rare",
     "type": "Skill",
@@ -2381,7 +2381,7 @@
   },
   {
     "name": "Offering",
-    "image": "Offering.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Offering.png/revision/latest/scale-to-width-down/310?cb=20181016210818",
     "color": "Red",
     "rarity": "Rare",
     "type": "Skill",
@@ -2393,7 +2393,7 @@
   },
   {
     "name": "Reaper",
-    "image": "Reaper.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6a/Reaper.png/revision/latest/scale-to-width-down/310?cb=20181016210951",
     "color": "Red",
     "rarity": "Rare",
     "type": "Attack",
@@ -2405,7 +2405,7 @@
   },
   {
     "name": "Clumsy",
-    "image": "Clumsy.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8e/Clumsy.png/revision/latest/scale-to-width-down/321?cb=20180120063331",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2419,7 +2419,7 @@
   },
   {
     "name": "Curse of the Bell",
-    "image": "CurseoftheBell.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/12/CurseoftheBell.png/revision/latest/scale-to-width-down/310?cb=20191017204224",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2433,7 +2433,7 @@
   },
   {
     "name": "Decay",
-    "image": "Decay.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Decay.png/revision/latest/scale-to-width-down/314?cb=20180120063341",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2444,7 +2444,7 @@
   },
   {
     "name": "Doubt",
-    "image": "Doubt.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6a/Doubt.png/revision/latest/scale-to-width-down/321?cb=20180120063352",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2458,7 +2458,7 @@
   },
   {
     "name": "Injury",
-    "image": "Injury.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/Injury.png/revision/latest/scale-to-width-down/321?cb=20180120063404",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2471,7 +2471,7 @@
   },
   {
     "name": "Necronomicurse",
-    "image": "Necronomicurse.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/38/Necronomicurse.png/revision/latest/scale-to-width-down/322?cb=20180120063415",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2484,7 +2484,7 @@
   },
   {
     "name": "Normality",
-    "image": "Normality.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a5/Normality.png/revision/latest/scale-to-width-down/321?cb=20180120063427",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2497,7 +2497,7 @@
   },
   {
     "name": "Pain",
-    "image": "Pain.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/54/Pain.png/revision/latest/scale-to-width-down/322?cb=20180120063437",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2511,7 +2511,7 @@
   },
   {
     "name": "Parasite",
-    "image": "Parasite.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f0/Parasite.png/revision/latest/scale-to-width-down/322?cb=20180120063446",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2524,7 +2524,7 @@
   },
   {
     "name": "Pride",
-    "image": "Pride.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b3/Pride.png/revision/latest/scale-to-width-down/310?cb=20181020132843",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2536,7 +2536,7 @@
   },
   {
     "name": "Regret",
-    "image": "Regret.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Regret.png/revision/latest/scale-to-width-down/314?cb=20180120063454",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2550,7 +2550,7 @@
   },
   {
     "name": "Shame",
-    "image": "Shame.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Shame.png/revision/latest/scale-to-width-down/308?cb=20180828093706",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2564,7 +2564,7 @@
   },
   {
     "name": "Writhe",
-    "image": "Writhe.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png/revision/latest/scale-to-width-down/314?cb=20180120063506",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2578,7 +2578,7 @@
   },
   {
     "name": "Ascender's Bane",
-    "image": "Ascender%27s Bane.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a0/Ascender%27s_Bane.png/revision/latest/scale-to-width-down/310?cb=20181016220002",
     "color": "Curse",
     "rarity": "Curse",
     "type": "Curse",
@@ -2591,7 +2591,7 @@
   },
   {
     "name": "Burn",
-    "image": "Burn.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bf/Burn.png/revision/latest/scale-to-width-down/310?cb=20181016212459",
     "color": "Colorless",
     "rarity": "Common",
     "type": "Status",
@@ -2605,7 +2605,7 @@
   },
   {
     "name": "Dazed",
-    "image": "Dazed.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/ad/Dazed.png/revision/latest/scale-to-width-down/310?cb=20181016212503",
     "color": "Colorless",
     "rarity": "Common",
     "type": "Status",
@@ -2619,7 +2619,7 @@
   },
   {
     "name": "Slimed",
-    "image": "Slimed.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Slimed.png/revision/latest/scale-to-width-down/310?cb=20181016212734",
     "color": "Colorless",
     "rarity": "Common",
     "type": "Status",
@@ -2633,7 +2633,7 @@
   },
   {
     "name": "Void",
-    "image": "Void.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/Void.png/revision/latest/scale-to-width-down/310?cb=20181016212740",
     "color": "Colorless",
     "rarity": "Common",
     "type": "Status",
@@ -2648,7 +2648,7 @@
   },
   {
     "name": "Wound",
-    "image": "Wound.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a4/Wound.png/revision/latest/scale-to-width-down/310?cb=20181016212742",
     "color": "Colorless",
     "rarity": "Common",
     "type": "Status",
@@ -2675,7 +2675,7 @@
   },
   {
     "name": "Dualcast",
-    "image": "Dualcast.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/00/Dualcast.png/revision/latest/scale-to-width-down/310?cb=20181016203425",
     "color": "Blue",
     "rarity": "Basic",
     "type": "Skill",
@@ -2702,7 +2702,7 @@
   },
   {
     "name": "Zap",
-    "image": "Zap.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Zap.png/revision/latest/scale-to-width-down/310?cb=20181016203836",
     "color": "Blue",
     "rarity": "Basic",
     "type": "Skill",
@@ -2715,7 +2715,7 @@
   },
   {
     "name": "Ball Lightning",
-    "image": "BallLightning.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/BallLightning.png/revision/latest/scale-to-width-down/310?cb=20181016203054",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2727,7 +2727,7 @@
   },
   {
     "name": "Barrage",
-    "image": "Barrage.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/2c/Barrage.png/revision/latest/scale-to-width-down/310?cb=20181016203240",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2739,7 +2739,7 @@
   },
   {
     "name": "Beam Cell",
-    "image": "BeamCell.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/BeamCell.png/revision/latest/scale-to-width-down/310?cb=20181016203240",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2751,7 +2751,7 @@
   },
   {
     "name": "Charge Battery",
-    "image": "ChargeBattery.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ed/ChargeBattery.png/revision/latest/scale-to-width-down/310?cb=20181016203241",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2763,7 +2763,7 @@
   },
   {
     "name": "Claw",
-    "image": "Claw.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Claw.png/revision/latest/scale-to-width-down/310?cb=20181016203325",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2775,7 +2775,7 @@
   },
   {
     "name": "Cold Snap",
-    "image": "ColdSnap.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/ColdSnap.png/revision/latest/scale-to-width-down/310?cb=20181016203325",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2787,7 +2787,7 @@
   },
   {
     "name": "Compile Driver",
-    "image": "CompileDriver.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/CompileDriver.png/revision/latest/scale-to-width-down/310?cb=20181016203325",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2799,7 +2799,7 @@
   },
   {
     "name": "Coolheaded",
-    "image": "Coolheaded.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/Coolheaded.png/revision/latest/scale-to-width-down/310?cb=20181016203326",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2811,7 +2811,7 @@
   },
   {
     "name": "Go for the Eyes",
-    "image": "GofortheEyes.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/GofortheEyes.png/revision/latest/scale-to-width-down/310?cb=20181016203510",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2823,7 +2823,7 @@
   },
   {
     "name": "Hologram",
-    "image": "Hologram.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c9/Hologram.png/revision/latest/scale-to-width-down/310?cb=20181016203511",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2835,7 +2835,7 @@
   },
   {
     "name": "Leap",
-    "image": "Leap.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/af/Leap.png/revision/latest/scale-to-width-down/310?cb=20181016203512",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2847,7 +2847,7 @@
   },
   {
     "name": "Rebound",
-    "image": "Rebound.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/Rebound.png/revision/latest/scale-to-width-down/310?cb=20181016203604",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2859,7 +2859,7 @@
   },
   {
     "name": "Recursion",
-    "image": "Recursion.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/82/Recursion.png/revision/latest/scale-to-width-down/310?cb=20181016203604",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2872,7 +2872,7 @@
   },
   {
     "name": "Stack",
-    "image": "Stack.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Stack.png/revision/latest/scale-to-width-down/310?cb=20181016203704",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2884,7 +2884,7 @@
   },
   {
     "name": "Steam Barrier",
-    "image": "SteamBarrier.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/SteamBarrier.png/revision/latest/scale-to-width-down/310?cb=20181016203735",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2896,7 +2896,7 @@
   },
   {
     "name": "Streamline",
-    "image": "Streamline.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/64/Streamline.png/revision/latest/scale-to-width-down/310?cb=20181016203832",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2908,7 +2908,7 @@
   },
   {
     "name": "Sweeping Beam",
-    "image": "SweepingBeam.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/ca/SweepingBeam.png/revision/latest/scale-to-width-down/310?cb=20181016203834",
     "color": "Blue",
     "rarity": "Common",
     "type": "Attack",
@@ -2920,7 +2920,7 @@
   },
   {
     "name": "TURBO",
-    "image": "TURBO.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/23/TURBO.png/revision/latest/scale-to-width-down/310?cb=20181016203836",
     "color": "Blue",
     "rarity": "Common",
     "type": "Skill",
@@ -2932,7 +2932,7 @@
   },
   {
     "name": "Aggregate",
-    "image": "Aggregate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/Aggregate.png/revision/latest/scale-to-width-down/310?cb=20210408070805",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2944,7 +2944,7 @@
   },
   {
     "name": "Auto-Shields",
-    "image": "Auto-Shields.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Auto-Shields.png/revision/latest/scale-to-width-down/310?cb=20181016203042",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2956,7 +2956,7 @@
   },
   {
     "name": "Blizzard",
-    "image": "Blizzard.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/39/Blizzard.png/revision/latest/scale-to-width-down/310?cb=20181016203240",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2968,7 +2968,7 @@
   },
   {
     "name": "Boot Sequence",
-    "image": "BootSequence.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/BootSequence.png/revision/latest/scale-to-width-down/310?cb=20181016203241",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -2980,7 +2980,7 @@
   },
   {
     "name": "Bullseye",
-    "image": "Bullseye.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Bullseye.png/revision/latest/scale-to-width-down/310?cb=20190829154634",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -2992,7 +2992,7 @@
   },
   {
     "name": "Capacitor",
-    "image": "Capacitor.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b5/Capacitor.png/revision/latest/scale-to-width-down/310?cb=20181016203241",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3004,7 +3004,7 @@
   },
   {
     "name": "Chaos",
-    "image": "Chaos.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Chaos.png/revision/latest/scale-to-width-down/310?cb=20181016203241",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3016,7 +3016,7 @@
   },
   {
     "name": "Chill",
-    "image": "Chill.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7b/Chill.png/revision/latest/scale-to-width-down/310?cb=20181016203324",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3028,7 +3028,7 @@
   },
   {
     "name": "Consume",
-    "image": "Consume.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/Consume.png/revision/latest/scale-to-width-down/310?cb=20181016203325",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3040,7 +3040,7 @@
   },
   {
     "name": "Darkness",
-    "image": "Darkness.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c0/Darkness.png/revision/latest/scale-to-width-down/310?cb=20181016203326",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3052,7 +3052,7 @@
   },
   {
     "name": "Defragment",
-    "image": "Defragment.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/Defragment.png/revision/latest/scale-to-width-down/310?cb=20181016203424",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3064,7 +3064,7 @@
   },
   {
     "name": "Doom and Gloom",
-    "image": "DoomandGloom.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/87/DoomandGloom.png/revision/latest/scale-to-width-down/310?cb=20181016203425",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3076,7 +3076,7 @@
   },
   {
     "name": "Double Energy",
-    "image": "DoubleEnergy.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/DoubleEnergy.png/revision/latest/scale-to-width-down/310?cb=20181016203425",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3089,7 +3089,7 @@
   },
   {
     "name": "Equilibrium",
-    "image": "Equilibrium.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/81/Equilibrium.png/revision/latest/scale-to-width-down/310?cb=20181016203426",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3101,7 +3101,7 @@
   },
   {
     "name": "FTL",
-    "image": "FTL.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c6/FTL.png/revision/latest/scale-to-width-down/310?cb=20181016203428",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3113,7 +3113,7 @@
   },
   {
     "name": "Force Field",
-    "image": "ForceField.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/aa/ForceField.png/revision/latest/scale-to-width-down/310?cb=20181016203427",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3125,7 +3125,7 @@
   },
   {
     "name": "Fusion",
-    "image": "Fusion.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/2d/Fusion.png/revision/latest/scale-to-width-down/310?cb=20181016203509",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3138,7 +3138,7 @@
   },
   {
     "name": "Genetic Algorithm",
-    "image": "GeneticAlgorithm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/GeneticAlgorithm.png/revision/latest/scale-to-width-down/310?cb=20181016203509",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3150,7 +3150,7 @@
   },
   {
     "name": "Glacier",
-    "image": "Glacier.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/24/Glacier.png/revision/latest/scale-to-width-down/310?cb=20181016203509",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3162,7 +3162,7 @@
   },
   {
     "name": "Heatsinks",
-    "image": "Heatsinks.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Heatsinks.png/revision/latest/scale-to-width-down/310?cb=20181016203510",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3174,7 +3174,7 @@
   },
   {
     "name": "Hello World",
-    "image": "HelloWorld.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/HelloWorld.png/revision/latest/scale-to-width-down/310?cb=20181016203511",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3186,7 +3186,7 @@
   },
   {
     "name": "Loop",
-    "image": "Loop.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/21/Loop.png/revision/latest/scale-to-width-down/310?cb=20181016203512",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3198,7 +3198,7 @@
   },
   {
     "name": "Melter",
-    "image": "Melter.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Melter.png/revision/latest/scale-to-width-down/310?cb=20181016203602",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3210,7 +3210,7 @@
   },
   {
     "name": "Overclock",
-    "image": "Overclock.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Overclock.png/revision/latest/scale-to-width-down/310?cb=20181016203603",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3222,7 +3222,7 @@
   },
   {
     "name": "Recycle",
-    "image": "Recycle.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/70/Recycle.png/revision/latest/scale-to-width-down/310?cb=20181016203609",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3235,7 +3235,7 @@
   },
   {
     "name": "Reinforced Body",
-    "image": "ReinforcedBody.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d4/ReinforcedBody.png/revision/latest/scale-to-width-down/310?cb=20181016203702",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3246,7 +3246,7 @@
   },
   {
     "name": "Reprogram",
-    "image": "Reprogram.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9d/Reprogram.png/revision/latest/scale-to-width-down/310?cb=20210408071552",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3258,7 +3258,7 @@
   },
   {
     "name": "Rip and Tear",
-    "image": "RipandTear.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/13/RipandTear.png/revision/latest/scale-to-width-down/310?cb=20181016203702",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3270,7 +3270,7 @@
   },
   {
     "name": "Scrape",
-    "image": "Scrape.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/94/Scrape.png/revision/latest/scale-to-width-down/310?cb=20210408071828",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3282,7 +3282,7 @@
   },
   {
     "name": "Self Repair",
-    "image": "SelfRepair.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/SelfRepair.png/revision/latest/scale-to-width-down/310?cb=20181016203703",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3294,7 +3294,7 @@
   },
   {
     "name": "Skim",
-    "image": "Skim.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Skim.png/revision/latest/scale-to-width-down/310?cb=20181016203704",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3306,7 +3306,7 @@
   },
   {
     "name": "Static Discharge",
-    "image": "StaticDischarge.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/StaticDischarge.png/revision/latest/scale-to-width-down/310?cb=20190821182252",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3318,7 +3318,7 @@
   },
   {
     "name": "Storm",
-    "image": "Storm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Storm.png/revision/latest/scale-to-width-down/310?cb=20181016203831",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3330,7 +3330,7 @@
   },
   {
     "name": "Sunder",
-    "image": "Sunder.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/Sunder.png/revision/latest/scale-to-width-down/310?cb=20181016203833",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3342,7 +3342,7 @@
   },
   {
     "name": "Tempest",
-    "image": "Tempest.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bb/Tempest.png/revision/latest/scale-to-width-down/310?cb=20181016203834",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3353,7 +3353,7 @@
   },
   {
     "name": "White Noise",
-    "image": "WhiteNoise.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/WhiteNoise.png/revision/latest/scale-to-width-down/310?cb=20181016203836",
     "color": "Blue",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3366,7 +3366,7 @@
   },
   {
     "name": "All for One",
-    "image": "AllforOne.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/AllforOne.png/revision/latest/scale-to-width-down/310?cb=20181016203018",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Attack",
@@ -3378,7 +3378,7 @@
   },
   {
     "name": "Amplify",
-    "image": "Amplify.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/Amplify.png/revision/latest/scale-to-width-down/310?cb=20181016203031",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3390,7 +3390,7 @@
   },
   {
     "name": "Biased Cognition",
-    "image": "BiasedCognition.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/50/BiasedCognition.png/revision/latest/scale-to-width-down/310?cb=20181016203240",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3402,7 +3402,7 @@
   },
   {
     "name": "Buffer",
-    "image": "Buffer.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Buffer.png/revision/latest/scale-to-width-down/310?cb=20181016203241",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3414,7 +3414,7 @@
   },
   {
     "name": "Core Surge",
-    "image": "CoreSurge.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/49/CoreSurge.png/revision/latest/scale-to-width-down/310?cb=20181016203326",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Attack",
@@ -3426,7 +3426,7 @@
   },
   {
     "name": "Creative AI",
-    "image": "CreativeAI.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fc/CreativeAI2.png/revision/latest/scale-to-width-down/301?cb=20180901004017",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3439,7 +3439,7 @@
   },
   {
     "name": "Echo Form",
-    "image": "EchoForm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/93/EchoForm.png/revision/latest/scale-to-width-down/310?cb=20181016203426",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3451,7 +3451,7 @@
   },
   {
     "name": "Electrodynamics",
-    "image": "Electrodynamics.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Electrodynamics.png/revision/latest/scale-to-width-down/310?cb=20181016203426",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3463,7 +3463,7 @@
   },
   {
     "name": "Fission",
-    "image": "Fission.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4d/Fission.png/revision/latest/scale-to-width-down/310?cb=20181016203427",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3475,7 +3475,7 @@
   },
   {
     "name": "Hyperbeam",
-    "image": "Hyperbeam.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Hyperbeam.png/revision/latest/scale-to-width-down/310?cb=20181016203511",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Attack",
@@ -3487,7 +3487,7 @@
   },
   {
     "name": "Machine Learning",
-    "image": "MachineLearning.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/03/MachineLearning.png/revision/latest/scale-to-width-down/310?cb=20181016203553",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Power",
@@ -3499,7 +3499,7 @@
   },
   {
     "name": "Meteor Strike",
-    "image": "MeteorStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/MeteorStrike.png/revision/latest/scale-to-width-down/310?cb=20181016203602",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Attack",
@@ -3511,7 +3511,7 @@
   },
   {
     "name": "Multi-Cast",
-    "image": "Multi-Cast.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/91/Multi-Cast.png/revision/latest/scale-to-width-down/310?cb=20181016203603",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3522,7 +3522,7 @@
   },
   {
     "name": "Rainbow",
-    "image": "Rainbow.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/Rainbow.png/revision/latest/scale-to-width-down/310?cb=20181016203604",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3534,7 +3534,7 @@
   },
   {
     "name": "Reboot",
-    "image": "Reboot.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/de/Reboot.png/revision/latest/scale-to-width-down/310?cb=20181016203604",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3546,7 +3546,7 @@
   },
   {
     "name": "Seek",
-    "image": "Seek.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Seek.png/revision/latest/scale-to-width-down/310?cb=20181016203703",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Skill",
@@ -3558,7 +3558,7 @@
   },
   {
     "name": "Thunder Strike",
-    "image": "ThunderStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/ThunderStrike.png/revision/latest/scale-to-width-down/310?cb=20181016203835",
     "color": "Blue",
     "rarity": "Rare",
     "type": "Attack",
@@ -3584,7 +3584,7 @@
   },
   {
     "name": "Eruption",
-    "image": "Eruption.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/Eruption.png/revision/latest/scale-to-width-down/310?cb=20190918002047",
     "color": "Purple",
     "rarity": "Basic",
     "type": "Attack",
@@ -3611,7 +3611,7 @@
   },
   {
     "name": "Vigilance",
-    "image": "Vigilance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d3/Vigilance.png/revision/latest/scale-to-width-down/310?cb=20191017204252",
     "color": "Purple",
     "rarity": "Basic",
     "type": "Skill",
@@ -3623,7 +3623,7 @@
   },
   {
     "name": "Bowling Bash",
-    "image": "BowlingBash.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/BowlingBash.png/revision/latest/scale-to-width-down/310?cb=20191003145418",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3635,7 +3635,7 @@
   },
   {
     "name": "Consecrate",
-    "image": "Consecrate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c2/Consecrate.png/revision/latest/scale-to-width-down/310?cb=20191003145421",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3647,7 +3647,7 @@
   },
   {
     "name": "Crescendo",
-    "image": "Crescendo.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b1/Crescendo.png/revision/latest/scale-to-width-down/310?cb=20191028224547",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3660,7 +3660,7 @@
   },
   {
     "name": "Crush Joints",
-    "image": "CrushJoints.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/34/CrushJoints.png/revision/latest/scale-to-width-down/310?cb=20191017204222",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3672,7 +3672,7 @@
   },
   {
     "name": "Cut Through Fate",
-    "image": "CutThroughFate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a3/CutThroughFate.png/revision/latest/scale-to-width-down/310?cb=20190918001628",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3684,7 +3684,7 @@
   },
   {
     "name": "Empty Body",
-    "image": "EmptyBody.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/EmptyBody.png/revision/latest/scale-to-width-down/310?cb=20200119035726",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3696,7 +3696,7 @@
   },
   {
     "name": "Empty Fist",
-    "image": "EmptyFist.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/76/EmptyFist.png/revision/latest/scale-to-width-down/310?cb=20200119035732",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3708,7 +3708,7 @@
   },
   {
     "name": "Evaluate",
-    "image": "Evaluate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/59/Evaluate.png/revision/latest/scale-to-width-down/310?cb=20200119035543",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3720,7 +3720,7 @@
   },
   {
     "name": "Flurry of Blows",
-    "image": "FlurryOfBlows.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlurryOfBlows.png/revision/latest/scale-to-width-down/310?cb=20191017204226",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3732,7 +3732,7 @@
   },
   {
     "name": "Flying Sleeves",
-    "image": "FlyingSleeves.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/FlyingSleeves.png/revision/latest/scale-to-width-down/310?cb=20191003145423",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3744,7 +3744,7 @@
   },
   {
     "name": "Follow-Up",
-    "image": "Follow-Up.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Follow-Up.png/revision/latest/scale-to-width-down/310?cb=20191003145424",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3756,7 +3756,7 @@
   },
   {
     "name": "Halt",
-    "image": "Halt.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/Halt.png/revision/latest/scale-to-width-down/307?cb=20231213223001",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3768,7 +3768,7 @@
   },
   {
     "name": "Just Lucky",
-    "image": "JustLucky.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/JustLucky.png/revision/latest/scale-to-width-down/310?cb=20190918180938",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3780,7 +3780,7 @@
   },
   {
     "name": "Pressure Points",
-    "image": "PressurePoints.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/PressurePoints.png/revision/latest/scale-to-width-down/310?cb=20191106145553",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3792,7 +3792,7 @@
   },
   {
     "name": "Prostrate",
-    "image": "Prostrate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Prostrate.png/revision/latest/scale-to-width-down/310?cb=20191017204233",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3804,7 +3804,7 @@
   },
   {
     "name": "Protect",
-    "image": "Protect.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f6/Protect.png/revision/latest/scale-to-width-down/310?cb=20200117164758",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3816,7 +3816,7 @@
   },
   {
     "name": "Sash Whip",
-    "image": "SashWhip.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/SashWhip.png/revision/latest/scale-to-width-down/310?cb=20191017204239",
     "color": "Purple",
     "rarity": "Common",
     "type": "Attack",
@@ -3828,7 +3828,7 @@
   },
   {
     "name": "Third Eye",
-    "image": "ThirdEye.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fc/ThirdEye.png/revision/latest/scale-to-width-down/310?cb=20190918002806",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3840,7 +3840,7 @@
   },
   {
     "name": "Tranquility",
-    "image": "Tranquility.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ee/Tranquility.png/revision/latest/scale-to-width-down/310?cb=20191017204250",
     "color": "Purple",
     "rarity": "Common",
     "type": "Skill",
@@ -3853,7 +3853,7 @@
   },
   {
     "name": "Battle Hymn",
-    "image": "BattleHymn.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/BattleHymn.png/revision/latest/scale-to-width-down/310?cb=20191003145436",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3867,7 +3867,7 @@
   },
   {
     "name": "Carve Reality",
-    "image": "CarveReality.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/CarveReality.png/revision/latest/scale-to-width-down/310?cb=20191017204219",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3879,7 +3879,7 @@
   },
   {
     "name": "Collect",
-    "image": "Collect.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Collect.png/revision/latest/scale-to-width-down/310?cb=20191003145442",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3890,7 +3890,7 @@
   },
   {
     "name": "Conclude",
-    "image": "Conclude.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e1/Conclude.png/revision/latest/scale-to-width-down/310?cb=20191028223746",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3902,7 +3902,7 @@
   },
   {
     "name": "Deceive Reality",
-    "image": "DeceiveReality.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/DeceiveReality.png/revision/latest/scale-to-width-down/310?cb=20191106145539",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3914,7 +3914,7 @@
   },
   {
     "name": "Empty Mind",
-    "image": "EmptyMind.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/EmptyMind.png/revision/latest/scale-to-width-down/310?cb=20200119035720",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3926,7 +3926,7 @@
   },
   {
     "name": "Fasting",
-    "image": "Fasting.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Fasting.png/revision/latest/scale-to-width-down/310?cb=20191028223752",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3938,7 +3938,7 @@
   },
   {
     "name": "Fear No Evil",
-    "image": "FearNoEvil.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/49/FearNoEvil.png/revision/latest/scale-to-width-down/310?cb=20191106145547",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -3950,7 +3950,7 @@
   },
   {
     "name": "Foreign Influence",
-    "image": "ForeignInfluence.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/ForeignInfluence.png/revision/latest/scale-to-width-down/310?cb=20191106145549",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3962,7 +3962,7 @@
   },
   {
     "name": "Foresight",
-    "image": "Foresight.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e5/Foresight.png/revision/latest/scale-to-width-down/310?cb=20191003145437",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -3974,7 +3974,7 @@
   },
   {
     "name": "Indignation",
-    "image": "Indignation.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8b/Indignation.png/revision/latest/scale-to-width-down/310?cb=20191106145551",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3986,7 +3986,7 @@
   },
   {
     "name": "Inner Peace",
-    "image": "InnerPeace.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/InnerPeace.png/revision/latest/scale-to-width-down/310?cb=20190918002052",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -3998,7 +3998,7 @@
   },
   {
     "name": "Like Water",
-    "image": "LikeWater.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/99/LikeWater.png/revision/latest/scale-to-width-down/310?cb=20191028223755",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -4010,7 +4010,7 @@
   },
   {
     "name": "Meditate",
-    "image": "Meditate.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/61/Meditate.png/revision/latest/scale-to-width-down/310?cb=20190918180937",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4022,7 +4022,7 @@
   },
   {
     "name": "Mental Fortress",
-    "image": "MentalFortress.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c1/MentalFortress.png/revision/latest/scale-to-width-down/310?cb=20191028224043",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -4034,7 +4034,7 @@
   },
   {
     "name": "Nirvana",
-    "image": "Nirvana.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/37/Nirvana.png/revision/latest/scale-to-width-down/310?cb=20210808183116",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -4046,7 +4046,7 @@
   },
   {
     "name": "Perseverance",
-    "image": "Perseverance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7f/Perseverance.png/revision/latest/scale-to-width-down/310?cb=20191106145552",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4057,7 +4057,7 @@
   },
   {
     "name": "Pray",
-    "image": "Pray.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Pray.png/revision/latest/scale-to-width-down/310?cb=20191002191006",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4069,7 +4069,7 @@
   },
   {
     "name": "Reach Heaven",
-    "image": "ReachHeaven.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8d/ReachHeaven.png/revision/latest/scale-to-width-down/310?cb=20200910214232",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4081,7 +4081,7 @@
   },
   {
     "name": "Rushdown",
-    "image": "Rushdown.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e8/Rushdown.png/revision/latest/scale-to-width-down/310?cb=20191106145554",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -4094,7 +4094,7 @@
   },
   {
     "name": "Sanctity",
-    "image": "Sanctity.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Sanctity.png/revision/latest/scale-to-width-down/310?cb=20200119035537",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4106,7 +4106,7 @@
   },
   {
     "name": "Sands of Time",
-    "image": "SandsofTime.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/SandsofTime.png/revision/latest/scale-to-width-down/310?cb=20191003145427",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4118,7 +4118,7 @@
   },
   {
     "name": "Signature Move",
-    "image": "SignatureMove.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a4/SignatureMove.png/revision/latest/scale-to-width-down/310?cb=20191003145429",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4130,7 +4130,7 @@
   },
   {
     "name": "Simmering Fury",
-    "image": "SimmeringFury.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/06/SimmeringFury.png/revision/latest/scale-to-width-down/310?cb=20200117164806",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4142,7 +4142,7 @@
   },
   {
     "name": "Study",
-    "image": "Study.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/26/Study.png/revision/latest/scale-to-width-down/310?cb=20191216175554",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Power",
@@ -4155,7 +4155,7 @@
   },
   {
     "name": "Swivel",
-    "image": "Swivel.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/21/Swivel.png/revision/latest/scale-to-width-down/310?cb=20191003145451",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4167,7 +4167,7 @@
   },
   {
     "name": "Talk to the Hand",
-    "image": "TalktotheHand.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f8/TalktotheHand.png/revision/latest/scale-to-width-down/310?cb=20190918180936",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4179,7 +4179,7 @@
   },
   {
     "name": "Tantrum",
-    "image": "Tantrum.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b3/Tantrum.png/revision/latest/scale-to-width-down/310?cb=20191017204246",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4191,7 +4191,7 @@
   },
   {
     "name": "Wallop",
-    "image": "Wallop.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Wallop.png/revision/latest/scale-to-width-down/310?cb=20191004214232",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4203,7 +4203,7 @@
   },
   {
     "name": "Wave of the Hand",
-    "image": "WaveoftheHand.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/WaveoftheHand.png/revision/latest/scale-to-width-down/310?cb=20191017204253",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4215,7 +4215,7 @@
   },
   {
     "name": "Weave",
-    "image": "Weave.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/63/Weave.png/revision/latest/scale-to-width-down/310?cb=20191008235834",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4227,7 +4227,7 @@
   },
   {
     "name": "Wheel Kick",
-    "image": "WheelKick.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/86/WheelKick.png/revision/latest/scale-to-width-down/310?cb=20191003145433",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4239,7 +4239,7 @@
   },
   {
     "name": "Windmill Strike",
-    "image": "WindmillStrike.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/aa/WindmillStrike.png/revision/latest/scale-to-width-down/310?cb=20191003145434",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Attack",
@@ -4251,7 +4251,7 @@
   },
   {
     "name": "Worship",
-    "image": "Worship.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d4/Worship.png/revision/latest/scale-to-width-down/310?cb=20191216175551",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4263,7 +4263,7 @@
   },
   {
     "name": "Wreath of Flame",
-    "image": "WreathofFlame.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/WreathofFlame.png/revision/latest/scale-to-width-down/310?cb=20191017204255",
     "color": "Purple",
     "rarity": "Uncommon",
     "type": "Skill",
@@ -4275,7 +4275,7 @@
   },
   {
     "name": "Alpha",
-    "image": "Alpha.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Alpha.png/revision/latest/scale-to-width-down/310?cb=20191017204215",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4289,7 +4289,7 @@
   },
   {
     "name": "Blasphemy",
-    "image": "Blasphemy.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/22/Blasphemy.png/revision/latest/scale-to-width-down/310?cb=20191106145537",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4301,7 +4301,7 @@
   },
   {
     "name": "Brilliance",
-    "image": "Brilliance.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/Brilliance.png/revision/latest/scale-to-width-down/310?cb=20200117164750",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Attack",
@@ -4313,7 +4313,7 @@
   },
   {
     "name": "Conjure Blade",
-    "image": "ConjureBlade.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/ConjureBlade.png/revision/latest/scale-to-width-down/310?cb=20191028223747",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4324,7 +4324,7 @@
   },
   {
     "name": "Deus Ex Machina",
-    "image": "DeusExMachina.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DeusExMachina.png/revision/latest/scale-to-width-down/310?cb=20191106145542",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4338,7 +4338,7 @@
   },
   {
     "name": "Deva Form",
-    "image": "DevaForm.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DevaForm.png/revision/latest/scale-to-width-down/310?cb=20190920011848",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Power",
@@ -4352,7 +4352,7 @@
   },
   {
     "name": "Devotion",
-    "image": "Devotion.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4b/Devotion.png/revision/latest/scale-to-width-down/310?cb=20191028223749",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Power",
@@ -4364,7 +4364,7 @@
   },
   {
     "name": "Establishment",
-    "image": "Establishment.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Establishment.png/revision/latest/scale-to-width-down/310?cb=20191106145544",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Power",
@@ -4378,7 +4378,7 @@
   },
   {
     "name": "Judgment",
-    "image": "Judgment.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/Judgment.png/revision/latest/scale-to-width-down/310?cb=20191003145447",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4390,7 +4390,7 @@
   },
   {
     "name": "Lesson Learned",
-    "image": "LessonLearned.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/3/38/LessonLearned.png/revision/latest/scale-to-width-down/310?cb=20191216175548",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Attack",
@@ -4402,7 +4402,7 @@
   },
   {
     "name": "Master Reality",
-    "image": "MasterReality.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/MasterReality.png/revision/latest/scale-to-width-down/310?cb=20191028224040",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Power",
@@ -4415,7 +4415,7 @@
   },
   {
     "name": "Omniscience",
-    "image": "Omniscience.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a1/Omniscience.png/revision/latest/scale-to-width-down/310?cb=20191216175546",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4428,7 +4428,7 @@
   },
   {
     "name": "Ragnarok",
-    "image": "Ragnarok.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/Ragnarok.png/revision/latest/scale-to-width-down/310?cb=20191003145426",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Attack",
@@ -4440,7 +4440,7 @@
   },
   {
     "name": "Scrawl",
-    "image": "Scrawl.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/df/Scrawl.png/revision/latest/scale-to-width-down/310?cb=20191106184712",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4453,7 +4453,7 @@
   },
   {
     "name": "Spirit Shield",
-    "image": "SpiritShield.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/SpiritShield.png/revision/latest/scale-to-width-down/310?cb=20191106184718",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4465,7 +4465,7 @@
   },
   {
     "name": "Vault",
-    "image": "Vault.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c9/Vault.png/revision/latest/scale-to-width-down/310?cb=20200918125353",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
@@ -4478,7 +4478,7 @@
   },
   {
     "name": "Wish",
-    "image": "Wish.png",
+    "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Wish.png/revision/latest/scale-to-width-down/310?cb=20191106184705",
     "color": "Purple",
     "rarity": "Rare",
     "type": "Skill",
