@@ -102,11 +102,13 @@ function generateMap(seed: number, rows = 8, nodesPerRow = 4): GeneratedNode[] {
 }
 
 interface MapScreenProps {
+  seed?: number
+  floor?: number
   onSelectNode?: (nodeId: string, type: MapNodeType) => void
 }
 
-export default function MapScreen({ onSelectNode }: MapScreenProps) {
-  const [seed, setSeed] = useState(() => Math.floor(Math.random() * 999999))
+export default function MapScreen({ seed: propSeed, floor: _floor = 0, onSelectNode }: MapScreenProps) {
+  const [seed, setSeed] = useState(() => propSeed ?? Math.floor(Math.random() * 999999))
   const [selectedNode, setSelectedNode] = useState<string | null>(null)
   const [visitedNodes, setVisitedNodes] = useState<Set<string>>(new Set())
   const [currentNode, setCurrentNode] = useState<string | null>(null)

@@ -122,7 +122,11 @@ function App() {
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
-      case 'map':            return <MapScreen onSelectNode={handleMapNode} />
+      case 'map':            return <MapScreen
+        seed={runState.run?.seed}
+        floor={runState.run?.floor}
+        onSelectNode={handleMapNode}
+      />
       case 'reward':         return <RewardScreen
         gold={runState.run?.player.gold}
         onPickCard={(card) => {

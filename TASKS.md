@@ -48,3 +48,7 @@
 - [x] CC-020: Continue Run button na StartPage
 - [x] CC-021: Reward picks i shop buys dodają karty do decku
 - [x] CC-022: Run history tracking (localStorage, best score, win rate)
+- [x] CC-023: Run stats (total runs, best score, win rate) na StartPage
+- [x] CC-024: Card removal at shop za 50 gold
+- [x] CC-025: Campfire upgrades uzywaja prawdziwych kart z decku
+- [x] CC-026: TASKS.md update
