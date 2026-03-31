@@ -17,6 +17,7 @@ export type AppView =
   | 'treasure'
   | 'game-over'
   | 'victory'
+  | 'deck-view'
   | 'game'
   | 'dev-game'
 

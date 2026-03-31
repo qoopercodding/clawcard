@@ -19,6 +19,7 @@ import CampfireScreen from './pages/CampfireScreen'
 import EventScreen from './pages/EventScreen'
 import TreasureScreen from './pages/TreasureScreen'
 import GameOverScreen from './pages/GameOverScreen'
+import DeckViewScreen from './pages/DeckViewScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -60,6 +61,7 @@ const RUN_VIEWS = new Set<AppView>(['map', 'reward', 'shop', 'campfire', 'event'
 
 function App() {
   const [view, setView] = useState<AppView>('start')
+  const [prevView, setPrevView] = useState<AppView>('map')
   const [sidebarExpanded, setSidebarExpanded] = useState(false)
   const { toggle: toggleInspector, isOpen: inspectorOpen } = useDevInspector()
   const runState = useRunState()
@@ -148,6 +150,7 @@ function App() {
         onRestart={handleNewRun}
         onMenu={() => setView('start')}
       />
+      case 'deck-view':      return <DeckViewScreen onClose={() => setView(prevView)} />
       case 'victory':        return <GameOverScreen
         victory={true}
         stats={{ floorsCleared: runState.run?.floor ?? 0, goldEarned: runState.run?.gold ?? 0 }}
@@ -229,6 +232,7 @@ function App() {
             floor={runState.run!.floor}
             relicCount={0}
             deckSize={runState.run!.deck.cards.length}
+            onDeckClick={() => { setPrevView(view); setView('deck-view') }}
           />
         )}
         {renderView()}
