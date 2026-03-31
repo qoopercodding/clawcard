@@ -1,12 +1,12 @@
 :root {
   --color-bg: #1a0e05;
-  --color-surface: #281608;
+  --color-surface: #2a1a0a;
   --color-surface-raised: #321c0a;
   --color-gold: #c8902a;
   --color-gold-bright: #f5c563;
-  --color-gold-dim: #8a6320;
+  --color-gold-dim: #8a6020;
   --color-text: #e8d5b0;
-  --color-text-dim: #9a8060;
+  --color-text-dim: #9a8a70;
   --color-danger: #e05555;
   --color-success: #86efac;
   --color-border: rgba(255, 230, 184, 0.12);
