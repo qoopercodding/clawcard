@@ -85,7 +85,7 @@ async function saveFrameConfigToGit(typeName: string, frameFile: string | null, 
 interface FrameEditorScreenProps { onNavigate?: (view: string) => void }
 
 export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
-  const { setPendingType } = useCardStore()
+  const { setPendingType, saveCustomFrameType } = useCardStore()
 
   const [mode, setMode]                 = useState<'existing' | 'new'>('existing')
   const [existingType, setExistingType]   = useState('companion')
@@ -253,6 +253,17 @@ export function FrameEditorScreen({ onNavigate }: FrameEditorScreenProps) {
     if (!result.art && !result.frame) { setSaveStatus('error'); setSaveMsg('Zaznacz przynajmniej Frame lub Art Area'); return }
     localStorage.setItem(STORAGE_KEY(typeName), JSON.stringify(result))
     setPendingType({ typeName, frameFile: frameFile ? `/frames/${frameFile}` : null, fields: { ...result } })
+
+    // Save to custom frame types registry
+    const customFields = allSteps.filter(s => s.custom && enabledKeys.has(s.key)).map(s => s.key)
+    saveCustomFrameType({
+      typeName,
+      frameFile: frameFile ? `/frames/${frameFile}` : null,
+      frameDataUrl: imgIsLocal && imgSrc ? imgSrc : null,
+      areas: { ...result },
+      customFields,
+      createdAt: Date.now(),
+    })
     if (hasPAT) {
       setSaveStatus('saving'); setSaveMsg('Commitowanie do GitHub...')
       try {

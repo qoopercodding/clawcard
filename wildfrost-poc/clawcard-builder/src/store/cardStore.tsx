@@ -17,13 +17,23 @@ import type { AnyCard, CardType } from '../types/card.types'
 //   const { allCards, userCards, addCard, pendingType, consumePendingType } = useCardStore()
 // =============================================================================
 
-const USER_CARDS_KEY   = 'user_cards'
-const PENDING_TYPE_KEY = 'pending_card_type'
+const USER_CARDS_KEY        = 'user_cards'
+const PENDING_TYPE_KEY      = 'pending_card_type'
+const CUSTOM_FRAME_TYPES_KEY = 'custom_frame_types'
 
 export interface PendingCardType {
   typeName:  string
   frameFile: string | null
   fields:    Record<string, { left: number; top: number; width: number; height: number }>
+}
+
+export interface CustomFrameType {
+  typeName:      string
+  frameFile:     string | null
+  frameDataUrl:  string | null  // base64 dataURL of the PNG — persists across sessions
+  areas:         Record<string, { left: number; top: number; width: number; height: number }>
+  customFields:  string[]  // field keys beyond builtins (hp, atk, counter, name, desc, art, frame)
+  createdAt:     number
 }
 
 interface CardStore {
@@ -39,7 +49,11 @@ interface CardStore {
   setPendingType:     (p: PendingCardType) => void
   consumePendingType: () => PendingCardType | null
 
-  // Dostępne typy ramek (z frameConfig.ts)
+  // Custom frame types (from Frame Editor)
+  customFrameTypes:    Record<string, CustomFrameType>
+  saveCustomFrameType: (ft: CustomFrameType) => void
+
+  // Dostępne typy ramek (z frameConfig.ts + custom)
   availableFrameTypes: CardType[]
 }
 
@@ -54,6 +68,11 @@ export function CardStoreProvider({ children }: { children: ReactNode }) {
   const [pendingType, setPendingTypeState] = useState<PendingCardType | null>(() => {
     try { return JSON.parse(localStorage.getItem(PENDING_TYPE_KEY) || 'null') }
     catch { return null }
+  })
+
+  const [customFrameTypes, setCustomFrameTypes] = useState<Record<string, CustomFrameType>>(() => {
+    try { return JSON.parse(localStorage.getItem(CUSTOM_FRAME_TYPES_KEY) || '{}') }
+    catch { return {} }
   })
 
   // Sync userCards → localStorage
@@ -85,13 +104,21 @@ export function CardStoreProvider({ children }: { children: ReactNode }) {
     return current
   }
 
+  function saveCustomFrameType(ft: CustomFrameType) {
+    const next = { ...customFrameTypes, [ft.typeName]: ft }
+    setCustomFrameTypes(next)
+    localStorage.setItem(CUSTOM_FRAME_TYPES_KEY, JSON.stringify(next))
+  }
+
   const allCards = [
     ...Object.values(SAMPLE_CARDS),
     ...Object.values(userCards),
   ]
 
-  // Dostępne typy ramek — z frameConfig.ts (aktualizuje się po hot-reload)
-  const availableFrameTypes = Object.keys(FRAME_CONFIGS) as CardType[]
+  // Dostępne typy ramek — z frameConfig.ts + custom frame types
+  const builtinTypes = Object.keys(FRAME_CONFIGS) as CardType[]
+  const customTypeNames = Object.keys(customFrameTypes) as CardType[]
+  const availableFrameTypes = [...new Set([...builtinTypes, ...customTypeNames])] as CardType[]
 
   return (
     <CardStoreContext.Provider value={{
@@ -103,6 +130,8 @@ export function CardStoreProvider({ children }: { children: ReactNode }) {
       pendingType,
       setPendingType,
       consumePendingType,
+      customFrameTypes,
+      saveCustomFrameType,
       availableFrameTypes,
     }}>
       {children}

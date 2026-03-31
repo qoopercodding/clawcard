@@ -9,7 +9,6 @@ export interface AreaConfig {
   top:    number
   width:  number
   height: number
-  basic_card: BASIC_CARD_USER_CONFIG,
 }
 export interface FrameConfig {
   frameFile: string | null

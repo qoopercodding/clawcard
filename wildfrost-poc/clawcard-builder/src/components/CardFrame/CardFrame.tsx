@@ -1,8 +1,35 @@
 import type React from 'react'
 import { useDevInspector } from '../debug/DevInspector'
 import { FRAME_CONFIGS } from '../../utils/frameConfig'
+import type { FrameConfig } from '../../utils/frameConfig'
 import type { AnyCard } from '../../types/card.types'
+import type { CustomFrameType } from '../../store/cardStore'
 import './CardFrame.css'
+
+const CUSTOM_FRAME_TYPES_KEY = 'custom_frame_types'
+
+function getCustomFrameConfig(cardType: string): FrameConfig | null {
+  try {
+    const raw = localStorage.getItem(CUSTOM_FRAME_TYPES_KEY)
+    if (!raw) return null
+    const customs: Record<string, CustomFrameType> = JSON.parse(raw)
+    const custom = customs[cardType]
+    if (!custom) return null
+    const { areas, frameFile, frameDataUrl } = custom as CustomFrameType & { frameDataUrl?: string }
+    return {
+      frameFile: frameDataUrl || frameFile || null,
+      art:     areas.art     ?? { left: 10, top: 10, width: 80, height: 40 },
+      name:    areas.name    ?? { left: 10, top: 55, width: 80, height: 8 },
+      desc:    areas.desc    ?? { left: 10, top: 65, width: 80, height: 25 },
+      hp:      areas.hp,
+      atk:     areas.atk,
+      counter: areas.counter,
+      scrap:   areas.scrap,
+    }
+  } catch {
+    return null
+  }
+}
 
 interface CardFrameProps {
   card: AnyCard
@@ -13,7 +40,7 @@ interface CardFrameProps {
 
 export function CardFrame({ card, width = 200, height = 294, inspectable = true }: CardFrameProps) {
   const { inspect } = useDevInspector()
-  const cfg = FRAME_CONFIGS[card.type] ?? FRAME_CONFIGS.companion
+  const cfg = FRAME_CONFIGS[card.type] ?? getCustomFrameConfig(card.type) ?? FRAME_CONFIGS.companion
   const stats = getCardStats(card)
   const px = (pct: number, dim: number) => `${(pct / 100 * dim).toFixed(1)}px`
 

@@ -102,7 +102,7 @@ const BADGE_STYLE: React.CSSProperties = {
 }
 
 export function CardEditorScreen() {
-  const { addCard, consumePendingType } = useCardStore()
+  const { addCard, consumePendingType, customFrameTypes } = useCardStore()
   const [draft, setDraft]           = useState<CardDraft>({ ...DEFAULT_DRAFT })
   const [library, setLibrary]       = useState<Record<string, CardDraft>>({})
   const [savedMsg, setSavedMsg]     = useState<'idle' | 'local' | 'git' | 'error'>('idle')
@@ -191,7 +191,7 @@ export function CardEditorScreen() {
           <GithubPATInput onTokenChange={setHasPAT} />
         </div>
 
-        <FormPanel draft={draft} onChange={update} editingId={editingId} />
+        <FormPanel draft={draft} onChange={update} editingId={editingId} customFrameTypes={customFrameTypes} />
 
         {errors.length > 0 && (
           <div className="ced-errors">
@@ -268,23 +268,25 @@ export function CardEditorScreen() {
 
 // ─── FORM PANEL ──────────────────────────────────────────────────────────────
 
-interface FormPanelProps { draft: CardDraft; onChange: (p: Partial<CardDraft>) => void; editingId: string | null }
+interface FormPanelProps {
+  draft: CardDraft
+  onChange: (p: Partial<CardDraft>) => void
+  editingId: string | null
+  customFrameTypes: Record<string, import('../../store/cardStore').CustomFrameType>
+}
 
-const CARD_TYPES: { value: CardType; label: string }[] = [
+const BUILTIN_CARD_TYPES: { value: CardType; label: string }[] = [
   { value: 'companion',           label: 'Companion' },
-  { value: 'boss',                label: 'Boss 👾' },
-  { value: 'transformer',         label: 'Transformer ⚡' },
-  { value: 'item_with_attack',    label: 'Item — z atakiem ⚔' },
+  { value: 'boss',                label: 'Boss' },
+  { value: 'transformer',         label: 'Transformer' },
+  { value: 'item_with_attack',    label: 'Item — z atakiem' },
   { value: 'item_without_attack', label: 'Item — bez ataku' },
   { value: 'clunker',             label: 'Clunker' },
   { value: 'shade',               label: 'Shade' },
   { value: 'charm',               label: 'Charm' },
-  { value: 'testets',             label: 'testets' },
-  { value: 'test2',               label: 'test2' },
-  { value: 'test3',               label: 'test3' },
 ]
 
-function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
+function FormPanel({ draft, onChange, editingId, customFrameTypes }: FormPanelProps) {
   const fileRef = useRef<HTMLInputElement>(null)
   const [newFieldKey, setNewFieldKey] = useState('')
   const [newFieldVal, setNewFieldVal] = useState('')
@@ -292,6 +294,13 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
   const loadFile = (file: File) => {
     const r = new FileReader(); r.onload = e => onChange({imgSrc: e.target?.result as string}); r.readAsDataURL(file)
   }
+
+  const customTypeEntries = Object.values(customFrameTypes)
+    .filter(ft => !BUILTIN_CARD_TYPES.some(b => b.value === ft.typeName))
+    .map(ft => ({ value: ft.typeName as CardType, label: `${ft.typeName} (custom)` }))
+
+  const allCardTypes = [...BUILTIN_CARD_TYPES, ...customTypeEntries]
+  const currentCustomType = customFrameTypes[draft.type]
 
   const isCompanionLike  = COMPANION_LIKE_TYPES.includes(draft.type)
   const isItemWithAttack = draft.type === 'item_with_attack'
@@ -328,7 +337,7 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
       <div className="ced-row">
         <label className="ced-label" style={{flex:2}}>Typ
           <select className="ced-input" value={draft.type} onChange={e => onChange({type: e.target.value as CardType})}>
-            {CARD_TYPES.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
+            {allCardTypes.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}
           </select>
         </label>
         <label className="ced-label" style={{flex:1}}>Tribe
@@ -395,9 +404,22 @@ function FormPanel({ draft, onChange, editingId }: FormPanelProps) {
         </div>
       </>)}
 
-      {!isCompanionLike && !isItem && (
+      {!isCompanionLike && !isItem && !currentCustomType && (
         <div className="ced-section-hint">Typ <strong>{draft.type}</strong> — statystyki TODO</div>
       )}
+
+      {currentCustomType && currentCustomType.customFields.length > 0 && (<>
+        <div className="ced-section-title">📐 Pola z Frame Editor</div>
+        <div className="ced-row" style={{flexWrap: 'wrap'}}>
+          {currentCustomType.customFields.map(field => (
+            <label key={field} className="ced-label" style={{flex: 1, minWidth: 100}}>
+              {field}
+              <input className="ced-input" value={draft.customFields[field] || ''} placeholder={field}
+                onChange={e => onChange({ customFields: { ...draft.customFields, [field]: e.target.value } })} />
+            </label>
+          ))}
+        </div>
+      </>)}
 
       <div className="ced-section-title">📝 Opis <span className="ced-required-star">*</span></div>
       <textarea className="ced-input ced-textarea" rows={3} value={draft.desc} placeholder="Opis działania karty..." onChange={e => onChange({desc:e.target.value})} />
