@@ -106,10 +106,14 @@ function App() {
 
   function renderView() {
     switch (view) {
-      case 'start':          return <StartPage onSelectView={(v) => {
-        if (v === 'map') { handleStartRun(); return }
-        setView(v)
-      }} />
+      case 'start':          return <StartPage
+        hasSavedRun={runState.hasSavedRun}
+        onContinueRun={() => setView('map')}
+        onSelectView={(v) => {
+          if (v === 'map') { handleStartRun(); return }
+          setView(v)
+        }}
+      />
       case 'last-language':  return <LastLanguageScreen />
       case 'battle':         return <BattleDemoScreen />
       case 'grid-battle':    return <GridBattleScreen />

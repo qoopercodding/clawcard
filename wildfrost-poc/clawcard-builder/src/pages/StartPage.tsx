@@ -24,6 +24,8 @@ export type AppView =
 
 interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void
+  hasSavedRun?: boolean
+  onContinueRun?: () => void
 }
 
 interface NavCard {
@@ -117,7 +119,7 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
 
 const groups = ['play', 'tools', 'dev'] as const
 
-export function StartPage({ onSelectView }: StartPageProps) {
+export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPageProps) {
   return (
     <main className="start-page">
       <div className="start-page__bg-pulse" />
@@ -136,6 +138,16 @@ export function StartPage({ onSelectView }: StartPageProps) {
           Dark fantasy roguelike deck builder — twórz karty, mechaniki i mapy
         </p>
         <div className="start-page__divider" />
+
+        {hasSavedRun && (
+          <button
+            type="button"
+            className="start-page__continue"
+            onClick={onContinueRun}
+          >
+            Continue Run
+          </button>
+        )}
       </section>
 
       {groups.map(group => {

@@ -444,6 +444,27 @@
   width: 100%;
 }
 
+.start-page__continue {
+  padding: 12px 36px;
+  border: 1px solid rgba(200, 144, 42, 0.4);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(200, 144, 42, 0.15), rgba(200, 144, 42, 0.05));
+  color: var(--color-gold);
+  cursor: pointer;
+  font-family: var(--font-gothic);
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 200ms ease;
+  animation: badge-pulse 2.5s ease-in-out infinite;
+}
+
+.start-page__continue:hover {
+  background: linear-gradient(135deg, rgba(200, 144, 42, 0.25), rgba(200, 144, 42, 0.1));
+  border-color: rgba(200, 144, 42, 0.6);
+  transform: translateY(-2px);
+}
+
 .start-page__separator {
   color: var(--color-gold);
 }
