@@ -117,9 +117,14 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
   } as React.CSSProperties,
 }))
 
+import { getBestScore, getTotalRuns, getWinRate } from '../store/runHistory'
+
 const groups = ['play', 'tools', 'dev'] as const
 
 export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPageProps) {
+  const totalRuns = getTotalRuns()
+  const bestScore = getBestScore()
+  const winRate = getWinRate()
   return (
     <main className="start-page">
       <div className="start-page__bg-pulse" />
@@ -147,6 +152,16 @@ export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPag
           >
             Continue Run
           </button>
+        )}
+
+        {totalRuns > 0 && (
+          <div className="start-page__stats">
+            <span>Runs: {totalRuns}</span>
+            <span className="start-page__separator">·</span>
+            <span>Best: {bestScore}</span>
+            <span className="start-page__separator">·</span>
+            <span>Win Rate: {winRate}%</span>
+          </div>
         )}
       </section>
 

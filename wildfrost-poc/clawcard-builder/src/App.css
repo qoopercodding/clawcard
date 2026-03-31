@@ -465,6 +465,16 @@
   transform: translateY(-2px);
 }
 
+.start-page__stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-gothic);
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.05em;
+}
+
 .start-page__separator {
   color: var(--color-gold);
 }
