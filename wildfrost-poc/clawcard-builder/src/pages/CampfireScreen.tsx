@@ -1,51 +1,49 @@
 import { useState } from 'react'
+import type { RunCard } from '../store/GameState'
 
 interface CampfireScreenProps {
   playerHp?: number
   maxHp?: number
+  deckCards?: RunCard[]
   onRest?: (healed: number) => void
-  onUpgrade?: (cardName: string) => void
+  onUpgradeCard?: (cardId: string) => void
   onLeave?: () => void
 }
-
-const UPGRADEABLE_CARDS = [
-  { name: 'Shadow Strike', emoji: '🗡️', bonus: '+3 damage' },
-  { name: 'Bone Shield', emoji: '🛡️', bonus: '+3 block' },
-  { name: 'Ember Wisp', emoji: '🔥', bonus: '+2 ATK' },
-  { name: 'Frostbite', emoji: '❄️', bonus: '+1 Snow' },
-  { name: 'Healing Herb', emoji: '🌿', bonus: '+4 heal' },
-]
 
 export default function CampfireScreen({
   playerHp = 22,
   maxHp = 30,
+  deckCards = [],
   onRest,
-  onUpgrade,
+  onUpgradeCard,
   onLeave,
 }: CampfireScreenProps) {
   const [choice, setChoice] = useState<'none' | 'rest' | 'upgrade' | 'done'>('none')
-  const [selectedCard, setSelectedCard] = useState<number | null>(null)
+  const [upgradedId, setUpgradedId] = useState<string | null>(null)
 
   const healAmount = Math.floor(maxHp * 0.3)
   const newHp = Math.min(maxHp, playerHp + healAmount)
+
+  const upgradeable = deckCards.filter(c => !c.upgraded)
 
   function handleRest() {
     setChoice('done')
     onRest?.(healAmount)
   }
 
-  function handleUpgrade(idx: number) {
-    setSelectedCard(idx)
+  function handleUpgrade(card: RunCard) {
+    setUpgradedId(card.id)
     setChoice('done')
-    onUpgrade?.(UPGRADEABLE_CARDS[idx].name)
+    onUpgradeCard?.(card.id)
   }
+
+  const upgradedCard = upgradedId ? deckCards.find(c => c.id === upgradedId) : null
 
   return (
     <div style={{
       display: 'flex', flexDirection: 'column', alignItems: 'center',
       gap: 32, padding: 48, minHeight: '100vh',
     }}>
-      {/* Campfire ambiance */}
       <div style={{ fontSize: '4rem', lineHeight: 1 }}>🔥</div>
 
       <div style={{ textAlign: 'center' }}>
@@ -67,7 +65,6 @@ export default function CampfireScreen({
 
       {choice === 'none' && (
         <div style={{ display: 'flex', gap: 20 }}>
-          {/* Rest option */}
           <button
             type="button"
             onClick={() => setChoice('rest')}
@@ -88,24 +85,25 @@ export default function CampfireScreen({
             </span>
           </button>
 
-          {/* Upgrade option */}
           <button
             type="button"
             onClick={() => setChoice('upgrade')}
+            disabled={upgradeable.length === 0}
             style={{
               display: 'flex', flexDirection: 'column', alignItems: 'center',
               gap: 10, padding: '28px 32px',
               border: '1px solid rgba(200,144,42,0.2)',
               borderRadius: 14,
               background: 'linear-gradient(180deg, rgba(42,26,10,0.8), rgba(26,14,5,0.95))',
-              color: 'var(--color-text)', cursor: 'pointer',
+              color: 'var(--color-text)', cursor: upgradeable.length > 0 ? 'pointer' : 'default',
               transition: 'all 200ms ease', width: 200,
+              opacity: upgradeable.length > 0 ? 1 : 0.4,
             }}
           >
             <span style={{ fontSize: '2.4rem' }}>⬆️</span>
             <strong style={{ fontFamily: 'var(--font-gothic)', fontSize: '1rem' }}>Upgrade</strong>
             <span style={{ fontSize: '0.76rem', color: 'var(--color-gold)' }}>
-              Enhance a card
+              {upgradeable.length > 0 ? `${upgradeable.length} cards available` : 'No cards to upgrade'}
             </span>
           </button>
         </div>
@@ -141,11 +139,11 @@ export default function CampfireScreen({
           display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
           gap: 12, maxWidth: 600, width: '100%',
         }}>
-          {UPGRADEABLE_CARDS.map((card, idx) => (
+          {upgradeable.map((card) => (
             <button
-              key={card.name}
+              key={card.id}
               type="button"
-              onClick={() => handleUpgrade(idx)}
+              onClick={() => handleUpgrade(card)}
               style={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
                 gap: 6, padding: '16px 12px',
@@ -158,7 +156,10 @@ export default function CampfireScreen({
             >
               <span style={{ fontSize: '1.6rem' }}>{card.emoji}</span>
               <strong style={{ fontFamily: 'var(--font-gothic)', fontSize: '0.82rem' }}>{card.name}</strong>
-              <span style={{ fontSize: '0.7rem', color: 'var(--color-gold)' }}>{card.bonus}</span>
+              <span style={{ fontSize: '0.68rem', color: 'var(--color-text-dim)' }}>
+                {card.attack > 0 ? `ATK ${card.attack}` : ''} {card.hp > 0 ? `HP ${card.hp}` : ''} Cost {card.cost}
+              </span>
+              <span style={{ fontSize: '0.7rem', color: 'var(--color-gold)' }}>Upgrade</span>
             </button>
           ))}
         </div>
@@ -166,9 +167,9 @@ export default function CampfireScreen({
 
       {choice === 'done' && (
         <div style={{ textAlign: 'center' }}>
-          {selectedCard !== null ? (
+          {upgradedCard ? (
             <p style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-gothic)' }}>
-              {UPGRADEABLE_CARDS[selectedCard].emoji} {UPGRADEABLE_CARDS[selectedCard].name} upgraded! ({UPGRADEABLE_CARDS[selectedCard].bonus})
+              {upgradedCard.emoji} {upgradedCard.name} upgraded!
             </p>
           ) : (
             <p style={{ color: '#86efac', fontFamily: 'var(--font-gothic)' }}>

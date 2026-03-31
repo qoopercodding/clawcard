@@ -133,6 +133,18 @@ export function useRunState() {
     })
   }, [])
 
+  const upgradeCard = useCallback((cardId: string) => {
+    setRun(prev => {
+      if (!prev) return prev
+      const newCards = prev.deck.cards.map(c =>
+        c.id === cardId
+          ? { ...c, upgraded: true, attack: c.attack + 2, hp: c.hp > 0 ? c.hp + 2 : 0, name: c.name }
+          : c
+      )
+      return { ...prev, deck: { ...prev.deck, cards: newCards } }
+    })
+  }, [])
+
   const removeCardFromDeck = useCallback((cardId: string) => {
     setRun(prev => {
       if (!prev) return prev
@@ -193,6 +205,7 @@ export function useRunState() {
     takeDamage,
     addMaxHp,
     addCardToDeck,
+    upgradeCard,
     removeCardFromDeck,
     addRelic,
     addScore,

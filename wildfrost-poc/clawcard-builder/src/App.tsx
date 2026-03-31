@@ -152,7 +152,9 @@ function App() {
       case 'campfire':       return <CampfireScreen
         playerHp={p?.hp}
         maxHp={p?.maxHp}
+        deckCards={runState.run?.deck.cards}
         onRest={(healed) => { runState.heal(healed); handleReturnToMap() }}
+        onUpgradeCard={(cardId) => runState.upgradeCard(cardId)}
         onLeave={handleReturnToMap}
       />
       case 'event':          return <EventScreen
