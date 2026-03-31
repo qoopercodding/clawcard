@@ -16,6 +16,7 @@ import ShopScreen from './pages/ShopScreen'
 import CampfireScreen from './pages/CampfireScreen'
 import EventScreen from './pages/EventScreen'
 import TreasureScreen from './pages/TreasureScreen'
+import GameOverScreen from './pages/GameOverScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -84,6 +85,8 @@ function App() {
       case 'campfire':       return <CampfireScreen onLeave={() => setView('map')} />
       case 'event':          return <EventScreen onLeave={() => setView('map')} />
       case 'treasure':       return <TreasureScreen onLeave={() => setView('map')} />
+      case 'game-over':      return <GameOverScreen victory={false} onRestart={() => setView('map')} onMenu={() => setView('start')} />
+      case 'victory':        return <GameOverScreen victory={true} onRestart={() => setView('map')} onMenu={() => setView('start')} />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':

@@ -15,6 +15,8 @@ export type AppView =
   | 'campfire'
   | 'event'
   | 'treasure'
+  | 'game-over'
+  | 'victory'
   | 'game'
   | 'dev-game'
 
