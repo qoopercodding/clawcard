@@ -15,12 +15,30 @@
 - [x] Dodaj przeglądarkę kart w Card Editor z filtrowaniem po grze/typie
 
 ## PRIORYTET 3: Frame Editor → Card Editor handoff
-- [ ] Po zapisaniu ramki w Frame Editor, Card Editor dynamicznie ładuje nowe typy
-- [ ] Custom pola z Frame Editor pojawiają się jako pola w Card Editor
-- [ ] frameTypes.json jako single source of truth
+- [x] Po zapisaniu ramki w Frame Editor, Card Editor dynamicznie ładuje nowe typy
+- [x] Custom pola z Frame Editor pojawiają się jako pola w Card Editor
+- [x] frameTypes.json jako single source of truth (localStorage registry: custom_frame_types)
 
 ## PRIORYTET 4: VPS Infrastructure
 - [ ] ttyd jako systemd service (DONE)
 - [ ] nginx proxy do Builder Tool (DONE)
 - [ ] openclaw Telegram gateway (DONE)
 - [ ] Scraper kart odpalony na VPS
+
+## PRIORYTET 5: Roguelike Game Loop (CC-001 → CC-016)
+- [x] CC-001: StartPage redesign — grouped nav cards, glow hover, section headers
+- [x] CC-002: Global CSS variables aligned with design system
+- [x] CC-003: GameState.ts — RunState, PlayerState, BattleState, MapNode interfaces
+- [x] CC-004: MapScreen — proceduralna mapa SVG z 7 typami węzłów
+- [x] CC-005: RewardScreen — wybór 1 z 3 kart po walce
+- [x] CC-006: ShopScreen — Dark Bazaar, kupno itemów za gold
+- [x] CC-007: CampfireScreen — rest (heal) lub upgrade karty
+- [x] CC-008: EventScreen — losowe zdarzenia z wyborami narratywnymi
+- [x] CC-009: TreasureScreen — chest z relics/gold/cards
+- [x] CC-010: Map → Screen routing (klik na węzeł → odpowiedni ekran)
+- [x] CC-011: GameOverScreen — victory/defeat ze statystykami i score
+- [x] CC-012: useRunState hook — centralne zarządzanie stanem runu
+- [x] CC-013: RunHUD — pasek HP/gold/floor/deck widoczny podczas runu
+- [x] CC-014: Integracja useRunState z App — stan przepływa przez ekrany
+- [x] CC-015: DeckViewScreen — podgląd decku z HUD
+- [x] CC-016: TASKS.md update z postępem
