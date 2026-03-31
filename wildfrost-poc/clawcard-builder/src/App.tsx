@@ -125,11 +125,26 @@ function App() {
       case 'map':            return <MapScreen onSelectNode={handleMapNode} />
       case 'reward':         return <RewardScreen
         gold={runState.run?.player.gold}
-        onPickCard={() => { runState.addScore(50); handleReturnToMap() }}
+        onPickCard={(card) => {
+          runState.addCardToDeck({ ...card, upgraded: false })
+          runState.addScore(50)
+          handleReturnToMap()
+        }}
         onSkip={handleReturnToMap}
       />
       case 'shop':           return <ShopScreen
         playerGold={runState.run?.player.gold}
+        onBuy={(item) => {
+          runState.addGold(-item.price)
+          if (item.type === 'card') {
+            runState.addCardToDeck({
+              id: `shop-${item.id}-${Date.now()}`,
+              name: item.name, emoji: item.emoji, cost: 1,
+              attack: 0, hp: 0, description: item.description,
+              rarity: item.rarity, upgraded: false,
+            })
+          }
+        }}
         onLeave={handleReturnToMap}
       />
       case 'campfire':       return <CampfireScreen
