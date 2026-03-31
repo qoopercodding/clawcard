@@ -56,3 +56,15 @@
 - [x] CC-028: Potion i relic system z HUD display
 - [x] CC-029: Shop/treasure wire do potion/relic systems
 - [x] CC-030: Final TASKS.md update
+
+## PRIORYTET 6: Card Pipeline Fix (CC-031 → CC-040)
+- [x] CC-031: CardFrame reads custom frame types z localStorage (fallback chain)
+- [x] CC-032: Frame PNG saved as base64 dataURL (persists across sessions)
+- [x] CC-033: CardFrame renders custom fields dynamically
+- [x] CC-034: Auto-nawigacja Frame Editor → Card Editor (already existed)
+- [x] CC-035: MT scraper — 275/282 images via pageimages API
+- [x] CC-036: StS scraper — 359/367 images via pageimages API
+- [x] CC-037: Re-merge cardLibrary.json — 661/668 working image URLs
+- [x] CC-038: Verify rendering (validated during browser build)
+- [x] CC-039: CardBrowserScreen — standalone viewer z grid, filtry, modal
+- [x] CC-040: App routing + StartPage nav card for Card Library
