@@ -10,6 +10,7 @@ export type AppView =
   | 'test-env'
   | 'map-editor'
   | 'map'
+  | 'reward'
   | 'game'
   | 'dev-game'
 

@@ -11,6 +11,7 @@ import { TestEnvScreen } from './modules/test-env/TestEnvScreen'
 import { LastLanguageScreen } from './modules/last-language/LastLanguageScreen'
 import MapEditorScreen from './modules/map-editor/MapEditorScreen'
 import MapScreen from './pages/MapScreen'
+import RewardScreen from './pages/RewardScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -58,6 +59,7 @@ function App() {
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
       case 'map':            return <MapScreen />
+      case 'reward':         return <RewardScreen onSkip={() => setView('map')} />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':
