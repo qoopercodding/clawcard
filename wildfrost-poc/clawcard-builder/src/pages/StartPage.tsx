@@ -12,6 +12,7 @@ export type AppView =
   | 'map'
   | 'reward'
   | 'shop'
+  | 'campfire'
   | 'game'
   | 'dev-game'
 

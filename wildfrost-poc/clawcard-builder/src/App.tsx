@@ -13,6 +13,7 @@ import MapEditorScreen from './modules/map-editor/MapEditorScreen'
 import MapScreen from './pages/MapScreen'
 import RewardScreen from './pages/RewardScreen'
 import ShopScreen from './pages/ShopScreen'
+import CampfireScreen from './pages/CampfireScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
@@ -62,6 +63,7 @@ function App() {
       case 'map':            return <MapScreen />
       case 'reward':         return <RewardScreen onSkip={() => setView('map')} />
       case 'shop':           return <ShopScreen onLeave={() => setView('map')} />
+      case 'campfire':       return <CampfireScreen onLeave={() => setView('map')} />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':
