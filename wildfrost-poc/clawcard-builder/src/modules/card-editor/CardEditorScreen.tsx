@@ -69,7 +69,7 @@ function draftToCard(draft: CardDraft): AnyCard {
   const resolvedId = draft.id || nameToId(draft.name) || '__preview__'
   const base = {
     id: resolvedId, name: draft.name || '???', tribe: draft.tribe,
-    imageUrl: draft.imgSrc?.startsWith('data:') ? null : draft.imgSrc,
+    imageUrl: draft.imgSrc || null,
     imageFallback: draft.icon || '❓',
     description: draft.desc, createdAt: Date.now(),
     ...draft.customFields,
@@ -257,6 +257,7 @@ export function CardEditorScreen() {
           atk: c.attack ?? 0,
           counter: c.counter ?? 3,
           icon: '📋',
+          imgSrc: c.image || '',
         })
       }} />
 
