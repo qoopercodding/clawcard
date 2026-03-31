@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createInitialRunState } from './GameState'
+import { addRunToHistory } from './runHistory'
 import type { RunState, RunCard, MapNodeType } from './GameState'
 
 const STORAGE_KEY = 'clawcard_run'
@@ -37,9 +38,19 @@ export function useRunState() {
   const endRun = useCallback((status: 'won' | 'lost' | 'abandoned') => {
     setRun(prev => {
       if (!prev) return null
-      const ended = { ...prev, status }
+      addRunToHistory({
+        id: prev.id,
+        seed: prev.seed,
+        result: status,
+        score: prev.score,
+        floor: prev.floor,
+        gold: prev.gold,
+        deckSize: prev.deck.cards.length,
+        duration: Date.now() - prev.started,
+        date: Date.now(),
+      })
       localStorage.removeItem(STORAGE_KEY)
-      return ended
+      return { ...prev, status }
     })
   }, [])
 

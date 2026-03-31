@@ -25,7 +25,7 @@
 - [ ] openclaw Telegram gateway (DONE)
 - [ ] Scraper kart odpalony na VPS
 
-## PRIORYTET 5: Roguelike Game Loop (CC-001 → CC-016)
+## PRIORYTET 5: Roguelike Game Loop (CC-001 → CC-022)
 - [x] CC-001: StartPage redesign — grouped nav cards, glow hover, section headers
 - [x] CC-002: Global CSS variables aligned with design system
 - [x] CC-003: GameState.ts — RunState, PlayerState, BattleState, MapNode interfaces
@@ -42,3 +42,9 @@
 - [x] CC-014: Integracja useRunState z App — stan przepływa przez ekrany
 - [x] CC-015: DeckViewScreen — podgląd decku z HUD
 - [x] CC-016: TASKS.md update z postępem
+- [x] CC-017: Starter deck (8 kart) + RunCard type + addCardToDeck
+- [x] CC-018: CombatScreen — turn-based combat z attack/defend, enemy tiers
+- [x] CC-019: localStorage run persistence z auto-save
+- [x] CC-020: Continue Run button na StartPage
+- [x] CC-021: Reward picks i shop buys dodają karty do decku
+- [x] CC-022: Run history tracking (localStorage, best score, win rate)
