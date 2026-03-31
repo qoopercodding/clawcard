@@ -14,7 +14,7 @@ export type MapNodeType =
   | 'elite'
   | 'boss'
   | 'shop'
-  | 'rest'
+  | 'campfire'
   | 'event'
   | 'treasure'
 
@@ -64,6 +64,8 @@ export interface BattleSnapshot {
   energy: number
   maxEnergy: number
 }
+
+export type BattleState = BattleSnapshot
 
 export interface RunState {
   id: string
