@@ -48,6 +48,22 @@ export interface RunCard {
   upgraded: boolean
 }
 
+export interface Potion {
+  id: string
+  name: string
+  emoji: string
+  description: string
+  effect: 'heal' | 'energy' | 'damage' | 'block' | 'draw'
+  value: number
+}
+
+export interface Relic {
+  id: string
+  name: string
+  emoji: string
+  description: string
+}
+
 export interface DeckState {
   cards: RunCard[]
   drawPile: string[]    // card ids
@@ -85,6 +101,8 @@ export interface RunState {
   started: number   // timestamp
   player: PlayerState
   deck: DeckState
+  potions: Potion[]
+  relics: Relic[]
   map: MapState
   battle: BattleSnapshot | null  // null when not in combat
   floor: number
@@ -132,6 +150,8 @@ export function createInitialRunState(seed?: number): RunState {
       floor: 0,
       maxFloor: 10,
     },
+    potions: [],
+    relics: [],
     battle: null,
     floor: 0,
     gold: 0,

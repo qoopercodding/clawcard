@@ -278,9 +278,11 @@ function App() {
             maxHp={p.maxHp}
             gold={runState.run!.gold}
             floor={runState.run!.floor}
-            relicCount={0}
+            potions={runState.run!.potions}
+            relics={runState.run!.relics}
             deckSize={runState.run!.deck.cards.length}
             onDeckClick={() => { setPrevView(view); setView('deck-view') }}
+            onUsePotion={(id) => runState.usePotion(id)}
           />
         )}
         {renderView()}

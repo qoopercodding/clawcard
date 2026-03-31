@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react'
 import { createInitialRunState } from './GameState'
 import { addRunToHistory } from './runHistory'
-import type { RunState, RunCard, MapNodeType } from './GameState'
+import type { RunState, RunCard, Potion, Relic, MapNodeType } from './GameState'
 
 const STORAGE_KEY = 'clawcard_run'
 
@@ -163,8 +163,35 @@ export function useRunState() {
     })
   }, [])
 
-  const addRelic = useCallback((_relicId: string) => {
-    setRun(prev => prev)
+  const addPotion = useCallback((potion: Potion) => {
+    setRun(prev => {
+      if (!prev || prev.potions.length >= 3) return prev
+      return { ...prev, potions: [...prev.potions, potion] }
+    })
+  }, [])
+
+  const usePotion = useCallback((potionId: string) => {
+    setRun(prev => {
+      if (!prev) return prev
+      const potion = prev.potions.find(p => p.id === potionId)
+      if (!potion) return prev
+      let player = { ...prev.player }
+      if (potion.effect === 'heal') {
+        player = { ...player, hp: Math.min(player.maxHp, player.hp + potion.value) }
+      }
+      return {
+        ...prev,
+        player,
+        potions: prev.potions.filter(p => p.id !== potionId),
+      }
+    })
+  }, [])
+
+  const addRelic = useCallback((relic: Relic) => {
+    setRun(prev => {
+      if (!prev) return prev
+      return { ...prev, relics: [...prev.relics, relic] }
+    })
   }, [])
 
   const addScore = useCallback((points: number) => {
@@ -207,6 +234,8 @@ export function useRunState() {
     addCardToDeck,
     upgradeCard,
     removeCardFromDeck,
+    addPotion,
+    usePotion,
     addRelic,
     addScore,
     nodeTypeToView,
