@@ -1,6 +1,8 @@
 import { useState, useCallback } from 'react'
 import { HoverTooltip } from './components/debug/HoverTooltip'
 import { useDevInspector } from './components/debug/DevInspector'
+import RunHUD from './components/RunHUD'
+import { useRunState } from './store/useRunState'
 import { CardBuilderScreen } from './modules/card-builder/CardBuilderScreen'
 import { CardEditorScreen } from './modules/card-editor/CardEditorScreen'
 import { FrameEditorScreen } from './modules/frame-editor/FrameEditorScreen'
@@ -44,33 +46,61 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'dev-game',      icon: '\u{1F52C}', label: 'Dev Game',       group: 'dev' },
 ]
 
+const NODE_VIEW_MAP: Record<MapNodeType, AppView> = {
+  combat: 'grid-battle',
+  elite: 'grid-battle',
+  boss: 'grid-battle',
+  shop: 'shop',
+  campfire: 'campfire',
+  event: 'event',
+  treasure: 'treasure',
+}
+
+const RUN_VIEWS = new Set<AppView>(['map', 'reward', 'shop', 'campfire', 'event', 'treasure', 'game-over', 'victory'])
+
 function App() {
   const [view, setView] = useState<AppView>('start')
   const [sidebarExpanded, setSidebarExpanded] = useState(false)
   const { toggle: toggleInspector, isOpen: inspectorOpen } = useDevInspector()
+  const runState = useRunState()
 
   const handleNavigate = (v: string) => {
     setView(v as AppView)
   }
 
-  const NODE_VIEW_MAP: Record<MapNodeType, AppView> = {
-    combat: 'grid-battle',
-    elite: 'grid-battle',
-    boss: 'grid-battle',
-    shop: 'shop',
-    campfire: 'campfire',
-    event: 'event',
-    treasure: 'treasure',
-  }
+  const handleStartRun = useCallback(() => {
+    runState.startRun()
+    setView('map')
+  }, [runState.startRun])
 
   const handleMapNode = useCallback((_nodeId: string, type: MapNodeType) => {
+    runState.advanceFloor()
     const target = NODE_VIEW_MAP[type]
     if (target) setView(target)
-  }, [])
+  }, [runState.advanceFloor])
+
+  const handleReturnToMap = useCallback(() => {
+    if (runState.run && runState.run.player.hp <= 0) {
+      setView('game-over')
+    } else {
+      setView('map')
+    }
+  }, [runState.run])
+
+  const handleNewRun = useCallback(() => {
+    runState.startRun()
+    setView('map')
+  }, [runState.startRun])
+
+  const p = runState.run?.player
+  const showHUD = RUN_VIEWS.has(view) && runState.isRunActive && p
 
   function renderView() {
     switch (view) {
-      case 'start':          return <StartPage onSelectView={setView} />
+      case 'start':          return <StartPage onSelectView={(v) => {
+        if (v === 'map') { handleStartRun(); return }
+        setView(v)
+      }} />
       case 'last-language':  return <LastLanguageScreen />
       case 'battle':         return <BattleDemoScreen />
       case 'grid-battle':    return <GridBattleScreen />
@@ -80,13 +110,50 @@ function App() {
       case 'frame-test':     return <FrameConfigTest />
       case 'test-env':       return <TestEnvScreen />
       case 'map':            return <MapScreen onSelectNode={handleMapNode} />
-      case 'reward':         return <RewardScreen onSkip={() => setView('map')} />
-      case 'shop':           return <ShopScreen onLeave={() => setView('map')} />
-      case 'campfire':       return <CampfireScreen onLeave={() => setView('map')} />
-      case 'event':          return <EventScreen onLeave={() => setView('map')} />
-      case 'treasure':       return <TreasureScreen onLeave={() => setView('map')} />
-      case 'game-over':      return <GameOverScreen victory={false} onRestart={() => setView('map')} onMenu={() => setView('start')} />
-      case 'victory':        return <GameOverScreen victory={true} onRestart={() => setView('map')} onMenu={() => setView('start')} />
+      case 'reward':         return <RewardScreen
+        gold={runState.run?.player.gold}
+        onPickCard={() => { runState.addScore(50); handleReturnToMap() }}
+        onSkip={handleReturnToMap}
+      />
+      case 'shop':           return <ShopScreen
+        playerGold={runState.run?.player.gold}
+        onLeave={handleReturnToMap}
+      />
+      case 'campfire':       return <CampfireScreen
+        playerHp={p?.hp}
+        maxHp={p?.maxHp}
+        onRest={(healed) => { runState.heal(healed); handleReturnToMap() }}
+        onLeave={handleReturnToMap}
+      />
+      case 'event':          return <EventScreen
+        onComplete={(effect, value) => {
+          if (effect === 'gain_gold') runState.addGold(value)
+          else if (effect === 'heal') runState.heal(value)
+          else if (effect === 'lose_hp') runState.takeDamage(value)
+          else if (effect === 'gain_max_hp') runState.addMaxHp(value)
+          else if (effect === 'lose_gold') runState.addGold(-value)
+        }}
+        onLeave={handleReturnToMap}
+      />
+      case 'treasure':       return <TreasureScreen
+        onTake={(item) => {
+          if (item.type === 'gold') runState.addGold(item.value)
+          runState.addScore(30)
+        }}
+        onLeave={handleReturnToMap}
+      />
+      case 'game-over':      return <GameOverScreen
+        victory={false}
+        stats={{ floorsCleared: runState.run?.floor ?? 0, goldEarned: runState.run?.gold ?? 0 }}
+        onRestart={handleNewRun}
+        onMenu={() => setView('start')}
+      />
+      case 'victory':        return <GameOverScreen
+        victory={true}
+        stats={{ floorsCleared: runState.run?.floor ?? 0, goldEarned: runState.run?.gold ?? 0 }}
+        onRestart={handleNewRun}
+        onMenu={() => setView('start')}
+      />
       case 'map-editor':     return <MapEditorScreen />
       case 'game':           return <GameScreen />
       case 'dev-game':
@@ -154,6 +221,16 @@ function App() {
       )}
 
       <div className="app-shell__content">
+        {showHUD && (
+          <RunHUD
+            hp={p.hp}
+            maxHp={p.maxHp}
+            gold={runState.run!.gold}
+            floor={runState.run!.floor}
+            relicCount={0}
+            deckSize={runState.run!.deck.cards.length}
+          />
+        )}
         {renderView()}
       </div>
     </div>
