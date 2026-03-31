@@ -7,6 +7,7 @@ import type { CustomFrameType } from '../../store/cardStore'
 import './CardFrame.css'
 
 const CUSTOM_FRAME_TYPES_KEY = 'custom_frame_types'
+const BASE = import.meta.env.BASE_URL
 const BUILTIN_AREA_KEYS = new Set(['frame', 'art', 'name', 'desc', 'hp', 'atk', 'counter', 'scrap'])
 
 type AreaDef = { left: number; top: number; width: number; height: number }
@@ -25,7 +26,7 @@ function getCustomFrameData(cardType: string): { config: FrameConfig; extraAreas
     }
     return {
       config: {
-        frameFile: frameDataUrl || frameFile || null,
+        frameFile: frameDataUrl || (frameFile ? (frameFile.startsWith('/frames/') ? `${BASE}${frameFile.slice(1)}` : frameFile) : null),
         art:     areas.art     ?? { left: 10, top: 10, width: 80, height: 40 },
         name:    areas.name    ?? { left: 10, top: 55, width: 80, height: 8 },
         desc:    areas.desc    ?? { left: 10, top: 65, width: 80, height: 25 },

@@ -173,6 +173,9 @@ export const FRAME_CONFIGS: Record<CardType, FrameConfig> = {
   __git_push__:         __GIT_PUSH___CONFIG,
   __e2e_test__:         __E2E_TEST___CONFIG,
   test3:                TEST3_CONFIG,
+  testtt_basic_card:    TESTTT_BASIC_CARD_USER_CONFIG,
+  basic_card:           BASIC_CARD_USER_CONFIG,
+  test_blankk:          TEST_BLANKK_USER_CONFIG,
 }
 
 export function getItemFrameConfig(damage: number | undefined): FrameConfig {
