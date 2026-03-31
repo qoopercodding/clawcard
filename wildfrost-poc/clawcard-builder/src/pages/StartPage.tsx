@@ -18,6 +18,7 @@ export type AppView =
   | 'game-over'
   | 'victory'
   | 'deck-view'
+  | 'card-browser'
   | 'combat'
   | 'game'
   | 'dev-game'
@@ -84,6 +85,11 @@ const NAV_CARDS: NavCard[] = [
     id: 'frame-test', emoji: '🧪', title: 'Frame Test', subtitle: 'Test e2e',
     description: 'Weryfikuje PNG, FRAME_CONFIGS, Vite plugin i render kart.',
     badge: 'DEV', group: 'dev',
+  },
+  {
+    id: 'card-browser', emoji: '📚', title: 'Card Library', subtitle: '668 kart z 3 gier',
+    description: 'Przeglądaj karty z StS, Monster Train i Wildfrost z obrazkami.',
+    badge: 'NOWE', highlight: true, group: 'tools',
   },
   {
     id: 'gallery', emoji: '🃏', title: 'Galeria kart', subtitle: 'Browse & inspect',

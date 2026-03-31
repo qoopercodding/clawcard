@@ -20,6 +20,7 @@ import EventScreen from './pages/EventScreen'
 import TreasureScreen from './pages/TreasureScreen'
 import GameOverScreen from './pages/GameOverScreen'
 import DeckViewScreen from './pages/DeckViewScreen'
+import CardBrowserScreen from './pages/CardBrowserScreen'
 import CombatScreen from './pages/CombatScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
@@ -43,6 +44,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'card-editor',   icon: '\u{270F}\uFE0F',  label: 'Card Editor',    group: 'tools' },
   { id: 'frame-editor',  icon: '\u{1F5BC}',  label: 'Frame Editor',   group: 'tools' },
   { id: 'map-editor',    icon: '\u{1F5FA}\uFE0F',  label: 'Map Editor',     group: 'tools' },
+  { id: 'card-browser',  icon: '\u{1F4DA}', label: 'Card Library',   group: 'tools' },
   { id: 'gallery',       icon: '\u{1F0CF}', label: 'Galeria',        group: 'tools' },
   { id: 'frame-test',    icon: '\u{1F9EA}', label: 'Frame Test',     group: 'dev' },
   { id: 'dev-game',      icon: '\u{1F52C}', label: 'Dev Game',       group: 'dev' },
@@ -117,6 +119,7 @@ function App() {
       case 'last-language':  return <LastLanguageScreen />
       case 'battle':         return <BattleDemoScreen />
       case 'grid-battle':    return <GridBattleScreen />
+      case 'card-browser':   return <CardBrowserScreen />
       case 'gallery':        return <CardBuilderScreen />
       case 'card-editor':    return <CardEditorScreen />
       case 'frame-editor':   return <FrameEditorScreen onNavigate={handleNavigate} />
