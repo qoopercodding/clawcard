@@ -452,6 +452,79 @@
 .workspace-screen { display: grid; gap: 28px; }
 .workspace-screen__header { display: grid; gap: 12px; }
 
+/* ── Run HUD ── */
+.run-hud {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: linear-gradient(180deg, rgba(26,14,5,0.95), rgba(20,10,3,0.98));
+  border-bottom: 1px solid rgba(200,144,42,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.run-hud__stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+}
+
+.run-hud__icon {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.run-hud__label {
+  color: var(--color-text-dim);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.run-hud__value {
+  font-family: var(--font-gothic);
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.run-hud__hp {
+  flex: 0 0 auto;
+  min-width: 140px;
+}
+
+.run-hud__bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+  min-width: 60px;
+}
+
+.run-hud__bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 300ms ease, background 300ms ease;
+}
+
+.run-hud__deck-btn {
+  background: none;
+  border: 1px solid rgba(200,144,42,0.12);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: border-color 150ms ease;
+  margin-left: auto;
+}
+
+.run-hud__deck-btn:hover {
+  border-color: rgba(200,144,42,0.35);
+}
+
 /* ── Dev ── */
 .hover-tooltip {
   position: fixed;
