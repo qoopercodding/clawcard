@@ -1,6 +1,14 @@
 import { useState, useMemo } from 'react'
 import cardLibrary from '../data/cardLibrary.json'
 
+const BASE = import.meta.env.BASE_URL
+
+function resolveImage(img: string | null | undefined): string | null {
+  if (!img) return null
+  if (img.startsWith('http')) return img
+  return `${BASE}${img.startsWith('/') ? img.slice(1) : img}`
+}
+
 interface LibCard {
   id: string
   name: string
@@ -64,7 +72,7 @@ export default function CardBrowserScreen({ onClose }: CardBrowserScreenProps) {
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const pageCards = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
 
-  const withImages = filtered.filter(c => c.image).length
+  const withImages = filtered.filter(c => resolveImage(c.image)).length
 
   return (
     <div style={{ padding: 24, maxWidth: 1100, margin: '0 auto' }}>
@@ -142,9 +150,9 @@ export default function CardBrowserScreen({ onClose }: CardBrowserScreenProps) {
               transition: 'all 150ms ease', textAlign: 'center',
             }}
           >
-            {card.image ? (
+            {resolveImage(card.image) ? (
               <img
-                src={card.image} alt={card.name}
+                src={resolveImage(card.image)!} alt={card.name}
                 style={{ width: 80, height: 80, objectFit: 'contain', borderRadius: 6 }}
                 onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
@@ -193,8 +201,8 @@ export default function CardBrowserScreen({ onClose }: CardBrowserScreenProps) {
             border: '1px solid rgba(200,144,42,0.2)',
           }} onClick={e => e.stopPropagation()}>
             <div style={{ display: 'flex', gap: 16 }}>
-              {selected.image ? (
-                <img src={selected.image} alt={selected.name}
+              {resolveImage(selected.image) ? (
+                <img src={resolveImage(selected.image)!} alt={selected.name}
                   style={{ width: 120, height: 160, objectFit: 'contain', borderRadius: 8 }} />
               ) : (
                 <div style={{

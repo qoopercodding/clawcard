@@ -9,7 +9,6 @@ export interface AreaConfig {
   top:    number
   width:  number
   height: number
-  test_blankk: TEST_BLANKK_USER_CONFIG,
 }
 export interface FrameConfig {
   frameFile: string | null

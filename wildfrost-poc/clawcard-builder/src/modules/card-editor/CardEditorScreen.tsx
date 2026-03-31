@@ -257,7 +257,7 @@ export function CardEditorScreen() {
           atk: c.attack ?? 0,
           counter: c.counter ?? 3,
           icon: '📋',
-          imgSrc: c.image || '',
+          imgSrc: c.image ? (c.image.startsWith('http') ? c.image : `${import.meta.env.BASE_URL}${c.image.startsWith('/') ? c.image.slice(1) : c.image}`) : '',
         })
       }} />
 
