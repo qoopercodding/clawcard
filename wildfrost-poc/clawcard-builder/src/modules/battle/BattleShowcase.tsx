@@ -5,6 +5,11 @@ import { Epic3Showcase } from './epic3/Epic3Showcase'
 import { Epic4Showcase } from './epic4/Epic4Showcase'
 import { Epic5Showcase } from './epic5/Epic5Showcase'
 import { Epic6Showcase } from './epic6/Epic6Showcase'
+import { Epic7Showcase } from './epic7/Epic7Showcase'
+import { Epic8Showcase } from './epic8/Epic8Showcase'
+import { Epic9Showcase } from './epic9/Epic9Showcase'
+import { Epic10Showcase } from './epic10/Epic10Showcase'
+import { Epic11Showcase } from './epic11/Epic11Showcase'
 import styles from './BattleShowcase.module.css'
 
 // ─── Epic registry ────────────────────────────────────────────────────────────
@@ -23,11 +28,11 @@ const EPICS: EpicMeta[] = [
   { id: 4,  label: 'Epic 4: Karty na boardzie',                status: 'done' },
   { id: 5,  label: 'Epic 5: Animacje (Framer Motion)',          status: 'done' },
   { id: 6,  label: 'Epic 6: Draw/Discard/Exhaust Pile',        status: 'done' },
-  { id: 7,  label: 'Epic 7: Merchant Screen',                  status: 'todo' },
-  { id: 8,  label: 'Epic 8: Campfire Screen',                  status: 'todo' },
-  { id: 9,  label: 'Epic 9: Room Triggers',                    status: 'todo' },
-  { id: 10, label: 'Epic 10: Sandbox Routes',                  status: 'todo' },
-  { id: 11, label: 'Epic 11: Full Transitions',                status: 'todo' },
+  { id: 7,  label: 'Epic 7: Merchant Screen',                  status: 'done' },
+  { id: 8,  label: 'Epic 8: Campfire Screen',                  status: 'done' },
+  { id: 9,  label: 'Epic 9: Room Triggers',                    status: 'done' },
+  { id: 10, label: 'Epic 10: Sandbox Routes',                  status: 'done' },
+  { id: 11, label: 'Epic 11: Full Transitions',                status: 'done' },
 ]
 
 const STATUS_BADGE: Record<EpicMeta['status'], string> = {
@@ -65,6 +70,16 @@ function EpicContent({ epicId }: { epicId: number }) {
       return <Epic5Showcase />
     case 6:
       return <Epic6Showcase />
+    case 7:
+      return <Epic7Showcase />
+    case 8:
+      return <Epic8Showcase />
+    case 9:
+      return <Epic9Showcase />
+    case 10:
+      return <Epic10Showcase />
+    case 11:
+      return <Epic11Showcase />
     default:
       return (
         <div className={styles.emptyState}>

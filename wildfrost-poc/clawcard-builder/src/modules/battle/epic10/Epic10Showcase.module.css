@@ -1,0 +1,444 @@
+/* ─── Root ─────────────────────────────────────────────────────────────────── */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.5rem;
+  min-height: 100%;
+  background: #1a0e05;
+  color: #e8d5b0;
+  font-family: inherit;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #c8902a;
+  border-bottom: 1px solid #c8902a44;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Hub section ──────────────────────────────────────────────────────────── */
+
+.hubSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hubHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hubIcon {
+  font-size: 1.3rem;
+}
+
+.hubTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #c8902a;
+}
+
+.hubSubtitle {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: #e8d5b066;
+}
+
+.hubGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.85rem;
+}
+
+/* ─── Hub card ─────────────────────────────────────────────────────────────── */
+
+.hubCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1rem;
+  background: #231408;
+  border: 1px solid #c8902a22;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hubCard:hover {
+  border-color: #c8902a88;
+  box-shadow: 0 0 12px #c8902a33;
+}
+
+.hubCardSelected {
+  border-color: #c8902a;
+  box-shadow: 0 0 16px #c8902a44;
+}
+
+.hubCardIcon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.hubCardTitle {
+  font-size: 0.72rem;
+  color: #c8902a;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.hubCardDesc {
+  font-size: 0.8rem;
+  color: #e8d5b0cc;
+  flex: 1;
+}
+
+.hubCardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.hubCardTag {
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  background: #c8902a22;
+  border: 1px solid #c8902a44;
+  border-radius: 3px;
+  color: #c8902a;
+}
+
+.hubCardFooter {
+  margin-top: 0.25rem;
+}
+
+.openBtnWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.openBtn {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  background: #c8902a22;
+  border: 1px solid #c8902a44;
+  border-radius: 4px;
+  color: #e8d5b066;
+  cursor: not-allowed;
+  transition: background 0.15s;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #2e1a06;
+  border: 1px solid #c8902a88;
+  border-radius: 5px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.7rem;
+  color: #e8d5b0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ─── Panel section ────────────────────────────────────────────────────────── */
+
+.panelSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #1e1006;
+  border: 1px solid #c8902a33;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.2rem;
+  background: #231408;
+  border-bottom: 1px solid #c8902a22;
+}
+
+.panelIcon {
+  font-size: 1.1rem;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #c8902a;
+}
+
+.panelSubtitle {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #e8d5b055;
+}
+
+/* ─── Tabs ─────────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: #1a0e05;
+  border-bottom: 1px solid #c8902a22;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: none;
+  color: #e8d5b066;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.tab:hover {
+  color: #e8d5b0cc;
+}
+
+.tabActive {
+  color: #c8902a;
+}
+
+.tabIcon {
+  font-size: 1rem;
+}
+
+.tabLabel {
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.tabUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #c8902a;
+  border-radius: 2px 2px 0 0;
+}
+
+/* ─── Panel content ────────────────────────────────────────────────────────── */
+
+.panelContent {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panelContentHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.panelContentIcon {
+  font-size: 1.8rem;
+}
+
+.panelContentTitle {
+  font-size: 0.85rem;
+  font-family: monospace;
+  color: #c8902a;
+}
+
+.panelContentDesc {
+  font-size: 0.82rem;
+  color: #e8d5b0aa;
+  margin-top: 0.15rem;
+}
+
+/* ─── Controls layout ──────────────────────────────────────────────────────── */
+
+.controlsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .controlsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.controlsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.controlsSectionTitle {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c8902a88;
+}
+
+/* ─── Slider control ───────────────────────────────────────────────────────── */
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.controlLabel {
+  font-size: 0.78rem;
+  color: #e8d5b0cc;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.slider {
+  flex: 1;
+  accent-color: #c8902a;
+  cursor: pointer;
+}
+
+.sliderValue {
+  font-size: 0.75rem;
+  color: #c8902a;
+  min-width: 2.5rem;
+  text-align: right;
+  font-family: monospace;
+}
+
+/* ─── Select control ───────────────────────────────────────────────────────── */
+
+.mockSelect {
+  flex: 1;
+  background: #2e1a06;
+  border: 1px solid #c8902a44;
+  border-radius: 4px;
+  color: #e8d5b0;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.4rem;
+  cursor: pointer;
+  outline: none;
+  appearance: auto;
+}
+
+.mockSelect:focus {
+  border-color: #c8902a;
+}
+
+/* ─── Toggle ───────────────────────────────────────────────────────────────── */
+
+.toggle {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background: #3a2010;
+  border: 1px solid #c8902a44;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.toggleOn {
+  background: #c8902a55;
+  border-color: #c8902a;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: #e8d5b0;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  pointer-events: none;
+}
+
+.toggleOn .toggleKnob {
+  transform: translateX(16px);
+  background: #c8902a;
+}
+
+/* ─── Checkbox ─────────────────────────────────────────────────────────────── */
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 14px;
+  height: 14px;
+  accent-color: #c8902a;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkboxLabel {
+  font-size: 0.78rem;
+  color: #e8d5b0cc;
+}
+
+/* ─── Action button ────────────────────────────────────────────────────────── */
+
+.mockBtn {
+  padding: 0.35rem 0.75rem;
+  background: #2e1a06;
+  border: 1px solid #c8902a55;
+  border-radius: 5px;
+  color: #e8d5b0;
+  font-size: 0.78rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  width: 100%;
+}
+
+.mockBtn:hover {
+  background: #3a2010;
+  border-color: #c8902a;
+}
+
+.mockBtnFlash {
+  background: #c8902a33;
+  border-color: #c8902a;
+  color: #c8902a;
+}

@@ -1,0 +1,252 @@
+/* Epic9Showcase.module.css — Room Trigger System */
+
+/* ─── Root ─────────────────────────────────────────────────────────────────── */
+
+.root {
+  background: #1a0e05;
+  color: #e8d5b0;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2rem;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #c8902a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid #c8902a33;
+  padding-bottom: 0.5rem;
+}
+
+/* ─── Main layout ───────────────────────────────────────────────────────────── */
+
+.mainLayout {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  align-items: flex-start;
+}
+
+/* ─── Panel shared ──────────────────────────────────────────────────────────── */
+
+.panelTitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  color: #a08060;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* ─── Grid panel ────────────────────────────────────────────────────────────── */
+
+.gridPanel {
+  flex: 0 0 auto;
+  width: 340px;
+}
+
+.roomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+}
+
+/* ─── Room tile ─────────────────────────────────────────────────────────────── */
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.65rem 0.4rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  color: #e8d5b0;
+  transition: background 0.15s;
+  background: #1e1108;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Tint per trigger type */
+.tile_combat   { background: #240a0a; }
+.tile_service  { background: #07131f; }
+.tile_exploration { background: #071a0e; }
+.tile_passive  { background: #141414; }
+
+.tile_combat:hover   { background: #2e0f0f; }
+.tile_service:hover  { background: #0b1b2c; }
+.tile_exploration:hover { background: #0b2216; }
+.tile_passive:hover  { background: #1c1c1c; }
+
+.tileEmoji {
+  font-size: 1.6rem;
+  user-select: none;
+  line-height: 1;
+}
+
+.tileName {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #c8b090;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 88px;
+}
+
+.tileBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.13rem 0.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ─── Console panel ─────────────────────────────────────────────────────────── */
+
+.consolePanel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.consolePanelHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.clearBtn {
+  background: none;
+  border: 1px solid #c8902a33;
+  color: #a08060;
+  border-radius: 6px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.clearBtn:hover {
+  border-color: #c8902a88;
+  color: #c8902a;
+}
+
+.consoleLog {
+  background: #0e0704;
+  border: 1px solid #c8902a22;
+  border-radius: 10px;
+  padding: 0.75rem;
+  min-height: 260px;
+  max-height: 360px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.consoleEmpty {
+  margin: 0;
+  color: #5a4030;
+  font-size: 0.82rem;
+  font-style: italic;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ─── Log entry ─────────────────────────────────────────────────────────────── */
+
+.logEntry {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  padding: 0.45rem 0.65rem;
+  background: #17090200;
+  border-left: 3px solid transparent;
+  border-radius: 0 6px 6px 0;
+  background: linear-gradient(90deg, #c8902a0a 0%, transparent 70%);
+  flex-shrink: 0;
+}
+
+.logTs {
+  font-size: 0.67rem;
+  color: #5a4030;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  min-width: 22px;
+}
+
+.logEmoji {
+  font-size: 1rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.logMsg {
+  font-size: 0.78rem;
+  color: #c8b090;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* ─── Summary ───────────────────────────────────────────────────────────────── */
+
+.summary {
+  background: #0e0704;
+  border: 1px solid #c8902a22;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.summaryTitle {
+  margin: 0 0 0.6rem;
+  font-size: 0.72rem;
+  color: #6a5040;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+
+.summaryCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.55rem 0.4rem;
+}
+
+.summaryCellLabel {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.summaryCellCount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+}
