@@ -1,0 +1,351 @@
+/* BattleScreen.module.css — Epic 3 */
+
+.battleScreen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+  overflow: hidden;
+  color: #e6edf3;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ─── Top Bar ────────────────────────────────────────────────────── */
+
+.topBar {
+  height: 8vh;
+  min-height: 48px;
+  max-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.runIndicator {
+  font-size: 0.75rem;
+  color: #8b949e;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* HP Bar */
+.hpBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hpIcon {
+  font-size: 0.9rem;
+  color: #f87171;
+}
+
+.hpNum {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e6edf3;
+  white-space: nowrap;
+  min-width: 52px;
+}
+
+.hpTrack {
+  width: 100px;
+  height: 8px;
+  background: #1f2937;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+}
+
+.hpFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.hpGreen  { background: #86efac; }
+.hpYellow { background: #fbbf24; }
+.hpRed    { background: #f87171; box-shadow: 0 0 6px #f8717188; }
+
+/* Energy */
+.energyDisplay {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.crystal {
+  font-size: 1.3rem;
+  line-height: 1;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.energyActive {
+  color: #60a5fa;
+  text-shadow: 0 0 10px #60a5fa99, 0 0 20px #60a5fa55;
+}
+
+.energySpent {
+  color: #2a3040;
+}
+
+/* Gold */
+.goldDisplay {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.goldCoin {
+  font-size: 1rem;
+  color: #fbbf24;
+}
+
+.goldNum {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+/* End Turn button */
+.endTurnBtn {
+  margin-left: auto;
+  padding: 6px 18px;
+  background: #c8902a;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+}
+
+.endTurnBtn:hover {
+  background: #e0a030;
+  box-shadow: 0 0 12px #c8902a55;
+}
+
+/* ─── Arena ──────────────────────────────────────────────────────── */
+
+.arena {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding: 1vh 2vw;
+  overflow: hidden;
+}
+
+.boardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.boardLabel {
+  font-size: 0.6rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.boardGrid {
+  display: grid;
+  gap: clamp(6px, 0.8vw, 10px);
+}
+
+.boardGridPlayer {
+  grid-template-columns: repeat(2, clamp(90px, 8vw, 130px));
+  grid-template-rows: repeat(2, clamp(110px, 10vh, 160px));
+}
+
+.boardGridEnemy {
+  grid-template-columns: repeat(3, clamp(90px, 8vw, 130px));
+  grid-template-rows: repeat(2, clamp(110px, 10vh, 160px));
+}
+
+.cell {
+  border-radius: 10px;
+  border: 2px dashed #30363d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.cellPlayer {
+  border-color: #1e3a5a;
+  background: #0a1520;
+}
+
+.cellEnemy {
+  border-color: #4a1a1a;
+  background: #150808;
+}
+
+.cell:hover {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.05);
+}
+
+/* VS divider */
+.vsDivider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+
+.vsLabel {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #2a2a3a;
+  letter-spacing: 2px;
+}
+
+/* ─── Intent ─────────────────────────────────────────────────────── */
+
+.intentBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 4px 20px;
+  background: #0d1117;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+  flex-shrink: 0;
+  height: 3vh;
+  min-height: 24px;
+}
+
+.intentLabel {
+  font-size: 0.68rem;
+  color: #8b949e;
+  margin-right: 4px;
+}
+
+.intentItem {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.intentSep {
+  color: #30363d;
+  font-size: 0.78rem;
+}
+
+/* ─── Hand Area ──────────────────────────────────────────────────── */
+
+.handArea {
+  height: 22vh;
+  min-height: 130px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 20px 10px;
+  background: #0d1117;
+  border-top: 1px solid #30363d;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.handFan {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: -4px;
+  position: relative;
+}
+
+.handCard {
+  width: clamp(60px, 5.5vw, 80px);
+  height: clamp(88px, 8vw, 114px);
+  background: #1f2937;
+  border: 2px solid #30363d;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+.handCard:hover {
+  transform: translateY(-24px) scale(1.08) !important;
+  box-shadow: 0 20px 40px #000b, 0 0 16px #fbbf2444;
+  border-color: #fbbf24;
+  z-index: 30;
+}
+
+.handCardNum {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #30363d;
+}
+
+/* ─── Bottom Bar ─────────────────────────────────────────────────── */
+
+.bottomBar {
+  height: 6vh;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.pileWidget {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.pileWidget:hover {
+  background: #1f2937;
+}
+
+.pileIcon {
+  font-size: 1.1rem;
+}
+
+.pileCount {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e6edf3;
+  min-width: 20px;
+}
+
+.pileLabel {
+  font-size: 0.65rem;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pileCenter {
+  opacity: 0.6;
+}

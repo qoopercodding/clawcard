@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Epic1Showcase } from './epic1/Epic1Showcase'
 import { Epic2Showcase } from './epic2/Epic2Showcase'
+import { Epic3Showcase } from './epic3/Epic3Showcase'
 import styles from './BattleShowcase.module.css'
 
 // ─── Epic registry ────────────────────────────────────────────────────────────
@@ -15,7 +16,7 @@ const EPICS: EpicMeta[] = [
   { id: 0,  label: 'Epic 0: Pusty ekran (baseline)',           status: 'done' },
   { id: 1,  label: 'Epic 1: Kategorie kart (taksonomia)',      status: 'done' },
   { id: 2,  label: 'Epic 2: Karty przeanalizowane (mechaniki)', status: 'done' },
-  { id: 3,  label: 'Epic 3: Battle Screen layout',             status: 'todo' },
+  { id: 3,  label: 'Epic 3: Battle Screen layout',             status: 'done' },
   { id: 4,  label: 'Epic 4: Karty na boardzie',                status: 'todo' },
   { id: 5,  label: 'Epic 5: Animacje',                         status: 'todo' },
   { id: 6,  label: 'Epic 6: Draw/Discard/Exhaust Pile',        status: 'todo' },
@@ -53,6 +54,8 @@ function EpicContent({ epicId }: { epicId: number }) {
       return <Epic1Showcase />
     case 2:
       return <Epic2Showcase />
+    case 3:
+      return <Epic3Showcase />
     default:
       return (
         <div className={styles.emptyState}>
