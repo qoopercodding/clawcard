@@ -1,0 +1,364 @@
+/* BoardCard.module.css — Epic 4 */
+
+/* ─── Card base ──────────────────────────────────────────────────── */
+
+.boardCard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: #161b22;
+}
+
+.boardCardPlayer {
+  border-color: #1e4a7a;
+  background: linear-gradient(180deg, #0d1f30 0%, #0a1520 100%);
+}
+
+.boardCardEnemy {
+  border-color: #6a1a1a;
+  background: linear-gradient(180deg, #200a0a 0%, #150505 100%);
+}
+
+/* ─── Visual states ──────────────────────────────────────────────── */
+
+.boardCardAttacking {
+  transform: translateX(12px);
+  z-index: 10;
+}
+
+.boardCardPlayer.boardCardAttacking {
+  transform: translateX(12px);
+}
+
+.boardCardEnemy.boardCardAttacking {
+  transform: translateX(-12px);
+}
+
+.boardCardHit {
+  animation: flashRed 0.3s ease-out;
+}
+
+.boardCardHealed {
+  animation: flashGreen 0.3s ease-out;
+}
+
+.boardCardDead {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.boardCardSelected {
+  border-color: #c8902a;
+  animation: selectedGlow 1.5s ease-in-out infinite;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────────── */
+
+@keyframes flashRed {
+  0%   { background-color: transparent; }
+  20%  { background-color: rgba(248, 113, 113, 0.55); box-shadow: inset 0 0 20px rgba(248,113,113,0.4); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flashGreen {
+  0%   { background-color: transparent; }
+  20%  { background-color: rgba(134, 239, 172, 0.45); box-shadow: inset 0 0 20px rgba(134,239,172,0.3); }
+  100% { background-color: transparent; }
+}
+
+@keyframes selectedGlow {
+  0%, 100% { box-shadow: 0 0 8px #c8902a88; }
+  50%       { box-shadow: 0 0 20px #c8902acc, 0 0 40px #c8902a44; }
+}
+
+/* ─── Counter display ────────────────────────────────────────────── */
+
+.counter {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  border: 2px solid;
+  z-index: 5;
+  line-height: 1;
+}
+
+.counterNormal {
+  background: #1a1f2e;
+  border-color: #4a5568;
+  color: #9ca3af;
+}
+
+.counterWarning {
+  background: #2d1a00;
+  border-color: #d97706;
+  color: #fbbf24;
+  animation: pulseOrange 1s ease-in-out infinite;
+}
+
+.counterZero {
+  background: #2d0000;
+  border-color: #ef4444;
+  color: #f87171;
+  animation: pulseRed 0.8s ease-in-out infinite;
+}
+
+@keyframes pulseOrange {
+  0%, 100% { box-shadow: 0 0 4px #d9770688; }
+  50%       { box-shadow: 0 0 10px #d97706cc, 0 0 20px #d9770644; }
+}
+
+@keyframes pulseRed {
+  0%, 100% { box-shadow: 0 0 4px #ef444488; }
+  50%       { box-shadow: 0 0 12px #ef4444cc, 0 0 24px #ef444444; }
+}
+
+/* ─── Art area ───────────────────────────────────────────────────── */
+
+.artArea {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: rgba(0, 0, 0, 0.3);
+  min-height: 0;
+}
+
+.artImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.artEmoji {
+  font-size: 2.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+/* ─── Name banner ────────────────────────────────────────────────── */
+
+.nameBanner {
+  padding: 2px 5px;
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.nameText {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* ─── HP bar ─────────────────────────────────────────────────────── */
+
+.hpBarTrack {
+  height: 4px;
+  background: #1f2937;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.hpBarFill {
+  height: 100%;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.hpFull     { background: #4ade80; }
+.hpHalf     { background: #fbbf24; }
+.hpCritical { background: #ef4444; box-shadow: 0 0 4px #ef444488; }
+
+/* ─── Stats row ──────────────────────────────────────────────────── */
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px;
+  background: rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.hpStat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.hpIcon {
+  font-size: 0.6rem;
+}
+
+.hpNum {
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.hpNumFull     { color: #4ade80; }
+.hpNumHalf     { color: #fbbf24; }
+.hpNumCritical { color: #ef4444; }
+
+.atkStat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.atkIcon {
+  font-size: 0.6rem;
+  color: #c8902a;
+}
+
+.atkNum {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #c8902a;
+}
+
+/* ─── Status effects ─────────────────────────────────────────────── */
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 2px 4px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-radius: 0 0 8px 8px;
+  min-height: 18px;
+  flex-shrink: 0;
+}
+
+.statusBubble {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 1px 4px;
+  cursor: help;
+}
+
+.statusBubble:hover .statusTooltip {
+  display: block;
+}
+
+.statusIcon {
+  font-size: 0.55rem;
+  line-height: 1;
+}
+
+.statusNum {
+  font-size: 0.52rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.statusTooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  font-size: 0.6rem;
+  color: #e6edf3;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ─── Status colors ──────────────────────────────────────────────── */
+
+.statusSnow     { border-color: #60a5fa66; }
+.statusPoison   { border-color: #a78bfa66; }
+.statusStrength { border-color: #f59e0b66; }
+.statusShell    { border-color: #6b7280aa; }
+.statusOverburn { border-color: #f9731666; }
+.statusVim      { border-color: #34d39966; }
+
+/* ─── Damage numbers ─────────────────────────────────────────────── */
+
+.damageNumbersLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 50;
+}
+
+.damageNumber {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  white-space: nowrap;
+  animation: floatUp 1.1s ease-out forwards;
+  pointer-events: none;
+}
+
+.damageNumberDamage { color: #f87171; }
+.damageNumberCrit   { color: #ff4444; font-size: 1.4rem; }
+.damageNumberHeal   { color: #4ade80; }
+.damageNumberSnow   { color: #93c5fd; }
+
+@keyframes floatUp {
+  0%   { transform: translateX(-50%) translateY(0);    opacity: 1;   }
+  70%  { transform: translateX(-50%) translateY(-35px); opacity: 0.9; }
+  100% { transform: translateX(-50%) translateY(-50px); opacity: 0;   }
+}
+
+/* ─── Scrap display (Clunker) ────────────────────────────────────── */
+
+.scrapStat {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.scrapIcon {
+  font-size: 0.6rem;
+  color: #9ca3af;
+}
+
+.scrapNum {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #9ca3af;
+}
