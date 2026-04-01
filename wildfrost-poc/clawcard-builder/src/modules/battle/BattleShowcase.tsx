@@ -3,6 +3,7 @@ import { Epic1Showcase } from './epic1/Epic1Showcase'
 import { Epic2Showcase } from './epic2/Epic2Showcase'
 import { Epic3Showcase } from './epic3/Epic3Showcase'
 import { Epic4Showcase } from './epic4/Epic4Showcase'
+import { Epic5Showcase } from './epic5/Epic5Showcase'
 import styles from './BattleShowcase.module.css'
 
 // ─── Epic registry ────────────────────────────────────────────────────────────
@@ -19,7 +20,7 @@ const EPICS: EpicMeta[] = [
   { id: 2,  label: 'Epic 2: Karty przeanalizowane (mechaniki)', status: 'done' },
   { id: 3,  label: 'Epic 3: Battle Screen layout',             status: 'done' },
   { id: 4,  label: 'Epic 4: Karty na boardzie',                status: 'done' },
-  { id: 5,  label: 'Epic 5: Animacje',                         status: 'todo' },
+  { id: 5,  label: 'Epic 5: Animacje (Framer Motion)',          status: 'done' },
   { id: 6,  label: 'Epic 6: Draw/Discard/Exhaust Pile',        status: 'todo' },
   { id: 7,  label: 'Epic 7: Merchant Screen',                  status: 'todo' },
   { id: 8,  label: 'Epic 8: Campfire Screen',                  status: 'todo' },
@@ -59,6 +60,8 @@ function EpicContent({ epicId }: { epicId: number }) {
       return <Epic3Showcase />
     case 4:
       return <Epic4Showcase />
+    case 5:
+      return <Epic5Showcase />
     default:
       return (
         <div className={styles.emptyState}>
