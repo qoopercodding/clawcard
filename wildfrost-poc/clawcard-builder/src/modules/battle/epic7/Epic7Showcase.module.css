@@ -1,0 +1,512 @@
+/* Epic7Showcase.module.css — Merchant Screen */
+
+/* ─── Root ─────────────────────────────────────────────────────────────────── */
+
+.root {
+  background: #1a0e05;
+  color: #e8d5b0;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2rem;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #c8902a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid #c8902a33;
+  padding-bottom: 0.5rem;
+}
+
+/* ─── Merchant area ────────────────────────────────────────────────────────── */
+
+.merchantArea {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: #231408;
+  border: 1px solid #c8902a33;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+
+.merchantFigure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.merchantEmoji {
+  font-size: 3.75rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px #c8902a55);
+  user-select: none;
+}
+
+.merchantLabel {
+  font-size: 0.72rem;
+  color: #c8902a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Speech bubble */
+.speechBubble {
+  position: relative;
+  background: #2e1a08;
+  border: 1px solid #c8902a55;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  flex: 1;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.speechBubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent #c8902a55 transparent transparent;
+}
+
+.speechBubble::after {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 7px 9px 7px 0;
+  border-style: solid;
+  border-color: transparent #2e1a08 transparent transparent;
+}
+
+.speechText {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e8d5b0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ─── Tab bar ──────────────────────────────────────────────────────────────── */
+
+.tabBar {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #c8902a33;
+}
+
+.tabBtn {
+  background: none;
+  border: none;
+  color: #a08060;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.18s;
+  font-family: inherit;
+}
+
+.tabBtn:hover {
+  color: #e8d5b0;
+}
+
+.tabBtnActive {
+  color: #c8902a;
+  border-bottom-color: #c8902a;
+}
+
+/* ─── Tab content ──────────────────────────────────────────────────────────── */
+
+.tabContent {
+  flex: 1;
+  min-height: 260px;
+}
+
+.tabPane {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* ─── Shop row (cards / items) ─────────────────────────────────────────────── */
+
+.shopRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #231408;
+  border: 1px solid #c8902a22;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.18s, opacity 0.25s;
+}
+
+.shopRow:hover:not(.shopRowBought) {
+  border-color: #c8902a66;
+}
+
+.shopRowBought {
+  opacity: 0.55;
+}
+
+.shopRowEmoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.shopRowInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.shopRowName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e8d5b0;
+}
+
+.shopRowDesc {
+  font-size: 0.8rem;
+  color: #a08060;
+}
+
+.shopRowAction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.shopRowPrice {
+  font-size: 0.85rem;
+  color: #c8902a;
+  font-weight: 600;
+}
+
+/* ─── Buy button ───────────────────────────────────────────────────────────── */
+
+.buyBtn {
+  background: #c8902a;
+  color: #1a0e05;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.buyBtn:hover:not(:disabled) {
+  background: #e8a830;
+  transform: scale(1.04);
+}
+
+.buyBtn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.buyBtn:disabled {
+  background: #5a4020;
+  color: #7a6040;
+  cursor: not-allowed;
+}
+
+/* ─── Bought badge ─────────────────────────────────────────────────────────── */
+
+.boughtBadge {
+  background: #2a5a1a;
+  color: #7eff60;
+  border: 1px solid #4eff2a44;
+  border-radius: 6px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+
+/* ─── Charm grid ───────────────────────────────────────────────────────────── */
+
+.charmGrid {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.charmTile {
+  background: #231408;
+  border: 1px solid #c8902a33;
+  border-radius: 12px;
+  padding: 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 160px;
+  transition: border-color 0.18s;
+}
+
+.charmTile:hover:not(.charmTileBought) {
+  border-color: #c8902a88;
+}
+
+.charmTileBought {
+  opacity: 0.55;
+}
+
+.charmCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #3a2010, #1a0e05);
+  border: 2px solid #c8902a66;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px #c8902a22 inset, 0 2px 12px #00000066;
+}
+
+.charmCircleIcon {
+  font-size: 2.5rem;
+  user-select: none;
+}
+
+.charmName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  text-align: center;
+}
+
+.charmDesc {
+  font-size: 0.77rem;
+  color: #a08060;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.charmPrice {
+  font-size: 0.85rem;
+  color: #c8902a;
+  font-weight: 600;
+}
+
+/* ─── Resources bar ────────────────────────────────────────────────────────── */
+
+.resourcesBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #231408;
+  border: 1px solid #c8902a33;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  margin-top: auto;
+}
+
+.goldDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.goldIcon {
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.goldAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c8902a;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.leaveBtn {
+  background: none;
+  border: 1px solid #c8902a88;
+  color: #c8902a;
+  border-radius: 8px;
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  transition: background 0.18s, color 0.18s;
+}
+
+.leaveBtn:hover {
+  background: #c8902a1a;
+  color: #e8d5b0;
+}
+
+/* ─── Leave overlay ────────────────────────────────────────────────────────── */
+
+.leaveOverlay {
+  position: fixed;
+  inset: 0;
+  background: #000000cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.leaveText {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 20px #c8902a88;
+}
+
+/* ─── Charm equip screen ───────────────────────────────────────────────────── */
+
+.equipOverlay {
+  position: fixed;
+  inset: 0;
+  background: #000000bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.equipPanel {
+  background: #231408;
+  border: 1px solid #c8902a66;
+  border-radius: 14px;
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 40px #00000088;
+}
+
+.equipHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.equipCharmIcon {
+  font-size: 2.25rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.equipTitle {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e8d5b0;
+}
+
+.equipSubtitle {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #a08060;
+}
+
+.equipClose {
+  background: none;
+  border: none;
+  color: #a08060;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 0.1rem 0.3rem;
+  transition: color 0.15s;
+}
+
+.equipClose:hover {
+  color: #e8d5b0;
+}
+
+.equipCardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.equipCard {
+  background: #1a0e05;
+  border: 1px solid #c8902a33;
+  border-radius: 10px;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s;
+  font-family: inherit;
+}
+
+.equipCard:hover {
+  border-color: #c8902a88;
+}
+
+.equipCardDone {
+  border-color: #4eff2a66;
+  background: #0d200a;
+}
+
+.equipCardEmoji {
+  font-size: 2rem;
+  user-select: none;
+}
+
+.equipCardName {
+  font-size: 0.82rem;
+  color: #e8d5b0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.equipBadge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #2a5a1a;
+  color: #7eff60;
+  border: 1px solid #4eff2a66;
+  border-radius: 20px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}

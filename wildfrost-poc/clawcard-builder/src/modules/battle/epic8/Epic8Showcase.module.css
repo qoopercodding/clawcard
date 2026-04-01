@@ -1,0 +1,649 @@
+/* Epic8Showcase.module.css — Campfire Screen */
+
+/* ─── Root ─────────────────────────────────────────────────────────────────── */
+
+.root {
+  background: #1a0e05;
+  color: #e8d5b0;
+  min-height: 100vh;
+  padding: 1.5rem 2rem 2rem;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #c8902a;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid #c8902a33;
+  padding-bottom: 0.5rem;
+}
+
+/* ─── HP Bar ────────────────────────────────────────────────────────────────── */
+
+.hpBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #231408;
+  border: 1px solid #c8902a33;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+}
+
+.hpLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c8902a;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.hpTrack {
+  flex: 1;
+  height: 14px;
+  background: #0e0704;
+  border-radius: 7px;
+  overflow: hidden;
+  border: 1px solid #3a2010;
+  position: relative;
+}
+
+.hpFill {
+  height: 100%;
+  border-radius: 7px;
+  box-shadow: 0 0 8px currentColor;
+  transition: background 0.4s;
+}
+
+.hpText {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  white-space: nowrap;
+  min-width: 56px;
+  text-align: right;
+  display: inline-block;
+}
+
+/* ─── Main layout ───────────────────────────────────────────────────────────── */
+
+.mainLayout {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  align-items: flex-start;
+}
+
+/* ─── Campfire area ─────────────────────────────────────────────────────────── */
+
+.campfireArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 260px;
+  padding-top: 1rem;
+}
+
+.campfireCaption {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #a08060;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Campfire visuals ──────────────────────────────────────────────────────── */
+
+.campfireWrap {
+  position: relative;
+  width: 180px;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fireGlow {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff6b0044 0%, #ff950022 40%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; }
+  50% { transform: translateX(-50%) scale(1.18); opacity: 1; }
+}
+
+.fireContainer {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Flame base shape: teardrop via border-radius */
+.flame {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 20% 20%;
+  transform-origin: bottom center;
+}
+
+/* Back flame — tallest, amber/orange */
+.flameBack {
+  width: 52px;
+  height: 100px;
+  background: linear-gradient(to top, #ff9500, #ff6b00 40%, #ffcc0088 80%, transparent);
+  animation: flameDance 1.6s ease-in-out infinite;
+  opacity: 0.75;
+  filter: blur(2px);
+}
+
+/* Mid flame — medium, orange/yellow */
+.flameMid {
+  width: 38px;
+  height: 80px;
+  background: linear-gradient(to top, #ff6b00, #ffcc00 50%, #ffe88088 85%, transparent);
+  animation: flameDance 1.2s ease-in-out infinite 0.25s;
+  opacity: 0.9;
+}
+
+/* Front flame — shortest, bright yellow */
+.flameFront {
+  width: 26px;
+  height: 58px;
+  background: linear-gradient(to top, #ffcc00, #fff176 60%, transparent);
+  animation: flameDance 0.9s ease-in-out infinite 0.5s;
+  opacity: 1;
+}
+
+@keyframes flameDance {
+  0%   { transform: scaleX(1)   scaleY(1)    rotate(-2deg); }
+  25%  { transform: scaleX(0.9) scaleY(1.06) rotate(2deg);  }
+  50%  { transform: scaleX(1.05) scaleY(0.95) rotate(-1deg); }
+  75%  { transform: scaleX(0.92) scaleY(1.08) rotate(3deg);  }
+  100% { transform: scaleX(1)   scaleY(1)    rotate(-2deg); }
+}
+
+/* Embers */
+.ember {
+  position: absolute;
+  border-radius: 50%;
+  background: #ff9500;
+  box-shadow: 0 0 4px #ffcc00;
+  pointer-events: none;
+}
+
+.ember1 {
+  width: 5px;
+  height: 5px;
+  bottom: 60px;
+  left: 14px;
+  animation: emberRise 2.2s ease-out infinite;
+}
+
+.ember2 {
+  width: 4px;
+  height: 4px;
+  bottom: 50px;
+  right: 10px;
+  animation: emberRise 1.8s ease-out infinite 0.7s;
+}
+
+.ember3 {
+  width: 3px;
+  height: 3px;
+  bottom: 70px;
+  left: 30px;
+  animation: emberRise 2.6s ease-out infinite 1.3s;
+}
+
+@keyframes emberRise {
+  0%   { opacity: 1; transform: translateY(0) translateX(0); }
+  60%  { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-60px) translateX(12px); }
+}
+
+/* Logs */
+.logs {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 18px;
+  background: #3a1c06;
+  border-radius: 6px 6px 4px 4px;
+  border-top: 2px solid #5a2e0a;
+  box-shadow: 0 2px 8px #00000088;
+}
+
+.logs::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 14px;
+  width: 62px;
+  height: 8px;
+  background: #2a1204;
+  border-radius: 4px;
+}
+
+/* ─── Actions panel ─────────────────────────────────────────────────────────── */
+
+.actionsPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.actionsPanelTitle {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  color: #a08060;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.actionBlock {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Action button ─────────────────────────────────────────────────────────── */
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: #231408;
+  border: 1px solid #c8902a44;
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  color: #e8d5b0;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: border-color 0.18s, background 0.18s, opacity 0.2s;
+  width: 100%;
+}
+
+.actionBtn:hover:not(:disabled) {
+  border-color: #c8902a99;
+  background: #2c1a0a;
+}
+
+.actionBtnDone {
+  border-color: #4eff2a55 !important;
+  background: #0d200a !important;
+  opacity: 0.85;
+}
+
+.actionBtnDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: #3a2010 !important;
+}
+
+.actionIcon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  user-select: none;
+  transition: transform 0.3s;
+}
+
+.heartPulse {
+  animation: heartbeat 0.6s ease-in-out 2;
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.4); filter: drop-shadow(0 0 6px #4caf50); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.actionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.actionName {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e8d5b0;
+}
+
+.actionDesc {
+  font-size: 0.8rem;
+  color: #a08060;
+}
+
+/* ─── Badges ────────────────────────────────────────────────────────────────── */
+
+.recommendedBadge {
+  background: #c8902a;
+  color: #1a0e05;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.doneBadge {
+  background: #1a3a0e;
+  color: #7eff60;
+  border: 1px solid #4eff2a44;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.missingBadge {
+  background: #3a1a0a;
+  color: #7a4a30;
+  border: 1px solid #5a2a1044;
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ─── Floating HP text ──────────────────────────────────────────────────────── */
+
+.floatingHp {
+  position: absolute;
+  top: -4px;
+  right: 1.1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4caf50;
+  text-shadow: 0 1px 8px #4caf5088;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ─── Upgrade sub-panel ─────────────────────────────────────────────────────── */
+
+.upgradePanel {
+  background: #1e100606;
+  border: 1px solid #c8902a33;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  padding: 0.9rem 1rem;
+  overflow: hidden;
+}
+
+.upgradePanelTitle {
+  margin: 0 0 0.65rem;
+  font-size: 0.82rem;
+  color: #a08060;
+  letter-spacing: 0.04em;
+}
+
+.upgradeCardRow {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.upgradeCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: #231408;
+  border: 1px solid #c8902a33;
+  border-radius: 8px;
+  padding: 0.75rem 0.65rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: #e8d5b0;
+  transition: border-color 0.15s;
+  min-width: 80px;
+}
+
+.upgradeCard:hover:not(:disabled) {
+  border-color: #c8902a88;
+}
+
+.upgradeCard:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.upgradeCardDone {
+  border-color: #ffcc0088 !important;
+  background: #1e1800 !important;
+}
+
+.upgradeCardEmoji {
+  font-size: 1.75rem;
+  user-select: none;
+}
+
+.upgradeCardName {
+  font-size: 0.72rem;
+  color: #c8b090;
+  text-align: center;
+  font-weight: 600;
+}
+
+.upgradedBadge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a1e00;
+  color: #ffcc00;
+  border: 1px solid #ffcc0066;
+  border-radius: 12px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sparkleRing {
+  position: absolute;
+  inset: -4px;
+  border-radius: 11px;
+  border: 2px solid #ffcc00;
+  animation: sparkle 0.8s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%   { opacity: 1; box-shadow: 0 0 0 0 #ffcc0088; }
+  50%  { opacity: 0.8; box-shadow: 0 0 12px 6px #ffcc0055; }
+  100% { opacity: 0; box-shadow: 0 0 18px 12px transparent; }
+}
+
+/* ─── Bottom bar ────────────────────────────────────────────────────────────── */
+
+.bottomBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid #c8902a22;
+}
+
+.leaveBtn {
+  background: linear-gradient(135deg, #c8902a, #a87020);
+  color: #1a0e05;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px #c8902a44;
+  transition: box-shadow 0.2s;
+}
+
+.leaveBtn:hover {
+  box-shadow: 0 6px 24px #c8902a66;
+}
+
+/* ─── Deck overlay ──────────────────────────────────────────────────────────── */
+
+.deckOverlay {
+  position: fixed;
+  inset: 0;
+  background: #000000cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+}
+
+.deckPanel {
+  background: #231408;
+  border: 1px solid #c8902a66;
+  border-radius: 14px;
+  padding: 1.5rem;
+  max-width: 680px;
+  width: 92%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px #00000099;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deckPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deckPanelTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #c8902a;
+  letter-spacing: 0.04em;
+}
+
+.deckCloseBtn {
+  background: none;
+  border: none;
+  color: #a08060;
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 0.1rem 0.35rem;
+  transition: color 0.15s;
+  font-family: inherit;
+}
+
+.deckCloseBtn:hover {
+  color: #e8d5b0;
+}
+
+.deckCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.deckCard {
+  background: #1a0e05;
+  border: 1px solid #c8902a33;
+  border-radius: 10px;
+  padding: 0.9rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  transition: border-color 0.15s;
+}
+
+.deckCard:hover {
+  border-color: #c8902a66;
+}
+
+.deckCardEmoji {
+  font-size: 2rem;
+  user-select: none;
+}
+
+.deckCardName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  text-align: center;
+}
+
+.deckCardDesc {
+  font-size: 0.7rem;
+  color: #a08060;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.deckHint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #6a5040;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ─── Leave overlay ─────────────────────────────────────────────────────────── */
+
+.leaveOverlay {
+  position: fixed;
+  inset: 0;
+  background: #000000cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.leaveText {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #e8d5b0;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 20px #c8902a88;
+}

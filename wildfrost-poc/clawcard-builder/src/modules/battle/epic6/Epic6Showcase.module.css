@@ -1,0 +1,479 @@
+/* ─── Root ──────────────────────────────────────────────────────────────────── */
+
+.root {
+  background: #1a0e05;
+  color: #e8d5b0;
+  min-height: 100%;
+  padding: 1.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.heading {
+  font-size: 1.4rem;
+  color: #c8902a;
+  margin: 0 0 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────────────────────── */
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ─── Sidebar ────────────────────────────────────────────────────────────────── */
+
+.sidebar {
+  background: #120a02;
+  border: 1px solid #3a2510;
+  border-radius: 10px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebarTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c8902a;
+  margin: 0 0 0.5rem;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────────── */
+
+.btnGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn {
+  background: #2a1a08;
+  border: 1px solid #5a3a18;
+  color: #e8d5b0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-family: inherit;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover {
+  background: #3a2510;
+  border-color: #c8902a;
+}
+
+.btn:active {
+  background: #4a3018;
+}
+
+.btnPrimary {
+  background: #1d3a1a;
+  border-color: #4a8a40;
+  color: #b8e8b0;
+}
+
+.btnPrimary:hover {
+  background: #2a5026;
+  border-color: #7acc70;
+}
+
+.btnSecondary {
+  background: #1a2a3a;
+  border-color: #3a6080;
+  color: #b0d0e8;
+}
+
+.btnSecondary:hover {
+  background: #243850;
+  border-color: #6ab0d0;
+}
+
+.btnDanger {
+  background: #3a1a10;
+  border-color: #8a3020;
+  color: #e8b0a0;
+}
+
+.btnDanger:hover {
+  background: #502010;
+  border-color: #c04030;
+}
+
+.btnReset {
+  margin-top: 0.25rem;
+  opacity: 0.6;
+  font-size: 0.75rem;
+}
+
+.btnReset:hover {
+  opacity: 1;
+}
+
+.btnHint {
+  opacity: 0.55;
+  font-size: 0.72rem;
+  display: block;
+}
+
+/* ─── Log ────────────────────────────────────────────────────────────────────── */
+
+.log {
+  background: #0e0703;
+  border: 1px solid #2a1a08;
+  border-radius: 6px;
+  padding: 0.6rem;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.logEntry {
+  font-size: 0.72rem;
+  color: #c8a870;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid #1a1005;
+  line-height: 1.4;
+}
+
+.logEntry:last-child {
+  border-bottom: none;
+}
+
+/* ─── Main ───────────────────────────────────────────────────────────────────── */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ─── Piles row ──────────────────────────────────────────────────────────────── */
+
+.pilesRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.pileTile {
+  flex: 1;
+  background: #120a02;
+  border: 1px solid #3a2510;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color 0.15s;
+}
+
+.pileTileClickable {
+  cursor: pointer;
+}
+
+.pileTileClickable:hover {
+  background: #1a1005;
+  border-color: #c8902a !important;
+}
+
+.pileTileIcon {
+  font-size: 1.8rem;
+}
+
+.pileTileHint {
+  font-size: 0.65rem;
+  color: #c8902a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+/* ─── Animated counter ───────────────────────────────────────────────────────── */
+
+.counterWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.counterNum {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-block;
+}
+
+.counterLabel {
+  font-size: 0.7rem;
+  color: #9a7850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Hand ───────────────────────────────────────────────────────────────────── */
+
+.handSection {
+  background: #120a02;
+  border: 1px solid #3a2510;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.handTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c8902a;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 60px;
+}
+
+.handCard {
+  background: #1e1208;
+  border: 1px solid #5a3a18;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 150px;
+  position: relative;
+}
+
+.handCardEmoji {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.handCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.handCardName {
+  font-size: 0.82rem;
+  color: #e8d5b0;
+}
+
+.handCardType {
+  font-size: 0.65rem;
+  color: #9a7850;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.firstTag {
+  position: absolute;
+  top: -6px;
+  right: 6px;
+  background: #c8902a;
+  color: #1a0e05;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+/* ─── Deck state grid ────────────────────────────────────────────────────────── */
+
+.deckState {
+  background: #120a02;
+  border: 1px solid #3a2510;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.deckStateTitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c8902a;
+  margin: 0 0 0.75rem;
+}
+
+.deckStateGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* ─── Pile list ──────────────────────────────────────────────────────────────── */
+
+.pileList {
+  background: #0e0703;
+  border: 1px solid #2a1a08;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pileListHeader {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a0e05;
+  border-bottom: 1px solid #2a1a08;
+}
+
+.pileListHeaderClickable {
+  cursor: pointer;
+}
+
+.pileListHeaderClickable:hover {
+  background: #221408;
+}
+
+.pileListCount {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.pileListBody {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+/* ─── Card chip ──────────────────────────────────────────────────────────────── */
+
+.cardChip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1a1005;
+  border: 1px solid #3a2510;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+}
+
+.cardChipHighlight {
+  border-color: #c8902a;
+  background: #221408;
+}
+
+.cardChipEmoji {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cardChipName {
+  font-size: 0.72rem;
+  color: #e8d5b0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardChipType {
+  font-size: 0.6rem;
+  color: #9a7850;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* ─── Empty note ─────────────────────────────────────────────────────────────── */
+
+.emptyNote {
+  font-size: 0.72rem;
+  color: #5a4030;
+  font-style: italic;
+  margin: 0;
+  padding: 0.25rem 0;
+  text-align: center;
+}
+
+/* ─── Modal ──────────────────────────────────────────────────────────────────── */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 5, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #1a0e05;
+  border: 1px solid #c8902a;
+  border-radius: 12px;
+  width: 360px;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #3a2510;
+}
+
+.modalTitle {
+  font-size: 0.95rem;
+  color: #c8902a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  color: #9a7850;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.modalClose:hover {
+  color: #e8d5b0;
+  background: #2a1a08;
+}
+
+.modalList {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  overflow-y: auto;
+}

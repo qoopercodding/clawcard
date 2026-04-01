@@ -58,6 +58,11 @@ const NAV_CARDS: NavCard[] = [
     group: 'play',
   },
   {
+    id: 'battle-showcase', emoji: '📋', title: 'Battle Showcase', subtitle: 'Epiki 0–11',
+    description: 'Interaktywny showcase systemu walki. Dropdown epików, live preview.',
+    badge: 'NOWE', highlight: true, group: 'play',
+  },
+  {
     id: 'test-env', emoji: '🎮', title: 'Test Environment', subtitle: 'Symulacja runów',
     description: 'Wybierz karty do ręki → uruchom 2 runy → sprawdź balance report.',
     badge: 'NOWE', highlight: true, group: 'play',
