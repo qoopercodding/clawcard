@@ -22,6 +22,7 @@ export type AppView =
   | 'combat'
   | 'game'
   | 'dev-game'
+  | 'battle-showcase'
 
 interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void

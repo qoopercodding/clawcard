@@ -25,6 +25,7 @@ import CombatScreen from './pages/CombatScreen'
 import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
+import { BattleShowcase } from './modules/battle/BattleShowcase'
 import type { MapNodeType } from './store/GameState'
 import './App.css'
 
@@ -37,6 +38,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'last-language', icon: '\u{1F4D6}', label: 'Ostatni Jezyk', group: 'play' },
+  { id: 'battle-showcase', icon: '\u{1F4CB}', label: 'Battle Showcase', group: 'play' },
   { id: 'grid-battle',   icon: '\u{2694}\uFE0F',  label: 'Grid Battle',    group: 'play' },
   { id: 'battle',        icon: '\u{1F5E1}\uFE0F',  label: 'Battle Demo',    group: 'play' },
   { id: 'test-env',      icon: '\u{1F3AE}', label: 'Test Env',       group: 'play' },
@@ -232,6 +234,8 @@ function App() {
       case 'game':           return <GameScreen />
       case 'dev-game':
         return (<><HoverTooltip /><GameScreen /></>)
+      case 'battle-showcase':
+        return <BattleShowcase />
       default: return <StartPage onSelectView={setView} />
     }
   }

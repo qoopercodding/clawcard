@@ -1,0 +1,131 @@
+/* BattleShowcase.module.css */
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg, #1a0e05);
+}
+
+/* ─── Top bar ────────────────────────────────────────────────── */
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: var(--color-surface, #2a1a0a);
+  border-bottom: 1px solid var(--color-border, rgba(255,230,184,0.12));
+  flex-shrink: 0;
+  height: 48px;
+}
+
+.topBarTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gold, #c8902a);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.epicSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.selectorLabel {
+  font-size: 0.7rem;
+  color: var(--color-text-dim, #9a8a70);
+  white-space: nowrap;
+}
+
+.select {
+  background: var(--color-surface, #2a1a0a);
+  border: 1px solid var(--color-border-hover, rgba(255,214,150,0.3));
+  border-radius: 6px;
+  color: var(--color-text, #e8d5b0);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  outline: none;
+  min-width: 300px;
+  transition: border-color 0.15s;
+}
+
+.select:hover,
+.select:focus {
+  border-color: var(--color-gold, #c8902a);
+}
+
+.select option {
+  background: #1a0e05;
+  color: #e8d5b0;
+}
+
+.epicStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusDot[data-status="done"] { background: #86efac; box-shadow: 0 0 6px #86efac88; }
+.statusDot[data-status="wip"]  { background: #fbbf24; box-shadow: 0 0 6px #fbbf2488; }
+.statusDot[data-status="todo"] { background: #4a4040; }
+
+.statusText {
+  font-size: 0.68rem;
+  color: var(--color-text-dim, #9a8a70);
+}
+
+/* ─── Content area ───────────────────────────────────────────── */
+
+.content {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ─── Empty state ────────────────────────────────────────────── */
+
+.emptyState {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.emptyTitle {
+  font-size: 1.3rem;
+  color: var(--color-text, #e8d5b0);
+  font-weight: 700;
+}
+
+.emptySubtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-dim, #9a8a70);
+  text-align: center;
+  max-width: 400px;
+}
+
+.emptyHint {
+  font-size: 0.7rem;
+  color: var(--color-text-dim, #9a8a70);
+  opacity: 0.6;
+  text-align: center;
+}
