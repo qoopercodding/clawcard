@@ -1,0 +1,479 @@
+/* Epic2Showcase.module.css */
+
+.showcase {
+  display: flex;
+  gap: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg, #1a0e05);
+}
+
+/* ─── Shared panel base ──────────────────────────────────────── */
+
+.leftPanel,
+.rightPanel {
+  flex-shrink: 0;
+  background: var(--color-surface, #2a1a0a);
+  border-color: var(--color-border, rgba(255,230,184,0.12));
+  border-style: solid;
+  padding: 16px 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.leftPanel {
+  width: 190px;
+  border-right-width: 1px;
+}
+
+.rightPanel {
+  width: 220px;
+  border-left-width: 1px;
+}
+
+.panelTitle {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text-dim, #9a8a70);
+  margin-bottom: 4px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border, rgba(255,230,184,0.12));
+  margin: 4px 0;
+}
+
+/* ─── Status filters ─────────────────────────────────────────── */
+
+.statusFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--color-border, rgba(255,230,184,0.12));
+  border-radius: 6px;
+  color: var(--color-text-dim, #9a8a70);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  text-align: left;
+  width: 100%;
+}
+
+.filterBtn:hover {
+  border-color: rgba(255,214,150,0.44);
+  color: var(--color-text, #e8d5b0);
+}
+
+.filterBtnActive {
+  background: rgba(255,255,255,0.04);
+}
+
+.filterDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.filterCount {
+  margin-left: auto;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.totalCount {
+  font-size: 0.65rem;
+  color: var(--color-text-dim, #9a8a70);
+}
+
+/* ─── Left legend ────────────────────────────────────────────── */
+
+.legend {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border, rgba(255,230,184,0.12));
+}
+
+.legendTitle {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-text-dim, #9a8a70);
+  margin-bottom: 6px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.65rem;
+  color: var(--color-text-dim, #9a8a70);
+  padding: 2px 0;
+}
+
+/* ─── Grid area ──────────────────────────────────────────────── */
+
+.gridArea {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.gridHeader {
+  margin-bottom: 16px;
+}
+
+.gridTitle {
+  font-size: 1.1rem;
+  color: var(--color-gold, #c8902a);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gridSubtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-dim, #9a8a70);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.clearFilter {
+  background: rgba(248,113,113,0.12);
+  border: 1px solid rgba(248,113,113,0.3);
+  border-radius: 4px;
+  color: #f87171;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.clearFilter:hover {
+  background: rgba(248,113,113,0.2);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.emptyGrid {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--color-text-dim, #9a8a70);
+  font-size: 0.8rem;
+  padding: 32px;
+}
+
+/* ─── Card tile ──────────────────────────────────────────────── */
+
+.cardTile {
+  position: relative;
+  background: var(--color-surface, #2a1a0a);
+  border: 1px solid var(--color-border, rgba(255,230,184,0.12));
+  border-radius: 10px;
+  overflow: visible;
+  cursor: default;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTile[data-status='ready'] {
+  border-color: rgba(74,222,128,0.2);
+}
+
+.cardTile[data-status='partial'] {
+  border-color: rgba(251,191,36,0.2);
+}
+
+.cardTile[data-status='missing'] {
+  border-color: rgba(248,113,113,0.2);
+}
+
+.cardTile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  z-index: 10;
+}
+
+.cardTile[data-status='ready']:hover    { border-color: rgba(74,222,128,0.5); }
+.cardTile[data-status='partial']:hover  { border-color: rgba(251,191,36,0.5); }
+.cardTile[data-status='missing']:hover  { border-color: rgba(248,113,113,0.5); }
+
+.cardArt {
+  background: linear-gradient(135deg, #2a1a0a, #1a0e05);
+  border-radius: 8px 8px 0 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cardEmoji {
+  font-size: 2.4rem;
+}
+
+.cardBody {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.cardName {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-text, #e8d5b0);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.statusBadge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.cardStats {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.statHp     { font-size: 0.62rem; color: #f87171; }
+.statAtk    { font-size: 0.62rem; color: #60a5fa; }
+.statCnt    { font-size: 0.62rem; color: #fbbf24; }
+.statEnergy { font-size: 0.62rem; color: #a78bfa; }
+.statClunker{ font-size: 0.62rem; color: #fb923c; }
+.statCurse  { font-size: 0.62rem; color: #f87171; }
+
+/* ─── Tooltip ────────────────────────────────────────────────── */
+
+.tooltipPortal {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  width: 240px;
+}
+
+.tooltip {
+  background: #1a0e05;
+  border: 1px solid rgba(255,214,150,0.3);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+}
+
+.tooltipHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.tooltipName {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #e8d5b0;
+}
+
+.tooltipStatusBadge {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.tooltipDesc {
+  font-size: 0.65rem;
+  color: #c8b090;
+  line-height: 1.4;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,230,184,0.1);
+  margin-bottom: 6px;
+}
+
+.tooltipSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+}
+
+.tooltipSectionLabel {
+  font-weight: 700;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tooltipSectionValue {
+  color: #c8b090;
+  line-height: 1.3;
+}
+
+/* ─── Right panel — report ───────────────────────────────────── */
+
+.reportSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+}
+
+.summaryLabel {
+  color: var(--color-text-dim, #9a8a70);
+}
+
+.summaryValue {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.chartTitle {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-dim, #9a8a70);
+  margin-bottom: 2px;
+}
+
+.chartHint {
+  font-size: 0.6rem;
+  color: rgba(154,138,112,0.6);
+  margin-bottom: 6px;
+}
+
+.barChart {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 4px 6px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  width: 100%;
+  text-align: left;
+}
+
+.barRow:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,214,150,0.2);
+}
+
+.barRowActive {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,214,150,0.3) !important;
+}
+
+.barLabel {
+  font-size: 0.65rem;
+  color: var(--color-text-dim, #9a8a70);
+  width: 80px;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barTrack {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.barCount {
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.noMechanics {
+  font-size: 0.7rem;
+  color: var(--color-text-dim, #9a8a70);
+  text-align: center;
+  padding: 8px 0;
+}
+
+.chartLegend {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border, rgba(255,230,184,0.12));
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
