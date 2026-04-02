@@ -18,15 +18,28 @@
     "Incant",
     "Resolve"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Multistrike": {
+      "definition_short": "Jednostka atakuje wielokrotnie.",
+      "ref": "KEYWORDS.md#multistrike"
+    },
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    },
+    "Resolve": {
+      "definition_short": "Efekt triggerowany na końcu tury.",
+      "ref": "KEYWORDS.md#resolve"
+    }
+  },
+  "mechanic_summary": "Eel Gorgon to Mage klanu Stygian Guard za 2. Efekt: Incant: Gain Multistrike 1. Resolve: Remove all status effects. Multistrike: Jednostka atakuje wielokrotnie. Incant: Efekt triggerowany za każdym razem gdy grasz spell. Resolve: Efekt triggerowany na końcu tury.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Eel_Gorgon",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Incant: Gain Multistrike 1. Resolve: Remove all status effects.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

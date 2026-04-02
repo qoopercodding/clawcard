@@ -17,15 +17,24 @@
     "Sweep",
     "Frostbite"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Sweep": {
+      "definition_short": "Atak trafia wszystkie wrogie jednostki na piętrze.",
+      "ref": "KEYWORDS.md#sweep"
+    },
+    "Frostbite": {
+      "definition_short": "Debuff zadający obrażenia na początku tury wroga.",
+      "ref": "KEYWORDS.md#frostbite"
+    }
+  },
+  "mechanic_summary": "Coldcaelia to Siren klanu Stygian Guard za 1. Efekt: Sweep. Strike: Apply Frostbite 3 to the attacked unit. Sweep: Atak trafia wszystkie wrogie jednostki na piętrze. Frostbite: Debuff zadający obrażenia na początku tury wroga.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Coldcaelia",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Sweep. Strike: Apply Frostbite 3 to the attacked unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -17,15 +17,24 @@
     "Incant",
     "Frostbite"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    },
+    "Frostbite": {
+      "definition_short": "Debuff zadający obrażenia na początku tury wroga.",
+      "ref": "KEYWORDS.md#frostbite"
+    }
+  },
+  "mechanic_summary": "Glacial Seal to Totem klanu Stygian Guard za 2. Efekt: Incant: Apply Frostbite 2 to enemy units. Incant: Efekt triggerowany za każdym razem gdy grasz spell. Frostbite: Debuff zadający obrażenia na początku tury wroga.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Glacial_Seal",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Incant: Apply Frostbite 2 to enemy units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

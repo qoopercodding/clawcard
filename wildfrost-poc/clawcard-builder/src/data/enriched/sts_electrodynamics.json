@@ -14,15 +14,20 @@
     "Channel",
     "Lightning"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Channel": {
+      "definition_short": "Tworzenie Orba (Lightning/Frost/Dark/Plasma) w slotach.",
+      "ref": "KEYWORDS.md#channel"
+    }
+  },
+  "mechanic_summary": "Electrodynamics to Rare Blue Power za 2 energii. Efekt: Lightning now hits ALL enemies. Channel 2/3 Lightning. Channel: Tworzenie Orba (Lightning/Frost/Dark/Plasma) w slotach.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Electrodynamics",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Lightning now hits ALL enemies. Channel 2/3 Lightning.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

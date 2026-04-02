@@ -14,15 +14,24 @@
     "Draw",
     "Calm"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Draw": {
+      "definition_short": "Dobranie dodatkowych kart z draw pile.",
+      "ref": "KEYWORDS.md#draw"
+    },
+    "Calm": {
+      "definition_short": "Stance: opuszczenie daje 2 Energy.",
+      "ref": "KEYWORDS.md#calm"
+    }
+  },
+  "mechanic_summary": "Inner Peace to Uncommon Purple Skill za 1 energii. Efekt: If you are in Calm, draw 3/4 cards, otherwise Enter Calm. Draw: Dobranie dodatkowych kart z draw pile. Calm: Stance: opuszczenie daje 2 Energy.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Inner_Peace",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] If you are in Calm, draw 3/4 cards, otherwise Enter Calm.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

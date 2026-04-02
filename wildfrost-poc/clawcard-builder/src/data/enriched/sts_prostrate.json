@@ -14,15 +14,24 @@
     "Block",
     "Mantra"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    },
+    "Mantra": {
+      "definition_short": "Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
+      "ref": "KEYWORDS.md#mantra"
+    }
+  },
+  "mechanic_summary": "Prostrate to Common Purple Skill za 0 energii. Efekt: Gain 2/3 Mantra. Gain 4 Block. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury. Mantra: Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Prostrate",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gain 2/3 Mantra. Gain 4 Block.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

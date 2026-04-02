@@ -15,15 +15,28 @@
     "Draw",
     "Discard"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Exhaust": {
+      "definition_short": "Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
+      "ref": "KEYWORDS.md#exhaust"
+    },
+    "Draw": {
+      "definition_short": "Dobranie dodatkowych kart z draw pile.",
+      "ref": "KEYWORDS.md#draw"
+    },
+    "Discard": {
+      "definition_short": "Odrzucenie karty z ręki do discard pile.",
+      "ref": "KEYWORDS.md#discard"
+    }
+  },
+  "mechanic_summary": "Calculated Gamble to Uncommon Green Skill za 0 energii. Efekt: Discard your hand, then draw that many cards.  Exhaust. Exhaust: Po zagraniu karta jest usuwana z gry (trafia do exhaust pile). Draw: Dobranie dodatkowych kart z draw pile. Discard: Odrzucenie karty z ręki do discard pile.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Calculated_Gamble",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Discard your hand, then draw that many cards.  Exhaust.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

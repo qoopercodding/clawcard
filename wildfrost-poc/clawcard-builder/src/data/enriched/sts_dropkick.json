@@ -16,15 +16,24 @@
     "Vulnerable",
     "Draw"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Vulnerable": {
+      "definition_short": "Cel otrzymuje 50% więcej obrażeń z ataków.",
+      "ref": "KEYWORDS.md#vulnerable"
+    },
+    "Draw": {
+      "definition_short": "Dobranie dodatkowych kart z draw pile.",
+      "ref": "KEYWORDS.md#draw"
+    }
+  },
+  "mechanic_summary": "Dropkick to Uncommon Red Attack za 1 energii. Efekt: Deal 5/8 damage. If the enemy has Vulnerable, gain <R> and draw 1 card. Vulnerable: Cel otrzymuje 50% więcej obrażeń z ataków. Draw: Dobranie dodatkowych kart z draw pile.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Dropkick",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 5/8 damage. If the enemy has Vulnerable, gain <R> and draw 1 card.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

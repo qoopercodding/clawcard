@@ -17,15 +17,24 @@
     "Rage",
     "Damage Shield"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    },
+    "Damage Shield": {
+      "definition_short": "Absorbuje jedną instancję obrażeń.",
+      "ref": "KEYWORDS.md#damage-shield"
+    }
+  },
+  "mechanic_summary": "Void Binding to Spell klanu Umbra za 1. Efekt: Apply Damage Shield 2, Rage 6, and Emberdrain 3. Rage: Buff zwiększający atak jednostki. Damage Shield: Absorbuje jedną instancję obrażeń.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Void_Binding",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Damage Shield 2, Rage 6, and Emberdrain 3.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

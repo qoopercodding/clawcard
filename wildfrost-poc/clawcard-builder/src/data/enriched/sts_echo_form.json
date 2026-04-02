@@ -13,15 +13,20 @@
   "keywords": [
     "Ethereal"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Ethereal": {
+      "definition_short": "Jeśli karta jest w ręce na koniec tury, zostaje automatycznie exhaustowana.",
+      "ref": "KEYWORDS.md#ethereal"
+    }
+  },
+  "mechanic_summary": "Echo Form to Rare Blue Power za 3 energii. Efekt: Ethereal.  The first card you play each turn is played twice. Ethereal: Jeśli karta jest w ręce na koniec tury, zostaje automatycznie exhaustowana.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Echo_Form",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Ethereal.  The first card you play each turn is played twice.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

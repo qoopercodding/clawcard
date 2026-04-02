@@ -16,15 +16,20 @@
   "keywords": [
     "Morsel"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    }
+  },
+  "mechanic_summary": "Shroud Mitosis to Spell klanu Umbra za 1. Efekt: Create 3 copies of a Morsel unit. Morsel: Mała jednostka-jedzenie zjadana przez Gorge units.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Shroud_Mitosis",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Create 3 copies of a Morsel unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

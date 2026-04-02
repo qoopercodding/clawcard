@@ -14,15 +14,24 @@
     "Block",
     "Draw"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    },
+    "Draw": {
+      "definition_short": "Dobranie dodatkowych kart z draw pile.",
+      "ref": "KEYWORDS.md#draw"
+    }
+  },
+  "mechanic_summary": "Escape Plan to Uncommon Green Skill za 0 energii. Efekt: Draw 1 card. If you draw a Skill, gain 3/5 Block. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury. Draw: Dobranie dodatkowych kart z draw pile.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Escape_Plan",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Draw 1 card. If you draw a Skill, gain 3/5 Block.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

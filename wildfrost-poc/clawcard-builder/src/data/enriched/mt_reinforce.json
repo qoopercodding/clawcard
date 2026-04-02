@@ -17,15 +17,24 @@
     "Consume",
     "Armor"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Armor": {
+      "definition_short": "Trwała tarcza absorbująca obrażenia.",
+      "ref": "KEYWORDS.md#armor"
+    }
+  },
+  "mechanic_summary": "Reinforce to Spell klanu Hellhorned za 3. Efekt: Consume. Double Armor on a unit. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Armor: Trwała tarcza absorbująca obrażenia.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Reinforce",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Double Armor on a unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

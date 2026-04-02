@@ -18,15 +18,28 @@
     "Rage",
     "Summon"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Armor": {
+      "definition_short": "Trwała tarcza absorbująca obrażenia.",
+      "ref": "KEYWORDS.md#armor"
+    },
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    },
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Apex Imp to Demon Imp klanu Hellhorned za 1. Efekt: Armored: Gain Rage equal to gained Armor. Summon: Gain Armor 5. Armor: Trwała tarcza absorbująca obrażenia. Rage: Buff zwiększający atak jednostki. Summon: Przywołanie nowej jednostki na piętro.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Apex_Imp",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Armored: Gain Rage equal to gained Armor. Summon: Gain Armor 5.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

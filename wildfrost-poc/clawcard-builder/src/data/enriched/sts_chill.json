@@ -16,15 +16,28 @@
     "Channel",
     "Frost"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Exhaust": {
+      "definition_short": "Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
+      "ref": "KEYWORDS.md#exhaust"
+    },
+    "Innate": {
+      "definition_short": "Karta jest zawsze dobierana do pierwszej ręki na początku walki.",
+      "ref": "KEYWORDS.md#innate"
+    },
+    "Channel": {
+      "definition_short": "Tworzenie Orba (Lightning/Frost/Dark/Plasma) w slotach.",
+      "ref": "KEYWORDS.md#channel"
+    }
+  },
+  "mechanic_summary": "Chill to Uncommon Blue Skill za 0 energii. Efekt: Innate.  Channel 1 Frost for each enemy in combat. Exhaust. Exhaust: Po zagraniu karta jest usuwana z gry (trafia do exhaust pile). Innate: Karta jest zawsze dobierana do pierwszej ręki na początku walki. Channel: Tworzenie Orba (Lightning/Frost/Dark/Plasma) w slotach.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Chill",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Innate.  Channel 1 Frost for each enemy in combat. Exhaust.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

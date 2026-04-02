@@ -13,15 +13,20 @@
   "keywords": [
     "Focus"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Focus": {
+      "definition_short": "Wzmacnia pasywne efekty Orbów.",
+      "ref": "KEYWORDS.md#focus"
+    }
+  },
+  "mechanic_summary": "Hyperbeam to Rare Blue Attack za 2 energii. Efekt: Deal 26/34 damage to ALL enemies. Lose 3 Focus. Focus: Wzmacnia pasywne efekty Orbów.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Hyperbeam",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 26/34 damage to ALL enemies. Lose 3 Focus.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

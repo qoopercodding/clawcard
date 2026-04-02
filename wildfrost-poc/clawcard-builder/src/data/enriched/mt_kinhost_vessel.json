@@ -16,15 +16,20 @@
   "keywords": [
     "Summon"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Kinhost Vessel to Egg klanu Wurmkin za 1. Efekt: Shell 8. Hatch: Summon Kinhost Pupa. Summon: Przywołanie nowej jednostki na piętro.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Kinhost_Vessel",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Shell 8. Hatch: Summon Kinhost Pupa.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

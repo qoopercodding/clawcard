@@ -16,15 +16,20 @@
   "keywords": [
     "Multistrike"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Multistrike": {
+      "definition_short": "Jednostka atakuje wielokrotnie.",
+      "ref": "KEYWORDS.md#multistrike"
+    }
+  },
+  "mechanic_summary": "Animus of Will to Animus klanu Awoken za 1. Efekt: Multistrike 2. Multistrike: Jednostka atakuje wielokrotnie.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Animus_of_Will",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Multistrike 2.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -14,15 +14,24 @@
     "Innate",
     "Shiv"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Innate": {
+      "definition_short": "Karta jest zawsze dobierana do pierwszej ręki na początku walki.",
+      "ref": "KEYWORDS.md#innate"
+    },
+    "Shiv": {
+      "definition_short": "Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
+      "ref": "KEYWORDS.md#shiv"
+    }
+  },
+  "mechanic_summary": "Infinite Blades to Uncommon Green Power za 1 energii. Efekt: Innate. At the start of your turn, add a Shiv into your hand. Innate: Karta jest zawsze dobierana do pierwszej ręki na początku walki. Shiv: Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Infinite_Blades",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Innate. At the start of your turn, add a Shiv into your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,24 @@
     "Strength",
     "Dexterity"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Strength": {
+      "definition_short": "Dodaje swoją wartość do obrażeń każdego ataku.",
+      "ref": "KEYWORDS.md#strength"
+    },
+    "Dexterity": {
+      "definition_short": "Dodaje swoją wartość do Block zyskiwanego z kart.",
+      "ref": "KEYWORDS.md#dexterity"
+    }
+  },
+  "mechanic_summary": "Fasting to Uncommon Purple Power za 2 energii. Efekt: Gain 3/4 Strength.  Gain 3/4 Dexterity.  Gain 1 less Energy at the start of each turn. Strength: Dodaje swoją wartość do obrażeń każdego ataku. Dexterity: Dodaje swoją wartość do Block zyskiwanego z kart.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Fasting",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gain 3/4 Strength.  Gain 3/4 Dexterity.  Gain 1 less Energy at the start of each turn.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

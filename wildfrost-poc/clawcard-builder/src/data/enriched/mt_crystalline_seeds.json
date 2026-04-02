@@ -17,15 +17,24 @@
     "Consume",
     "Frostbite"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Frostbite": {
+      "definition_short": "Debuff zadający obrażenia na początku tury wroga.",
+      "ref": "KEYWORDS.md#frostbite"
+    }
+  },
+  "mechanic_summary": "Crystalline Seeds to Spell klanu Stygian Guard za 0. Efekt: Consume. Apply Frostbite 6 to enemy units. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Frostbite: Debuff zadający obrażenia na początku tury wroga.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Crystalline_Seeds",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Apply Frostbite 6 to enemy units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

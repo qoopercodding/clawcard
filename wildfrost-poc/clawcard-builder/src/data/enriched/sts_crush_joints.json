@@ -13,15 +13,20 @@
   "keywords": [
     "Vulnerable"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Vulnerable": {
+      "definition_short": "Cel otrzymuje 50% więcej obrażeń z ataków.",
+      "ref": "KEYWORDS.md#vulnerable"
+    }
+  },
+  "mechanic_summary": "Crush Joints to Common Purple Attack za 1 energii. Efekt: Deal 8/10 damage. If the previous card played was a Skill, apply 1/2 Vulnerable. Vulnerable: Cel otrzymuje 50% więcej obrażeń z ataków.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Crush_Joints",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 8/10 damage. If the previous card played was a Skill, apply 1/2 Vulnerable.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

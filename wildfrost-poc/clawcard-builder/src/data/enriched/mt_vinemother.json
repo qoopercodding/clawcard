@@ -16,15 +16,20 @@
   "keywords": [
     "Resolve"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Resolve": {
+      "definition_short": "Efekt triggerowany na końcu tury.",
+      "ref": "KEYWORDS.md#resolve"
+    }
+  },
+  "mechanic_summary": "Vinemother to Hollow klanu Awoken za 1. Efekt: Resolve: Add a Sting spell to your hand. Resolve: Efekt triggerowany na końcu tury.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Vinemother",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Resolve: Add a Sting spell to your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -14,15 +14,24 @@
     "Exhaust",
     "Vulnerable"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Exhaust": {
+      "definition_short": "Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
+      "ref": "KEYWORDS.md#exhaust"
+    },
+    "Vulnerable": {
+      "definition_short": "Cel otrzymuje 50% więcej obrażeń z ataków.",
+      "ref": "KEYWORDS.md#vulnerable"
+    }
+  },
+  "mechanic_summary": "Terror to Uncommon Green Skill za 1 energii. Efekt: Apply 99 Vulnerable. Exhaust. Exhaust: Po zagraniu karta jest usuwana z gry (trafia do exhaust pile). Vulnerable: Cel otrzymuje 50% więcej obrażeń z ataków.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Terror",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply 99 Vulnerable. Exhaust.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

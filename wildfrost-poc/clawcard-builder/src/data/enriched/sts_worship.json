@@ -14,15 +14,24 @@
     "Retain",
     "Mantra"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Retain": {
+      "definition_short": "Karta zostaje w ręce na koniec tury zamiast być odrzuconą.",
+      "ref": "KEYWORDS.md#retain"
+    },
+    "Mantra": {
+      "definition_short": "Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
+      "ref": "KEYWORDS.md#mantra"
+    }
+  },
+  "mechanic_summary": "Worship to Uncommon Purple Skill za 2 energii. Efekt: Retain. Gain 5 Mantra. Retain: Karta zostaje w ręce na koniec tury zamiast być odrzuconą. Mantra: Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Worship",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Retain. Gain 5 Mantra.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

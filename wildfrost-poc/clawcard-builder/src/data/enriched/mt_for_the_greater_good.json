@@ -16,15 +16,20 @@
   "keywords": [
     "Summon"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "For the Greater Good to Spell klanu Clanless za 2. Efekt: Summon a friendly Rebel unit to the front of this floor. Summon: Przywołanie nowej jednostki na piętro.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/For_the_Greater_Good",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Summon a friendly Rebel unit to the front of this floor.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

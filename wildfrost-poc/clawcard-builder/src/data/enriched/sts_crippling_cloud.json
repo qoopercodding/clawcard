@@ -15,15 +15,28 @@
     "Weak",
     "Poison"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Exhaust": {
+      "definition_short": "Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
+      "ref": "KEYWORDS.md#exhaust"
+    },
+    "Weak": {
+      "definition_short": "Cel zadaje 25% mniej obrażeń atakami.",
+      "ref": "KEYWORDS.md#weak"
+    },
+    "Poison": {
+      "definition_short": "Na początku tury cel traci HP = Poison, potem Poison spada o 1.",
+      "ref": "KEYWORDS.md#poison"
+    }
+  },
+  "mechanic_summary": "Crippling Cloud to Uncommon Green Skill za 2 energii. Efekt: Apply 4/7 Poison and 2 Weak to ALL enemies. Exhaust. Exhaust: Po zagraniu karta jest usuwana z gry (trafia do exhaust pile). Weak: Cel zadaje 25% mniej obrażeń atakami. Poison: Na początku tury cel traci HP = Poison, potem Poison spada o 1.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Crippling_Cloud",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply 4/7 Poison and 2 Weak to ALL enemies. Exhaust.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

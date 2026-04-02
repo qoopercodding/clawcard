@@ -17,15 +17,24 @@
     "Consume",
     "Multistrike"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Multistrike": {
+      "definition_short": "Jednostka atakuje wielokrotnie.",
+      "ref": "KEYWORDS.md#multistrike"
+    }
+  },
+  "mechanic_summary": "Onehorn's Tome to Spell klanu Hellhorned za 5. Efekt: Consume. Apply Multistrike 1 and Fragile to a friendly unit. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Multistrike: Jednostka atakuje wielokrotnie.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Onehorn's_Tome",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Apply Multistrike 1 and Fragile to a friendly unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

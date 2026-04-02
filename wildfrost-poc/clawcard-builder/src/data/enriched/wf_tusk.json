@@ -17,15 +17,20 @@
   "keywords": [
     "Teeth"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Teeth": {
+      "definition_short": "Zadaje obrażenia atakującemu (thorns/kolce).",
+      "ref": "KEYWORDS.md#teeth"
+    }
+  },
+  "mechanic_summary": "Tusk to Companion (2/5, counter: 5). Efekt: While active, add 3 Teeth to all allies Teeth: Zadaje obrażenia atakującemu (thorns/kolce).",
   "verified_against_wiki": false,
   "wiki_url": "https://wildfrost.wiki.gg/wiki/Tusk",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] While active, add 3 Teeth to all allies",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

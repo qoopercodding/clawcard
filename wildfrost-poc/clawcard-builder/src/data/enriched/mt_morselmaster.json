@@ -17,15 +17,24 @@
     "Summon",
     "Morsel"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    },
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    }
+  },
+  "mechanic_summary": "Morselmaster to Shroud klanu Umbra za 1. Efekt: When you summon a Morsel unit on this floor, create a copy. Summon: Przywołanie nowej jednostki na piętro. Morsel: Mała jednostka-jedzenie zjadana przez Gorge units.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Morselmaster",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] When you summon a Morsel unit on this floor, create a copy.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

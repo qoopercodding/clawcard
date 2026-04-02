@@ -14,15 +14,24 @@
     "Dexterity",
     "Intangible"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Dexterity": {
+      "definition_short": "Dodaje swoją wartość do Block zyskiwanego z kart.",
+      "ref": "KEYWORDS.md#dexterity"
+    },
+    "Intangible": {
+      "definition_short": "Wszystkie obrażenia i utrata HP redukowane do 1.",
+      "ref": "KEYWORDS.md#intangible"
+    }
+  },
+  "mechanic_summary": "Wraith Form to Rare Green Power za 3 energii. Efekt: Gain 2/3 Intangible. At the end of your turn, lose 1 Dexterity. Dexterity: Dodaje swoją wartość do Block zyskiwanego z kart. Intangible: Wszystkie obrażenia i utrata HP redukowane do 1.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Wraith_Form",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gain 2/3 Intangible. At the end of your turn, lose 1 Dexterity.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

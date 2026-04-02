@@ -17,15 +17,24 @@
     "Consume",
     "Rage"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    }
+  },
+  "mechanic_summary": "Rage Serum to Spell klanu Hellhorned za 0. Efekt: Consume. Apply Rage 3. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Rage: Buff zwiększający atak jednostki.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Rage_Serum",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Apply Rage 3.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

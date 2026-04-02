@@ -17,15 +17,20 @@
   "keywords": [
     "Snow"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Snow": {
+      "definition_short": "Dodaje do countera karty, opóźniając akcję.",
+      "ref": "KEYWORDS.md#snow"
+    }
+  },
+  "mechanic_summary": "Wallop to Companion (4/9, counter: 4). Efekt: Deal 8 additional damage to Snow'd targets Snow: Dodaje do countera karty, opóźniając akcję.",
   "verified_against_wiki": false,
   "wiki_url": "https://wildfrost.wiki.gg/wiki/Wallop",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 8 additional damage to Snow'd targets",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

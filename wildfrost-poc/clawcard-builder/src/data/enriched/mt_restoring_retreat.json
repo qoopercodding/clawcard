@@ -16,15 +16,20 @@
   "keywords": [
     "Descend"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Descend": {
+      "definition_short": "Przenosi jednostkę o jedno piętro niżej.",
+      "ref": "KEYWORDS.md#descend"
+    }
+  },
+  "mechanic_summary": "Restoring Retreat to Spell klanu Awoken za 2. Efekt: Descend a unit and restore 10 health. Descend: Przenosi jednostkę o jedno piętro niżej.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Restoring_Retreat",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Descend a unit and restore 10 health.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

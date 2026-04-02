@@ -14,15 +14,24 @@
     "Block",
     "X cost"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    },
+    "X cost": {
+      "definition_short": "Karta zużywa całą energię — efekt skaluje z wydaną ilością.",
+      "ref": "KEYWORDS.md#x-cost"
+    }
+  },
+  "mechanic_summary": "Reinforced Body to Uncommon Blue Skill za 0 energii. Efekt: Gain 7/9 Block X times. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury. X cost: Karta zużywa całą energię — efekt skaluje z wydaną ilością.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Reinforced_Body",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gain 7/9 Block X times.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

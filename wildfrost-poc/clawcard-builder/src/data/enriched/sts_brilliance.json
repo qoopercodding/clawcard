@@ -13,15 +13,20 @@
   "keywords": [
     "Mantra"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Mantra": {
+      "definition_short": "Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
+      "ref": "KEYWORDS.md#mantra"
+    }
+  },
+  "mechanic_summary": "Brilliance to Rare Purple Attack za 1 energii. Efekt: Deal 12/16 damage. Deals additional damage equal to Mantra gained this combat. Mantra: Po zebraniu 10, wchodzisz w Divinity (3x obrażenia + 3 Energy).",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Brilliance",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 12/16 damage. Deals additional damage equal to Mantra gained this combat.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

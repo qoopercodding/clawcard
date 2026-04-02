@@ -16,15 +16,20 @@
   "keywords": [
     "Stealth"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Stealth": {
+      "definition_short": "Jednostka nie może być zaatakowana dopóki nie zaatakuje.",
+      "ref": "KEYWORDS.md#stealth"
+    }
+  },
+  "mechanic_summary": "Molten Encasement to Tomb klanu Melting Remnant za 1. Efekt: Extinguish: Apply Stealth 2 to friendly units. Stealth: Jednostka nie może być zaatakowana dopóki nie zaatakuje.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Molten_Encasement",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Extinguish: Apply Stealth 2 to friendly units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

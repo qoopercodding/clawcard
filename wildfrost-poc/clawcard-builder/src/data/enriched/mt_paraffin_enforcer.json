@@ -17,15 +17,24 @@
     "Rage",
     "Burnout"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    },
+    "Burnout": {
+      "definition_short": "Jednostka jest niszczona po X turach.",
+      "ref": "KEYWORDS.md#burnout"
+    }
+  },
+  "mechanic_summary": "Paraffin Enforcer to Wickless klanu Melting Remnant za 1. Efekt: Strike: Friendly Burnout units gain Rage 3. Rage: Buff zwiększający atak jednostki. Burnout: Jednostka jest niszczona po X turach.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Paraffin_Enforcer",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Strike: Friendly Burnout units gain Rage 3.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

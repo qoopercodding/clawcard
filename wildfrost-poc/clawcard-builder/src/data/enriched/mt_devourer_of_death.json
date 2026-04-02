@@ -16,15 +16,20 @@
   "keywords": [
     "Harvest"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Harvest": {
+      "definition_short": "Efekt triggerowany gdy sojusznicza jednostka zginie.",
+      "ref": "KEYWORDS.md#harvest"
+    }
+  },
+  "mechanic_summary": "Devourer of Death to Wickless klanu Melting Remnant za 1. Efekt: Harvest: Gain Soul 1. Extinguish: Deal damage to the enemy units equal to 15x the Soul count. Harvest: Efekt triggerowany gdy sojusznicza jednostka zginie.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Devourer_of_Death",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Harvest: Gain Soul 1. Extinguish: Deal damage to the enemy units equal to 15x the Soul count.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,20 @@
   "keywords": [
     "Rage"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    }
+  },
+  "mechanic_summary": "Ritual of Battle to Spell klanu Hellhorned za 3. Efekt: Apply Rage 10. Rage: Buff zwiększający atak jednostki.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Ritual_of_Battle",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Rage 10.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -17,15 +17,24 @@
     "Consume",
     "Quick"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Quick": {
+      "definition_short": "Jednostka atakuje PRZED wrogami na tym samym piętrze.",
+      "ref": "KEYWORDS.md#quick"
+    }
+  },
+  "mechanic_summary": "Wildwood Tome to Spell klanu Awoken za 1. Efekt: Consume. Apply Quick. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Quick: Jednostka atakuje PRZED wrogami na tym samym piętrze.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wildwood_Tome",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Apply Quick.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

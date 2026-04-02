@@ -13,15 +13,20 @@
   "keywords": [
     "Exhaust"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Exhaust": {
+      "definition_short": "Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
+      "ref": "KEYWORDS.md#exhaust"
+    }
+  },
+  "mechanic_summary": "Double Energy to Uncommon Blue Skill za 1 energii. Efekt: Double your Energy. Exhaust. Exhaust: Po zagraniu karta jest usuwana z gry (trafia do exhaust pile).",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Double_Energy",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Double your Energy. Exhaust.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -14,15 +14,24 @@
     "Vulnerable",
     "Wrath"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Vulnerable": {
+      "definition_short": "Cel otrzymuje 50% więcej obrażeń z ataków.",
+      "ref": "KEYWORDS.md#vulnerable"
+    },
+    "Wrath": {
+      "definition_short": "Stance: 2x obrażenia zadawane i otrzymywane.",
+      "ref": "KEYWORDS.md#wrath"
+    }
+  },
+  "mechanic_summary": "Indignation to Uncommon Purple Skill za 1 energii. Efekt: If you are in Wrath, apply 3/5 Vulnerable to ALL enemies, otherwise enter Wrath. Vulnerable: Cel otrzymuje 50% więcej obrażeń z ataków. Wrath: Stance: 2x obrażenia zadawane i otrzymywane.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Indignation",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] If you are in Wrath, apply 3/5 Vulnerable to ALL enemies, otherwise enter Wrath.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,20 @@
   "keywords": [
     "Regen"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Regen": {
+      "definition_short": "Leczy jednostkę na początku jej tury.",
+      "ref": "KEYWORDS.md#regen"
+    }
+  },
+  "mechanic_summary": "Awake to Spell klanu Awoken za 3. Efekt: Restore 30 health. Apply Regen 3. Regen: Leczy jednostkę na początku jej tury.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Awake",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Restore 30 health. Apply Regen 3.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

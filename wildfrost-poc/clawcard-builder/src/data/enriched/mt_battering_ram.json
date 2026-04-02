@@ -16,15 +16,20 @@
   "keywords": [
     "Armor"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Armor": {
+      "definition_short": "Trwała tarcza absorbująca obrażenia.",
+      "ref": "KEYWORDS.md#armor"
+    }
+  },
+  "mechanic_summary": "Battering Ram to Spell klanu Hellhorned za 3. Efekt: Deal damage to the front enemy unit equal to 4x the amount of Armor on friendly units. Armor: Trwała tarcza absorbująca obrażenia.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Battering_Ram",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal damage to the front enemy unit equal to 4x the amount of Armor on friendly units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

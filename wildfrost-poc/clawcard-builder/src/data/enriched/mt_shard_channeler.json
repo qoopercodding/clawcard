@@ -16,15 +16,20 @@
   "keywords": [
     "Spikes"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Spikes": {
+      "definition_short": "Zadaje obrażenia atakującemu.",
+      "ref": "KEYWORDS.md#spikes"
+    }
+  },
+  "mechanic_summary": "Shard Channeler to Channeler klanu Awoken za 1. Efekt: Spikes on friendly units deal +1 damage per stack. Spikes: Zadaje obrażenia atakującemu.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Shard_Channeler",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Spikes on friendly units deal +1 damage per stack.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

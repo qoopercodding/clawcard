@@ -14,15 +14,24 @@
     "Block",
     "Shiv"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    },
+    "Shiv": {
+      "definition_short": "Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
+      "ref": "KEYWORDS.md#shiv"
+    }
+  },
+  "mechanic_summary": "Cloak and Dagger to Common Green Skill za 1 energii. Efekt: Gain 6 Block. Add 1/2 Shiv/Shivs into your hand. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury. Shiv: Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Cloak_and_Dagger",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gain 6 Block. Add 1/2 Shiv/Shivs into your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

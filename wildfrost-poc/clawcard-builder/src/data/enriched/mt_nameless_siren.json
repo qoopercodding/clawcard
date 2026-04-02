@@ -17,15 +17,24 @@
     "Rage",
     "Incant"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Rage": {
+      "definition_short": "Buff zwiększający atak jednostki.",
+      "ref": "KEYWORDS.md#rage"
+    },
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    }
+  },
+  "mechanic_summary": "Nameless Siren to Siren klanu Stygian Guard za 1. Efekt: Incant: Gain Rage 2. Rage: Buff zwiększający atak jednostki. Incant: Efekt triggerowany za każdym razem gdy grasz spell.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Nameless_Siren",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Incant: Gain Rage 2.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

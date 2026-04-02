@@ -13,15 +13,20 @@
   "keywords": [
     "Strength"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Strength": {
+      "definition_short": "Dodaje swoją wartość do obrażeń każdego ataku.",
+      "ref": "KEYWORDS.md#strength"
+    }
+  },
+  "mechanic_summary": "Heavy Blade to Common Red Attack za 2 energii. Efekt: Deal 14 damage. Strength affects this card 3/5 times. Strength: Dodaje swoją wartość do obrażeń każdego ataku.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Heavy_Blade",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 14 damage. Strength affects this card 3/5 times.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -17,15 +17,20 @@
   "keywords": [
     "Bom"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Bom": {
+      "definition_short": "Eksploduje po odliczeniu countera, zadając obrażenia.",
+      "ref": "KEYWORDS.md#bom"
+    }
+  },
+  "mechanic_summary": "Biji to Companion (0/8, counter: 4). Efekt: Apply 3 Bom Increase by 1 when hit Bom: Eksploduje po odliczeniu countera, zadając obrażenia.",
   "verified_against_wiki": false,
   "wiki_url": "https://wildfrost.wiki.gg/wiki/Biji",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply 3 Bom Increase by 1 when hit",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

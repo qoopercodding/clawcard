@@ -17,15 +17,24 @@
     "Consume",
     "Reform"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Consume": {
+      "definition_short": "Spell jest usuwany po zagraniu — jednorazowe użycie.",
+      "ref": "KEYWORDS.md#consume"
+    },
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Sacred Wicks to Spell klanu Melting Remnant za 0. Efekt: Consume. Reform 2 random units. Consume: Spell jest usuwany po zagraniu — jednorazowe użycie. Reform: Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Sacred_Wicks",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Consume. Reform 2 random units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

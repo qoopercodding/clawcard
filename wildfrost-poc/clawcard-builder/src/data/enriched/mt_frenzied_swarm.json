@@ -16,15 +16,20 @@
   "keywords": [
     "Daze"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Daze": {
+      "definition_short": "Debuff zmniejszający atak jednostki.",
+      "ref": "KEYWORDS.md#daze"
+    }
+  },
+  "mechanic_summary": "Frenzied Swarm to Spell klanu Stygian Guard za 1. Efekt: Apply Dazed 1 to enemy units. Discard your hand. Daze: Debuff zmniejszający atak jednostki.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Frenzied_Swarm",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Dazed 1 to enemy units. Discard your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

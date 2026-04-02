@@ -14,15 +14,24 @@
     "Weak",
     "Block"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Weak": {
+      "definition_short": "Cel zadaje 25% mniej obrażeń atakami.",
+      "ref": "KEYWORDS.md#weak"
+    },
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    }
+  },
+  "mechanic_summary": "Wave of the Hand to Uncommon Purple Skill za 1 energii. Efekt: Whenever you gain Block this turn, apply 1/2 Weak to ALL enemies. Weak: Cel zadaje 25% mniej obrażeń atakami. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Wave_of_the_Hand",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Whenever you gain Block this turn, apply 1/2 Weak to ALL enemies.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

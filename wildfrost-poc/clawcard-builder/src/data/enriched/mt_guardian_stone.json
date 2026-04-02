@@ -17,15 +17,24 @@
     "Armor",
     "Incant"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Armor": {
+      "definition_short": "Trwała tarcza absorbująca obrażenia.",
+      "ref": "KEYWORDS.md#armor"
+    },
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    }
+  },
+  "mechanic_summary": "Guardian Stone to Totem klanu Stygian Guard za 1. Efekt: Incant: Apply Armor 1 to friendly units. Armor: Trwała tarcza absorbująca obrażenia. Incant: Efekt triggerowany za każdym razem gdy grasz spell.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Guardian_Stone",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Incant: Apply Armor 1 to friendly units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

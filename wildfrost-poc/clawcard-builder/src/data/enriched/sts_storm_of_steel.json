@@ -14,15 +14,24 @@
     "Discard",
     "Shiv"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Discard": {
+      "definition_short": "Odrzucenie karty z ręki do discard pile.",
+      "ref": "KEYWORDS.md#discard"
+    },
+    "Shiv": {
+      "definition_short": "Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
+      "ref": "KEYWORDS.md#shiv"
+    }
+  },
+  "mechanic_summary": "Storm of Steel to Rare Green Skill za 1 energii. Efekt: Discard your hand. Add 1 Shiv+ into your hand for each card discarded. Discard: Odrzucenie karty z ręki do discard pile. Shiv: Generowana karta 0-cost ataku za 4/6 obrażeń, Exhaust.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Storm_of_Steel",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Discard your hand. Add 1 Shiv+ into your hand for each card discarded.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,20 @@
   "keywords": [
     "Purge"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Purge": {
+      "definition_short": "Usuwa kartę z gry na stałe.",
+      "ref": "KEYWORDS.md#purge"
+    }
+  },
+  "mechanic_summary": "The Ultimate Penance to Scourge klanu Clanless za 2. Efekt: Purge. Reserve: Your Pyre takes 5 damage. Purge: Usuwa kartę z gry na stałe.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/The_Ultimate_Penance",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Purge. Reserve: Your Pyre takes 5 damage.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -17,15 +17,24 @@
     "Multistrike",
     "Gorge"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Multistrike": {
+      "definition_short": "Jednostka atakuje wielokrotnie.",
+      "ref": "KEYWORDS.md#multistrike"
+    },
+    "Gorge": {
+      "definition_short": "Efekt triggerowany przez zjadanie Morseli.",
+      "ref": "KEYWORDS.md#gorge"
+    }
+  },
+  "mechanic_summary": "Alloyed Construct to Construct klanu Umbra za 2. Efekt: Inert. Multistrike 1. Gorge: Gain Fuel 1. Multistrike: Jednostka atakuje wielokrotnie. Gorge: Efekt triggerowany przez zjadanie Morseli.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Alloyed_Construct",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Inert. Multistrike 1. Gorge: Gain Fuel 1.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

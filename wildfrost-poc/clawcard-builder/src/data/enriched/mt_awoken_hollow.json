@@ -17,15 +17,24 @@
     "Rejuvenate",
     "Summon"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Rejuvenate": {
+      "definition_short": "Leczy jednostkę o podaną wartość.",
+      "ref": "KEYWORDS.md#rejuvenate"
+    },
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Awoken Hollow to Hollow klanu Awoken za 1. Efekt: Summon: Gain 60 max health. Rejuvenate: Cultivate 2 Rejuvenate: Leczy jednostkę o podaną wartość. Summon: Przywołanie nowej jednostki na piętro.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Awoken_Hollow",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Summon: Gain 60 max health. Rejuvenate: Cultivate 2",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

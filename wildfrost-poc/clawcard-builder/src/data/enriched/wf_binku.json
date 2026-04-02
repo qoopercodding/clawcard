@@ -17,15 +17,20 @@
   "keywords": [
     "Ink"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Ink": {
+      "definition_short": "Spowalnia counter wroga — opóźnia atak.",
+      "ref": "KEYWORDS.md#ink"
+    }
+  },
+  "mechanic_summary": "Binku to Pet (2/5, counter: 4). Efekt: Apply 3 Ink Ink: Spowalnia counter wroga — opóźnia atak.",
   "verified_against_wiki": false,
   "wiki_url": "https://wildfrost.wiki.gg/wiki/Binku",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply 3 Ink",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

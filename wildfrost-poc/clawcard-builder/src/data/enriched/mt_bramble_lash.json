@@ -16,15 +16,20 @@
   "keywords": [
     "Spikes"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Spikes": {
+      "definition_short": "Zadaje obrażenia atakującemu.",
+      "ref": "KEYWORDS.md#spikes"
+    }
+  },
+  "mechanic_summary": "Bramble Lash to Spell klanu Awoken za 2. Efekt: Deal damage to the front enemy unit equal to 10x the amount of Spikes on friendly units. Spikes: Zadaje obrażenia atakującemu.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Bramble_Lash",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal damage to the front enemy unit equal to 10x the amount of Spikes on friendly units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

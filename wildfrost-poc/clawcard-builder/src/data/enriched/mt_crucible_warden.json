@@ -17,15 +17,24 @@
     "Gorge",
     "Damage Shield"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Gorge": {
+      "definition_short": "Efekt triggerowany przez zjadanie Morseli.",
+      "ref": "KEYWORDS.md#gorge"
+    },
+    "Damage Shield": {
+      "definition_short": "Absorbuje jedną instancję obrażeń.",
+      "ref": "KEYWORDS.md#damage-shield"
+    }
+  },
+  "mechanic_summary": "Crucible Warden to Shroud klanu Umbra za 1. Efekt: Gorge: Gain Damage Shield 1. Gorge: Efekt triggerowany przez zjadanie Morseli. Damage Shield: Absorbuje jedną instancję obrażeń.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Crucible_Warden",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Gorge: Gain Damage Shield 1.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

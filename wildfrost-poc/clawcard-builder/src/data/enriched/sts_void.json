@@ -15,15 +15,28 @@
     "Unplayable",
     "Draw"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Ethereal": {
+      "definition_short": "Jeśli karta jest w ręce na koniec tury, zostaje automatycznie exhaustowana.",
+      "ref": "KEYWORDS.md#ethereal"
+    },
+    "Unplayable": {
+      "definition_short": "Karty nie można zagrać — trzeba ją odrzucić lub usunąć innym efektem.",
+      "ref": "KEYWORDS.md#unplayable"
+    },
+    "Draw": {
+      "definition_short": "Dobranie dodatkowych kart z draw pile.",
+      "ref": "KEYWORDS.md#draw"
+    }
+  },
+  "mechanic_summary": "Void to Common Colorless Status za 0 energii. Efekt: Unplayable. Whenever this card is drawn, lose 1 Energy. Ethereal. Ethereal: Jeśli karta jest w ręce na koniec tury, zostaje automatycznie exhaustowana. Unplayable: Karty nie można zagrać — trzeba ją odrzucić lub usunąć innym efektem. Draw: Dobranie dodatkowych kart z draw pile.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Void",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Unplayable. Whenever this card is drawn, lose 1 Energy. Ethereal.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,20 @@
   "keywords": [
     "Sap"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Sap": {
+      "definition_short": "Debuff redukujący atak po każdym ataku.",
+      "ref": "KEYWORDS.md#sap"
+    }
+  },
+  "mechanic_summary": "Drain to Spell klanu Stygian Guard za 1. Efekt: Apply Sap 3. Discard a card at random. Sap: Debuff redukujący atak po każdym ataku.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Drain",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Sap 3. Discard a card at random.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

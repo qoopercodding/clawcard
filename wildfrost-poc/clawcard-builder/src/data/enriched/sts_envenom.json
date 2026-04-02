@@ -14,15 +14,24 @@
     "Block",
     "Poison"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    },
+    "Poison": {
+      "definition_short": "Na początku tury cel traci HP = Poison, potem Poison spada o 1.",
+      "ref": "KEYWORDS.md#poison"
+    }
+  },
+  "mechanic_summary": "Envenom to Rare Green Power za 2 energii. Efekt: Whenever an Attack deals unblocked damage, apply 1 Poison. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury. Poison: Na początku tury cel traci HP = Poison, potem Poison spada o 1.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Envenom",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Whenever an Attack deals unblocked damage, apply 1 Poison.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

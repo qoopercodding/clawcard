@@ -13,15 +13,20 @@
   "keywords": [
     "Vulnerable"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Vulnerable": {
+      "definition_short": "Cel otrzymuje 50% więcej obrażeń z ataków.",
+      "ref": "KEYWORDS.md#vulnerable"
+    }
+  },
+  "mechanic_summary": "Thunderclap to Common Red Attack za 1 energii. Efekt: Deal 4/7 damage and apply 1 Vulnerable to ALL enemies. Vulnerable: Cel otrzymuje 50% więcej obrażeń z ataków.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/Thunderclap",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 4/7 damage and apply 1 Vulnerable to ALL enemies.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

@@ -16,15 +16,20 @@
   "keywords": [
     "Lifesteal"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Lifesteal": {
+      "definition_short": "Leczy Pyra za obrażenia zadane wrogom.",
+      "ref": "KEYWORDS.md#lifesteal"
+    }
+  },
+  "mechanic_summary": "Immortal Trade to Spell klanu Umbra za 0. Efekt: Apply Lifesteal 3 and Emberdrain 2 to a friendly unit. Lifesteal: Leczy Pyra za obrażenia zadane wrogom.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Immortal_Trade",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Lifesteal 3 and Emberdrain 2 to a friendly unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

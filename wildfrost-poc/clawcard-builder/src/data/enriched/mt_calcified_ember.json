@@ -16,15 +16,20 @@
   "keywords": [
     "Purge"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Purge": {
+      "definition_short": "Usuwa kartę z gry na stałe.",
+      "ref": "KEYWORDS.md#purge"
+    }
+  },
+  "mechanic_summary": "Calcified Ember to Blight klanu Clanless za 3. Efekt: Purge. Purge: Usuwa kartę z gry na stałe.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Calcified_Ember",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Purge.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

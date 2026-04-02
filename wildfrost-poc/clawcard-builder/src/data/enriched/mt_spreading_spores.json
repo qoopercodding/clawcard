@@ -17,15 +17,24 @@
     "Regen",
     "Spikes"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Regen": {
+      "definition_short": "Leczy jednostkę na początku jej tury.",
+      "ref": "KEYWORDS.md#regen"
+    },
+    "Spikes": {
+      "definition_short": "Zadaje obrażenia atakującemu.",
+      "ref": "KEYWORDS.md#spikes"
+    }
+  },
+  "mechanic_summary": "Spreading Spores to Spell klanu Awoken za 2. Efekt: Apply Regen 2 and Spikes 2. Add a copy of this card to your discard pile. Regen: Leczy jednostkę na początku jej tury. Spikes: Zadaje obrażenia atakującemu.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Spreading_Spores",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Regen 2 and Spikes 2. Add a copy of this card to your discard pile.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

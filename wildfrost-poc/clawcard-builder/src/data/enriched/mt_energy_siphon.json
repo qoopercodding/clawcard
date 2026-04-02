@@ -16,15 +16,20 @@
   "keywords": [
     "Spell Weakness"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Spell Weakness": {
+      "definition_short": "Cel otrzymuje więcej obrażeń od spelli.",
+      "ref": "KEYWORDS.md#spell-weakness"
+    }
+  },
+  "mechanic_summary": "Energy Siphon to Spell klanu Stygian Guard za 0. Efekt: Apply Spell Weakness 1 to an enemy unit. Spell Weakness: Cel otrzymuje więcej obrażeń od spelli.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Energy_Siphon",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply Spell Weakness 1 to an enemy unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

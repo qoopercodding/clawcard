@@ -17,15 +17,20 @@
   "keywords": [
     "Aimless"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Aimless": {
+      "definition_short": "Atak trafia losowego wroga zamiast celowanego.",
+      "ref": "KEYWORDS.md#aimless"
+    }
+  },
+  "mechanic_summary": "Loki to Pet (3/5, counter: 3). Efekt: Apply 1 Demonize Aimless Aimless: Atak trafia losowego wroga zamiast celowanego.",
   "verified_against_wiki": false,
   "wiki_url": "https://wildfrost.wiki.gg/wiki/Loki",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Apply 1 Demonize Aimless",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

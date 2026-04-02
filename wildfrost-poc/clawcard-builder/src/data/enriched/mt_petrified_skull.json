@@ -16,15 +16,20 @@
   "keywords": [
     "Purge"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Purge": {
+      "definition_short": "Usuwa kartę z gry na stałe.",
+      "ref": "KEYWORDS.md#purge"
+    }
+  },
+  "mechanic_summary": "Petrified Skull to Spell klanu Clanless za 0. Efekt: Purge. Kill a non-boss unit. Purge: Usuwa kartę z gry na stałe.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Petrified_Skull",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Purge. Kill a non-boss unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

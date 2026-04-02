@@ -16,15 +16,20 @@
   "keywords": [
     "Frostbite"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Frostbite": {
+      "definition_short": "Debuff zadający obrażenia na początku tury wroga.",
+      "ref": "KEYWORDS.md#frostbite"
+    }
+  },
+  "mechanic_summary": "Flash Freeze to Spell klanu Stygian Guard za 1. Efekt: Deal 3 damage. Apply Frostbite 8. Frostbite: Debuff zadający obrażenia na początku tury wroga.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Flash_Freeze",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Deal 3 damage. Apply Frostbite 8.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

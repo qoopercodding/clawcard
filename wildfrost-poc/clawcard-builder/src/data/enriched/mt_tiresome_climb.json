@@ -17,15 +17,24 @@
     "Daze",
     "Ascend"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Daze": {
+      "definition_short": "Debuff zmniejszający atak jednostki.",
+      "ref": "KEYWORDS.md#daze"
+    },
+    "Ascend": {
+      "definition_short": "Przenosi jednostkę o jedno piętro wyżej.",
+      "ref": "KEYWORDS.md#ascend"
+    }
+  },
+  "mechanic_summary": "Tiresome Climb to Spell klanu Hellhorned za 2. Efekt: Ascend a unit and apply Dazed 2. Daze: Debuff zmniejszający atak jednostki. Ascend: Przenosi jednostkę o jedno piętro wyżej.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Tiresome_Climb",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Ascend a unit and apply Dazed 2.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",

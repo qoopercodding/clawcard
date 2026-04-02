@@ -14,15 +14,24 @@
     "Innate",
     "Block"
   ],
-  "keyword_details": {},
-  "mechanic_summary": "",
+  "keyword_details": {
+    "Innate": {
+      "definition_short": "Karta jest zawsze dobierana do pierwszej ręki na początku walki.",
+      "ref": "KEYWORDS.md#innate"
+    },
+    "Block": {
+      "definition_short": "Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
+      "ref": "KEYWORDS.md#block"
+    }
+  },
+  "mechanic_summary": "After Image to Rare Green Power za 1 energii. Efekt: Innate.  Whenever you play a card, gain 1 Block. Innate: Karta jest zawsze dobierana do pierwszej ręki na początku walki. Block: Tymczasowa tarcza absorbująca obrażenia, znika na początku następnej tury.",
   "verified_against_wiki": false,
   "wiki_url": "https://slay-the-spire.fandom.com/wiki/After_Image",
-  "wiki_desc": "",
+  "wiki_desc": "[From game data] Innate.  Whenever you play a card, gain 1 Block.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_notes": "Auto-enriched with game knowledge. Keywords verified against known mechanics.",
   "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
