@@ -1,0 +1,33 @@
+{
+  "id": "mt_furnace_tap",
+  "name": "Furnace Tap",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 2,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/d/d3/Furnace_Tap.png/revision/latest/scale-to-width-down/239?cb=20201215090500",
+  "desc_raw": "Consume.\nApply Multistrike 1. Apply Emberdrain 4.",
+  "desc_clean": "Consume. Apply Multistrike 1. Apply Emberdrain 4.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume",
+    "Multistrike"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Furnace_Tap",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

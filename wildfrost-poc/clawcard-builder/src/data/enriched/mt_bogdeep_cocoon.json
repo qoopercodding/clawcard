@@ -1,0 +1,32 @@
+{
+  "id": "mt_bogdeep_cocoon",
+  "name": "Bogdeep Cocoon",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Rare",
+  "type": "Egg",
+  "cost": 2,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/c/cc/Bogdeep_Cocoon.png/revision/latest/scale-to-width-down/400?cb=20210329105853",
+  "desc_raw": "Shell 12.\nHatch: Summon Bog Wurmling",
+  "desc_clean": "Shell 12. Hatch: Summon Bog Wurmling",
+  "desc_problems": [],
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Bogdeep_Cocoon",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sts_prepared",
+  "name": "Prepared",
+  "game": "slay_the_spire",
+  "color": "Green",
+  "rarity": "Common",
+  "type": "Skill",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/83/Prepared.png/revision/latest/scale-to-width-down/310?cb=20181016211925",
+  "desc_raw": "Draw 1/2 card/cards.\nDiscard 1/2 card/cards.",
+  "desc_clean": "Draw 1/2 card/cards. Discard 1/2 card/cards.",
+  "desc_problems": [],
+  "keywords": [
+    "Draw",
+    "Discard"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Prepared",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

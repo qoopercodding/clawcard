@@ -1,0 +1,33 @@
+{
+  "id": "mt_lodestone_totem",
+  "name": "Lodestone Totem",
+  "game": "monster_train",
+  "clan": "Stygian Guard",
+  "rarity": "Rare",
+  "type": "Totem",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/6/6b/Lodestone_Totem.png/revision/latest?cb=20200527190505",
+  "desc_raw": "Incant: Apply Sap 1 to enemy units.",
+  "desc_clean": "Incant: Apply Sap 1 to enemy units.",
+  "desc_problems": [],
+  "keywords": [
+    "Sap",
+    "Incant"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Lodestone_Totem",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

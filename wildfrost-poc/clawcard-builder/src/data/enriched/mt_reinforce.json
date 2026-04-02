@@ -1,0 +1,33 @@
+{
+  "id": "mt_reinforce",
+  "name": "Reinforce",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/2/26/Reinforce.png/revision/latest/scale-to-width-down/239?cb=20201216021815",
+  "desc_raw": "Consume.\nDouble Armor on a unit.",
+  "desc_clean": "Consume. Double Armor on a unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume",
+    "Armor"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Reinforce",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

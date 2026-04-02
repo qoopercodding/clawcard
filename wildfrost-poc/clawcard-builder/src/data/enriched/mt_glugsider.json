@@ -1,0 +1,32 @@
+{
+  "id": "mt_glugsider",
+  "name": "Glugsider",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Rare",
+  "type": "Fen",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/6/63/Glugsider.png/revision/latest/scale-to-width-down/400?cb=20210326184220",
+  "desc_raw": "Extract 4.\nInspire: Restore 5 health.\nRevenge: Apply Reap 5 to the attacking unit.",
+  "desc_clean": "Extract 4. Inspire: Restore 5 health. Revenge: Apply Reap 5 to the attacking unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Inspire"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Glugsider",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

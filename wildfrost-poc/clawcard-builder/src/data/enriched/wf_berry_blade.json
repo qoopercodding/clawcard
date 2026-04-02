@@ -1,0 +1,31 @@
+{
+  "id": "wf_berry_blade",
+  "name": "Berry Blade",
+  "game": "wildfrost",
+  "card_type": "Item",
+  "types": [
+    "Item",
+    "ShopItem"
+  ],
+  "attack": 4,
+  "health": 0,
+  "counter": 0,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Berry_Blade_(Berry_Blade).png",
+  "desc_raw": "Restore Health to front ally equal to damage dealt",
+  "desc_clean": "Restore Health to front ally equal to damage dealt",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Berry_Blade",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

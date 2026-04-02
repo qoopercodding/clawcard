@@ -1,0 +1,32 @@
+{
+  "id": "mt_animus_of_speed",
+  "name": "Animus of Speed",
+  "game": "monster_train",
+  "clan": "Awoken",
+  "rarity": "Uncommon",
+  "type": "Animus",
+  "cost": 1,
+  "capacity": 2,
+  "attack": 25,
+  "health": 3,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/d/d7/Animus_of_Speed.png/revision/latest/scale-to-width-down/269?cb=20200901052448",
+  "desc_raw": "Quick.",
+  "desc_clean": "Quick.",
+  "desc_problems": [],
+  "keywords": [
+    "Quick"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Animus_of_Speed",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

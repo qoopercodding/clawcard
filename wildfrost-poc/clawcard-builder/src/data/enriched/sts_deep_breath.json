@@ -1,0 +1,30 @@
+{
+  "id": "sts_deep_breath",
+  "name": "Deep Breath",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Uncommon",
+  "type": "Skill",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/62/DeepBreath.png/revision/latest/scale-to-width-down/310?cb=20181016212504",
+  "desc_raw": "Shuffle your discard pile into your draw pile.\nDraw 1/2 card/cards.",
+  "desc_clean": "Shuffle your discard pile into your draw pile. Draw 1/2 card/cards.",
+  "desc_problems": [],
+  "keywords": [
+    "Draw",
+    "Discard"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Deep_Breath",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

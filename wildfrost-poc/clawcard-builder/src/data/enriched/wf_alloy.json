@@ -1,0 +1,31 @@
+{
+  "id": "wf_alloy",
+  "name": "Alloy",
+  "game": "wildfrost",
+  "card_type": "Companion",
+  "types": [
+    "Companion",
+    "NonPetCompanion"
+  ],
+  "attack": 6,
+  "health": 12,
+  "counter": 5,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Alloy_(Alloy).png",
+  "desc_raw": "Apply 1 Scrap to a random ally",
+  "desc_clean": "Apply 1 Scrap to a random ally",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Alloy",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

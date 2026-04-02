@@ -1,0 +1,32 @@
+{
+  "id": "mt_ritual_of_battle",
+  "name": "Ritual of Battle",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Common",
+  "type": "Spell",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/e/e8/Ritual_of_Battle.png/revision/latest/scale-to-width-down/239?cb=20201216022012",
+  "desc_raw": "Apply Rage 10.",
+  "desc_clean": "Apply Rage 10.",
+  "desc_problems": [],
+  "keywords": [
+    "Rage"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Ritual_of_Battle",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

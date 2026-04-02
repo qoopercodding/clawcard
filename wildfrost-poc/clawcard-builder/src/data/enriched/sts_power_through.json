@@ -1,0 +1,30 @@
+{
+  "id": "sts_power_through",
+  "name": "Power Through",
+  "game": "slay_the_spire",
+  "color": "Red",
+  "rarity": "Uncommon",
+  "type": "Skill",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/PowerThrough.png/revision/latest/scale-to-width-down/310?cb=20181016210950",
+  "desc_raw": "Add 2 Wounds into your hand.\nGain 15/20 Block.",
+  "desc_clean": "Add 2 Wounds into your hand. Gain 15/20 Block.",
+  "desc_problems": [],
+  "keywords": [
+    "Block",
+    "Wound"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Power_Through",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

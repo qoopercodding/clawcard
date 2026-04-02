@@ -98,3 +98,136 @@ Heal przywraca utracone HP. Nie może przekroczyć Max HP. W walce heal jest rza
 **Zweryfikowane:** TAK | Data: 2026-04-02
 
 ---
+
+# ── MONSTER TRAIN ──
+
+## Consume
+**Gra:** Monster Train
+**Krótki opis:** Karta jest usuwana po zagraniu — jednorazowe użycie.
+**Pełny opis:**
+Spelle z keyword Consume mogą być zagrane tylko raz na bitwę. Po zagraniu znikają i nie wracają. Odpowiednik Exhaust ze Slay the Spire.
+**Przykłady kart:** Imp-in-a-Box, Rage Serum
+**Wiki:** https://monster-train.fandom.com/wiki/Consume
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Armor
+**Gra:** Monster Train
+**Krótki opis:** Absorbuje obrażenia zanim trafią w HP jednostki.
+**Pełny opis:**
+Armor daje jednostce tarczę. Każdy punkt Armor absorbuje 1 punkt obrażeń. Trwały — nie znika na koniec tury.
+**Przykłady kart:** Fortify
+**Wiki:** https://monster-train.fandom.com/wiki/Armor
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Rage
+**Gra:** Monster Train
+**Krótki opis:** Zwiększa atak jednostki o wartość Rage.
+**Pełny opis:**
+Rage to buff zwiększający atak. Każdy punkt Rage = +1 Attack. Stacks. Odpowiednik Strength ze StS.
+**Przykłady kart:** Dark Deal, Rage Serum
+**Wiki:** https://monster-train.fandom.com/wiki/Rage
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Sweep
+**Gra:** Monster Train
+**Krótki opis:** Atak trafia wszystkie wrogie jednostki na piętrze.
+**Wiki:** https://monster-train.fandom.com/wiki/Sweep
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Lifesteal
+**Gra:** Monster Train
+**Krótki opis:** Leczy Pyra za obrażenia zadane wrogom.
+**Wiki:** https://monster-train.fandom.com/wiki/Lifesteal
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Multistrike
+**Gra:** Monster Train
+**Krótki opis:** Jednostka atakuje wielokrotnie w jednej fazie ataku.
+**Wiki:** https://monster-train.fandom.com/wiki/Multistrike
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Gorge
+**Gra:** Monster Train (Umbra)
+**Krótki opis:** Efekt triggerowany przy zjadaniu Morseli.
+**Wiki:** https://monster-train.fandom.com/wiki/Gorge
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Incant
+**Gra:** Monster Train
+**Krótki opis:** Efekt triggerowany przy graniu spelli.
+**Wiki:** https://monster-train.fandom.com/wiki/Incant
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+# ── WILDFROST ──
+
+## Ink
+**Gra:** Wildfrost
+**Krótki opis:** Spowalnia counter wroga.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Ink
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Snow
+**Gra:** Wildfrost
+**Krótki opis:** Dodaje do countera karty, opóźniając akcję.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Snow
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Shell
+**Gra:** Wildfrost
+**Krótki opis:** Tarcza absorbująca obrażenia.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Shell
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Teeth
+**Gra:** Wildfrost
+**Krótki opis:** Zadaje obrażenia atakującemu (thorns).
+**Wiki:** https://wildfrost.wiki.gg/wiki/Teeth
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Spice
+**Gra:** Wildfrost
+**Krótki opis:** Tymczasowy boost do ataku.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Spice
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Frenzy
+**Gra:** Wildfrost
+**Krótki opis:** Wielokrotne ataki na trigger.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Frenzy
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---
+
+## Barrage
+**Gra:** Wildfrost
+**Krótki opis:** Atak trafia wszystkich wrogów.
+**Wiki:** https://wildfrost.wiki.gg/wiki/Barrage
+**Zweryfikowane:** TAK | Data: 2026-04-02
+
+---

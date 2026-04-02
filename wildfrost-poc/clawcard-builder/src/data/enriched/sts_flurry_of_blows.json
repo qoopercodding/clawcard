@@ -1,0 +1,29 @@
+{
+  "id": "sts_flurry_of_blows",
+  "name": "Flurry of Blows",
+  "game": "slay_the_spire",
+  "color": "Purple",
+  "rarity": "Common",
+  "type": "Attack",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlurryOfBlows.png/revision/latest/scale-to-width-down/310?cb=20191017204226",
+  "desc_raw": "Deal 4/6 damage. On Stance change, returns from the Discard Pile into your hand.",
+  "desc_clean": "Deal 4/6 damage. On Stance change, returns from the Discard Pile into your hand.",
+  "desc_problems": [],
+  "keywords": [
+    "Discard"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Flurry_of_Blows",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

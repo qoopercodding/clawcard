@@ -1,0 +1,32 @@
+{
+  "id": "mt_glareminder",
+  "name": "Glareminder",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Rare",
+  "type": "Kin",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/e/ef/Glareminder.png/revision/latest?cb=20210329105943",
+  "desc_raw": "Sweep.\nEtch: Apply Reap 2 to enemy units.",
+  "desc_clean": "Sweep. Etch: Apply Reap 2 to enemy units.",
+  "desc_problems": [],
+  "keywords": [
+    "Sweep"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Glareminder",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "mt_kinhost_vessel",
+  "name": "Kinhost Vessel",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Uncommon",
+  "type": "Egg",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 0,
+  "health": 1,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/7/72/Kinhost_Vessel.png/revision/latest?cb=20210329110020",
+  "desc_raw": "Shell 8.\nHatch: Summon Kinhost Pupa.",
+  "desc_clean": "Shell 8. Hatch: Summon Kinhost Pupa.",
+  "desc_problems": [],
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Kinhost_Vessel",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

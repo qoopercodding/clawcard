@@ -1,0 +1,33 @@
+{
+  "id": "mt_urchin_spines",
+  "name": "Urchin Spines",
+  "game": "monster_train",
+  "clan": "Stygian Guard",
+  "rarity": "Uncommon",
+  "type": "Spell",
+  "cost": 0,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/c/c1/Urchin_Spines.png/revision/latest/scale-to-width-down/239?cb=20201216024405",
+  "desc_raw": "Consume.\nApply Spell Weakness 2 to enemy units.",
+  "desc_clean": "Consume. Apply Spell Weakness 2 to enemy units.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume",
+    "Spell Weakness"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Urchin_Spines",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

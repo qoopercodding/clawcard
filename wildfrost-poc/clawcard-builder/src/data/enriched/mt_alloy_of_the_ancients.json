@@ -1,0 +1,33 @@
+{
+  "id": "mt_alloy_of_the_ancients",
+  "name": "Alloy of the Ancients",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/a/a9/Alloy_of_the_Ancients.png/revision/latest/scale-to-width-down/239?cb=20201215054316",
+  "desc_raw": "Consume.\nApply Armor 25.",
+  "desc_clean": "Consume. Apply Armor 25.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume",
+    "Armor"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Alloy_of_the_Ancients",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

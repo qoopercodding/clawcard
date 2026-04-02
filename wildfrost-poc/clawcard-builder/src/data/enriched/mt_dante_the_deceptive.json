@@ -1,0 +1,32 @@
+{
+  "id": "mt_dante_the_deceptive",
+  "name": "Dante the Deceptive",
+  "game": "monster_train",
+  "clan": "Clanless",
+  "rarity": "Rare",
+  "type": "Dante",
+  "cost": 1,
+  "capacity": 2,
+  "attack": 3,
+  "health": 10,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/3/3c/Dante_the_Deceptive.png/revision/latest?cb=20200527190503",
+  "desc_raw": "When played, gain a stack of Multistrike for each Blight card in your deck.",
+  "desc_clean": "When played, gain a stack of Multistrike for each Blight card in your deck.",
+  "desc_problems": [],
+  "keywords": [
+    "Multistrike"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Dante_the_Deceptive",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

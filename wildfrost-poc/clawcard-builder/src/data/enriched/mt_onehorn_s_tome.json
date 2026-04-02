@@ -1,0 +1,33 @@
+{
+  "id": "mt_onehorn_s_tome",
+  "name": "Onehorn's Tome",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 5,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/b/b2/Onehorn%27s_Tome.png/revision/latest/scale-to-width-down/239?cb=20201216005950",
+  "desc_raw": "Consume.\nApply Multistrike 1 and Fragile to a friendly unit.",
+  "desc_clean": "Consume. Apply Multistrike 1 and Fragile to a friendly unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume",
+    "Multistrike"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Onehorn's_Tome",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

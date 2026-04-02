@@ -1,0 +1,32 @@
+{
+  "id": "sts_dropkick",
+  "name": "Dropkick",
+  "game": "slay_the_spire",
+  "color": "Red",
+  "rarity": "Uncommon",
+  "type": "Attack",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Dropkick.png/revision/latest/scale-to-width-down/310?cb=20181016205819",
+  "desc_raw": "Deal 5/8 damage.\nIf the enemy has Vulnerable, gain <R> and draw 1 card.",
+  "desc_clean": "Deal 5/8 damage. If the enemy has Vulnerable, gain <R> and draw 1 card.",
+  "desc_problems": [
+    "Remaining: ['<R>']"
+  ],
+  "keywords": [
+    "Vulnerable",
+    "Draw"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Dropkick",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

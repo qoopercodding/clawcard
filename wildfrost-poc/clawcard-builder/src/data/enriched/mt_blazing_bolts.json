@@ -1,0 +1,32 @@
+{
+  "id": "mt_blazing_bolts",
+  "name": "Blazing Bolts",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/1/1d/Blazing_Bolts_1.png/revision/latest/scale-to-width-down/239?cb=20210710113550",
+  "desc_raw": "Purge.\nDeal 30 damage to the front enemy unit. Add a stronger version of this card to your discard.<hr>Purge.\nDeal 30 damage to a random unit, two times. Add a stronger version of this card to your discard.<hr>Deal 30 damage to a random unit, four times.",
+  "desc_clean": "Purge. Deal 30 damage to the front enemy unit. Add a stronger version of this card to your discard.<hr>Purge. Deal 30 damage to a random unit, two times. Add a stronger version of this card to your discard.<hr>Deal 30 damage to a random unit, four times.",
+  "desc_problems": [],
+  "keywords": [
+    "Purge"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Blazing_Bolts",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

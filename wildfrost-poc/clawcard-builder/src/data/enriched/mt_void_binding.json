@@ -1,0 +1,33 @@
+{
+  "id": "mt_void_binding",
+  "name": "Void Binding",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Uncommon",
+  "type": "Spell",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Void_Binding.png/revision/latest/scale-to-width-down/239?cb=20201216024511",
+  "desc_raw": "Apply Damage Shield 2, Rage 6, and Emberdrain 3.",
+  "desc_clean": "Apply Damage Shield 2, Rage 6, and Emberdrain 3.",
+  "desc_problems": [],
+  "keywords": [
+    "Rage",
+    "Damage Shield"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Void_Binding",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

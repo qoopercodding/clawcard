@@ -1,0 +1,29 @@
+{
+  "id": "sts_bash",
+  "name": "Bash",
+  "game": "slay_the_spire",
+  "color": "Red",
+  "rarity": "Basic",
+  "type": "Attack",
+  "cost": 2,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/Bash.png/revision/latest/scale-to-width-down/310?cb=20181016205628",
+  "desc_raw": "Deal 8/10 damage.\nApply 2/3 Vulnerable.",
+  "desc_clean": "Deal 8/10 damage. Apply 2/3 Vulnerable.",
+  "desc_problems": [],
+  "keywords": [
+    "Vulnerable"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Bash",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

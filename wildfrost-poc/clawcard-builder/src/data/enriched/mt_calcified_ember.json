@@ -1,0 +1,32 @@
+{
+  "id": "mt_calcified_ember",
+  "name": "Calcified Ember",
+  "game": "monster_train",
+  "clan": "Clanless",
+  "rarity": "",
+  "type": "Blight",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/c/ca/Calcified_Ember.png/revision/latest/scale-to-width-down/239?cb=20201215055303",
+  "desc_raw": "Purge.",
+  "desc_clean": "Purge.",
+  "desc_problems": [],
+  "keywords": [
+    "Purge"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Calcified_Ember",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sts_distraction",
+  "name": "Distraction",
+  "game": "slay_the_spire",
+  "color": "Green",
+  "rarity": "Uncommon",
+  "type": "Skill",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Distraction.png/revision/latest/scale-to-width-down/310?cb=20181016211544",
+  "desc_raw": "Add a random Skill into your hand.\nIt costs 0 this turn.\nExhaust.",
+  "desc_clean": "Add a random Skill into your hand. It costs 0 this turn. Exhaust.",
+  "desc_problems": [],
+  "keywords": [
+    "Exhaust"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Distraction",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

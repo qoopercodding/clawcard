@@ -1,0 +1,29 @@
+{
+  "id": "sts_setup",
+  "name": "Setup",
+  "game": "slay_the_spire",
+  "color": "Green",
+  "rarity": "Uncommon",
+  "type": "Skill",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/9/98/Setup.png/revision/latest/scale-to-width-down/310?cb=20181016212111",
+  "desc_raw": "Put a card from your hand on top of your draw pile.\nIt costs 0 until played.",
+  "desc_clean": "Put a card from your hand on top of your draw pile. It costs 0 until played.",
+  "desc_problems": [],
+  "keywords": [
+    "Draw"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Setup",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

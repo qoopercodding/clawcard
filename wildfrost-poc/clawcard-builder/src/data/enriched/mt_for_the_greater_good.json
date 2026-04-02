@@ -1,0 +1,32 @@
+{
+  "id": "mt_for_the_greater_good",
+  "name": "For the Greater Good",
+  "game": "monster_train",
+  "clan": "Clanless",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 2,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/f/fa/For_the_Greater_Good.png/revision/latest/scale-to-width-down/239?cb=20210520024437",
+  "desc_raw": "Summon a friendly Rebel unit to the front of this floor.",
+  "desc_clean": "Summon a friendly Rebel unit to the front of this floor.",
+  "desc_problems": [],
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/For_the_Greater_Good",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "mt_shard_channeler",
+  "name": "Shard Channeler",
+  "game": "monster_train",
+  "clan": "Awoken",
+  "rarity": "Rare",
+  "type": "Channeler",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 0,
+  "health": 2,
+  "image": "",
+  "desc_raw": "Spikes on friendly units deal +1 damage per stack.",
+  "desc_clean": "Spikes on friendly units deal +1 damage per stack.",
+  "desc_problems": [],
+  "keywords": [
+    "Spikes"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Shard_Channeler",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

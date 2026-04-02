@@ -1,0 +1,30 @@
+{
+  "id": "wf_bitebox",
+  "name": "Bitebox",
+  "game": "wildfrost",
+  "card_type": "Clunker",
+  "types": [
+    "Clunker"
+  ],
+  "attack": 0,
+  "health": 0,
+  "counter": 0,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Bitebox_(Bitebox).png",
+  "desc_raw": "When hit, deal equal damage to the attacker",
+  "desc_clean": "When hit, deal equal damage to the attacker",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Bitebox",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

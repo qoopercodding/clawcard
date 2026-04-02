@@ -1,0 +1,31 @@
+{
+  "id": "wf_lil_gazi",
+  "name": "Lil' Gazi",
+  "game": "wildfrost",
+  "card_type": "Pet",
+  "types": [
+    "Pet",
+    "Companion"
+  ],
+  "attack": 4,
+  "health": 3,
+  "counter": 4,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Lil_Gazi_(Lil_Gazi).png",
+  "desc_raw": "While active, add +1 Attack to all allies",
+  "desc_clean": "While active, add +1 Attack to all allies",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Lil'_Gazi",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

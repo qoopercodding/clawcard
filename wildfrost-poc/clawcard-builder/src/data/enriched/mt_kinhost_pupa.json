@@ -1,0 +1,33 @@
+{
+  "id": "mt_kinhost_pupa",
+  "name": "Kinhost Pupa",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Uncommon",
+  "type": "Host",
+  "cost": "-",
+  "capacity": 2,
+  "attack": "30x2",
+  "health": 10,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Kinhost_Pupa.png/revision/latest?cb=20210329110013",
+  "desc_raw": "Armor 20. Multistrike 1.\nStrike: Apply Reap 1 to enemy units.",
+  "desc_clean": "Armor 20. Multistrike 1. Strike: Apply Reap 1 to enemy units.",
+  "desc_problems": [],
+  "keywords": [
+    "Armor",
+    "Multistrike"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Kinhost_Pupa",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

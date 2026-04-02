@@ -1,0 +1,31 @@
+{
+  "id": "wf_big_berry",
+  "name": "Big Berry",
+  "game": "wildfrost",
+  "card_type": "Companion",
+  "types": [
+    "Companion",
+    "NonPetCompanion"
+  ],
+  "attack": 5,
+  "health": 10,
+  "counter": 4,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Big_Berry_(Big_Berry).png",
+  "desc_raw": "On kill, restore 2 Health to self and allies in the row",
+  "desc_clean": "On kill, restore 2 Health to self and allies in the row",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Big_Berry",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "mt_immortal_trade",
+  "name": "Immortal Trade",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Common",
+  "type": "Spell",
+  "cost": 0,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/4/4c/Immortal_Trade.png/revision/latest/scale-to-width-down/239?cb=20201215092026",
+  "desc_raw": "Apply Lifesteal 3 and Emberdrain 2 to a friendly unit.",
+  "desc_clean": "Apply Lifesteal 3 and Emberdrain 2 to a friendly unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Lifesteal"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Immortal_Trade",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "mt_awoken_hollow",
+  "name": "Awoken Hollow",
+  "game": "monster_train",
+  "clan": "Awoken",
+  "rarity": "Uncommon",
+  "type": "Hollow",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/9/9a/Awoken_Hollow.png/revision/latest/scale-to-width-down/400?cb=20200527190508",
+  "desc_raw": "Summon: Gain 60 max health.\nRejuvenate: Cultivate 2",
+  "desc_clean": "Summon: Gain 60 max health. Rejuvenate: Cultivate 2",
+  "desc_problems": [],
+  "keywords": [
+    "Rejuvenate",
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Awoken_Hollow",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

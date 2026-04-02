@@ -1,0 +1,32 @@
+{
+  "id": "mt_invigorating_solution",
+  "name": "Invigorating Solution",
+  "game": "monster_train",
+  "clan": "Awoken",
+  "rarity": "Uncommon",
+  "type": "Spell",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/0/0c/Invigorating_Solution.png/revision/latest/scale-to-width-down/239?cb=20210328024304",
+  "desc_raw": "Consume.\nDraw +3 next turn.",
+  "desc_clean": "Consume. Draw +3 next turn.",
+  "desc_problems": [],
+  "keywords": [
+    "Consume"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Invigorating_Solution",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

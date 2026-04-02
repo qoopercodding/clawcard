@@ -1,0 +1,32 @@
+{
+  "id": "mt_molten_encasement",
+  "name": "Molten Encasement",
+  "game": "monster_train",
+  "clan": "Melting Remnant",
+  "rarity": "Common",
+  "type": "Tomb",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 0,
+  "health": 1,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/3/34/Molten_Encasement.png/revision/latest?cb=20200527190506",
+  "desc_raw": "Extinguish: Apply Stealth 2 to friendly units.",
+  "desc_clean": "Extinguish: Apply Stealth 2 to friendly units.",
+  "desc_problems": [],
+  "keywords": [
+    "Stealth"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Molten_Encasement",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

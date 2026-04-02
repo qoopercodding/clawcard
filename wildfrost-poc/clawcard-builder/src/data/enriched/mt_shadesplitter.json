@@ -1,0 +1,32 @@
+{
+  "id": "mt_shadesplitter",
+  "name": "Shadesplitter",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Common",
+  "type": "Spell",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/5/5f/Shadesplitter.png/revision/latest/scale-to-width-down/239?cb=20201216022130",
+  "desc_raw": "Add a common or uncommon Morsel unit to your hand.",
+  "desc_clean": "Add a common or uncommon Morsel unit to your hand.",
+  "desc_problems": [],
+  "keywords": [
+    "Morsel"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Shadesplitter",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

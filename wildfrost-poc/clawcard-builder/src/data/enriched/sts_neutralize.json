@@ -1,0 +1,29 @@
+{
+  "id": "sts_neutralize",
+  "name": "Neutralize",
+  "game": "slay_the_spire",
+  "color": "Green",
+  "rarity": "Basic",
+  "type": "Attack",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/Neutralize.png/revision/latest/scale-to-width-down/310?cb=20181016211836",
+  "desc_raw": "Deal 3/4 damage.\nApply 1/2 Weak.",
+  "desc_clean": "Deal 3/4 damage. Apply 1/2 Weak.",
+  "desc_problems": [],
+  "keywords": [
+    "Weak"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Neutralize",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

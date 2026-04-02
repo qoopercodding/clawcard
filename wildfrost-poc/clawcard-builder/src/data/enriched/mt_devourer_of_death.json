@@ -1,0 +1,32 @@
+{
+  "id": "mt_devourer_of_death",
+  "name": "Devourer of Death",
+  "game": "monster_train",
+  "clan": "Melting Remnant",
+  "rarity": "Rare",
+  "type": "Wickless",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 0,
+  "health": 5,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/4/4a/Devourer_of_Death.png/revision/latest?cb=20200527190505",
+  "desc_raw": "Harvest: Gain Soul 1.\nExtinguish: Deal damage to the enemy units equal to 15x the Soul count.",
+  "desc_clean": "Harvest: Gain Soul 1. Extinguish: Deal damage to the enemy units equal to 15x the Soul count.",
+  "desc_problems": [],
+  "keywords": [
+    "Harvest"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Devourer_of_Death",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

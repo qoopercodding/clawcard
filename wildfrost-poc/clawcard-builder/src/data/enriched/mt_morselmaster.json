@@ -1,0 +1,33 @@
+{
+  "id": "mt_morselmaster",
+  "name": "Morselmaster",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Uncommon",
+  "type": "Shroud",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 10,
+  "health": 10,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/4/41/Morselmaster.png/revision/latest?cb=20200527190507",
+  "desc_raw": "When you summon a Morsel unit on this floor, create a copy.",
+  "desc_clean": "When you summon a Morsel unit on this floor, create a copy.",
+  "desc_problems": [],
+  "keywords": [
+    "Summon",
+    "Morsel"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Morselmaster",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

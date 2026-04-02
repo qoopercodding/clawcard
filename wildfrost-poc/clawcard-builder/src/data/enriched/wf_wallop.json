@@ -1,0 +1,33 @@
+{
+  "id": "wf_wallop",
+  "name": "Wallop",
+  "game": "wildfrost",
+  "card_type": "Companion",
+  "types": [
+    "Companion",
+    "NonPetCompanion"
+  ],
+  "attack": 4,
+  "health": 9,
+  "counter": 4,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Wallop_(Wallop).png",
+  "desc_raw": "Deal 8 additional damage to Snow'd targets",
+  "desc_clean": "Deal 8 additional damage to Snow'd targets",
+  "desc_problems": [],
+  "keywords": [
+    "Snow"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Wallop",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

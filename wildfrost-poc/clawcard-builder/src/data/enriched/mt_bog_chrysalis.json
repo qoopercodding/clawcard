@@ -1,0 +1,32 @@
+{
+  "id": "mt_bog_chrysalis",
+  "name": "Bog Chrysalis",
+  "game": "monster_train",
+  "clan": "Wurmkin",
+  "rarity": "Uncommon",
+  "type": "Egg",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 0,
+  "health": 1,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/4/44/Bog_Chrysalis.png/revision/latest?cb=20210329110119",
+  "desc_raw": "Shell 5.\nHatch: Summon 2 Bog Fly units.",
+  "desc_clean": "Shell 5. Hatch: Summon 2 Bog Fly units.",
+  "desc_problems": [],
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Bog_Chrysalis",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

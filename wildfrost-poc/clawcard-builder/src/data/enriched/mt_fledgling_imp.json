@@ -1,0 +1,33 @@
+{
+  "id": "mt_fledgling_imp",
+  "name": "Fledgling Imp",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Common",
+  "type": "Imp",
+  "cost": 1,
+  "capacity": 1,
+  "attack": 1,
+  "health": 1,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/9/9a/Fledgling_Imp.png/revision/latest?cb=20200527190505",
+  "desc_raw": "Summon: Apply Rage 5 to friendly units.",
+  "desc_clean": "Summon: Apply Rage 5 to friendly units.",
+  "desc_problems": [],
+  "keywords": [
+    "Rage",
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Fledgling_Imp",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

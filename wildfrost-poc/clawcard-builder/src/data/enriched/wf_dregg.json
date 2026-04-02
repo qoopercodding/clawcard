@@ -1,0 +1,30 @@
+{
+  "id": "wf_dregg",
+  "name": "Dregg",
+  "game": "wildfrost",
+  "card_type": "Shade",
+  "types": [
+    "Shade"
+  ],
+  "attack": 5,
+  "health": 5,
+  "counter": 4,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Dregg_(Dregg).png",
+  "desc_raw": "",
+  "desc_clean": "",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Dregg",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "pending",
+  "qa_notes": "No description available.",
+  "qa_critic_score": 2,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "mt_remnant_host",
+  "name": "Remnant Host",
+  "game": "monster_train",
+  "clan": "Melting Remnant",
+  "rarity": "Uncommon",
+  "type": "Tomb",
+  "cost": 0,
+  "capacity": 1,
+  "attack": 0,
+  "health": 1,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/2/2f/Remnant_Host.png/revision/latest?cb=20200527190507",
+  "desc_raw": "Extinguish: Summon 2 Draff units.",
+  "desc_clean": "Extinguish: Summon 2 Draff units.",
+  "desc_problems": [],
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Remnant_Host",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

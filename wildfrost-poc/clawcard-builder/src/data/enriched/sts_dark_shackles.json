@@ -1,0 +1,30 @@
+{
+  "id": "sts_dark_shackles",
+  "name": "Dark Shackles",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Uncommon",
+  "type": "Skill",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/7/79/DarkShackles.png/revision/latest/scale-to-width-down/310?cb=20181016212502",
+  "desc_raw": "Enemy loses 9/15 Strength this turn.\nExhaust.",
+  "desc_clean": "Enemy loses 9/15 Strength this turn. Exhaust.",
+  "desc_problems": [],
+  "keywords": [
+    "Exhaust",
+    "Strength"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Dark_Shackles",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

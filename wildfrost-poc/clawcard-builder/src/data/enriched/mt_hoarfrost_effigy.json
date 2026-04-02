@@ -1,0 +1,32 @@
+{
+  "id": "mt_hoarfrost_effigy",
+  "name": "Hoarfrost Effigy",
+  "game": "monster_train",
+  "clan": "Stygian Guard",
+  "rarity": "Rare",
+  "type": "Spell",
+  "cost": 3,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/2/22/Hoarfrost_Effigy.png/revision/latest/scale-to-width-down/239?cb=20201215091929",
+  "desc_raw": "Transfer all Frostbite on this floor to a unit, then double the amount of Frostbite.",
+  "desc_clean": "Transfer all Frostbite on this floor to a unit, then double the amount of Frostbite.",
+  "desc_problems": [],
+  "keywords": [
+    "Frostbite"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Hoarfrost_Effigy",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sts_writhe",
+  "name": "Writhe",
+  "game": "slay_the_spire",
+  "color": "Curse",
+  "rarity": "Curse",
+  "type": "Curse",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6e/Writhe.png/revision/latest/scale-to-width-down/314?cb=20180120063506",
+  "desc_raw": "Unplayable.\nInnate.",
+  "desc_clean": "Unplayable. Innate.",
+  "desc_problems": [],
+  "keywords": [
+    "Innate",
+    "Unplayable"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Writhe",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

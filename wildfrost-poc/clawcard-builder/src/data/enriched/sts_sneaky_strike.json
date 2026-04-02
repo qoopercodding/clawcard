@@ -1,0 +1,31 @@
+{
+  "id": "sts_sneaky_strike",
+  "name": "Sneaky Strike",
+  "game": "slay_the_spire",
+  "color": "Green",
+  "rarity": "Common",
+  "type": "Attack",
+  "cost": 2,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ed/SneakyStrike.png/revision/latest/scale-to-width-down/310?cb=20210408072002",
+  "desc_raw": "Deal 12/16 damage.\nIf you have discarded a card this turn,\ngain <G> <G>.",
+  "desc_clean": "Deal 12/16 damage. If you have discarded a card this turn, gain <G> <G>.",
+  "desc_problems": [
+    "Remaining: ['<G>', '<G>']"
+  ],
+  "keywords": [
+    "Discard"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Sneaky_Strike",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

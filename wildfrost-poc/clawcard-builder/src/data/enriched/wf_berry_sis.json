@@ -1,0 +1,31 @@
+{
+  "id": "wf_berry_sis",
+  "name": "Berry Sis",
+  "game": "wildfrost",
+  "card_type": "Companion",
+  "types": [
+    "Companion",
+    "NonPetCompanion"
+  ],
+  "attack": 2,
+  "health": 8,
+  "counter": 3,
+  "image": "https://wildfrostwiki.com/Special:FilePath/Berry_Sis_(Berry_Sis).png",
+  "desc_raw": "When hit, add lost Health to a random ally",
+  "desc_clean": "When hit, add lost Health to a random ally",
+  "desc_problems": [],
+  "keywords": [],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://wildfrost.wiki.gg/wiki/Berry_Sis",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

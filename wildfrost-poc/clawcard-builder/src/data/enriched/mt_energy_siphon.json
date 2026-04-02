@@ -1,0 +1,32 @@
+{
+  "id": "mt_energy_siphon",
+  "name": "Energy Siphon",
+  "game": "monster_train",
+  "clan": "Stygian Guard",
+  "rarity": "Common",
+  "type": "Spell",
+  "cost": 0,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/d/d2/Energy_Siphon.png/revision/latest/scale-to-width-down/239?cb=20201215090151",
+  "desc_raw": "Apply Spell Weakness 1 to an enemy unit.",
+  "desc_clean": "Apply Spell Weakness 1 to an enemy unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Spell Weakness"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Energy_Siphon",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

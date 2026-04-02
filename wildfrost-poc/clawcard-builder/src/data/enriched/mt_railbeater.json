@@ -1,0 +1,32 @@
+{
+  "id": "mt_railbeater",
+  "name": "Railbeater",
+  "game": "monster_train",
+  "clan": "Hellhorned",
+  "rarity": "Uncommon",
+  "type": "Demon",
+  "cost": 1,
+  "capacity": 2,
+  "attack": 10,
+  "health": 10,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/8/88/Railbeater.png/revision/latest/scale-to-width-down/400?cb=20200527190507",
+  "desc_raw": "Armor 30.\nStrike: Apply Melee Weakness 1 to the attacked unit.",
+  "desc_clean": "Armor 30. Strike: Apply Melee Weakness 1 to the attacked unit.",
+  "desc_problems": [],
+  "keywords": [
+    "Armor"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Railbeater",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

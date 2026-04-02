@@ -1,0 +1,32 @@
+{
+  "id": "mt_drain",
+  "name": "Drain",
+  "game": "monster_train",
+  "clan": "Stygian Guard",
+  "rarity": "Uncommon",
+  "type": "Spell",
+  "cost": 1,
+  "capacity": 0,
+  "attack": 0,
+  "health": 0,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Drain.png/revision/latest/scale-to-width-down/239?cb=20201215060336",
+  "desc_raw": "Apply Sap 3.\nDiscard a card at random.",
+  "desc_clean": "Apply Sap 3. Discard a card at random.",
+  "desc_problems": [],
+  "keywords": [
+    "Sap"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Drain",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

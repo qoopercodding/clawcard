@@ -1,0 +1,33 @@
+{
+  "id": "mt_alloyed_construct",
+  "name": "Alloyed Construct",
+  "game": "monster_train",
+  "clan": "Umbra",
+  "rarity": "Uncommon",
+  "type": "Construct",
+  "cost": 2,
+  "capacity": 2,
+  "attack": "25x2",
+  "health": 25,
+  "image": "https://static.wikia.nocookie.net/monster_train/images/6/68/Alloyed_Construct.png/revision/latest?cb=20200527190506",
+  "desc_raw": "Inert. Multistrike 1.\nGorge: Gain Fuel 1.",
+  "desc_clean": "Inert. Multistrike 1. Gorge: Gain Fuel 1.",
+  "desc_problems": [],
+  "keywords": [
+    "Multistrike",
+    "Gorge"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://monster-train.fandom.com/wiki/Alloyed_Construct",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "sts_slimed",
+  "name": "Slimed",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Common",
+  "type": "Status",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Slimed.png/revision/latest/scale-to-width-down/310?cb=20181016212734",
+  "desc_raw": "Exhaust.",
+  "desc_clean": "Exhaust.",
+  "desc_problems": [],
+  "keywords": [
+    "Exhaust"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Slimed",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}

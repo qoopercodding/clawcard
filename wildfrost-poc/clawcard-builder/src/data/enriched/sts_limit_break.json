@@ -1,0 +1,30 @@
+{
+  "id": "sts_limit_break",
+  "name": "Limit Break",
+  "game": "slay_the_spire",
+  "color": "Red",
+  "rarity": "Rare",
+  "type": "Skill",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8c/LimitBreak.png/revision/latest/scale-to-width-down/310?cb=20181016210818",
+  "desc_raw": "Double your Strength. \nExhaust.",
+  "desc_clean": "Double your Strength.  Exhaust.",
+  "desc_problems": [],
+  "keywords": [
+    "Exhaust",
+    "Strength"
+  ],
+  "keyword_details": {},
+  "mechanic_summary": "",
+  "verified_against_wiki": false,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Limit_Break",
+  "wiki_desc": "",
+  "wiki_keywords": [],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "Auto-enriched batch. Keywords extracted from desc_clean.",
+  "qa_critic_score": 4,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_batch_pipeline",
+  "verified_at": "2026-04-02"
+}
