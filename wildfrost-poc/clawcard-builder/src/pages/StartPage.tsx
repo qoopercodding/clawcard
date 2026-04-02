@@ -129,54 +129,106 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
   } as React.CSSProperties,
 }))
 
+import { useState } from 'react'
 import { getBestScore, getTotalRuns, getWinRate } from '../store/runHistory'
 
 const groups = ['play', 'tools', 'dev'] as const
 
+type HubMode = 'hub' | 'legacy' | 'new'
+
 export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPageProps) {
+  const [hubMode, setHubMode] = useState<HubMode>('hub')
   const totalRuns = getTotalRuns()
   const bestScore = getBestScore()
   const winRate = getWinRate()
-  return (
-    <main className="start-page">
-      <div className="start-page__bg-pulse" />
-      <div className="start-page__particles">
-        {PARTICLES.map(p => (
-          <div key={p.id} className="start-page__particle" style={p.style} />
-        ))}
+
+  const renderHero = () => (
+    <section className="start-page__hero">
+      <p className="start-page__eyebrow">ClawCard Builder</p>
+      <h1 className="start-page__title">
+        Forge Your <span className="start-page__gold">Destiny</span>
+      </h1>
+      <p className="start-page__lead">
+        Dark fantasy roguelike deck builder — twórz karty, mechaniki i mapy
+      </p>
+      <div className="start-page__divider" />
+
+      {hasSavedRun && (
+        <button
+          type="button"
+          className="start-page__continue"
+          onClick={onContinueRun}
+        >
+          Continue Run
+        </button>
+      )}
+
+      {totalRuns > 0 && (
+        <div className="start-page__stats">
+          <span>Runs: {totalRuns}</span>
+          <span className="start-page__separator">·</span>
+          <span>Best: {bestScore}</span>
+          <span className="start-page__separator">·</span>
+          <span>Win Rate: {winRate}%</span>
+        </div>
+      )}
+    </section>
+  )
+
+  const renderHub = () => (
+    <section className="start-page__hub">
+      <div className="hub-tiles">
+        <button
+          className="hub-tile hub-tile--new"
+          type="button"
+          onClick={() => setHubMode('new')}
+        >
+          <div className="hub-tile__glow" />
+          <span className="hub-tile__emoji">✨</span>
+          <strong className="hub-tile__title">Nowe Rzeczy</strong>
+          <span className="hub-tile__subtitle">WOEC — nowe eksperymenty</span>
+          <span className="hub-tile__desc">Nowe prototypy i mechaniki w rozwoju</span>
+        </button>
+
+        <button
+          className="hub-tile hub-tile--legacy"
+          type="button"
+          onClick={() => setHubMode('legacy')}
+        >
+          <div className="hub-tile__glow" />
+          <span className="hub-tile__emoji">📦</span>
+          <strong className="hub-tile__title">Stare POC</strong>
+          <span className="hub-tile__subtitle">Wszystkie prototypy</span>
+          <span className="hub-tile__desc">Oryginalne proof-of-concept ekrany i narzędzia</span>
+        </button>
       </div>
+    </section>
+  )
 
-      <section className="start-page__hero">
-        <p className="start-page__eyebrow">ClawCard Builder</p>
-        <h1 className="start-page__title">
-          Forge Your <span className="start-page__gold">Destiny</span>
-        </h1>
-        <p className="start-page__lead">
-          Dark fantasy roguelike deck builder — twórz karty, mechaniki i mapy
-        </p>
-        <div className="start-page__divider" />
+  const renderNew = () => (
+    <section className="start-page__section">
+      <div className="start-page__back-row">
+        <button className="start-page__back" type="button" onClick={() => setHubMode('hub')}>
+          ← Powrót
+        </button>
+        <h2 className="start-page__section-title">Nowe Rzeczy</h2>
+      </div>
+      <div className="start-page__empty">
+        <span className="start-page__empty-emoji">🚧</span>
+        <p className="start-page__empty-text">Wkrótce...</p>
+        <p className="start-page__empty-sub">Nowe eksperymenty pojawią się tutaj</p>
+      </div>
+    </section>
+  )
 
-        {hasSavedRun && (
-          <button
-            type="button"
-            className="start-page__continue"
-            onClick={onContinueRun}
-          >
-            Continue Run
-          </button>
-        )}
-
-        {totalRuns > 0 && (
-          <div className="start-page__stats">
-            <span>Runs: {totalRuns}</span>
-            <span className="start-page__separator">·</span>
-            <span>Best: {bestScore}</span>
-            <span className="start-page__separator">·</span>
-            <span>Win Rate: {winRate}%</span>
-          </div>
-        )}
-      </section>
-
+  const renderLegacy = () => (
+    <>
+      <div className="start-page__back-row">
+        <button className="start-page__back" type="button" onClick={() => setHubMode('hub')}>
+          ← Powrót
+        </button>
+        <h2 className="start-page__section-title" style={{ margin: 0 }}>Stare POC</h2>
+      </div>
       {groups.map(group => {
         const cards = NAV_CARDS.filter(c => c.group === group)
         return (
@@ -212,6 +264,23 @@ export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPag
           </section>
         )
       })}
+    </>
+  )
+
+  return (
+    <main className="start-page">
+      <div className="start-page__bg-pulse" />
+      <div className="start-page__particles">
+        {PARTICLES.map(p => (
+          <div key={p.id} className="start-page__particle" style={p.style} />
+        ))}
+      </div>
+
+      {renderHero()}
+
+      {hubMode === 'hub' && renderHub()}
+      {hubMode === 'new' && renderNew()}
+      {hubMode === 'legacy' && renderLegacy()}
 
       <footer className="start-page__footer">
         <span>ClawCard v1.5</span>

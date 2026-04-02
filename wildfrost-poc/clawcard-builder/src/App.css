@@ -479,6 +479,167 @@
   color: var(--color-gold);
 }
 
+/* ── Hub Tiles ── */
+.start-page__hub {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+}
+
+.hub-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  width: 100%;
+}
+
+.hub-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid rgba(200, 144, 42, 0.25);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(42, 26, 10, 0.9), rgba(26, 14, 5, 0.95));
+  color: var(--color-text);
+  cursor: pointer;
+  transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+  overflow: hidden;
+  min-height: 260px;
+}
+
+.hub-tile:hover {
+  transform: translateY(-5px);
+  border-color: rgba(200, 144, 42, 0.6);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(200, 144, 42, 0.12);
+}
+
+.hub-tile__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(200, 144, 42, 0.06), transparent 70%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.hub-tile:hover .hub-tile__glow {
+  opacity: 1;
+}
+
+.hub-tile__emoji {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(200, 144, 42, 0.3));
+}
+
+.hub-tile__title {
+  font-family: var(--font-gothic);
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.hub-tile__subtitle {
+  font-family: var(--font-gothic);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold);
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.hub-tile__desc {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.hub-tile--new {
+  border-color: rgba(200, 144, 42, 0.35);
+  box-shadow: 0 0 24px rgba(200, 144, 42, 0.06);
+}
+
+.hub-tile--new:hover {
+  border-color: rgba(200, 144, 42, 0.7);
+}
+
+/* ── Back Button & Empty State ── */
+.start-page__back-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.start-page__back {
+  padding: 8px 18px;
+  border: 1px solid rgba(200, 144, 42, 0.25);
+  border-radius: 8px;
+  background: rgba(42, 26, 10, 0.6);
+  color: var(--color-gold);
+  cursor: pointer;
+  font-family: var(--font-gothic);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  transition: all 200ms ease;
+}
+
+.start-page__back:hover {
+  background: rgba(200, 144, 42, 0.12);
+  border-color: rgba(200, 144, 42, 0.5);
+}
+
+.start-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.start-page__empty-emoji {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+
+.start-page__empty-text {
+  font-family: var(--font-gothic);
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.start-page__empty-sub {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+}
+
+@media (max-width: 640px) {
+  .hub-tiles {
+    grid-template-columns: 1fr;
+  }
+  .hub-tile {
+    min-height: 200px;
+    padding: 36px 24px;
+  }
+}
+
 /* ── Workspace ── */
 .workspace-screen { display: grid; gap: 28px; }
 .workspace-screen__header { display: grid; gap: 12px; }
