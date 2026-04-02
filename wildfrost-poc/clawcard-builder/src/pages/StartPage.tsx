@@ -23,6 +23,7 @@ export type AppView =
   | 'game'
   | 'dev-game'
   | 'battle-showcase'
+  | 'card-mechanics'
 
 interface StartPageProps {
   onSelectView: (view: Exclude<AppView, 'start'>) => void
@@ -106,6 +107,11 @@ const NAV_CARDS: NavCard[] = [
     id: 'dev-game', emoji: '🔬', title: 'Dev Game', subtitle: 'Hover inspector',
     description: 'Game screen z aktywnym Hover Inspector.',
     badge: 'DEV', group: 'dev',
+  },
+  {
+    id: 'card-mechanics', emoji: '🧠', title: 'Mechaniki Kart', subtitle: 'Epic 7 — Enrichment Pipeline',
+    description: 'Wzbogacone karty z wiki-weryfikacją, keywords, i mechanic browser.',
+    badge: 'NOWE', highlight: true, group: 'tools',
   },
 ]
 
@@ -205,6 +211,14 @@ export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPag
     </section>
   )
 
+  const NEW_CARDS: NavCard[] = [
+    {
+      id: 'card-mechanics', emoji: '🧠', title: 'Mechaniki Kart', subtitle: 'Epic 7 — Enrichment Pipeline',
+      description: 'Wzbogacone karty z wiki-weryfikacją, keywords, i mechanic browser.',
+      badge: 'NOWE', highlight: true, group: 'tools',
+    },
+  ]
+
   const renderNew = () => (
     <section className="start-page__section">
       <div className="start-page__back-row">
@@ -213,10 +227,32 @@ export function StartPage({ onSelectView, hasSavedRun, onContinueRun }: StartPag
         </button>
         <h2 className="start-page__section-title">Nowe Rzeczy</h2>
       </div>
-      <div className="start-page__empty">
-        <span className="start-page__empty-emoji">🚧</span>
-        <p className="start-page__empty-text">Wkrótce...</p>
-        <p className="start-page__empty-sub">Nowe eksperymenty pojawią się tutaj</p>
+      <div className="start-page__grid">
+        {NEW_CARDS.map(card => (
+          <button
+            key={card.id}
+            className={`nav-card ${card.highlight ? 'nav-card--highlight' : ''}`}
+            type="button"
+            onClick={() => onSelectView(card.id)}
+          >
+            <div className="nav-card__icon-wrap">
+              <span className="nav-card__emoji">{card.emoji}</span>
+            </div>
+            <div className="nav-card__body">
+              <div className="nav-card__header">
+                <strong className="nav-card__title">{card.title}</strong>
+                {card.badge && (
+                  <span className={`nav-card__badge ${card.badge === 'NOWE' ? 'nav-card__badge--hot' : 'nav-card__badge--dev'}`}>
+                    {card.badge}
+                  </span>
+                )}
+              </div>
+              <span className="nav-card__subtitle">{card.subtitle}</span>
+              <span className="nav-card__description">{card.description}</span>
+            </div>
+            <div className="nav-card__glow" />
+          </button>
+        ))}
       </div>
     </section>
   )

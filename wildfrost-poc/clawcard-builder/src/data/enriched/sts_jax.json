@@ -1,0 +1,36 @@
+{
+  "id": "sts_jax",
+  "name": "J.A.X.",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Special",
+  "type": "Skill",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/0/08/J.A.X..png/revision/latest/scale-to-width-down/310?cb=20181016212611",
+  "desc_raw": "Lose 3 HP.\nGain 2/3 Strength.",
+  "desc_clean": "Lose 3 HP. Gain 2/3 Strength.",
+  "desc_problems": [],
+  "keywords": [
+    "Strength"
+  ],
+  "keyword_details": {
+    "Strength": {
+      "definition_short": "Zwiększa obrażenia ataków o wartość Strength.",
+      "ref": "KEYWORDS.md#strength"
+    }
+  },
+  "mechanic_summary": "Karta kosztująca 0 energii. Tracisz 3 HP (bezpośrednia utrata, nie obrażenia — omija Block i Intangible). W zamian zyskujesz 2/3 Strength (stały buff zwiększający obrażenia ataków). Ryzykowna ale silna.",
+  "verified_against_wiki": true,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/J.A.X.",
+  "wiki_desc": "J.A.X. is a special 0-cost Colorless Skill. It causes you to lose 3 HP and gain 2 (3 upgraded) Strength. The HP loss is direct (not damage, so it bypasses Block and Intangible).",
+  "wiki_keywords": [
+    "Strength"
+  ],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "OK. Wszystkie keywords potwierdzone. mechanic_summary poprawny. Wiki verified.",
+  "qa_critic_score": 5,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_2_researcher",
+  "verified_at": "2026-04-02"
+}

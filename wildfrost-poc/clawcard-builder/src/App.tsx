@@ -26,6 +26,8 @@ import GameScreen from './pages/GameScreen'
 import { StartPage } from './pages/StartPage'
 import type { AppView } from './pages/StartPage'
 import { BattleShowcase } from './modules/battle/BattleShowcase'
+import { CardMechanicsView } from './modules/card-mechanics/CardMechanicsView'
+import './modules/card-mechanics/CardMechanics.css'
 import type { MapNodeType } from './store/GameState'
 import './App.css'
 
@@ -39,6 +41,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { id: 'last-language', icon: '\u{1F4D6}', label: 'Ostatni Jezyk', group: 'play' },
   { id: 'battle-showcase', icon: '\u{1F4CB}', label: 'Battle Showcase', group: 'play' },
+  { id: 'card-mechanics', icon: '\u{1F9E0}', label: 'Card Mechanics', group: 'tools' },
   { id: 'grid-battle',   icon: '\u{2694}\uFE0F',  label: 'Grid Battle',    group: 'play' },
   { id: 'battle',        icon: '\u{1F5E1}\uFE0F',  label: 'Battle Demo',    group: 'play' },
   { id: 'test-env',      icon: '\u{1F3AE}', label: 'Test Env',       group: 'play' },
@@ -236,6 +239,8 @@ function App() {
         return (<><HoverTooltip /><GameScreen /></>)
       case 'battle-showcase':
         return <BattleShowcase />
+      case 'card-mechanics':
+        return <CardMechanicsView />
       default: return <StartPage onSelectView={setView} />
     }
   }

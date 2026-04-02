@@ -1,0 +1,48 @@
+{
+  "id": "sts_apparition",
+  "name": "Apparition",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Special",
+  "type": "Skill",
+  "cost": 1,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/Apparition.png/revision/latest/scale-to-width-down/310?cb=20181016212247",
+  "desc_raw": "Ethereal.\nGain 1 Intangible. \nExhaust.",
+  "desc_clean": "Ethereal. Gain 1 Intangible.  Exhaust.",
+  "desc_problems": [],
+  "keywords": [
+    "Exhaust",
+    "Ethereal",
+    "Intangible"
+  ],
+  "keyword_details": {
+    "Ethereal": {
+      "definition_short": "Jeśli karta jest w ręce na koniec tury, zostaje exhaustowana.",
+      "ref": "KEYWORDS.md#ethereal"
+    },
+    "Intangible": {
+      "definition_short": "Wszystkie obrażenia redukowane do 1 na czas działania.",
+      "ref": "KEYWORDS.md#intangible"
+    },
+    "Exhaust": {
+      "definition_short": "Karta jest usuwana z gry po zagraniu.",
+      "ref": "KEYWORDS.md#exhaust"
+    }
+  },
+  "mechanic_summary": "Karta z Ethereal — jeśli nie zagrana do końca tury, zostaje exhaustowana. Po zagraniu daje 1 turę Intangible (wszystkie obrażenia redukowane do 1). Znika z gry po zagraniu (Exhaust). Pochodzi z eventu Council of Ghosts.",
+  "verified_against_wiki": true,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Apparition",
+  "wiki_desc": "Apparition is a special 1-cost Colorless Skill obtained from the Council of Ghosts event. It has Ethereal — if in hand at end of turn, it's Exhausted. Grants 1 turn of Intangible (reduces all damage to 1). Exhausts after use.",
+  "wiki_keywords": [
+    "Ethereal",
+    "Intangible",
+    "Exhaust"
+  ],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "OK. Wszystkie keywords potwierdzone. mechanic_summary poprawny. Wiki verified.",
+  "qa_critic_score": 5,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_2_researcher",
+  "verified_at": "2026-04-02"
+}

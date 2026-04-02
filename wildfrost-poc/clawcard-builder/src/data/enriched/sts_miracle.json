@@ -1,0 +1,44 @@
+{
+  "id": "sts_miracle",
+  "name": "Miracle",
+  "game": "slay_the_spire",
+  "color": "Colorless",
+  "rarity": "Special",
+  "type": "Skill",
+  "cost": 0,
+  "image": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/Miracle.png/revision/latest/scale-to-width-down/310?cb=20190918002430",
+  "desc_raw": "Retain. Gain <P> <P>. Exhaust.",
+  "desc_clean": "Retain. Gain 2 Energy. Exhaust.",
+  "desc_problems": [
+    "2x <P> -> 'Energy'"
+  ],
+  "keywords": [
+    "Retain",
+    "Exhaust"
+  ],
+  "keyword_details": {
+    "Retain": {
+      "definition_short": "Karta nie jest odrzucana na koniec tury — zostaje w ręce.",
+      "ref": "KEYWORDS.md#retain"
+    },
+    "Exhaust": {
+      "definition_short": "Karta jest usuwana z gry po zagraniu.",
+      "ref": "KEYWORDS.md#exhaust"
+    }
+  },
+  "mechanic_summary": "Karta trzyma się w ręce między turami (Retain). Po zagraniu daje 2 kryształy energii. Po zagraniu znika z gry — trafia do exhaust pile, nie do discard pile (Exhaust).",
+  "verified_against_wiki": true,
+  "wiki_url": "https://slay-the-spire.fandom.com/wiki/Miracle",
+  "wiki_desc": "Miracle is a special 0-cost Colorless Skill for the Watcher. It grants 1 (2 if upgraded) Energy when played and then Exhausts. It has Retain, meaning it will not be discarded when you end your turn. Cannot be obtained directly; added to hand via Deus Ex Machina, Devotion, Worship.",
+  "wiki_keywords": [
+    "Retain",
+    "Exhaust"
+  ],
+  "discrepancies": [],
+  "qa_status": "approved",
+  "qa_notes": "OK. Wszystkie keywords potwierdzone. mechanic_summary poprawny. Wiki verified.",
+  "qa_critic_score": 5,
+  "enriched_at": "2026-04-02",
+  "enriched_by": "agent_2_researcher",
+  "verified_at": "2026-04-02"
+}

@@ -1,0 +1,403 @@
+/* ── Card Mechanics View ── */
+.card-mechanics {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.card-mechanics__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-mechanics__title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-mechanics__title {
+  font-family: var(--font-gothic);
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.card-mechanics__progress {
+  font-family: var(--font-gothic);
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.08em;
+}
+
+.card-mechanics__progress-bar {
+  height: 6px;
+  background: rgba(200, 144, 42, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.card-mechanics__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(200, 144, 42, 0.6), rgba(200, 144, 42, 0.9));
+  border-radius: 3px;
+  transition: width 500ms ease;
+}
+
+.card-mechanics__stats {
+  display: flex;
+  gap: 20px;
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+}
+
+.card-mechanics__filters {
+  display: flex;
+  gap: 8px;
+}
+
+.card-mechanics__filter {
+  padding: 6px 14px;
+  border: 1px solid rgba(200, 144, 42, 0.15);
+  border-radius: 6px;
+  background: rgba(42, 26, 10, 0.5);
+  color: var(--color-text-dim);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 200ms ease;
+}
+
+.card-mechanics__filter:hover {
+  border-color: rgba(200, 144, 42, 0.4);
+  color: var(--color-text);
+}
+
+.card-mechanics__filter--active {
+  border-color: rgba(200, 144, 42, 0.5);
+  background: rgba(200, 144, 42, 0.1);
+  color: var(--color-gold);
+}
+
+.card-mechanics__body {
+  position: relative;
+}
+
+.card-mechanics__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* ── Mechanic Card ── */
+.mech-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid rgba(200, 144, 42, 0.12);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(42, 26, 10, 0.85), rgba(26, 14, 5, 0.92));
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.mech-card:hover {
+  border-color: rgba(200, 144, 42, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.mech-card--approved {
+  border-color: rgba(42, 160, 42, 0.2);
+}
+
+.mech-card--needs_fix {
+  border-color: rgba(160, 42, 42, 0.3);
+}
+
+.mech-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mech-card__game {
+  font-size: 1.2rem;
+}
+
+.mech-card__cost {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(200, 144, 42, 0.15);
+  border: 1px solid rgba(200, 144, 42, 0.3);
+  color: var(--color-gold);
+  font-family: var(--font-gothic);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.mech-card__name {
+  font-family: var(--font-gothic);
+  font-size: 1.1rem;
+  color: var(--color-gold);
+  letter-spacing: 0.03em;
+}
+
+.mech-card__type {
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.mech-card__desc-divider {
+  height: 1px;
+  background: rgba(200, 144, 42, 0.1);
+}
+
+.mech-card__desc-raw {
+  font-size: 0.75rem;
+  color: #6a5a45;
+  font-style: italic;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.mech-card__desc-clean {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mech-card__keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.mech-card__keyword-badge {
+  padding: 3px 10px;
+  border: 1px solid rgba(200, 144, 42, 0.3);
+  border-radius: 12px;
+  background: rgba(200, 144, 42, 0.08);
+  color: var(--color-gold);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 150ms ease;
+  font-family: var(--font-gothic);
+  letter-spacing: 0.04em;
+}
+
+.mech-card__keyword-badge:hover {
+  background: rgba(200, 144, 42, 0.2);
+  border-color: rgba(200, 144, 42, 0.6);
+  transform: translateY(-1px);
+}
+
+.mech-card__summary {
+  font-size: 0.78rem;
+  color: var(--color-text-dim);
+  margin: 0;
+  line-height: 1.5;
+  border-left: 2px solid rgba(200, 144, 42, 0.15);
+  padding-left: 10px;
+}
+
+.mech-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.mech-card__status {
+  font-size: 0.68rem;
+}
+
+.mech-card__score {
+  font-size: 0.68rem;
+  color: var(--color-text-dim);
+}
+
+/* ── Keyword Panel (overlay) ── */
+.card-mechanics__panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.keyword-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  min-width: 360px;
+  max-width: 500px;
+  border: 1px solid rgba(200, 144, 42, 0.35);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(32, 18, 6, 0.98), rgba(20, 10, 2, 0.99));
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 40px rgba(200, 144, 42, 0.08);
+}
+
+.keyword-panel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.keyword-panel__title {
+  font-family: var(--font-gothic);
+  font-size: 1.4rem;
+  color: var(--color-gold);
+  letter-spacing: 0.04em;
+}
+
+.keyword-panel__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(200, 144, 42, 0.2);
+  border-radius: 8px;
+  background: rgba(42, 26, 10, 0.5);
+  color: var(--color-text-dim);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 150ms ease;
+}
+
+.keyword-panel__close:hover {
+  border-color: rgba(200, 144, 42, 0.5);
+  color: var(--color-gold);
+}
+
+.keyword-panel__game {
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.keyword-panel__short {
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  margin: 0;
+  font-weight: 500;
+}
+
+.keyword-panel__divider {
+  height: 1px;
+  background: rgba(200, 144, 42, 0.12);
+}
+
+.keyword-panel__full {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.keyword-panel__examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.keyword-panel__examples-label {
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.keyword-panel__example-tag {
+  padding: 2px 8px;
+  border: 1px solid rgba(200, 144, 42, 0.2);
+  border-radius: 8px;
+  background: rgba(200, 144, 42, 0.05);
+  font-size: 0.72rem;
+  color: var(--color-text);
+}
+
+.keyword-panel__wiki {
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 150ms ease;
+}
+
+.keyword-panel__wiki:hover {
+  opacity: 1;
+}
+
+.keyword-panel__verified {
+  font-size: 0.72rem;
+  color: #4a8a4a;
+}
+
+.keyword-panel__unknown {
+  font-size: 0.85rem;
+  color: var(--color-text-dim);
+  font-style: italic;
+}
+
+/* ── Keyword Bar ── */
+.card-mechanics__keyword-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border: 1px solid rgba(200, 144, 42, 0.1);
+  border-radius: 10px;
+  background: rgba(42, 26, 10, 0.4);
+}
+
+.card-mechanics__keyword-bar-label {
+  font-size: 0.72rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 4px;
+}
+
+.card-mechanics__keyword-tag {
+  padding: 4px 12px;
+  border: 1px solid rgba(200, 144, 42, 0.2);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--color-text-dim);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.card-mechanics__keyword-tag:hover {
+  border-color: rgba(200, 144, 42, 0.5);
+  color: var(--color-gold);
+}
+
+.card-mechanics__keyword-tag--active {
+  border-color: rgba(200, 144, 42, 0.6);
+  background: rgba(200, 144, 42, 0.12);
+  color: var(--color-gold);
+}
