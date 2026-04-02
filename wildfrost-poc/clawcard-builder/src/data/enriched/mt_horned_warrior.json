@@ -7,7 +7,7 @@
   "type": "Demon",
   "cost": 1,
   "capacity": 2,
-  "attack": "15x2",
+  "attack": 0,
   "health": 5,
   "image": "https://static.wikia.nocookie.net/monster_train/images/8/89/Horned_Warrior.png/revision/latest/scale-to-width-down/400?cb=20200527190644",
   "desc_raw": "Multistrike 1.",

@@ -5,7 +5,7 @@
   "clan": "Clanless",
   "rarity": "Uncommon",
   "type": "Spell",
-  "cost": "X",
+  "cost": 0,
   "capacity": 0,
   "attack": 0,
   "health": 0,
