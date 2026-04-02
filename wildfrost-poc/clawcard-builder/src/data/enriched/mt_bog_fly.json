@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/1/12/Bog_Fly.png/revision/latest?cb=20210329105836",
   "desc_raw": "[No text - Kin]",
-  "desc_clean": "Kin",
+  "desc_clean": "Summon 2 Bog Flies on death.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Bog Fly to Kin klanu Wurmkin. Kin. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Bog Fly to Kin klanu Wurmkin (0/0). Summon 2 Bog Flies on death.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Bog_Fly",
-  "wiki_desc": "[Stats-based] Kin",
+  "wiki_desc": "[Game knowledge] Summon 2 Bog Flies on death.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

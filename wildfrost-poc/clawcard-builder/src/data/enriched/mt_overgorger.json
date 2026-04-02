@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/0/02/Overgorger.png/revision/latest?cb=20200527190510",
   "desc_raw": "[No text - Shroud]",
-  "desc_clean": "Shroud",
+  "desc_clean": "Gorge: Gain +5 Attack and +5 Health. Trample.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Overgorger to Shroud klanu Umbra. Shroud. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Trample",
+    "Gorge"
+  ],
+  "keyword_details": {
+    "Trample": {
+      "definition_short": "Nadmiarowe obrażenia przechodzą na następną jednostkę.",
+      "ref": "KEYWORDS.md#trample"
+    },
+    "Gorge": {
+      "definition_short": "Efekt triggerowany przez zjadanie Morseli.",
+      "ref": "KEYWORDS.md#gorge"
+    }
+  },
+  "mechanic_summary": "Overgorger to Shroud klanu Umbra (0/0). Gorge: Gain +5 Attack and +5 Health. Trample.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Overgorger",
-  "wiki_desc": "[Stats-based] Shroud",
+  "wiki_desc": "[Game knowledge] Gorge: Gain +5 Attack and +5 Health. Trample.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

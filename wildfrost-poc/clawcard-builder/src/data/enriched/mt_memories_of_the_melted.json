@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/0/0a/Memories_of_the_Melted.png/revision/latest/scale-to-width-down/239?cb=20201216005906",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Melting Remnant 0 The Reformed, a group of Waxers dedicated to the melting of others, believe in respecting the already melted.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Memories of the Melted to Spell klanu Melting Remnant. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Quick",
+    "Reform"
+  ],
+  "keyword_details": {
+    "Quick": {
+      "definition_short": "Jednostka atakuje PRZED wrogami na tym samym piętrze.",
+      "ref": "KEYWORDS.md#quick"
+    },
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Memories of the Melted to Spell klanu Melting Remnant. Melting Remnant 0 The Reformed, a group of Waxers dedicated to the melting of others, believe in respecting the already melted. Keywords: Quick, Reform.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Memories_of_the_Melted",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Melting Remnant 0 The Reformed, a group of Waxers dedicated to the melting of others, believe in respecting the already melted. The Reformed keep the wicks of each Waxer they've helped to melt, burning the wicks briefly to remind themselves of their own impermanence, but extinguishing the wicks quickly to remember that their purpose is not yet fulfilled.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

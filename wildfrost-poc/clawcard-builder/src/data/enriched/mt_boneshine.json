@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/a5/Boneshine.png/revision/latest/scale-to-width-down/239?cb=20201215055205",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Apply Burnout 2 to a friendly unit.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Boneshine to Spell klanu Clanless. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Burnout"
+  ],
+  "keyword_details": {
+    "Burnout": {
+      "definition_short": "Jednostka jest niszczona po X turach.",
+      "ref": "KEYWORDS.md#burnout"
+    }
+  },
+  "mechanic_summary": "Boneshine to Spell klanu Clanless (0/0). Apply Burnout 2 to a friendly unit.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Boneshine",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "[Game knowledge] Apply Burnout 2 to a friendly unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

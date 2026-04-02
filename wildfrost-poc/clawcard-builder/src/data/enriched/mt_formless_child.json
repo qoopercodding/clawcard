@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/2/2b/Formless_Child.png/revision/latest?cb=20200527190505",
   "desc_raw": "[No text - Tomb]",
-  "desc_clean": "Tomb",
+  "desc_clean": "Reform. On death: returns to hand with +10/+10.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Formless Child to Tomb klanu Melting Remnant. Tomb. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Reform"
+  ],
+  "keyword_details": {
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Formless Child to Tomb klanu Melting Remnant (0/0). Reform. On death: returns to hand with +10/+10.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Formless_Child",
-  "wiki_desc": "[Stats-based] Tomb",
+  "wiki_desc": "[Game knowledge] Reform. On death: returns to hand with +10/+10.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

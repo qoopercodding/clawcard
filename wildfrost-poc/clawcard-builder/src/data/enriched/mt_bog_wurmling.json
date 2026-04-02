@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/5/5c/Bog_Wurmling.png/revision/latest/scale-to-width-down/400?cb=20210329105844",
   "desc_raw": "[No text - Kin]",
-  "desc_clean": "Kin",
+  "desc_clean": "Strikes all enemy units on the floor. Sweep.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Bog Wurmling to Kin klanu Wurmkin. Kin. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Sweep"
+  ],
+  "keyword_details": {
+    "Sweep": {
+      "definition_short": "Atak trafia wszystkie wrogie jednostki na piętrze.",
+      "ref": "KEYWORDS.md#sweep"
+    }
+  },
+  "mechanic_summary": "Bog Wurmling to Kin klanu Wurmkin (0/0). Strikes all enemy units on the floor. Sweep.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Bog_Wurmling",
-  "wiki_desc": "[Stats-based] Kin",
+  "wiki_desc": "[Game knowledge] Strikes all enemy units on the floor. Sweep.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

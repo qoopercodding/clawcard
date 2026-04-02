@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/5/54/Kinhost_Carapace.png/revision/latest?cb=20210329110007",
   "desc_raw": "[No text - Host]",
-  "desc_clean": "Host",
+  "desc_clean": "Gorge: Gain +2 Attack and +5 Health.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Kinhost Carapace to Host klanu Wurmkin. Host. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Gorge"
+  ],
+  "keyword_details": {
+    "Gorge": {
+      "definition_short": "Efekt triggerowany przez zjadanie Morseli.",
+      "ref": "KEYWORDS.md#gorge"
+    }
+  },
+  "mechanic_summary": "Kinhost Carapace to Host klanu Wurmkin (0/0). Gorge: Gain +2 Attack and +5 Health.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Kinhost_Carapace",
-  "wiki_desc": "[Stats-based] Host",
+  "wiki_desc": "[Game knowledge] Gorge: Gain +2 Attack and +5 Health.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

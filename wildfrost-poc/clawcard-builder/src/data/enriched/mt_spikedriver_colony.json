@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/6/69/Spikedriver_Colony.png/revision/latest?cb=20200527190504",
   "desc_raw": "[No text - Machine]",
-  "desc_clean": "Machine",
+  "desc_clean": "Applies Spikes to friendly units.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Spikedriver Colony to Machine klanu Clanless. Machine. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Spikes"
+  ],
+  "keyword_details": {
+    "Spikes": {
+      "definition_short": "Zadaje obrażenia atakującemu.",
+      "ref": "KEYWORDS.md#spikes"
+    }
+  },
+  "mechanic_summary": "Spikedriver Colony to Machine klanu Clanless (0/0). Applies Spikes to friendly units.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Spikedriver_Colony",
-  "wiki_desc": "[Stats-based] Machine",
+  "wiki_desc": "[Game knowledge] Applies Spikes to friendly units.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

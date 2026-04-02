@@ -11,19 +11,31 @@
   "health": 10,
   "image": "https://static.wikia.nocookie.net/monster_train/images/2/28/Rector_Flicker.png/revision/latest?cb=20200526054339",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (10 Attack, 10 Health, Capacity: 2)",
+  "desc_clean": "Reform 2. Harvest: Gain +5 Attack.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Rector Flicker to Champion klanu Melting Remnant. Champion (10 Attack, 10 Health, Capacity: 2). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Harvest",
+    "Reform"
+  ],
+  "keyword_details": {
+    "Harvest": {
+      "definition_short": "Efekt triggerowany gdy sojusznicza jednostka zginie.",
+      "ref": "KEYWORDS.md#harvest"
+    },
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Rector Flicker to Champion klanu Melting Remnant (10/10). Reform 2. Harvest: Gain +5 Attack.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Rector_Flicker",
-  "wiki_desc": "[Stats-based] Champion (10 Attack, 10 Health, Capacity: 2)",
+  "wiki_desc": "[Game knowledge] Reform 2. Harvest: Gain +5 Attack.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

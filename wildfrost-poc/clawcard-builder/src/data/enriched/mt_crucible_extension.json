@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/5/58/Crucible_Extension.png/revision/latest/scale-to-width-down/239?cb=20201215055721",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Umbra 2 The number of Morsels within the Crucible seems to be endless, making the work they accomplish proceed near instantaneously.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Crucible Extension to Spell klanu Umbra. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Morsel",
+    "Endless"
+  ],
+  "keyword_details": {
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    },
+    "Endless": {
+      "definition_short": "Jednostka wraca do ręki po śmierci.",
+      "ref": "KEYWORDS.md#endless"
+    }
+  },
+  "mechanic_summary": "Crucible Extension to Spell klanu Umbra. Umbra 2 The number of Morsels within the Crucible seems to be endless, making the work they accomplish proceed near instantaneously. Keywords: Morsel, Endless.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Crucible_Extension",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Umbra 2 The number of Morsels within the Crucible seems to be endless, making the work they accomplish proceed near instantaneously. Should I need to do future work on the Boneshaker, I will remember to take this into account.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

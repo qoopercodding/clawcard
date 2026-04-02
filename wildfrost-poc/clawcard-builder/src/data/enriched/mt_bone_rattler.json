@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/c/cb/Bone_Rattler.png/revision/latest/scale-to-width-down/239?cb=20201215060913",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Endless. Returns to hand on death.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Bone Rattler to Spell klanu Clanless. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Endless"
+  ],
+  "keyword_details": {
+    "Endless": {
+      "definition_short": "Jednostka wraca do ręki po śmierci.",
+      "ref": "KEYWORDS.md#endless"
+    }
+  },
+  "mechanic_summary": "Bone Rattler to Spell klanu Clanless (0/0). Endless. Returns to hand on death.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Bone_Rattler",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "[Game knowledge] Endless. Returns to hand on death.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

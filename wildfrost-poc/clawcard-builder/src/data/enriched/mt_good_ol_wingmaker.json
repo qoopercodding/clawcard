@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/d/dc/Good_Ol%27_Wingmaker.png/revision/latest/scale-to-width-down/239?cb=20210328020652",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Summon: Add a random Imp to your hand.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Good Ol' Wingmaker to Spell klanu Clanless. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Good Ol' Wingmaker to Spell klanu Clanless (0/0). Summon: Add a random Imp to your hand.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Good_Ol'_Wingmaker",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "[Game knowledge] Summon: Add a random Imp to your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

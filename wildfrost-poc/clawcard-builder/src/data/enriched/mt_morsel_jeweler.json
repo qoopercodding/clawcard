@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/a5/Morsel_Jeweler.png/revision/latest?cb=20200527190505",
   "desc_raw": "[No text - Morsel]",
-  "desc_clean": "Morsel",
+  "desc_clean": "Gorge: Gain Damage Shield 1.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Morsel Jeweler to Morsel klanu Umbra. Morsel. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Damage Shield",
+    "Gorge"
+  ],
+  "keyword_details": {
+    "Damage Shield": {
+      "definition_short": "Absorbuje jedną instancję obrażeń.",
+      "ref": "KEYWORDS.md#damage-shield"
+    },
+    "Gorge": {
+      "definition_short": "Efekt triggerowany przez zjadanie Morseli.",
+      "ref": "KEYWORDS.md#gorge"
+    }
+  },
+  "mechanic_summary": "Morsel Jeweler to Morsel klanu Umbra (0/0). Gorge: Gain Damage Shield 1.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Morsel_Jeweler",
-  "wiki_desc": "[Stats-based] Morsel",
+  "wiki_desc": "[Game knowledge] Gorge: Gain Damage Shield 1.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

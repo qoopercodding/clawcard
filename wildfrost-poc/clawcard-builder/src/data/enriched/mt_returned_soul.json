@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/a4/Returned_Soul.png/revision/latest/scale-to-width-down/239?cb=20210328021545",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Wurmkin 0 Learning this strange language on the stones was slowgoing at first, but as if by some stroke of divinity, I'm now able to decipher the runes quickly.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Returned Soul to Spell klanu Wurmkin. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Quick"
+  ],
+  "keyword_details": {
+    "Quick": {
+      "definition_short": "Jednostka atakuje PRZED wrogami na tym samym piętrze.",
+      "ref": "KEYWORDS.md#quick"
+    }
+  },
+  "mechanic_summary": "Returned Soul to Spell klanu Wurmkin. Wurmkin 0 Learning this strange language on the stones was slowgoing at first, but as if by some stroke of divinity, I'm now able to decipher the runes quickly. Keywords: Quick.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Returned_Soul",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Wurmkin 0 Learning this strange language on the stones was slowgoing at first, but as if by some stroke of divinity, I'm now able to decipher the runes quickly. I wouldn't go so far as to say I'm fluent, but this odd influx of knowledge has been remarkable and likely the result of the Wurmkin's Echoes injecting me with it on their own will. Will they take it away just as easily?",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

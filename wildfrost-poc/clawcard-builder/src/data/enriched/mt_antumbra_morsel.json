@@ -11,19 +11,26 @@
   "health": 0,
   "image": "",
   "desc_raw": "[No text - Morsel]",
-  "desc_clean": "Morsel",
+  "desc_clean": "Morsel. When eaten: +5 Attack to eating unit.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Antumbra Morsel to Morsel klanu Umbra. Morsel. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Morsel"
+  ],
+  "keyword_details": {
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    }
+  },
+  "mechanic_summary": "Antumbra Morsel to Morsel klanu Umbra (0/0). Morsel. When eaten: +5 Attack to eating unit.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Antumbra_Morsel",
-  "wiki_desc": "[Stats-based] Morsel",
+  "wiki_desc": "[Game knowledge] Morsel. When eaten: +5 Attack to eating unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

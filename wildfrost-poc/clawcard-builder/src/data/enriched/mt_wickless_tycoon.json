@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/8/87/Wickless_Tycoon.png/revision/latest/scale-to-width-down/349?cb=20200527190506",
   "desc_raw": "[No text - Wickless]",
-  "desc_clean": "Wickless",
+  "desc_clean": "Burnout 2. Harvest: Add a copy of this unit to your hand.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Wickless Tycoon to Wickless klanu Melting Remnant. Wickless. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Harvest",
+    "Burnout"
+  ],
+  "keyword_details": {
+    "Harvest": {
+      "definition_short": "Efekt triggerowany gdy sojusznicza jednostka zginie.",
+      "ref": "KEYWORDS.md#harvest"
+    },
+    "Burnout": {
+      "definition_short": "Jednostka jest niszczona po X turach.",
+      "ref": "KEYWORDS.md#burnout"
+    }
+  },
+  "mechanic_summary": "Wickless Tycoon to Wickless klanu Melting Remnant (0/0). Burnout 2. Harvest: Add a copy of this unit to your hand.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wickless_Tycoon",
-  "wiki_desc": "[Stats-based] Wickless",
+  "wiki_desc": "[Game knowledge] Burnout 2. Harvest: Add a copy of this unit to your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

@@ -11,19 +11,26 @@
   "health": 20,
   "image": "https://static.wikia.nocookie.net/monster_train/images/c/c7/Spine_Chief.png/revision/latest/scale-to-width-down/400?cb=20210329110054",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (5 Attack, 20 Health, Capacity: 3)",
+  "desc_clean": "Applies Spikes 2 to self per turn.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Spine Chief to Champion klanu Wurmkin. Champion (5 Attack, 20 Health, Capacity: 3). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Spikes"
+  ],
+  "keyword_details": {
+    "Spikes": {
+      "definition_short": "Zadaje obrażenia atakującemu.",
+      "ref": "KEYWORDS.md#spikes"
+    }
+  },
+  "mechanic_summary": "Spine Chief to Champion klanu Wurmkin (5/20). Applies Spikes 2 to self per turn.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Spine_Chief",
-  "wiki_desc": "[Stats-based] Champion (5 Attack, 20 Health, Capacity: 3)",
+  "wiki_desc": "[Game knowledge] Applies Spikes 2 to self per turn.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/e/ef/Wickless_Baron.png/revision/latest?cb=20200527190506",
   "desc_raw": "[No text - Wickless]",
-  "desc_clean": "Wickless",
+  "desc_clean": "Burnout 3. Reform with +10/+10 on death.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Wickless Baron to Wickless klanu Melting Remnant. Wickless. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Burnout",
+    "Reform"
+  ],
+  "keyword_details": {
+    "Burnout": {
+      "definition_short": "Jednostka jest niszczona po X turach.",
+      "ref": "KEYWORDS.md#burnout"
+    },
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Wickless Baron to Wickless klanu Melting Remnant (0/0). Burnout 3. Reform with +10/+10 on death.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wickless_Baron",
-  "wiki_desc": "[Stats-based] Wickless",
+  "wiki_desc": "[Game knowledge] Burnout 3. Reform with +10/+10 on death.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

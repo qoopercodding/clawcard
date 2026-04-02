@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/7/79/Excavation_Eruption.png/revision/latest/scale-to-width-down/239?cb=20201215090312",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Umbra 3 With little regard for their own lives, these Morsels seem to explode carelessly in the mines, paying no mind to the possible consequences of their actions.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Excavation Eruption to Spell klanu Umbra. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Morsel"
+  ],
+  "keyword_details": {
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    }
+  },
+  "mechanic_summary": "Excavation Eruption to Spell klanu Umbra. Umbra 3 With little regard for their own lives, these Morsels seem to explode carelessly in the mines, paying no mind to the possible consequences of their actions. Keywords: Morsel.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Excavation_Eruption",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Umbra 3 With little regard for their own lives, these Morsels seem to explode carelessly in the mines, paying no mind to the possible consequences of their actions. I've seen this backfire on more than one occasion...",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

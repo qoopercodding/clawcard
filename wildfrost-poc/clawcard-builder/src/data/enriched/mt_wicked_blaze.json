@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/0/0f/Wicked_Blaze.png/revision/latest/scale-to-width-down/239?cb=20201216024559",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Melting Remnant 2 Though not entirely under their control, the burning of a Waxer's wick can accelerate with a great deal of focus and help from other Waxers.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Wicked Blaze to Spell klanu Melting Remnant. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Reform"
+  ],
+  "keyword_details": {
+    "Reform": {
+      "definition_short": "Zwraca jednostkę z exhaust do ręki z powiększonymi statami.",
+      "ref": "KEYWORDS.md#reform"
+    }
+  },
+  "mechanic_summary": "Wicked Blaze to Spell klanu Melting Remnant. Melting Remnant 2 Though not entirely under their control, the burning of a Waxer's wick can accelerate with a great deal of focus and help from other Waxers. Keywords: Reform.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wicked_Blaze",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Melting Remnant 2 Though not entirely under their control, the burning of a Waxer's wick can accelerate with a great deal of focus and help from other Waxers. The resulting melting wax is then collected and donated to reform one of their kin.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

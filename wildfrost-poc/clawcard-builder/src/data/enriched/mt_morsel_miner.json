@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/5/5a/Morsel_Miner.png/revision/latest?cb=20200527190505",
   "desc_raw": "[No text - Morsel]",
-  "desc_clean": "Morsel",
+  "desc_clean": "Summon: Add 2 Morsels to your hand.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Morsel Miner to Morsel klanu Umbra. Morsel. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Summon",
+    "Morsel"
+  ],
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    },
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    }
+  },
+  "mechanic_summary": "Morsel Miner to Morsel klanu Umbra (0/0). Summon: Add 2 Morsels to your hand.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Morsel_Miner",
-  "wiki_desc": "[Stats-based] Morsel",
+  "wiki_desc": "[Game knowledge] Summon: Add 2 Morsels to your hand.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

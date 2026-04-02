@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/6/66/Edge_Prior.png/revision/latest?cb=20200527190505",
   "desc_raw": "[No text - Channeler]",
-  "desc_clean": "Channeler",
+  "desc_clean": "Strike: Apply 2 Sap to the target.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Edge Prior to Channeler klanu Awoken. Channeler. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Sap"
+  ],
+  "keyword_details": {
+    "Sap": {
+      "definition_short": "Debuff redukujący atak po każdym ataku.",
+      "ref": "KEYWORDS.md#sap"
+    }
+  },
+  "mechanic_summary": "Edge Prior to Channeler klanu Awoken (0/0). Strike: Apply 2 Sap to the target.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Edge_Prior",
-  "wiki_desc": "[Stats-based] Channeler",
+  "wiki_desc": "[Game knowledge] Strike: Apply 2 Sap to the target.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

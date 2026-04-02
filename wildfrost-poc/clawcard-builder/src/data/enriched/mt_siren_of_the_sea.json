@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/d/de/Siren_of_the_Sea.png/revision/latest?cb=20200527190506",
   "desc_raw": "[No text - Siren]",
-  "desc_clean": "Siren",
+  "desc_clean": "Incant: Apply 1 Spell Weakness to all enemies.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Siren of the Sea to Siren klanu Stygian Guard. Siren. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Spell Weakness",
+    "Incant"
+  ],
+  "keyword_details": {
+    "Spell Weakness": {
+      "definition_short": "Cel otrzymuje więcej obrażeń od spelli.",
+      "ref": "KEYWORDS.md#spell-weakness"
+    },
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    }
+  },
+  "mechanic_summary": "Siren of the Sea to Siren klanu Stygian Guard (0/0). Incant: Apply 1 Spell Weakness to all enemies.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Siren_of_the_Sea",
-  "wiki_desc": "[Stats-based] Siren",
+  "wiki_desc": "[Game knowledge] Incant: Apply 1 Spell Weakness to all enemies.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

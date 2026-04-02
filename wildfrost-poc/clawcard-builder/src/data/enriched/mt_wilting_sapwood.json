@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/ad/Wilting_Sapwood.png/revision/latest/scale-to-width-down/343?cb=20200527190509",
   "desc_raw": "[No text - Hollow]",
-  "desc_clean": "Hollow",
+  "desc_clean": "Applies -2 Attack to all enemy units each turn.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Wilting Sapwood to Hollow klanu Awoken. Hollow. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Daze"
+  ],
+  "keyword_details": {
+    "Daze": {
+      "definition_short": "Debuff zmniejszający atak jednostki.",
+      "ref": "KEYWORDS.md#daze"
+    }
+  },
+  "mechanic_summary": "Wilting Sapwood to Hollow klanu Awoken (0/0). Applies -2 Attack to all enemy units each turn.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wilting_Sapwood",
-  "wiki_desc": "[Stats-based] Hollow",
+  "wiki_desc": "[Game knowledge] Applies -2 Attack to all enemy units each turn.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

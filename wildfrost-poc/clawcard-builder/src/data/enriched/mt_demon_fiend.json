@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/9/90/Demon_Fiend.png/revision/latest/scale-to-width-down/343?cb=20200527190507",
   "desc_raw": "[No text - Demon]",
-  "desc_clean": "Demon",
+  "desc_clean": "Summon: Deal 5 damage to the front enemy unit.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Demon Fiend to Demon klanu Hellhorned. Demon. Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Summon"
+  ],
+  "keyword_details": {
+    "Summon": {
+      "definition_short": "Przywołanie nowej jednostki na piętro.",
+      "ref": "KEYWORDS.md#summon"
+    }
+  },
+  "mechanic_summary": "Demon Fiend to Demon klanu Hellhorned (0/0). Summon: Deal 5 damage to the front enemy unit.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Demon_Fiend",
-  "wiki_desc": "[Stats-based] Demon",
+  "wiki_desc": "[Game knowledge] Summon: Deal 5 damage to the front enemy unit.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

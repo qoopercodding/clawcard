@@ -11,19 +11,31 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/0/0f/Mine_Collapse.png/revision/latest/scale-to-width-down/239?cb=20201216005913",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Umbra X While Morsels seem to be quick workers in their mine, they do not appear to be the most intelligent and have been the cause of many easily avoided accidents.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Mine Collapse to Spell klanu Umbra. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Morsel",
+    "Quick"
+  ],
+  "keyword_details": {
+    "Morsel": {
+      "definition_short": "Mała jednostka-jedzenie zjadana przez Gorge units.",
+      "ref": "KEYWORDS.md#morsel"
+    },
+    "Quick": {
+      "definition_short": "Jednostka atakuje PRZED wrogami na tym samym piętrze.",
+      "ref": "KEYWORDS.md#quick"
+    }
+  },
+  "mechanic_summary": "Mine Collapse to Spell klanu Umbra. Umbra X While Morsels seem to be quick workers in their mine, they do not appear to be the most intelligent and have been the cause of many easily avoided accidents. Keywords: Morsel, Quick.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Mine_Collapse",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Umbra X While Morsels seem to be quick workers in their mine, they do not appear to be the most intelligent and have been the cause of many easily avoided accidents. I can only hope this will not be the case aboard the train.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

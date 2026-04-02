@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/9/99/Sharpen.png/revision/latest/scale-to-width-down/239?cb=20201216023102",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Awoken 2 I've found discarded Hollow armor serves as a perfect tool to sharpen dull weapons.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Sharpen to Spell klanu Awoken. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Armor"
+  ],
+  "keyword_details": {
+    "Armor": {
+      "definition_short": "Trwała tarcza absorbująca obrażenia.",
+      "ref": "KEYWORDS.md#armor"
+    }
+  },
+  "mechanic_summary": "Sharpen to Spell klanu Awoken. Awoken 2 I've found discarded Hollow armor serves as a perfect tool to sharpen dull weapons. Keywords: Armor.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Sharpen",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Awoken 2 I've found discarded Hollow armor serves as a perfect tool to sharpen dull weapons.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

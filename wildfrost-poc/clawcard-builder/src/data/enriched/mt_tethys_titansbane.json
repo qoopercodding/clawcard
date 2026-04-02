@@ -11,19 +11,31 @@
   "health": 3,
   "image": "https://static.wikia.nocookie.net/monster_train/images/c/cf/Tethys_Titansbane.png/revision/latest?cb=20200526054112",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (5 Attack, 3 Health, Capacity: 1)",
+  "desc_clean": "Sweep. Sap 2 on strike.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Tethys Titansbane to Champion klanu Stygian Guard. Champion (5 Attack, 3 Health, Capacity: 1). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Sap",
+    "Sweep"
+  ],
+  "keyword_details": {
+    "Sap": {
+      "definition_short": "Debuff redukujący atak po każdym ataku.",
+      "ref": "KEYWORDS.md#sap"
+    },
+    "Sweep": {
+      "definition_short": "Atak trafia wszystkie wrogie jednostki na piętrze.",
+      "ref": "KEYWORDS.md#sweep"
+    }
+  },
+  "mechanic_summary": "Tethys Titansbane to Champion klanu Stygian Guard (5/3). Sweep. Sap 2 on strike.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Tethys_Titansbane",
-  "wiki_desc": "[Stats-based] Champion (5 Attack, 3 Health, Capacity: 1)",
+  "wiki_desc": "[Game knowledge] Sweep. Sap 2 on strike.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

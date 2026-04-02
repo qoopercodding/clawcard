@@ -11,19 +11,26 @@
   "health": 5,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/a3/Echowright.png/revision/latest?cb=20210329105911",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (10 Attack, 5 Health, Capacity: 2)",
+  "desc_clean": "Incant: Draw 1 card.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Echowright to Champion klanu Wurmkin. Champion (10 Attack, 5 Health, Capacity: 2). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Incant"
+  ],
+  "keyword_details": {
+    "Incant": {
+      "definition_short": "Efekt triggerowany za każdym razem gdy grasz spell.",
+      "ref": "KEYWORDS.md#incant"
+    }
+  },
+  "mechanic_summary": "Echowright to Champion klanu Wurmkin (10/5). Incant: Draw 1 card.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Echowright",
-  "wiki_desc": "[Stats-based] Champion (10 Attack, 5 Health, Capacity: 2)",
+  "wiki_desc": "[Game knowledge] Incant: Draw 1 card.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

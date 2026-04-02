@@ -11,19 +11,26 @@
   "health": 30,
   "image": "https://static.wikia.nocookie.net/monster_train/images/a/a4/Wyldenten.png/revision/latest/scale-to-width-down/400?cb=20200903185717",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (5 Attack, 30 Health, Capacity: 3)",
+  "desc_clean": "Sweep. Heals friendly units for damage dealt.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Wyldenten to Champion klanu Awoken. Champion (5 Attack, 30 Health, Capacity: 3). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Sweep"
+  ],
+  "keyword_details": {
+    "Sweep": {
+      "definition_short": "Atak trafia wszystkie wrogie jednostki na piętrze.",
+      "ref": "KEYWORDS.md#sweep"
+    }
+  },
+  "mechanic_summary": "Wyldenten to Champion klanu Awoken (5/30). Sweep. Heals friendly units for damage dealt.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Wyldenten",
-  "wiki_desc": "[Stats-based] Champion (5 Attack, 30 Health, Capacity: 3)",
+  "wiki_desc": "[Game knowledge] Sweep. Heals friendly units for damage dealt.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

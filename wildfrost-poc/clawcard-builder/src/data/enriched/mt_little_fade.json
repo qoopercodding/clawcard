@@ -11,19 +11,31 @@
   "health": 1,
   "image": "https://static.wikia.nocookie.net/monster_train/images/3/32/Little_Fade.png/revision/latest?cb=20200903185731",
   "desc_raw": "[No text - Champion]",
-  "desc_clean": "Champion (5 Attack, 1 Health, Capacity: 1)",
+  "desc_clean": "Stealth. Lifesteal.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Little Fade to Champion klanu Melting Remnant. Champion (5 Attack, 1 Health, Capacity: 1). Karta bez efektu tekstowego — czysta jednostka ze statami.",
+  "keywords": [
+    "Lifesteal",
+    "Stealth"
+  ],
+  "keyword_details": {
+    "Lifesteal": {
+      "definition_short": "Leczy Pyra za obrażenia zadane wrogom.",
+      "ref": "KEYWORDS.md#lifesteal"
+    },
+    "Stealth": {
+      "definition_short": "Jednostka nie może być zaatakowana dopóki nie zaatakuje.",
+      "ref": "KEYWORDS.md#stealth"
+    }
+  },
+  "mechanic_summary": "Little Fade to Champion klanu Melting Remnant (5/1). Stealth. Lifesteal.",
   "verified_against_wiki": false,
   "wiki_url": "https://monster-train.fandom.com/wiki/Little_Fade",
-  "wiki_desc": "[Stats-based] Champion (5 Attack, 1 Health, Capacity: 1)",
+  "wiki_desc": "[Game knowledge] Stealth. Lifesteal.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Enriched from game knowledge database.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"

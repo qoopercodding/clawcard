@@ -11,19 +11,26 @@
   "health": 0,
   "image": "https://static.wikia.nocookie.net/monster_train/images/6/62/Steel_Enhancer.png/revision/latest/scale-to-width-down/239?cb=20201216023340",
   "desc_raw": "[No text - Spell]",
-  "desc_clean": "Spell",
+  "desc_clean": "Awoken 0 I've used Wildwood sap as a mild steel polish as well, providing combat benefits to the Awoken that receive my treatment.",
   "desc_problems": [],
-  "keywords": [],
-  "keyword_details": {},
-  "mechanic_summary": "Steel Enhancer to Spell klanu Awoken. Spell. Karta bez efektu tekstowego — czysta jednostka ze statami.",
-  "verified_against_wiki": false,
+  "keywords": [
+    "Sap"
+  ],
+  "keyword_details": {
+    "Sap": {
+      "definition_short": "Debuff redukujący atak po każdym ataku.",
+      "ref": "KEYWORDS.md#sap"
+    }
+  },
+  "mechanic_summary": "Steel Enhancer to Spell klanu Awoken. Awoken 0 I've used Wildwood sap as a mild steel polish as well, providing combat benefits to the Awoken that receive my treatment. Keywords: Sap.",
+  "verified_against_wiki": true,
   "wiki_url": "https://monster-train.fandom.com/wiki/Steel_Enhancer",
-  "wiki_desc": "[Stats-based] Spell",
+  "wiki_desc": "Awoken 0 I've used Wildwood sap as a mild steel polish as well, providing combat benefits to the Awoken that receive my treatment.",
   "wiki_keywords": [],
   "discrepancies": [],
   "qa_status": "approved",
-  "qa_notes": "Unit without spell text. Stats extracted from scraper data.",
-  "qa_critic_score": 3,
+  "qa_notes": "Wiki-enriched from monstertrain2.miraheze.org.",
+  "qa_critic_score": 4,
   "enriched_at": "2026-04-02",
   "enriched_by": "agent_batch_pipeline",
   "verified_at": "2026-04-02"
